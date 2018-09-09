@@ -1,3 +1,10 @@
+.DS_Store
+
+# Eclipse generated files
+.project
+.settings
+.classpath
+
 # Compiled class file
 *.class
 
