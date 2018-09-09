@@ -10,8 +10,8 @@
 
   <modules>
     <module>support/java-lib</module>
-    <module>support/eclipse-plugin</module>
     <module>securityinjava-ssm</module>
+    <module>support/eclipse-plugin</module>
     <module>support/build</module>
   </modules>
 

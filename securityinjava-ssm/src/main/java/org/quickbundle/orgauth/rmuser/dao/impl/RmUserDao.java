@@ -149,11 +149,11 @@ public class RmUserDao extends RmJdbcTemplate implements IRmUserDao, IRmUserCons
      * @return 总记录数
      */
     public int getRecordCount(String queryCondition) {
-        String strsql = SQL_COUNT + DEFAULT_SQL_WHERE_USABLE;
+        String sql = SQL_COUNT + DEFAULT_SQL_WHERE_USABLE;
         if (queryCondition != null && queryCondition.trim().length() > 0) {
-            strsql += DEFAULT_SQL_CONTACT_KEYWORD + queryCondition; //where后加上查询条件
+            sql += DEFAULT_SQL_CONTACT_KEYWORD + queryCondition; //where后加上查询条件
         }
-        return queryForInt(strsql);
+        return queryForObject(sql, Integer.class);
     }
 
     /**

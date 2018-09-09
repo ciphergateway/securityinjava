@@ -19,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.omg.CORBA.INTERNAL;
 import org.quickbundle.base.beans.factory.RmIdFactory;
 import org.quickbundle.base.dao.RmJdbcTemplate;
 import org.quickbundle.modules.code.rmcodetype.dao.IRmCodeTypeDao;
@@ -114,11 +115,11 @@ public class RmCodeTypeDao extends RmJdbcTemplate implements IRmCodeTypeDao, IRm
      * @return 总记录数
      */
     public int getRecordCount(String queryCondition) {
-        String strsql = SQL_COUNT + DEFAULT_SQL_WHERE_USABLE;
+        String sql = SQL_COUNT + DEFAULT_SQL_WHERE_USABLE;
         if (queryCondition != null && queryCondition.trim().length() > 0) {
-            strsql += DEFAULT_SQL_CONTACT_KEYWORD + queryCondition; //where后加上查询条件
+            sql += DEFAULT_SQL_CONTACT_KEYWORD + queryCondition; //where后加上查询条件
         }
-        return queryForInt(strsql);
+        return queryForObject(sql, Integer.class);
     }
 
     /**

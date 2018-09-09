@@ -27,13 +27,13 @@
 		<!--定义数据库类型-->
 		<dbTypes>
 			<dbType defaultDriver="com.mysql.jdbc.Driver" defaultUrl="jdbc:mysql://localhost/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;jdbcCompliantTruncation=false&amp;autoReconnect=true">MySQL</dbType>
+			<dbType defaultDriver="org.postgresql.Driver" defaultUrl="jdbc:postgresql://localhost/test">PostgreSQL</dbType>
+			<dbType defaultDriver="org.h2.Driver" defaultUrl="jdbc:h2:tcp://localhost/~/test">H2</dbType>
 			<dbType defaultDriver="oracle.jdbc.driver.OracleDriver" defaultUrl="jdbc:oracle:thin:@localhost:1521:test">Oracle</dbType>
 			<dbType defaultDriver="com.ibm.db2.jcc.DB2Driver" defaultDriver.old="COM.ibm.db2.jdbc.app.DB2Driver" defaultUrl="jdbc:db2://localhost:50000/test">db2</dbType>
 			<dbType defaultDriver="net.sourceforge.jtds.jdbc.Driver" defaultUrl="jdbc:jtds:sqlserver://localhost:1433/test;charset=GBK">SQL Server</dbType>
-			<dbType defaultDriver="org.h2.Driver" defaultUrl="jdbc:h2:tcp://localhost/~/test">H2</dbType>
-			<dbType defaultDriver="com.sybase.jdbc2.jdbc.SybDriver" defaultUrl="jdbc:sybase:Tds:localhost:2638/">Sybase</dbType>
+			<dbType defaultDriver="net.sourceforge.jtds.jdbc.Driver" defaultUrl="jdbc:jtds:sybase://localhost:5000/test">Sybase</dbType>
 			<dbType defaultDriver="com.informix.jdbc.IfxDriver" defaultUrl="jdbc:informix-sqli://localhost:1533/test:INFORMIXSERVER=myserver">informix</dbType>
-			<dbType defaultDriver="org.postgresql.Driver" defaultUrl="jdbc:postgresql://localhost/test">PostgreSQL</dbType>
 			<!-- 
 			<dbType defaultDriver="sun.jdbc.odbc.JdbcOdbcDriver" defaultUrl="jdbc:odbc:Driver={MicroSoft Access Driver (*.mdb)};DBQ=yourApplicationRealPath/Data/ReportDemo.mdb">access(*)</dbType>
 			 -->

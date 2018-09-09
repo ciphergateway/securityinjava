@@ -14,17 +14,24 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
+			<groupId>com.ciphergateway</groupId>
+			<artifactId>quickbundle-tools</artifactId>
+			<version>${securityinjava.version}</version>
+		</dependency>
+
+		<!-- JSON begin -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.11.2</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jaxb-annotations</artifactId>
+			<version>2.8.11</version>
 		</dependency>
+		<!-- JSON end -->
+
 		<dependency>
 			<groupId>org.apache.geronimo.specs</groupId>
 			<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
@@ -32,19 +39,14 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-tools</artifactId>
-			<version>${securityinjava.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>
-			<version>${ant.version}</version>
+			<version>1.9.13</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.10</version>
+			<version>1.11</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
@@ -52,44 +54,9 @@
 			<version>3.2.2</version>
 		</dependency>
 		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>${dom4j.version}</version>
-		</dependency>
-		
-		<!-- JSON begin -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.module</groupId>
-			<artifactId>jackson-module-jaxb-annotations</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<!-- JSON end -->
-		
-		<dependency>
-			<groupId>org.safehaus.jug</groupId>
-			<artifactId>jug</artifactId>
-			<version>2.0.0</version>
-			<classifier>lgpl</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>${mail.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.4</version>
+			<version>1.8.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

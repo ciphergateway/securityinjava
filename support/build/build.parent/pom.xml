@@ -12,9 +12,6 @@
 		<basedir>./</basedir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<securityinjava.version>6.0.0</securityinjava.version>
-
-		<maven-assembly.version>2.5.3</maven-assembly.version>
-		<maven-antrun.version>1.7</maven-antrun.version>
 	</properties>
 	
 	<build>
@@ -22,7 +19,7 @@
 
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${maven-assembly.version}</version>
+				<version>3.1.0</version>
 				<configuration>
 					<descriptors>
 						<descriptor>src/main/assembly/assembly.xml</descriptor>
@@ -45,7 +42,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>${maven-antrun.version}</version>
+				<version>1.8</version>
 				<executions>
 					<execution>
 						<phase>package</phase>

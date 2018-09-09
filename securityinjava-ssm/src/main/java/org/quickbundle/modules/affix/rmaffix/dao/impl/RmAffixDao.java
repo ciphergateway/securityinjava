@@ -156,7 +156,7 @@ public class RmAffixDao extends RmJdbcTemplate implements IRmAffixDao, IRmAffixC
         	sql.append(DEFAULT_SQL_CONTACT_KEYWORD); //where后加上查询条件
         	sql.append(queryCondition);
         }
-        return queryForInt(sql.toString());
+        return queryForObject(sql.toString(), Integer.class);
     }
 
     /**

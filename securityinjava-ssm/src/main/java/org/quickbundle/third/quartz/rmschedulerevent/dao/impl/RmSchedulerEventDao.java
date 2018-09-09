@@ -150,12 +150,11 @@ public class RmSchedulerEventDao extends RmJdbcTemplate implements IRmSchedulerE
      * @return 总记录数
      */
     public int getRecordCount(String queryCondition) {
-    	StringBuilder sql = new StringBuilder(SQL_COUNT + DEFAULT_SQL_WHERE_USABLE);
+        String sql = SQL_COUNT + DEFAULT_SQL_WHERE_USABLE;
         if (queryCondition != null && queryCondition.trim().length() > 0) {
-        	sql.append(DEFAULT_SQL_CONTACT_KEYWORD); //where后加上查询条件
-        	sql.append(queryCondition);
+            sql += DEFAULT_SQL_CONTACT_KEYWORD + queryCondition; //where后加上查询条件
         }
-        return queryForInt(sql.toString());
+        return queryForObject(sql, Integer.class);
     }
 
     /**
