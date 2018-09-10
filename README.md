@@ -17,9 +17,9 @@
 
 # Introduction
 
-JavaSec是一个以“快速开发”为目标的Web/Mobile应用开发平台，同时大幅增强了Web安全性。
+SecurityInJava是一个以“安全+高效开发”为目标的Java应用开发平台，针对主流的SSM(Spring MVC+Spring+MyBatis，适用于管理平面的应用开发)和Java异步应用级框架(Vert.x为主，适用于高并发场景)两大架构，提供专业的安全编码最佳实践，并内置安全模块，包含商用密码算法模块（即国密算法）、基于ABAC的访问控制，以大幅增强了Java应用开发安全性。按Gartner统计，仅仅OWASP Top10的安全缺陷就导致了50%的漏洞，因此SecurityInJava如果能够推广，有望从源头显著改善应用系统的安全性，实现真正的“Build Security In”，而且和后期补漏洞技术相比，SecurityInJava具有投入成本极低、但贡献价值极高。
 
-#### 功能优势
+#### 应用功能优势
 * 支持父子表、多对多表的智能关系分析及生成
 * JavaEE标准版的代码生成器，可以做企业应用、互联网后端、2B的门户、及网站前台(需要单独设计页面)
 * 跨平台的Mobile端的代码生成器(即将发布)，用一套代码通吃iOS各版本、Android各版本、winphone，可用于企业移动端应用、2C的轻应用
@@ -82,7 +82,7 @@ In your issue report please make sure you provide the following information:
 # Installation
 
 ##编译打包
-#### 一键编译quickbundle-6.0.0插件的方式一（推荐）
+#### 一键编译securityinjava-6.0.0插件的方式一（推荐）
 eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要求是eclipse的JavaEE/jee版，同时Eclipse版本>=3.7
 
 		1，git clone https://github.com/ciphergateway/securityinjava
@@ -111,22 +111,24 @@ Download lastest release.
 ##基础jar包和Eclipse插件源代码模块介绍
 
 #### 包含基础jar包5个:
-		java-lib/quickbundle-tools  基础工具jar包，是一些其它quickbundle-xxx.jar的基础
-		java-lib/quickbundle-core  核心jar包，依赖于Spring
-		java-lib/quickbundle-mybatis  mybatis扩展
-		java-lib/quickbundle-springweb  spring mvc扩展
-		java-lib/quickbundle-struts  struts1 扩展
+		support/java-lib/quickbundle-tools  基础工具jar包，是一些其它quickbundle-xxx.jar的基础
+		support/java-lib/quickbundle-core  核心jar包，依赖于Spring
+		support/java-lib/quickbundle-mybatis  mybatis扩展
+		support/java-lib/quickbundle-springweb  spring mvc扩展
+		support/java-lib/quickbundle-struts  struts1 扩展
 	
 #### Eclipse插件
-		eclipse-plugin/org.quickbundle.mda.libs  osgi下的jar包接入点
-		eclipse-plugin/quickbundle-gp  项目生成器
-		eclipse-plugin/quickbundle-mvm  模型虚拟机
-		eclipse-plugin/quickbundle-gc  代码生成器
+		support/eclipse-plugin/org.quickbundle.mda.libs  osgi下的jar包接入点
+		support/eclipse-plugin/quickbundle-gp  项目生成器
+		support/eclipse-plugin/quickbundle-mvm  模型虚拟机
+		support/eclipse-plugin/quickbundle-gc  代码生成器
 		
-		eclipse-plugin/org.quickbundle.mda.feature  Eclipse插件组合的feature工程
-		eclipse-plugin/org.quickbundle.mda.updatesite  Eclipse插件的在线/离线安装包的组合工程
+		support/eclipse-plugin/org.quickbundle.mda.feature  Eclipse插件组合的feature工程
+		support/eclipse-plugin/org.quickbundle.mda.updatesite  Eclipse插件的在线/离线安装包的组合工程
 ##骨架工程介绍
-目前包含：JavaEE标准版、跨平台的Mobile端phonegap版
+目前包含：基于SSM的JavaEE标准版。
+
+待整合：Vert.x。
 
 ####securityinjava-ssm
 
@@ -139,7 +141,7 @@ Download lastest release.
 适用场景：企业应用、互联网应用后端。
 
 #Web Security
-##逐鹿安全应用框架
+##安全应用框架
 
 安全强化的Java Web版(后端+PC端)，Mobile版。  
 对JavaEE标准版，以“Build Security In”的思想彻底重构之后的注重安全的Java Web应用框架。适用场景：对安全有要求的企业应用、互联网应用后端。
