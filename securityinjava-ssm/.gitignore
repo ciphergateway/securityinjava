@@ -1,14 +1,13 @@
 *.class
 
-target/*
-bin/*
-.settings/*
 .project
+.settings
 .classpath
-.pydevproject
-WebContent/WEB-INF/classes
-WebContent/WEB-INF/lib
-WebContent/upload/*
-qalab.xml
-/target/
-/bin/
+target/
+bin/
+
+/WebContent/WEB-INF/classes/
+/WebContent/WEB-INF/lib/
+
+/.pydevproject
+/qalab.xml
