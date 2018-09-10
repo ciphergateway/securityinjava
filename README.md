@@ -17,7 +17,9 @@
 
 # Introduction
 
-SecurityInJava是一个以“安全+高效开发”为目标的Java应用开发平台，针对主流的SSM(Spring MVC+Spring+MyBatis，适用于管理平面的应用开发)和Java异步应用级框架(Vert.x为主，适用于高并发场景)两大架构，提供专业的安全编码最佳实践，并内置安全模块，包含商用密码算法模块（即国密算法）、基于ABAC的访问控制，以大幅增强了Java应用开发安全性。按Gartner统计，仅仅OWASP Top10的安全缺陷就导致了50%的漏洞，因此SecurityInJava如果能够推广，有望从源头显著改善应用系统的安全性，实现真正的“Build Security In”，而且和后期补漏洞技术相比，SecurityInJava具有投入成本极低、但贡献价值极高。
+SecurityInJava是一个以“安全+高效开发”为目标的Java应用开发平台，针对主流的SSM(Spring MVC+Spring+MyBatis，适用于管理平面的应用开发)和Java异步应用级框架(Vert.x为主，适用于高并发场景)两大架构，提供专业的安全编码最佳实践，并内置安全模块，包含商用密码算法模块（即国密算法）、基于ABAC的访问控制、认证模块等，以大幅增强Java应用开发框架的安全性。
+
+按Gartner统计，仅仅OWASP Top10的安全缺陷就导致了50%的漏洞，随着SecurityInJava的普及推广，能够从源头显著改善应用系统的安全性，实现真正的“Build Security In”，而且和后期补漏洞技术相比，SecurityInJava提供的安全能力是“应用内生的安全”，具有投入成本极低、安全防护价值极高的特点。
 
 #### 应用功能优势
 * 支持父子表、多对多表的智能关系分析及生成
