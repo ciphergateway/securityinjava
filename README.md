@@ -50,7 +50,7 @@ Current Version: **6.0.0**
 - IE 10+
 
 ####Java
-- Java 5.0 or greater
+- Java 8.0 or greater
 
 ####Database
 - Mysql
@@ -85,19 +85,17 @@ In your issue report please make sure you provide the following information:
 #### 一键编译quickbundle-6.0.0插件的方式一（推荐）
 eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要求是eclipse的JavaEE/jee版，同时Eclipse版本>=3.7
 
-		1，git clone https://github.com/quickbundle/javasec
+		1，git clone https://github.com/ciphergateway/securityinjava
 		2，先安装基础jar包和必要组件到$M2_REPO。
-			cd javasec		   
-			mvn install 【注：第一次执行需要下载大量maven资源，第二次执行可以加上离线参数-o以加快编译，即mvn install -o】
-			【注：如果报错，请尝试执行多次mvn install】
-		3，打包。
-			mvn clean package
+			cd securityinjava		   
+			mvn clean package 【注：第一次执行需要下载大量maven资源，第二次执行可以加上离线参数-o以加快编译，即mvn install -o】
+			【注：如果报错，请尝试执行多次mvn package
 		4，安装插件包。
-			复制javasec/build/build-securityinjava-ssm/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_6.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
-			最终结构如下：$ECLIPSE_HOME/links/javasec_6.0.0/eclipse/plugins/...
+			securityinjava/support/build/build-securityinjava-ssm/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_6.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
+			最终结构如下：$ECLIPSE_HOME/links/securityinjava_6.0.0/eclipse/plugins/...
 		5，重启Eclipse即可
 		
-#### 一键编译quickbundle-6.0.0插件的方式二(不推荐)
+#### 一键编译quickbundle-6.0.0插件的方式二(不推荐，目前未做维护)
 updatesite格式的安装版，安装到Eclipse时较慢。但安装时会自动下载所需的依赖插件，要求Eclipse版本>=3.7
 
 		1，使用Linux下的ln -s(或windows下的junction)，把qb-archetype/quickbundle-rmwebdemo目录软链接到qb-core/eclipse-plugin/quickbundle-gp/t/j1目录。
@@ -171,39 +169,6 @@ Download lastest release.
 * 针对运维阶段，编写一套ruby脚本做自动化的配置漏洞检查，并以主流漏洞扫描器(如AppScan、Acunetix WVS等)做辅助验证。并部署一套重构后的安全应用框架实例到靶机，持续攻防测试并持续改进。
 * 将上述应用安全框架成果，提炼到基于MDA的代码生成器模板[【引用】](https://github.com/quickbundle/qb-core/tree/master/eclipse-plugin)中，并发布为Eclipse plugin形式(支持Eclipse3.7及以上)，“逐鹿安全应用框架”的用户(应用开发者)可以快速构建并生成Java应用代码。
 
-# Mobile
-## quickbundle-phonegapsecurity特性
-* mobile appliation archetype, corporate with java-archetype backend server<br/>
-* 提供一个跨平台移动终端方案，一套代码支持iOS、Android、Windows Phone等移动平台
-* 主框架是PhoneGap-2.0 + jQuery-1.5 + jQuery Mobile-1.0 + jQuery JSONP-2.4 + Html5
-
-适用场景：要求跨平台的移动端接入。
-
-#### 如何一键编译phonegap：
-		1，打开~/.m2/settings.xml，加入配置：
-			<servers>
-				<server>
-					<id>phonegap-build</id>
-					<username>yourmail@gmail.com</username>
-					<password>yourpassword******</password> 
-				</server>
-			</servers>
-		............
-			<profiles>
-				<profile>
-					<id>dev</id>
-					<properties>
-						<phonegap-build.server>phonegap-build</phonegap-build.server>
-					</properties>
-		......
-		2，免费build.phonegap.com帐号只能上传一个private app，因此执行mvn phonegap-build:scorch清理掉已存在的private app（谨慎操作）
-		3，cd /quickbundle-phonegapdemo> mvn clean install -Dmaven.test.skip=true
-		4，apk、xap等文件，在$M2_REPO/org/quickbundle/quickbundle-phonegapdemo/4.0.0
-
-#### 安全特性
-* 以phonegap版(quickbundle-phonegapdemo)为基础 [【引用】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)
-* 针对2013 OWASP Mobile Top 10[【参考】](https://www.owasp.org/index.php/OWASP_Mobile_Security_Project#tab=Top_Ten_Mobile_Risks)做框架代码安全加固。
-* 形成混淆编译的操作工具及规范[【参考】](http://bbs.pediy.com/showthread.php?t=137112)。
 
 # Upgrading
 
