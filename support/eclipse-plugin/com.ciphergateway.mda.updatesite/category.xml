@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Quickbundle Update Site" url="http://ciphergateway.com/mda/update">
+      Quickbundle Update Site
+   </description>
+   <feature url="features/com.ciphergateway.mda.feature_0.0.0.release.jar" id="com.ciphergateway.mda.feature" version="0.0.0">
+      <category name="mda"/>
+   </feature>
+   <category-def name="designer" label="Quickbundle mda">
+      <description>
+        Quickbundle mda
+      </description>
+   </category-def>
+</site>

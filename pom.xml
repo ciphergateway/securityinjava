@@ -4,13 +4,14 @@
   xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ciphergateway</groupId>
-  <artifactId>securityinjava</artifactId>
+  <artifactId>securityinjava.aggregator</artifactId>
   <version>6.0.0</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>support/java-lib</module>
     <module>securityinjava-ssm</module>
+    <module>securityinjava-vertx</module>
     <module>support/eclipse-plugin</module>
     <module>support/build</module>
   </modules>

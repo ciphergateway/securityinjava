@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            name="SecurityInJava-代码生成器V6.0.0"
+            id="com.ciphergateway.generator_V6.0.0">
+      </category>
+      <wizard
+            name="2.生成可运行的代码"
+            icon="icons/sample.gif"
+            category="com.ciphergateway.generator_V6.0.0"
+            class="org.quickbundle.mda.gc.GenerateCodeWizard"
+            id="com.ciphergateway.gc_V6.0.0">
+      </wizard>
+   </extension>
+</plugin>

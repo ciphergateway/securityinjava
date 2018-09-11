@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RmIdFactory 
-	xmlns="http://www.quickbundle.org/schema" 
+	xmlns="http://www.ciphergateway.com/schema" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.quickbundle.org/schema http://www.quickbundle.org/schema/id.xsd">
+	xsi:schemaLocation="http://www.ciphergateway.com/schema http://www.ciphergateway.com/schema/id.xsd">
 
     <!--系统中所有表的主键生成规则-->
     <!-- table_name排重的xpath表达式 //table[@table_name=following::table/@table_name]/@table_name -->

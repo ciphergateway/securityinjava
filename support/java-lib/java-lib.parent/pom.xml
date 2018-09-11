@@ -28,12 +28,12 @@
 		</license>
 	</licenses>
 	<organization>
-		<name>Quickbundle Team</name>
-		<url>http://quickbundle.org</url>
+		<name>CipherGateway Team</name>
+		<url>http://ciphergateway.com</url>
 	</organization>
 	<issueManagement>
 		<system>Bugzilla</system>
-		<url>http://bugs.quickbundle.org</url>
+		<url>http://bugs.ciphergateway.com</url>
 	</issueManagement>
 	<scm>
 		<connection>scm:git:https://github.com/quickbundle/javasec.git</connection>
