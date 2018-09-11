@@ -12,7 +12,6 @@
 - [Web Security Web安全性](#web-security)
 - [Mobile 手机端](#mobile)
 - [Upgrading 更新](#upgrading)
-- [Announcements 公告](https://github.com/quickbundle/javasec/issues/1)
 - [References 参考](#references)
 
 # 1. Introduction
@@ -73,11 +72,11 @@ Current Version: **6.0.0**
 If you find this image useful here's how you can help:
 
 - Send a Pull Request with your awesome new features and bug fixes
-- Help new users with [Issues](https://github.com/quickbundle/javasec/issues) they may encounter
+- Help new users with [Issues](https://github.com/ciphergateway/securityinjava/issues) they may encounter
 
 ### Issues
 
-If you found a issue, please post a issue request on the [issues](https://github.com/quickbundle/javasec/issues) page.
+If you found a issue, please post a issue request on the [issues](https://github.com/ciphergateway/securityinjava/issues) page.
 
 In your issue report please make sure you provide the following information:
 
