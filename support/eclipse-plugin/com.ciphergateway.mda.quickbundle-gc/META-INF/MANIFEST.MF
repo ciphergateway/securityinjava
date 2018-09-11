@@ -15,5 +15,6 @@ Require-Bundle: org.eclipse.ui,
  com.ciphergateway.mda.libs,
  com.ciphergateway.mda.mvm
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: CipherGateway team
 Bundle-ClassPath: .,
  target/classes
