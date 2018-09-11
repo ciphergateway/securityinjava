@@ -114,7 +114,7 @@
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>package</phase>
+						<phase>compile</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -366,17 +366,34 @@ encoding/tools.bat=GBK]]>
 			<version>${securityinjava.version}</version>
 		</dependency>
 
+		<!-- Proxool -->
 		<dependency>
 			<groupId>com.cloudhopper.proxool</groupId>
 			<artifactId>proxool</artifactId>
 			<version>0.9.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>avalon-framework</groupId>
+					<artifactId>avalon-framework-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<dependency>
+		  <groupId>avalon-framework</groupId>
+		  <artifactId>avalon-framework-api</artifactId>
+		  <version>4.3</version>
+		</dependency>
 
+ 		
 		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>
@@ -720,7 +737,7 @@ encoding/tools.bat=GBK]]>
 		<dependency>  
 		    <groupId>org.springframework.security</groupId>  
 		    <artifactId>spring-security-openid</artifactId>  
-		    <version>${spring.security.version}</version>  
+		    <version>${spring.security.version}</version>
 		</dependency>  
 		<dependency>  
 		    <groupId>org.springframework.security</groupId>  
