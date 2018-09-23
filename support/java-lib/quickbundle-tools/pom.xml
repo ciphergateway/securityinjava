@@ -9,7 +9,7 @@
     <relativePath>../java-lib.parent/pom.xml</relativePath>
   </parent>
 
-    <artifactId>quickbundle-tools</artifactId>
+    <artifactId>securityinjava-tools</artifactId>
     <packaging>jar</packaging>
 
   <dependencies>

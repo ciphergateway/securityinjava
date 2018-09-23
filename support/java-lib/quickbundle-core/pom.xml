@@ -9,13 +9,13 @@
 		<relativePath>../java-lib.parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>quickbundle-core</artifactId>
+	<artifactId>securityinjava-core</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-tools</artifactId>
+			<artifactId>securityinjava-tools</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
 

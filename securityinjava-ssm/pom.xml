@@ -44,12 +44,12 @@
 	</organization>
 	<issueManagement>
 		<system>Github Issues</system>
-		<url>https://github.com/quickbundle/javasec/issues</url>
+		<url>https://github.com/ciphergateway/securityinjava/issues</url>
 	</issueManagement>
 	<scm>
-		<connection>scm:git:https://github.com/quickbundle/javasec.git</connection>
-		<developerConnection>scm:git:https://github.com/quickbundle/javasec.git</developerConnection>
-		<url>https://github.com/quickbundle/javasec</url>
+		<connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
+		<developerConnection>scm:git:https://github.com/ciphergateway/securityinjava.git</developerConnection>
+		<url>https://github.com/ciphergateway/securityinjava</url>
 	</scm>
 
 	<build>
@@ -347,7 +347,7 @@ encoding/tools.bat=GBK]]>
 		</dependency>
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-core</artifactId>
+			<artifactId>securityinjava-core</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
 
