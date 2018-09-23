@@ -3,11 +3,8 @@ package org.quickbundle;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.xml.parsers.DocumentBuilder;
-
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
-import org.dom4j.DocumentFactory;
 import org.dom4j.io.SAXReader;
 
 import junit.framework.Test;

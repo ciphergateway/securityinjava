@@ -25,7 +25,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 

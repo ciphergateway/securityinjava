@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.quickbundle.itf.cache.IRmCacheListener;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 
 public class RmSqlCountCache implements IRmCacheListener {

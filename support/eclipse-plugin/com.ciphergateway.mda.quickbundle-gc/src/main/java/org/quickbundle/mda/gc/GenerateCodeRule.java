@@ -17,8 +17,8 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.eclipse.jface.dialogs.MessageDialogWithToggle;
 import org.eclipse.swt.widgets.Combo;
-import org.quickbundle.tools.helper.io.RmFileHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 public class GenerateCodeRule {
     

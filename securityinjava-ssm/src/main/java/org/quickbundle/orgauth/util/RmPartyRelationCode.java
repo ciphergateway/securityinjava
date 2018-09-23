@@ -3,9 +3,8 @@ package org.quickbundle.orgauth.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.quickbundle.util.numeral.RmBaseXNumeral;
-
 import org.quickbundle.orgauth.cache.RmPartyViewCache;
+import org.quickbundle.util.RmBaseXNumeral;
 
 public class RmPartyRelationCode extends RmBaseXNumeral {
 	

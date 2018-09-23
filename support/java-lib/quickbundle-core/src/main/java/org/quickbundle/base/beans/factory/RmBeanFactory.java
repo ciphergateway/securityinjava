@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.quickbundle.base.web.servlet.RmHolderServlet;
 import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.tools.support.path.RmPathHelper;
 import org.slf4j.Logger;
 import org.springframework.beans.BeansException;

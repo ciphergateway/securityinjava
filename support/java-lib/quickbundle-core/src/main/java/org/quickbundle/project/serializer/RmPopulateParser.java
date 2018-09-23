@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 import org.quickbundle.itf.IPopulateParser;
 import org.quickbundle.tools.helper.RmDateHelper;
-import org.quickbundle.tools.helper.math.RmNumberHelper;
+import org.quickbundle.tools.helper.RmNumberHelper;
 
 public class RmPopulateParser implements IPopulateParser {
 

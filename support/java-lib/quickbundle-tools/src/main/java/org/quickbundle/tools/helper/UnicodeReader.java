@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.unicode;
+package org.quickbundle.tools.helper;
 
 /**
 version: 1.1 / 2007-01-25

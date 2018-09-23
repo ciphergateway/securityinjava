@@ -1,4 +1,4 @@
-package org.quickbundle.tools.helper.io;
+package org.quickbundle.tools.helper;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -24,7 +24,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.util.RmString;
 
 public class RmFileHelper {

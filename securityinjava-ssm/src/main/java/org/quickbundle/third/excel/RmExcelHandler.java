@@ -31,10 +31,10 @@ import jxl.write.WritableWorkbook;
 
 import org.dom4j.Document;
 import org.quickbundle.tools.helper.RmDateHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
+import org.quickbundle.tools.helper.RmNumberHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
-import org.quickbundle.tools.helper.math.RmNumberHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.util.RmSequenceMap;
 
 

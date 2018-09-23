@@ -1,4 +1,4 @@
-package org.quickbundle.util.numeral;
+package org.quickbundle.util;
 
 /**
  * 实现一个可定制的X进制数字体系，步长至少2位，最长不限，可表示极大的数

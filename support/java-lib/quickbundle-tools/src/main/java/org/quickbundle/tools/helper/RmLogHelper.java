@@ -9,7 +9,7 @@
  * 2006-3-17 13:34:51 创建1.0.0版 (baixiaoyong)
  * 
  */
-package org.quickbundle.tools.support.log;
+package org.quickbundle.tools.helper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

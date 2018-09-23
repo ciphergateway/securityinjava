@@ -19,8 +19,7 @@ package org.quickbundle.orgauth.rmuser.vo;
 import java.sql.Timestamp;
 
 import org.quickbundle.project.login.IRmLoginVo;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.orgauth.custom.RmCustomUserVo;
 
 /**

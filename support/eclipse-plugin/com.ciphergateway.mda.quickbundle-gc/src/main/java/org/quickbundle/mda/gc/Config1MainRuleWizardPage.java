@@ -47,8 +47,8 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
-import org.quickbundle.tools.helper.io.RmFileHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 /**
  * The "New" wizard page allows setting the container for the new file as well

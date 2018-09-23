@@ -1,4 +1,4 @@
-package org.quickbundle.util.numeral;
+package org.quickbundle.util;
 
 import java.math.BigInteger;
 

@@ -24,8 +24,8 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.quickbundle.base.web.servlet.RmHolderServlet;
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 /**
  * 功能、用途、现存BUG:

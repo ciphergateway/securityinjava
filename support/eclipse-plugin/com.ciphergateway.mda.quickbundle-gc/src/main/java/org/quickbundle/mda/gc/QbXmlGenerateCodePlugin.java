@@ -11,8 +11,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.quickbundle.tools.helper.io.RmFileHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 
 /**

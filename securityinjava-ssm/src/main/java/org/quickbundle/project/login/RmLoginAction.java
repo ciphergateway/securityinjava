@@ -18,7 +18,7 @@ import org.quickbundle.third.struts.RmActionHelper;
 import org.quickbundle.third.struts.actions.RmDispatchAction;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 
 public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants {

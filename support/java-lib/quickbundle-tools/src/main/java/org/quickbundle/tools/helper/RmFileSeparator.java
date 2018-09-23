@@ -9,7 +9,7 @@
  * 2008-3-5 下午04:18:46 创建1.0.0版 (baixiaoyong)
  * 
  */
-package org.quickbundle.tools.helper.io;
+package org.quickbundle.tools.helper;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -20,7 +20,7 @@ import org.quickbundle.project.test.RmAlarmCollector;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;

@@ -1,13 +1,10 @@
-package org.quickbundle.tools.context;
+package org.quickbundle.tools.helper;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.quickbundle.tools.helper.RmVmHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 
 public class RmUrlHelper {
     

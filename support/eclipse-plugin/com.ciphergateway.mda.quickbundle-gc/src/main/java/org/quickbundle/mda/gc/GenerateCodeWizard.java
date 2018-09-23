@@ -21,7 +21,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.quickbundle.mda.mvm.CodegenEngine;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 /**
  * This is a sample new wizard. Its role is to create a new file resource in the

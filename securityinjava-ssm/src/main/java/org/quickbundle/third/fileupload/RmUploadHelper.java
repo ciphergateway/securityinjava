@@ -49,11 +49,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.quickbundle.base.web.servlet.RmHolderServlet;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.project.IGlobalConstants;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
-import org.quickbundle.tools.support.picture.jpegtool.JpegTool;
-import org.quickbundle.tools.support.picture.jpegtool.JpegToolException;
+import org.quickbundle.tools.helper.RmXmlHelper;
+import org.quickbundle.tools.support.picture.JpegTool;
+import org.quickbundle.tools.support.picture.JpegToolException;
 
 
 /**

@@ -20,8 +20,8 @@ import java.sql.Timestamp;
 
 import org.dom4j.Document;
 import org.quickbundle.base.vo.RmValueObject;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 /**
  * 功能、用途、现存BUG:

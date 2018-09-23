@@ -212,7 +212,7 @@ $(document).ready(function () {
 <%@page import="org.quickbundle.project.serializer.RmObjectMapper"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
-<%@page import="org.quickbundle.tools.helper.io.RmFileHelper"%>
+<%@page import="org.quickbundle.tools.helper.RmFileHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="java.io.File"%>
 <%@page import="java.util.List"%>

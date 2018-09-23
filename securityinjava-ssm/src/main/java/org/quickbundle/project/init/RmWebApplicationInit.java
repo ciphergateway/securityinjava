@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.quickbundle.base.beans.factory.RmBeanFactory;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.itf.ILoadOnStartup;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 /**
  * 初始化组件和服务

@@ -3,7 +3,7 @@ package org.quickbundle.project.cache;
 import java.util.Arrays;
 
 import org.quickbundle.itf.cache.IRmCacheListener;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 
 public abstract class RmAbstractCache implements IRmCacheListener{

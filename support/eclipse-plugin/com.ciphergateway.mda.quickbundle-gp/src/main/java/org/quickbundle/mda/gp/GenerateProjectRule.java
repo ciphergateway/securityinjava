@@ -8,8 +8,8 @@ import java.util.Set;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
-import org.quickbundle.tools.helper.io.RmFileHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 public class GenerateProjectRule {
 	

@@ -1,7 +1,7 @@
 /*
  * 创建日期 2006-2-15
  */
-package org.quickbundle.tools.support.picture.jpegtool;
+package org.quickbundle.tools.support.picture;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;

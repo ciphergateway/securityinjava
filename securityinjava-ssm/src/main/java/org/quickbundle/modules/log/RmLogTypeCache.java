@@ -8,7 +8,7 @@ import org.quickbundle.modules.log.rmlogtype.service.IRmLogTypeService;
 import org.quickbundle.modules.log.rmlogtype.util.IRmLogTypeConstants;
 import org.quickbundle.modules.log.rmlogtype.vo.RmLogTypeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.util.RmSequenceMap;
 
 public class RmLogTypeCache extends RmAbstractCache {

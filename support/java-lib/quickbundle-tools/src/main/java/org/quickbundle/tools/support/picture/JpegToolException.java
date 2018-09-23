@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.picture.jpegtool;
+package org.quickbundle.tools.support.picture;
 /*
  * 创建日期 2006-2-15
  */

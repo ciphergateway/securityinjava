@@ -1,4 +1,4 @@
-package org.quickbundle.tools.helper.io;
+package org.quickbundle.tools.helper;
 
 /**
  * 合并文件：合并由拆分文件拆分的文件

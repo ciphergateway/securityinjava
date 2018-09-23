@@ -1,5 +1,5 @@
 <%@page import="org.quickbundle.tools.helper.xml.RmXmlConverter"%>
-<%@page import="org.quickbundle.tools.helper.xml.RmXmlHelper"%>
+<%@page import="org.quickbundle.tools.helper.RmXmlHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>

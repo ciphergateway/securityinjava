@@ -6,8 +6,6 @@ Bundle-Version: 6.0.0
 Eclipse-BundleShape: dir
 Export-Package: org.quickbundle.config,
  org.quickbundle.tools.helper,
- org.quickbundle.tools.helper.xml,
- org.quickbundle.tools.helper.io,
  org.quickbundle.mda,
  org.dom4j,
  org.dom4j.io,

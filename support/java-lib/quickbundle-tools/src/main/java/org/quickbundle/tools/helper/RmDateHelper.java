@@ -8,8 +8,6 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.quickbundle.tools.support.log.RmLogHelper;
-
 /**
  * @author   
  * 帮助实现一些通用的日期,时间处理

@@ -21,8 +21,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.slf4j.Logger;
 
 public class RmLogMethod {

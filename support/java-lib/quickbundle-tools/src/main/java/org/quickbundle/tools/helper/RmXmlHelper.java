@@ -1,4 +1,4 @@
-package org.quickbundle.tools.helper.xml;
+package org.quickbundle.tools.helper;
 /*
  * 系统名称:Quickbundle.org --> ranminXmlGenerateCode
  * 
@@ -40,7 +40,6 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.helper.io.RmFileHelper;
 
 /**
  * 功能、用途、现存BUG:

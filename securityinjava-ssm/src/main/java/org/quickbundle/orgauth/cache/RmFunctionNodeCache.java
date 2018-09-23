@@ -12,7 +12,7 @@ import org.quickbundle.orgauth.rmfunctionnode.service.IRmFunctionNodeService;
 import org.quickbundle.orgauth.rmfunctionnode.util.IRmFunctionNodeConstants;
 import org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 public class RmFunctionNodeCache extends RmAbstractCache {
 

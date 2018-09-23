@@ -9,8 +9,8 @@ import org.quickbundle.config.RmConfig;
 import org.quickbundle.third.quartz.rmschedulerevent.service.IRmSchedulerEventService;
 import org.quickbundle.third.quartz.rmschedulerevent.util.IRmSchedulerEventConstants;
 import org.quickbundle.third.quartz.rmschedulerevent.vo.RmSchedulerEventVo;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.support.buffer.AbstractTaskQueue;
-import org.quickbundle.tools.support.log.RmLogHelper;
 
 public class EventLog2DbService extends AbstractTaskQueue<RmSchedulerEventVo> {
 	private String name = "调度事件缓冲器";

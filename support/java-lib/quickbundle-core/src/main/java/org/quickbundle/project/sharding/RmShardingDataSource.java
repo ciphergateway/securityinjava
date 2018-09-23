@@ -2,7 +2,7 @@ package org.quickbundle.project.sharding;
 
 import org.quickbundle.base.beans.factory.RmBeanFactory;
 import org.quickbundle.base.exception.RmRuntimeException;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;

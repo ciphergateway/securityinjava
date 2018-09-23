@@ -9,7 +9,7 @@ import org.quickbundle.orgauth.rmpartytyperelationrule.service.IRmPartyTypeRelat
 import org.quickbundle.orgauth.rmpartytyperelationrule.util.IRmPartyTypeRelationRuleConstants;
 import org.quickbundle.orgauth.rmpartytyperelationrule.vo.RmPartyTypeRelationRuleVo;
 import org.quickbundle.project.cache.RmAbstractCache;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 public class RmPartyTypeRelationRuleCache extends RmAbstractCache {
     private Map<ViewParentChild, RmPartyTypeRelationRuleVo> mPartyTypeRelationRule;

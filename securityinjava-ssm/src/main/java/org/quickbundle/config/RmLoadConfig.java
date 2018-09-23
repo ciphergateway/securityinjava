@@ -9,7 +9,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.quickbundle.base.exception.RmRuntimeException;
 import org.quickbundle.project.RmProjectHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.tools.support.path.RmPathHelper;
 
 public class RmLoadConfig {

@@ -2,7 +2,7 @@ package org.quickbundle.mda.gc;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 public class GcPluginHelper {
 

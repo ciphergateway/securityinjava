@@ -20,7 +20,7 @@ import java.util.MissingResourceException;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Node;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.tools.support.path.RmPathHelper;
 
 /**

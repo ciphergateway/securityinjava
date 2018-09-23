@@ -24,9 +24,9 @@ import org.python.util.Generic;
 import org.python.util.PyServlet;
 import org.python.util.PythonInterpreter;
 import org.quickbundle.config.RmConfig;
+import org.quickbundle.tools.helper.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 import org.quickbundle.tools.helper.io.RmZipHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.quickbundle.tools.support.path.RmPathHelper;
 
 /**

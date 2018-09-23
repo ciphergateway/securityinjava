@@ -19,7 +19,7 @@ import org.quickbundle.project.init.CustomSystemProperties;
 import org.quickbundle.project.init.InitDatabaseHelper;
 import org.quickbundle.project.init.LoadProjectConfig;
 import org.quickbundle.project.listener.RmContextLoaderListener;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.support.path.RmPathHelper;
 import org.slf4j.Logger;
 import org.springframework.web.context.support.WebApplicationContextUtils;

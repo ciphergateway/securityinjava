@@ -9,7 +9,7 @@ import org.quickbundle.orgauth.rmpartytype.service.IRmPartyTypeService;
 import org.quickbundle.orgauth.rmpartytype.util.IRmPartyTypeConstants;
 import org.quickbundle.orgauth.rmpartytype.vo.RmPartyTypeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 public class RmPartyTypeCache extends RmAbstractCache {
     private Map<String, RmPartyTypeVo> mPartyType;

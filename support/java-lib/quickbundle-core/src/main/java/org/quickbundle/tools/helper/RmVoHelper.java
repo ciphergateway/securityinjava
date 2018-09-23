@@ -24,7 +24,6 @@ import org.quickbundle.itf.ITransctVoField;
 import org.quickbundle.project.serializer.RmBeanSerializerFactory;
 import org.quickbundle.project.serializer.RmObjectMapper;
 import org.quickbundle.tools.context.RmBeanHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.quickbundle.util.RmSequenceMap;
 import org.quickbundle.util.RmSequenceSet;
 import org.springframework.beans.BeanWrapper;

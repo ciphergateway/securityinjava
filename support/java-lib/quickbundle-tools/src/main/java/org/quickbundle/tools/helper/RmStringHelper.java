@@ -20,9 +20,6 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.support.cn2spell.Cn2Spell;
-import org.quickbundle.tools.support.log.RmLogHelper;
-import org.quickbundle.tools.support.unicode.UnicodeReader;
 
 /**
  * 功能: 帮助实现一些通用的字符串处理
@@ -891,14 +888,5 @@ public class RmStringHelper {
 			return true;
 		}
 		return false;
-	}
-	
-    /**
-     * 得到首字母集合，简称
-     * @param cnStr
-     * @return
-     */
-	public static String getFirstSpellCollection(String cnStr) {
-		return Cn2Spell.getFirstSpellCollection(cnStr);
 	}
 }

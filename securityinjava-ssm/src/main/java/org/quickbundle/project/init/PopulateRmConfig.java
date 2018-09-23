@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.quickbundle.config.RmConfigVo;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 

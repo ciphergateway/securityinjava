@@ -15,8 +15,8 @@ import org.quickbundle.itf.code.IRmCodeService;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmGlobalReference;
 import org.quickbundle.tools.context.RmBeanHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 public class InitDatabaseHelper {
 	

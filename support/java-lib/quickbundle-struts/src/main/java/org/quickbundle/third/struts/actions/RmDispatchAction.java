@@ -8,8 +8,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 import org.quickbundle.ICoreConstants;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.slf4j.Logger;
 
 public class RmDispatchAction extends DispatchAction {

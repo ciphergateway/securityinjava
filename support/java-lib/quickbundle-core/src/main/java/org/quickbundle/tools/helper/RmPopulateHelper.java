@@ -30,7 +30,6 @@ import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.itf.IPopulateParser;
 import org.quickbundle.project.serializer.RmObjectMapper;
 import org.quickbundle.project.serializer.RmPopulateParser;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.quickbundle.util.RmSequenceMap;
 import org.slf4j.Logger;
 import org.springframework.beans.BeanWrapper;

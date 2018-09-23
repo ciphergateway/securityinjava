@@ -30,8 +30,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.helper.io.RmFileHelper;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
+import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmXmlHelper;
 
 public class CopyProjectEngine {
 	

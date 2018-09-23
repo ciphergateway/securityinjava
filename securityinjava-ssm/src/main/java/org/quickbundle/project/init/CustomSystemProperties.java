@@ -10,8 +10,8 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.Node;
 import org.quickbundle.config.RmLoadConfig;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 
 public class CustomSystemProperties {
 	

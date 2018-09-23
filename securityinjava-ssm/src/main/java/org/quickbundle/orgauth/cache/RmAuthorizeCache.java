@@ -9,7 +9,7 @@ import org.quickbundle.orgauth.rmauthorize.service.IRmAuthorizeService;
 import org.quickbundle.orgauth.rmauthorize.util.IRmAuthorizeConstants;
 import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 
 public class RmAuthorizeCache extends RmAbstractCache {

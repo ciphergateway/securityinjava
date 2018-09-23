@@ -15,8 +15,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.util.numeral.RmBaseXNumeral"%>
-<%@page import="org.quickbundle.util.numeral.RmNumeralConfig"%>
+<%@page import="org.quickbundle.util.RmBaseXNumeral"%>
+<%@page import="org.quickbundle.util.RmNumeralConfig"%>
 <%@page import="org.quickbundle.project.common.vo.RmCommonVo"%><html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>

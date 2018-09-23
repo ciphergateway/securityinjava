@@ -12,9 +12,9 @@ import org.quickbundle.config.RmConfig;
 import org.quickbundle.project.common.vo.RmCommonVo;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.tools.helper.RmDateHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
 
 public class ClusterConfigLoaderDb extends AbstractClusterConfigLoader {
 	

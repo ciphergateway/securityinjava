@@ -8,7 +8,7 @@
  * 版本历史: 2006-12-6 15:48:52 创建1.0.0版 (baixiaoyong)
  *  
  */
-package org.quickbundle.tools.helper.io;
+package org.quickbundle.tools.helper;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

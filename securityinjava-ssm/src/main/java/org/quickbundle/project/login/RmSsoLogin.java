@@ -17,10 +17,10 @@ import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmLoadConfig;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.secure.RmCryptoHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
 import org.quickbundle.tools.support.encrypt.Md5Token;
-import org.quickbundle.tools.support.log.RmLogHelper;
 import org.slf4j.Logger;
 
 public class RmSsoLogin {

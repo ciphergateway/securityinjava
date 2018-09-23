@@ -11,11 +11,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.tools.helper.RmXmlHelper;
+
 import net.sf.saxon.Configuration;
 import net.sf.saxon.value.Whitespace;
-
-import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.helper.xml.RmXmlHelper;
 
 public class RmTransform {
 	/**

@@ -1,4 +1,4 @@
-package org.quickbundle.tools.helper.reflect;
+package org.quickbundle.tools.helper;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

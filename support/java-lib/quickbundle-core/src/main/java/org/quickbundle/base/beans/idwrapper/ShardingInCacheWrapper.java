@@ -8,7 +8,7 @@ import org.quickbundle.base.beans.TableIdRuleVo;
 import org.quickbundle.base.beans.factory.RmIdFactory;
 import org.quickbundle.itf.base.IRmIdWrapper;
 import org.quickbundle.tools.context.RmBeanHelper;
-import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.helper.RmLogHelper;
 
 public class ShardingInCacheWrapper extends AbstractDbWrapper implements IRmIdWrapper {
 	

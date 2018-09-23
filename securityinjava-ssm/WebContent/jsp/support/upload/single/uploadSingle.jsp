@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
-<%@page import="org.quickbundle.tools.helper.io.RmFileHelper"%>
+<%@page import="org.quickbundle.tools.helper.RmFileHelper"%>
 <%@page import="org.quickbundle.third.fileupload.RmUploadHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%

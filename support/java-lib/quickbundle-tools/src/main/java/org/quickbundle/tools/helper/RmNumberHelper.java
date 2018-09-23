@@ -1,4 +1,4 @@
-package org.quickbundle.tools.helper.math;
+package org.quickbundle.tools.helper;
 
 import java.text.DecimalFormat;
 import java.util.regex.Matcher;

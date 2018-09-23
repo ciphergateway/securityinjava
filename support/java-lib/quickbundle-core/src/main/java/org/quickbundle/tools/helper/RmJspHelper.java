@@ -22,7 +22,6 @@ import org.quickbundle.base.exception.RmRuntimeException;
 import org.quickbundle.base.web.page.RmPageVo;
 import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.itf.IObject2Object;
-import org.quickbundle.tools.support.log.RmLogHelper;
 
 
 /**
