@@ -222,6 +222,7 @@ encoding/<project>=UTF-8]]></content>
 									<pluginExecutionFilter>
 										<groupId>org.apache.maven.plugins</groupId>
 										<artifactId>maven-clean-plugin</artifactId>
+										<versionRange>3.1.0</versionRange>
 										<goals>
 											<goal>clean</goal>
 										</goals>

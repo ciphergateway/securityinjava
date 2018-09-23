@@ -23,7 +23,6 @@ Export-Package: org.quickbundle.config,
 Bundle-Vendor: CipherGateway team
 Bundle-ClassPath: .,
  target/classes,
- lib/quickbundle-tools-6.0.0.jar,
  lib/dom4j-1.6.1.jar,
  lib/xml-apis-1.4.01.jar,
  lib/jaxen-1.1.6.jar,

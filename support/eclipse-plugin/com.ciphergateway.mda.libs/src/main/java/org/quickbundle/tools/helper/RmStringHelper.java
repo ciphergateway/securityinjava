@@ -321,60 +321,6 @@ public class RmStringHelper {
 			});
 	}
 	
-    /**
-     * 对象
-     * 
-     * @param tempValue
-     * @return
-     */
-    public static String parseToJsValue(Object tempValue) {
-    	if(tempValue == null) {
-    		return null;
-    	}
-    	StringBuilder sb = new StringBuilder();
-        if (tempValue instanceof String || tempValue instanceof Integer || tempValue instanceof Long) { //如果是String、int、 long单值
-        	sb.append("\"");
-        	sb.append(replaceStringToScript(tempValue.toString())); //从数据库中取出来以后需要转换1次
-        	sb.append("\"");
-        } else if (tempValue instanceof BigDecimal) { //如果是数字，直接注入
-        	sb.append("\"");
-            BigDecimal tmpB = new BigDecimal(tempValue.toString()).setScale(RmBaseConfig.getSingleton().getDefaultNumberScale(), BigDecimal.ROUND_HALF_UP);
-            sb.append(replaceStringToScript(tmpB.toString()));
-            sb.append("\"");
-        } else if (tempValue instanceof String[] || tempValue instanceof int[] || tempValue instanceof long[]) { //如果是多值，放入数组
-        	sb.append("[");
-            String[] myArray = (String[]) tempValue;
-            for (int i = 0; i < myArray.length; i++) {
-                if (i > 0) {
-                	sb.append(", ");
-                }
-                sb.append("\"");
-                sb.append(replaceStringToScript(myArray[i]));
-                sb.append("\"");
-            }
-            sb.append("]");
-        } else if (tempValue instanceof Timestamp) { //如果是时间戳
-        	sb.append("\"");
-        	String str = tempValue.toString().substring(0,19);
-        	if(" 00:00:00".equals(str.substring(10))) {
-        		sb.append(replaceStringToScript(str.substring(0, 10)));
-        	} else {
-        		sb.append(replaceStringToScript(str));
-        	}
-        	sb.append("\"");
-        }  else if (tempValue instanceof Date) { //如果是日期戳
-        	sb.append("\"");
-        	sb.append(replaceStringToScript(tempValue.toString().substring(0,10)));
-        	sb.append("\"");
-        } else if(tempValue instanceof Map || tempValue instanceof Collection) { //跳过Map
-            return null;
-        } else {
-            RmLogHelper.warn(RmStringHelper.class, "从Object转化为js，遇到了未知java类型:" + tempValue);                    
-            return null;
-        }
-        return sb.toString();
-    }
-
 	/**
 	 * 过滤Html页面中的敏感字符
 	 * 
