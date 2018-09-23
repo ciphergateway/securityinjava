@@ -1,4 +1,4 @@
-package org.quickbundle.third.struts.action;
+package org.quickbundle.third.struts;
 
 
 import java.util.regex.Pattern;

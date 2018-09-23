@@ -1,4 +1,4 @@
-package org.quickbundle.third.struts.taglib;
+package org.quickbundle.third.struts;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;

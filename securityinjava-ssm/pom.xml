@@ -352,11 +352,6 @@ encoding/tools.bat=GBK]]>
 		</dependency>
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-struts</artifactId>
-			<version>${securityinjava.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ciphergateway</groupId>
 			<artifactId>quickbundle-mybatis</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>

@@ -126,7 +126,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- struts begin -->
+	<!-- //TODO Clean struts begin -->
 	<servlet>
 		<servlet-name>action</servlet-name>
 		<servlet-class>org.quickbundle.third.struts.action.RmActionServlet</servlet-class>

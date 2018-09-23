@@ -1,4 +1,4 @@
-package org.quickbundle.third.struts.actions;
+package org.quickbundle.third.struts;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

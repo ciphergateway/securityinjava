@@ -5,7 +5,7 @@
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.base.exception.RmExceptionVo"%>
 <%@page import="org.quickbundle.third.excel.RmExcelHandler"%>
-<%@page import="org.quickbundle.third.struts.action.RmExceptionHandler"%>
+<%@page import="org.quickbundle.third.struts.RmExceptionHandler"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.config.RmConfig"%>
 <%try { %>
