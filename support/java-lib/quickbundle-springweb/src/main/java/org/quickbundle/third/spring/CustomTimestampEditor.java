@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.web.bind;
+package org.quickbundle.third.spring;
 
 import java.beans.PropertyEditorSupport;
 import java.sql.Timestamp;

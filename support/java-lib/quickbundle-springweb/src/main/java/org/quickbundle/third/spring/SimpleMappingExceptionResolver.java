@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.web.servlet.handler;
+package org.quickbundle.third.spring;
 
 import java.util.Arrays;
 import java.util.Collections;

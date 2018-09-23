@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.context.annotation;
+package org.quickbundle.third.spring;
 
 import java.beans.Introspector;
 

@@ -8,7 +8,7 @@
 
 	<!-- 自动扫描且只扫描@Controller -->
 	<context:component-scan base-package="org.quickbundle,hello.helloworld" use-default-filters="false"
-		name-generator="org.quickbundle.third.spring.context.annotation.RmAnnotationBeanNameGenerator">
+		name-generator="org.quickbundle.third.spring.RmAnnotationBeanNameGenerator">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
@@ -17,7 +17,7 @@
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="webBindingInitializer">
-			<bean class="org.quickbundle.third.spring.web.bind.RmDataBinding" />
+			<bean class="org.quickbundle.third.spring.RmDataBinding" />
 		</property>
 		<property name="messageConverters">
 			<list>
@@ -43,7 +43,7 @@
 		</property>
 	</bean>
 	<bean id="jacksonObjectMapper"
-		class="org.quickbundle.third.spring.http.converter.json.RmObjectMapperSpringWeb">
+		class="org.quickbundle.third.spring.RmObjectMapperSpringWeb">
 		<property name="writeNumbersAsStrings" value="true" />
 	</bean>
 
@@ -62,7 +62,7 @@
 
 	<!-- 总错误处理 -->
 	<bean id="exceptionResolver"
-		class="org.quickbundle.third.spring.web.servlet.handler.SimpleMappingExceptionResolver">
+		class="org.quickbundle.third.spring.SimpleMappingExceptionResolver">
 		<property name="defaultErrorView">
 			<value>/common/err</value>
 		</property>
@@ -70,7 +70,7 @@
 			<value>500</value>
 		</property>
 		<property name="warnLogCategory">
-			<value>org.quickbundle.third.spring.web.servlet.handler.SimpleMappingExceptionResolver</value>
+			<value>org.quickbundle.third.spring.SimpleMappingExceptionResolver</value>
 		</property>
 	</bean>
 

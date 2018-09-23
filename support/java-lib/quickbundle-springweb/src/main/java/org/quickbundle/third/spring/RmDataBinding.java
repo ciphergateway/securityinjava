@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.web.bind;
+package org.quickbundle.third.spring;
 
 import java.text.SimpleDateFormat;
 
@@ -14,7 +14,7 @@ public class RmDataBinding implements WebBindingInitializer {
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(java.util.Date.class, new CustomDateEditor(dateFormat, true));
 		
-		binder.registerCustomEditor(java.sql.Date.class, new org.quickbundle.third.spring.web.bind.CustomSqlDateEditor(dateFormat, true));
+		binder.registerCustomEditor(java.sql.Date.class, new org.quickbundle.third.spring.CustomSqlDateEditor(dateFormat, true));
 
 		SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		datetimeFormat.setLenient(false);

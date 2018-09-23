@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.http;
+package org.quickbundle.third.spring;
 
 import java.util.HashMap;
 import java.util.Map;

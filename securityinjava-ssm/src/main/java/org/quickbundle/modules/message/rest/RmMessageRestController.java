@@ -15,7 +15,7 @@ import org.quickbundle.modules.message.IRmMessageConstants;
 import org.quickbundle.modules.message.service.RmMessageService;
 import org.quickbundle.modules.message.vo.RmMessageVo;
 import org.quickbundle.modules.message.web.RmMessageController;
-import org.quickbundle.third.spring.http.RmResponseEntityFactory;
+import org.quickbundle.third.spring.RmResponseEntityFactory;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmVoHelper;

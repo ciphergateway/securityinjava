@@ -1,4 +1,4 @@
-package org.quickbundle.third.spring.http.converter.json;
+package org.quickbundle.third.spring;
 
 import java.io.IOException;
 
