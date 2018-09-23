@@ -25,7 +25,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.quickbundle.ICoreConstants;
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.itf.IPopulateParser;
 import org.quickbundle.project.serializer.RmObjectMapper;

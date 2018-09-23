@@ -17,16 +17,16 @@
 		
 	<!--startProjectBeans-->
 	
-	<bean id="org.quickbundle.itf.base.IRmIdGenerator" class="org.quickbundle.base.beans.RmIdGenerator"/>
+	<bean id="org.quickbundle.itf.IRmIdGenerator" class="org.quickbundle.base.beans.RmIdGenerator"/>
 	
-	<bean id="org.quickbundle.itf.code.IRmCodeService" class="org.quickbundle.project.init.RmCodeService"/>
+	<bean id="org.quickbundle.itf.IRmCodeService" class="org.quickbundle.project.init.RmCodeService"/>
 
 	<bean id="org.quickbundle.project.login.IRmLoginService" class="org.quickbundle.project.login.RmLoginService"/>
 	
 	<bean id="org.quickbundle.project.login.IRmSessionService" class="org.quickbundle.project.login.RmSessionService"/>
 
 	<!--RmCommon通用方法的bean-->
-	<bean id="IRmCommonService" class="org.quickbundle.project.common.service.impl.RmCommonService">
+	<bean id="IRmCommonService" class="org.quickbundle.project.common.service.RmCommonService">
 		<property name="dao" ref="org.quickbundle.project.common.dao.RmCommonDao"/>
 	</bean>
 	<bean id="org.quickbundle.project.common.dao.RmCommonDao" class="org.quickbundle.project.common.dao.RmCommonDao">
@@ -38,7 +38,7 @@
     </bean>
 
 	<!-- 发邮件 -->	
-	<bean id="IRmMailService" class="org.quickbundle.project.mail.impl.RmMailService">
+	<bean id="IRmMailService" class="org.quickbundle.project.mail.RmMailService">
 		<property name="mailSmtpHost" value="${mail.host}"/>
 		<property name="sendMailUser" value="${mail.username}"/>
 		<property name="sendMailPassword" value="${mail.password}"/>

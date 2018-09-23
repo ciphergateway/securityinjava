@@ -19,7 +19,7 @@ package org.quickbundle.orgauth.rmauthorize.vo;
 import java.sql.Timestamp;
 
 import org.dom4j.Document;
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
 

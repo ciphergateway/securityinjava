@@ -29,7 +29,7 @@ try {
 	e.printStackTrace();
 }
 %>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.tools.support.tree.DeepTreeVo"%>
 <%@page import="org.quickbundle.tools.support.tree.DeepTreeXmlHandler"%>

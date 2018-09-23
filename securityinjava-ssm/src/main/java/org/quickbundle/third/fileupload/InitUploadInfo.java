@@ -20,8 +20,8 @@ import java.util.MissingResourceException;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Node;
+import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
-import org.quickbundle.tools.support.path.RmPathHelper;
 
 /**
  * 功能、用途、现存BUG:

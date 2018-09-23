@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.third.quartz.jobtrigger.vo.JobTriggerVo" %>
 <%@ page import="org.quickbundle.third.quartz.jobtrigger.util.IJobTriggerConstants" %>
 <%  //取出List

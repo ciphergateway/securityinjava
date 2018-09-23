@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.quickbundle.base.web.page.RmPageVo;
+import org.quickbundle.base.RmPageVo;
 import org.quickbundle.modules.message.IRmMessageConstants;
 import org.quickbundle.modules.message.service.RmMessageService;
 import org.quickbundle.modules.message.vo.RmMessageReceiverVo;

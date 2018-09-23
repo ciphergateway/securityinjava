@@ -2,7 +2,7 @@ package org.quickbundle.third.middleware;
 
 import java.io.File;
 
-import org.quickbundle.tools.support.path.RmPathHelper;
+import org.quickbundle.tools.context.RmPathHelper;
 
 public class BuildTomcatContextXml {
 	public static void main(String[] args) {

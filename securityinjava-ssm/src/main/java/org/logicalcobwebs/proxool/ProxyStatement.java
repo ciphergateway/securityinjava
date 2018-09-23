@@ -15,7 +15,7 @@ import org.logicalcobwebs.cglib.proxy.MethodInterceptor;
 import org.logicalcobwebs.cglib.proxy.MethodProxy;
 import org.logicalcobwebs.proxool.proxy.InvokerFacade;
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.project.listener.RmRequestMonitor;
+import org.quickbundle.project.RmRequestMonitor;
 
 /**
  * Delegates to Statement for all calls. But also, for all execute methods, it

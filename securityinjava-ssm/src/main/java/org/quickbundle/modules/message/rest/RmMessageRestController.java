@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
-import org.quickbundle.base.web.page.RmPageVo;
+import org.quickbundle.base.RmPageVo;
 import org.quickbundle.modules.message.IRmMessageConstants;
 import org.quickbundle.modules.message.service.RmMessageService;
 import org.quickbundle.modules.message.vo.RmMessageVo;

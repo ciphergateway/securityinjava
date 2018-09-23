@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.login.IRmLoginService;
 

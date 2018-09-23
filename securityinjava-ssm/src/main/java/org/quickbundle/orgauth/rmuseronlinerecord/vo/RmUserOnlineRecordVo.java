@@ -18,10 +18,9 @@ package org.quickbundle.orgauth.rmuseronlinerecord.vo;
 
 import java.sql.Timestamp;
 
+import org.quickbundle.base.RmValueObject;
+
 import java.math.BigDecimal;
-
-
-import org.quickbundle.base.vo.RmValueObject;
 
 /**
  * 功能、用途、现存BUG:

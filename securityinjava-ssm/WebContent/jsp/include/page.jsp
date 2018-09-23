@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=UTF-8" language="java" %><%@page import="org.quickbundle.base.web.page.RmPageVo"%><%@page import="org.quickbundle.project.IGlobalConstants"%><%  //翻页
+<%@ page contentType="text/html; charset=UTF-8" language="java" %><%@page import="org.quickbundle.base.RmPageVo"%><%@page import="org.quickbundle.project.IGlobalConstants"%><%  //翻页
 	int[] aSize = new int[]{15, 25, 50};
 	if(request.getParameter("size_list") != null && request.getParameter("size_list").trim().length() > 0) {
 	    try {

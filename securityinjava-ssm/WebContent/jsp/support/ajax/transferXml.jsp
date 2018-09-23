@@ -1,4 +1,4 @@
-<%@page import="org.quickbundle.tools.helper.xml.RmXmlConverter"%>
+<%@page import="org.quickbundle.tools.helper.RmXmlConverter"%>
 <%@page import="org.quickbundle.tools.helper.RmXmlHelper"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>
 <%@ page contentType="text/xml;charset=UTF-8" language="java" %><%try {

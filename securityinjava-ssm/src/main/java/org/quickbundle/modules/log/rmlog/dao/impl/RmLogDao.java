@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.quickbundle.base.beans.factory.RmIdFactory;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.base.dao.RmJdbcTemplate;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmStringHelper;

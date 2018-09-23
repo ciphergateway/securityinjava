@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.third.quartz.rmschedulerevent.service.IRmSchedulerEventService;
 import org.quickbundle.third.quartz.rmschedulerevent.util.IRmSchedulerEventConstants;

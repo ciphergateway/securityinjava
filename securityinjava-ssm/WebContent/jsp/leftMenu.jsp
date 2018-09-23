@@ -5,7 +5,7 @@
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -7,11 +7,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.base.beans.factory.RmIdFactory;
-import org.quickbundle.base.exception.RmRuntimeException;
+import org.quickbundle.base.RmRuntimeException;
+import org.quickbundle.base.beans.RmBeanFactory;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.itf.code.IRmCodeService;
+import org.quickbundle.itf.IRmCodeService;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmGlobalReference;
 import org.quickbundle.tools.context.RmBeanHelper;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.quickbundle.itf.cache.IRmCacheListener;
+import org.quickbundle.itf.IRmCacheListener;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 

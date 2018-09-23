@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.dom4j.Element;
-import org.quickbundle.base.web.servlet.RmHolderServlet;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmClusterConfig.NodeKey;
+import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.project.common.vo.RmCommonVo;
 import org.quickbundle.tools.context.RmBeanHelper;
+import org.quickbundle.tools.context.RmHolderServlet;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;

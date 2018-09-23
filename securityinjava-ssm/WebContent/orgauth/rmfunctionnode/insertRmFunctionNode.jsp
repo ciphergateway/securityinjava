@@ -8,7 +8,7 @@
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo" %>
 <%@ page import="org.quickbundle.orgauth.rmfunctionnode.util.IRmFunctionNodeConstants" %>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.config.RmConfig"%>
 <%  //判断是否为修改页面

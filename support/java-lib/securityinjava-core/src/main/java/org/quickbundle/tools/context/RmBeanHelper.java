@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.quickbundle.ICoreConstants;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.base.exception.RmRuntimeException;
+import org.quickbundle.base.RmRuntimeException;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.project.common.service.IRmCommonService;
 
 public class RmBeanHelper {

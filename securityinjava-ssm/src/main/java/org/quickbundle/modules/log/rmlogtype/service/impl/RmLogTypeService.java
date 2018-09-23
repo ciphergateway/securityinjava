@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.quickbundle.base.service.RmService;
-import org.quickbundle.itf.cache.IRmCacheListener;
+import org.quickbundle.itf.IRmCacheListener;
 import org.quickbundle.modules.log.RmLogTypeCache;
 import org.quickbundle.modules.log.rmlogtype.dao.IRmLogTypeDao;
 import org.quickbundle.modules.log.rmlogtype.service.IRmLogTypeService;

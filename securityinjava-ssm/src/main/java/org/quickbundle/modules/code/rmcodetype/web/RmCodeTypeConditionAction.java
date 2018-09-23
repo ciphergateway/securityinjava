@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.quickbundle.base.web.page.RmPageVo;
+import org.quickbundle.base.RmPageVo;
 import org.quickbundle.modules.code.rmcodetype.service.IRmCodeTypeService;
 import org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants;
 import org.quickbundle.modules.code.rmcodetype.vo.RmCodeTypeVo;

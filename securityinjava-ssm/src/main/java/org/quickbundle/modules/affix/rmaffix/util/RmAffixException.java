@@ -15,7 +15,7 @@
 
 package org.quickbundle.modules.affix.rmaffix.util;
 
-import org.quickbundle.base.exception.RmRuntimeException;
+import org.quickbundle.base.RmRuntimeException;
 
 /**
  * 功能、用途、现存BUG:

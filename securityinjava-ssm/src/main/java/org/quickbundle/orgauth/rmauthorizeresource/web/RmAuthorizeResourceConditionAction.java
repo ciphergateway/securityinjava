@@ -24,7 +24,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.dom4j.Document;
-import org.quickbundle.base.web.page.RmPageVo;
+import org.quickbundle.base.RmPageVo;
 import org.quickbundle.orgauth.cache.RmAuthorizeCache;
 import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
 import org.quickbundle.orgauth.rmauthorizeresource.service.IRmAuthorizeResourceService;

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@ page import="org.quickbundle.modules.message.IRmMessageConstants" %>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>

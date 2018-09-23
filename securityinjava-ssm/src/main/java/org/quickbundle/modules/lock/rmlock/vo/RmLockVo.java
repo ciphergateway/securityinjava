@@ -18,8 +18,7 @@ package org.quickbundle.modules.lock.rmlock.vo;
 
 import java.sql.Timestamp;
 
-
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 
 /**
  * 功能、用途、现存BUG:

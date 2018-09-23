@@ -2,7 +2,7 @@ package org.quickbundle.orgauth.itf;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.quickbundle.project.common.vo.RmCommonVo;
+import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.tools.support.tree.DeepTreeVo;
 
 public interface IUtOrgTree {

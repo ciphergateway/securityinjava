@@ -8,15 +8,14 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
-import org.quickbundle.base.beans.factory.RmIdFactory;
 import org.quickbundle.base.beans.idwrapper.MaxInDbWrapper;
 import org.quickbundle.base.beans.idwrapper.ShardingInCacheWrapper;
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.itf.base.IRmIdGenerator;
-import org.quickbundle.itf.base.IRmIdWrapper;
+import org.quickbundle.itf.IRmIdGenerator;
+import org.quickbundle.itf.IRmIdWrapper;
+import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
-import org.quickbundle.tools.support.path.RmPathHelper;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import org.quickbundle.base.beans.NumberIncrementService;
 import org.quickbundle.base.beans.TableIdRuleVo;
-import org.quickbundle.itf.base.IRmIdWrapper;
+import org.quickbundle.itf.IRmIdWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;

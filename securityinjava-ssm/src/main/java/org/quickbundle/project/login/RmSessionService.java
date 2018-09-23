@@ -12,12 +12,12 @@ import javax.jws.WebService;
 import javax.servlet.http.HttpSession;
 
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
-import org.quickbundle.project.common.vo.RmCommonVo;
+import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
 import org.quickbundle.tools.helper.RmPopulateHelper;

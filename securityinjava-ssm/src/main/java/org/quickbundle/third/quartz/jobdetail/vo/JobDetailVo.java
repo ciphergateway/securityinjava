@@ -18,7 +18,7 @@ package org.quickbundle.third.quartz.jobdetail.vo;
 import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.quartz.impl.JobDetailImpl;
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 
 /**
  * 功能、用途、现存BUG:

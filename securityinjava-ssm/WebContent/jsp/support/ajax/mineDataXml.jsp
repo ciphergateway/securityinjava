@@ -1,8 +1,8 @@
-<%@page import="org.quickbundle.tools.helper.xml.RmXmlConverter"%>
+<%@page import="org.quickbundle.tools.helper.RmXmlConverter"%>
 <%@page import="org.quickbundle.tools.helper.RmXmlHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@ page contentType="text/xml;charset=UTF-8" language="java" %><%try {
 	org.dom4j.Document doc = null;

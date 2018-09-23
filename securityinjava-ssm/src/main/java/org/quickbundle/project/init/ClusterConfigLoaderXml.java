@@ -6,9 +6,9 @@ import java.util.Map;
 
 import org.dom4j.Element;
 import org.dom4j.Node;
-import org.quickbundle.base.web.servlet.RmHolderServlet;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmClusterConfig.NodeKey;
+import org.quickbundle.tools.context.RmHolderServlet;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.config.RmConfig;
 

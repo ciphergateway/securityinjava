@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.quickbundle.base.service.RmService;
-import org.quickbundle.itf.cache.IRmCacheListener;
+import org.quickbundle.itf.IRmCacheListener;
 import org.quickbundle.orgauth.cache.RmPartyTypeRelationRuleCache;
 import org.quickbundle.orgauth.rmpartytyperelationrule.dao.IRmPartyTypeRelationRuleDao;
 import org.quickbundle.orgauth.rmpartytyperelationrule.service.IRmPartyTypeRelationRuleService;

@@ -21,7 +21,7 @@ import java.util.List;
 import org.quartz.JobExecutionContext;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
 import org.quickbundle.third.quartz.jobexecuting.service.IJobExecutingService;
 import org.quickbundle.third.quartz.jobexecuting.util.IJobExecutingConstants;

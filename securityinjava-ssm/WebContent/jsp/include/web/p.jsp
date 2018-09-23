@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>
 <%  //翻页
 	RmPageVo pageVo = (RmPageVo) request.getAttribute(IGlobalConstants.RM_PAGE_VO);

@@ -1,4 +1,4 @@
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="java.io.File"%>

@@ -14,7 +14,7 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.tools.support.statistic.RmStatisticHandler;
+import org.quickbundle.tools.support.RmStatisticHandler;
 import org.quickbundle.util.RmSequenceSet;
 
 public class StatisticExport extends RmStatisticHandler {

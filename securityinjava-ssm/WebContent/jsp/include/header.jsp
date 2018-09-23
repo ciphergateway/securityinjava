@@ -4,7 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.TreeSet"%>
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>

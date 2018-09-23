@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.orgauth.rmpartyview.service.IRmPartyViewService;
 import org.quickbundle.orgauth.rmpartyview.util.IRmPartyViewConstants;
 import org.quickbundle.orgauth.rmpartyview.vo.RmPartyViewVo;

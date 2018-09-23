@@ -24,10 +24,10 @@ import org.python.util.Generic;
 import org.python.util.PyServlet;
 import org.python.util.PythonInterpreter;
 import org.quickbundle.config.RmConfig;
+import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
-import org.quickbundle.tools.helper.io.RmZipHelper;
-import org.quickbundle.tools.support.path.RmPathHelper;
+import org.quickbundle.tools.helper.RmZipHelper;
 
 /**
  * This servlet is used to re-serve Jython servlets. It stores bytecode for Jython servlets and

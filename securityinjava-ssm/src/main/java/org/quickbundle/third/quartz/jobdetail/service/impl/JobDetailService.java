@@ -26,7 +26,7 @@ import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.impl.matchers.GroupMatcher;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
 import org.quickbundle.third.quartz.jobdetail.service.IJobDetailService;
 import org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants;

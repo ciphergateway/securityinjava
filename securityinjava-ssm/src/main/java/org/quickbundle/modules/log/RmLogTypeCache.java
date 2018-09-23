@@ -3,7 +3,7 @@ package org.quickbundle.modules.log;
 import java.util.List;
 import java.util.Map;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.modules.log.rmlogtype.service.IRmLogTypeService;
 import org.quickbundle.modules.log.rmlogtype.util.IRmLogTypeConstants;
 import org.quickbundle.modules.log.rmlogtype.vo.RmLogTypeVo;

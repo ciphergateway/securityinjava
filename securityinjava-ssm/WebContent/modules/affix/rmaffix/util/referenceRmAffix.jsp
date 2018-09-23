@@ -2,7 +2,7 @@
 <%@page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
 <%@page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
 <%

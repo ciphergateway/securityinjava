@@ -219,7 +219,7 @@
 		    <aop:after-throwing method="afterThrowingMethod" pointcut-ref="allService" throwing="t"/>
 		</aop:aspect>
 	</aop:config>
-	<bean id="RmLogMethod" class="org.quickbundle.project.listener.RmLogMethod"/>
+	<bean id="RmLogMethod" class="org.quickbundle.project.RmLogMethod"/>
 
 	<!-- production环境 -->
  	<beans profile="production">

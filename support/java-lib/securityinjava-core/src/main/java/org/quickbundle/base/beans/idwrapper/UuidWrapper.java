@@ -1,7 +1,7 @@
 package org.quickbundle.base.beans.idwrapper;
 
 import org.quickbundle.base.beans.TableIdRuleVo;
-import org.quickbundle.itf.base.IRmIdWrapper;
+import org.quickbundle.itf.IRmIdWrapper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
 
 public class UuidWrapper implements IRmIdWrapper {

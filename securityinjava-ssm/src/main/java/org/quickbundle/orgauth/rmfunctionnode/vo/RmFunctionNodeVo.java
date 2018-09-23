@@ -18,8 +18,7 @@ package org.quickbundle.orgauth.rmfunctionnode.vo;
 
 import java.sql.Timestamp;
 
-import org.quickbundle.base.vo.RmValueObject;
-
+import org.quickbundle.base.RmValueObject;
 import org.quickbundle.orgauth.IOrgauthConstants;
 import org.quickbundle.orgauth.itf.vo.IRmAuthorizeResourceVo;
 

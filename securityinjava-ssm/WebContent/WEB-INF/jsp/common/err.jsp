@@ -3,7 +3,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="org.apache.struts.action.ActionMessages"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
-<%@page import="org.quickbundle.base.exception.RmExceptionVo"%>
+<%@page import="org.quickbundle.base.RmExceptionVo"%>
 <%@page import="org.quickbundle.third.excel.RmExcelHandler"%>
 <%@page import="org.quickbundle.third.struts.RmExceptionHandler"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>

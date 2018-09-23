@@ -22,7 +22,7 @@ import java.sql.Timestamp;
 import org.quartz.CronTrigger;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 
 /**
  * 功能、用途、现存BUG:

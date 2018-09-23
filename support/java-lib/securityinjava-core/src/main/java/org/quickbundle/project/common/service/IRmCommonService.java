@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.quickbundle.itf.IExecuteCode;
-import org.quickbundle.project.common.vo.RmCommonVo;
+import org.quickbundle.project.common.RmCommonVo;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 

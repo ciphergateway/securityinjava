@@ -5,7 +5,7 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.orgauth.rmrole.vo.RmRoleVo" %>
 <%@ page import="org.quickbundle.orgauth.rmrole.util.IRmRoleConstants" %>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>

@@ -3,7 +3,7 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.orgauth.rmauthorizeresource.vo.RmAuthorizeResourceVo" %>
 <%@page import="org.quickbundle.orgauth.rmauthorizeresource.util.IRmAuthorizeResourceConstants" %>

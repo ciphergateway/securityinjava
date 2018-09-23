@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>
 <%@ include file="/jsp/include/web/g.jsp" %>

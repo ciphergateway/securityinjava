@@ -2,10 +2,9 @@ package org.quickbundle.orgauth.util;
 
 import org.dom4j.Document;
 import org.dom4j.Element;
-import org.quickbundle.base.exception.RmRuntimeException;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.tools.helper.RmStringHelper;
-
+import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.orgauth.IOrgauthConstants;
 import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
 

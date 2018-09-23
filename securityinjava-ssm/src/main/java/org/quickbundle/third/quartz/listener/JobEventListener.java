@@ -7,7 +7,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.quartz.JobListener;
 import org.quartz.Trigger;
-import org.quickbundle.project.listener.RmGlobalMonitor;
+import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.third.quartz.rmschedulerevent.vo.RmSchedulerEventVo;
 import org.quickbundle.third.quartz.util.ISchedulerConstants;
 import org.quickbundle.tools.helper.RmDateHelper;

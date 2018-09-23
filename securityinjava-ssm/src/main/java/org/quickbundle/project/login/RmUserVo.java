@@ -25,7 +25,7 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 import org.quickbundle.third.webservice.TimestampAdapter;
 
 /**

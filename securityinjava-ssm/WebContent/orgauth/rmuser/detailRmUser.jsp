@@ -15,7 +15,7 @@
 <%@page import="org.quickbundle.orgauth.util.RmOrgAuthSqlHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="java.util.List"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.TreeSet"%>
 <%@page import="java.util.Map"%>

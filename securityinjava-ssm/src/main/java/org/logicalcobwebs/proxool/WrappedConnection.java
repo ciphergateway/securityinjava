@@ -17,7 +17,7 @@ import org.logicalcobwebs.cglib.proxy.InvocationHandler;
 import org.logicalcobwebs.cglib.proxy.MethodInterceptor;
 import org.logicalcobwebs.cglib.proxy.MethodProxy;
 import org.logicalcobwebs.proxool.proxy.InvokerFacade;
-import org.quickbundle.project.listener.RmGlobalMonitor;
+import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.tools.helper.RmUUIDHelper;
 
 /**

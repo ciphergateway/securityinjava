@@ -90,7 +90,7 @@ try {
 <%@page import="org.quickbundle.base.dao.RmJdbcTemplate"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.List"%>
 <%@page import="org.quickbundle.tools.support.tree.DeepTreeVo"%>
 <%@page import="org.quickbundle.tools.support.tree.DeepTreeXmlHandler"%>

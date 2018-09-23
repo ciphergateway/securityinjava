@@ -2,7 +2,7 @@ package org.quickbundle.project.cache;
 
 import java.util.Arrays;
 
-import org.quickbundle.itf.cache.IRmCacheListener;
+import org.quickbundle.itf.IRmCacheListener;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 

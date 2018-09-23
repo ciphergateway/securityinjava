@@ -17,9 +17,9 @@ import org.apache.struts.util.ModuleException;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.Node;
-import org.quickbundle.base.exception.RmExceptionVo;
+import org.quickbundle.base.RmExceptionVo;
+import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
-import org.quickbundle.tools.support.path.RmPathHelper;
 
 public class RmExceptionHandler extends ExceptionHandler {
     

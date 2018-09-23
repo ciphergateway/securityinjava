@@ -19,16 +19,16 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
 import org.quickbundle.orgauth.rmuser.dao.IRmUserDao;
 import org.quickbundle.orgauth.rmuser.service.IRmUserService;
 import org.quickbundle.orgauth.rmuser.util.IRmUserConstants;
 import org.quickbundle.orgauth.rmuser.vo.RmUserVo;
+import org.quickbundle.project.RmCryptoHelper;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.cache.RmSqlCountCache;
 import org.quickbundle.project.mail.IRmMailService;
-import org.quickbundle.project.secure.RmCryptoHelper;
 import org.quickbundle.tools.support.mail.SendPassword;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.HashSet"%>
 <%@ page import="java.util.Set"%>
 <%@ page import="java.util.List, java.util.Iterator" %>
@@ -8,8 +8,8 @@
 <%@ page import="jxl.format.Alignment" %>
 <%@ page import="jxl.write.Label" %>
 <%@ page import="jxl.write.WritableCellFormat" %>
-<%@ page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
-<%@ page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@ page import="org.quickbundle.base.beans.RmBeanFactory"%>
+<%@ page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@ page import="org.quickbundle.tools.helper.RmDateHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>

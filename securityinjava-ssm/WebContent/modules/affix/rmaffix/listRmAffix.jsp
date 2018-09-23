@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@page import="java.util.HashMap"%>
@@ -8,7 +8,7 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
 <%@ page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
 <%  //判断是否只读

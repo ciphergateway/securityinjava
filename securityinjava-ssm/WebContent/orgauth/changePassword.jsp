@@ -1,9 +1,9 @@
-<%@page import="org.quickbundle.project.secure.RmCryptoHelper"%>
+<%@page import="org.quickbundle.project.RmCryptoHelper"%>
 <%@page import="org.quickbundle.orgauth.rmuser.service.IRmUserService"%>
 <%@page import="org.quickbundle.orgauth.rmuser.util.IRmUserConstants"%>
 <%@page import="org.quickbundle.project.login.RmUserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

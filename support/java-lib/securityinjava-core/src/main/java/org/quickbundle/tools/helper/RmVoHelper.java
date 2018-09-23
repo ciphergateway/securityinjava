@@ -19,7 +19,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.quickbundle.ICoreConstants;
-import org.quickbundle.base.exception.RmRuntimeException;
+import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.itf.ITransctVoField;
 import org.quickbundle.project.serializer.RmBeanSerializerFactory;
 import org.quickbundle.project.serializer.RmObjectMapper;

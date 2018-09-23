@@ -5,7 +5,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<%@page import="org.quickbundle.tools.support.path.RmPathHelper"%>
+<%@page import="org.quickbundle.tools.context.RmPathHelper"%>
 <%@page import="java.io.FileReader"%>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>

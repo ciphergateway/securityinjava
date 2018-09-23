@@ -2,7 +2,7 @@
 <%@page import="java.util.List,java.util.Iterator" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.modules.code.rmcodetype.vo.RmCodeTypeVo" %>
 <%@page import="org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants" %>
 <%

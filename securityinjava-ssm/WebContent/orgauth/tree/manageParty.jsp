@@ -2,9 +2,9 @@
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <%@page import="org.quickbundle.orgauth.cache.RmPartyTypeCache"%>
 <%@page import="java.util.List"%>
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>

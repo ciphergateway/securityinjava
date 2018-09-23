@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.omg.CORBA.INTERNAL;
-import org.quickbundle.base.beans.factory.RmIdFactory;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.base.dao.RmJdbcTemplate;
 import org.quickbundle.modules.code.rmcodetype.dao.IRmCodeTypeDao;
 import org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants;

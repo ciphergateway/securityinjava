@@ -17,7 +17,7 @@
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.util.RmBaseXNumeral"%>
 <%@page import="org.quickbundle.util.RmNumeralConfig"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%><html>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%><html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
 <%@ include file="/jsp/include/rmGlobal_insert.jsp" %>

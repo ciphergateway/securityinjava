@@ -103,7 +103,7 @@
 	<!-- load-on-startup classes of this framework -->
 	<servlet>
 		<servlet-name>RmHolderServlet</servlet-name>
-		<servlet-class>org.quickbundle.base.web.servlet.RmHolderServlet</servlet-class>
+		<servlet-class>org.quickbundle.tools.context.RmHolderServlet</servlet-class>
 		<init-param>
 			<param-name>init-classes</param-name>
 			<!-- implement classes of org.quickbundle.itf.ILoadOnStartup, split by "," -->

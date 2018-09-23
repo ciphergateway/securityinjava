@@ -24,8 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.base.web.page.RmPageVo;
+import org.quickbundle.base.RmPageVo;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.modules.affix.rmaffix.service.IRmAffixService;
 import org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants;
 import org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo;
@@ -36,7 +36,7 @@ import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
-import org.quickbundle.tools.support.statistic.RmStatisticHandler;
+import org.quickbundle.tools.support.RmStatisticHandler;
 
 /**
  * 功能、用途、现存BUG:

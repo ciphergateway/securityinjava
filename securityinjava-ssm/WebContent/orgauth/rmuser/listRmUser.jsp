@@ -1,16 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="org.quickbundle.orgauth.util.impl.RmOrgService"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@ page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.orgauth.rmuser.vo.RmUserVo" %>
 <%@ page import="org.quickbundle.orgauth.rmuser.util.IRmUserConstants" %>
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <%  //取出List
 	List<RmUserVo> lResult = null;  //定义结果列表的List变量

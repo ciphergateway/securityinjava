@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
-import org.quickbundle.itf.cache.IRmCacheListener;
+import org.quickbundle.itf.IRmCacheListener;
 import org.quickbundle.orgauth.cache.RmAuthorizeCache;
 import org.quickbundle.orgauth.itf.vo.IRmAuthorizeResourceVo;
 import org.quickbundle.orgauth.rmauthorize.dao.IRmAuthorizeDao;
@@ -40,8 +40,8 @@ import org.quickbundle.orgauth.rmauthorizeresourcerecord.vo.RmAuthorizeResourceR
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.cache.RmCacheHandler;
 import org.quickbundle.project.cache.RmSqlCountCache;
+import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.project.common.service.IRmCommonService;
-import org.quickbundle.project.common.vo.RmCommonVo;
 import org.quickbundle.tools.helper.RmStringHelper;
 
 /**

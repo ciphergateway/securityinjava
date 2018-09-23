@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="javax.sql.DataSource"%>
 <%@page import="org.quickbundle.modules.lock.RmLockHelper"%>
 <%@page import="org.quickbundle.modules.lock.rmlock.service.IRmLockService"%>

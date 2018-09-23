@@ -1,4 +1,4 @@
-<%@page import="org.quickbundle.project.IGlobalConstants"%><%@ page contentType="text/html; charset=UTF-8" language="java" %><%@page import="org.quickbundle.base.web.page.RmPageVo"%><% 
+<%@page import="org.quickbundle.project.IGlobalConstants"%><%@ page contentType="text/html; charset=UTF-8" language="java" %><%@page import="org.quickbundle.base.RmPageVo"%><% 
 	//前台分页
 	int page_size = 20;
 	if(request.getParameter("RM_PAGE_SIZE") != null) {

@@ -24,8 +24,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.dom4j.Document;
-import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.base.beans.factory.RmIdFactory;
+import org.quickbundle.base.beans.RmBeanFactory;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.base.service.RmService;
 import org.quickbundle.orgauth.cache.RmAuthorizeCache;
 import org.quickbundle.orgauth.itf.vo.IRmAuthorizeResourceVo;

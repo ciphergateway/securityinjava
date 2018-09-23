@@ -32,7 +32,8 @@ import org.apache.commons.beanutils.converters.IntegerConverter;
 import org.apache.commons.beanutils.converters.LongConverter;
 import org.apache.commons.beanutils.converters.ShortConverter;
 import org.apache.struts.action.ActionServlet;
-import org.quickbundle.tools.support.path.RmPathHelper;
+import org.quickbundle.tools.context.RmPathHelper;
+
 import javax.servlet.ServletException;
 
 import java.io.File;

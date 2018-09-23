@@ -3,7 +3,7 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<%@page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.third.quartz.jobdetail.vo.JobDetailVo" %>
 <%@ page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants" %>
 <%  //取出List

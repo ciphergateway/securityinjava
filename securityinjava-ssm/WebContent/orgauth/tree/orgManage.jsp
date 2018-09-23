@@ -1,7 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="java.util.List"%>
-<%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
+<%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>

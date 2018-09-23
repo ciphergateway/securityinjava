@@ -3,7 +3,7 @@ package org.quickbundle.orgauth.util;
 import java.util.List;
 import java.util.Set;
 
-import org.quickbundle.project.common.vo.RmCommonVo;
+import org.quickbundle.project.common.RmCommonVo;
 
 public interface IRmOrgService {
 	

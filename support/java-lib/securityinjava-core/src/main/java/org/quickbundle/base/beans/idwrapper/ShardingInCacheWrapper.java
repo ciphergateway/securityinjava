@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.quickbundle.base.beans.AbstractDbWrapper;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.base.beans.TableIdRuleVo;
-import org.quickbundle.base.beans.factory.RmIdFactory;
-import org.quickbundle.itf.base.IRmIdWrapper;
+import org.quickbundle.itf.IRmIdWrapper;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 

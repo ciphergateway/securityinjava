@@ -11,7 +11,7 @@
  */
 package org.quickbundle.project.sharding;
 
-import org.quickbundle.base.exception.RmRuntimeException;
+import org.quickbundle.base.RmRuntimeException;
 
 public class RmShardingDbHolder {
 	private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();

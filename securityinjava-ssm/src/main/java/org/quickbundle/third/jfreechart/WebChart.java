@@ -39,7 +39,7 @@ import org.jfree.chart.urls.PieURLGenerator;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.ui.RectangleInsets;
-import org.quickbundle.tools.support.font.RmFont;
+import org.quickbundle.tools.support.RmFont;
 
 /**
  * @author sentom

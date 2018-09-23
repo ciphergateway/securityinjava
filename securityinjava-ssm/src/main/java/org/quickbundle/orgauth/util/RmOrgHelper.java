@@ -15,7 +15,7 @@ import org.quickbundle.orgauth.itf.IUtOrgTree;
 import org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
-import org.quickbundle.project.common.vo.RmCommonVo;
+import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.tools.helper.RmSqlHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
