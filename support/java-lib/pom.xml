@@ -17,8 +17,8 @@ Contributors:
 
 	<modules>
         <module>java-lib.parent</module>
-        <module>quickbundle-tools</module>
-	    <module>quickbundle-core</module>
+        <module>securityinjava-tools</module>
+	    <module>securityinjava-core</module>
   </modules>
 	
 </project>
