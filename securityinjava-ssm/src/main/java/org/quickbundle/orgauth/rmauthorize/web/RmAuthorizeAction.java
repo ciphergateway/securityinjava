@@ -31,7 +31,7 @@ import org.quickbundle.orgauth.rmauthorize.util.IRmAuthorizeConstants;
 import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.cache.RmSqlCountCache;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;

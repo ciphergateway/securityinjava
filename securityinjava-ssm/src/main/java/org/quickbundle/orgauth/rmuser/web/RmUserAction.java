@@ -44,7 +44,7 @@ import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.project.login.IRmLoginConstants;
 import org.quickbundle.project.login.IRmSessionService;
 import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;

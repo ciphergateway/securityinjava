@@ -25,7 +25,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.quartz.Scheduler;
 import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.third.quartz.jobexecuting.service.IJobExecutingService;
 import org.quickbundle.third.quartz.jobexecuting.util.IJobExecutingConstants;
 import org.quickbundle.third.quartz.jobexecuting.vo.JobExecutingVo;

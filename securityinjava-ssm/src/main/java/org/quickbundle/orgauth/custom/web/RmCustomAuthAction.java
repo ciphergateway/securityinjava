@@ -22,7 +22,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.quickbundle.orgauth.rmparty.util.IRmPartyConstants;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 
 /**
  * 功能、用途、现存BUG:

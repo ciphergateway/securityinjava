@@ -19,8 +19,6 @@ Contributors:
         <module>java-lib.parent</module>
         <module>quickbundle-tools</module>
 	    <module>quickbundle-core</module>
-		<module>quickbundle-mybatis</module>
-        <module>quickbundle-springweb</module>
   </modules>
 	
 </project>

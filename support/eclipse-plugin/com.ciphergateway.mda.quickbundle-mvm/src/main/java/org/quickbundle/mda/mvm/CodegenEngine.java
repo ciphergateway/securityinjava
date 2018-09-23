@@ -21,8 +21,8 @@ import org.dom4j.io.SAXReader;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.quickbundle.mda.RmTransform;
-import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmFileHelper;
+import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
 
 /**

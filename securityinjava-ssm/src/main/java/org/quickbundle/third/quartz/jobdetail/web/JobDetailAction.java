@@ -27,7 +27,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.quickbundle.base.beans.factory.RmBeanFactory;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.base.web.page.RmPageVo;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.third.quartz.jobdetail.service.IJobDetailService;

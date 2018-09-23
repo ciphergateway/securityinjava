@@ -33,7 +33,7 @@ import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmGlobalReference;
 import org.quickbundle.project.cache.RmCacheHandler;
 import org.quickbundle.project.cache.RmSqlCountCache;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmVoHelper;

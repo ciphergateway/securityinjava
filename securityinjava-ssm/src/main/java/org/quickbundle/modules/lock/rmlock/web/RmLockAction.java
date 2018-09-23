@@ -31,7 +31,7 @@ import org.quickbundle.modules.lock.rmlock.util.IRmLockConstants;
 import org.quickbundle.modules.lock.rmlock.vo.RmLockVo;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.cache.RmSqlCountCache;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;

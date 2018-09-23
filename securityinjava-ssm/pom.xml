@@ -350,16 +350,6 @@ encoding/tools.bat=GBK]]>
 			<artifactId>quickbundle-core</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-mybatis</artifactId>
-			<version>${securityinjava.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ciphergateway</groupId>
-			<artifactId>quickbundle-springweb</artifactId>
-			<version>${securityinjava.version}</version>
-		</dependency>
 
 		<!-- Proxool -->
 		<dependency>
@@ -498,6 +488,12 @@ encoding/tools.bat=GBK]]>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
@@ -558,6 +554,7 @@ encoding/tools.bat=GBK]]>
 			<artifactId>mybatis-spring</artifactId>
 			<version>${mybatis-spring.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>

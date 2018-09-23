@@ -15,7 +15,7 @@ import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.third.struts.RmActionHelper;
-import org.quickbundle.third.struts.actions.RmDispatchAction;
+import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
