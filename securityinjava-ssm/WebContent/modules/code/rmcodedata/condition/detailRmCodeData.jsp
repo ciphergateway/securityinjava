@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.vo.RmCodeDataVo" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.RmCodeDataVo" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getAttribute(IRmCodeDataConstants.REQUEST_IS_READ_ONLY))) {

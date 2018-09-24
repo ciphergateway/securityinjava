@@ -8,15 +8,15 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
-<%@page import="org.quickbundle.orgauth.rmparty.service.IRmPartyService"%>
-<%@page import="org.quickbundle.orgauth.rmparty.util.IRmPartyConstants"%>
-<%@page import="org.quickbundle.orgauth.rmparty.vo.RmPartyVo"%>
-<%@page import="org.quickbundle.orgauth.rmpartytype.service.impl.RmPartyTypeService"%>
-<%@page import="org.quickbundle.orgauth.rmpartytype.util.IRmPartyTypeConstants"%>
-<%@page import="org.quickbundle.orgauth.rmpartytype.vo.RmPartyTypeVo"%>
-<%@page import="org.quickbundle.orgauth.rmpartyrelation.service.IRmPartyRelationService"%>
-<%@page import="org.quickbundle.orgauth.rmpartyrelation.util.IRmPartyRelationConstants"%>
-<%@page import="org.quickbundle.orgauth.rmpartyrelation.vo.RmPartyRelationVo"%>
+<%@page import="org.quickbundle.orgauth.rmparty.IRmPartyService"%>
+<%@page import="org.quickbundle.orgauth.rmparty.IRmPartyConstants"%>
+<%@page import="org.quickbundle.orgauth.rmparty.RmPartyVo"%>
+<%@page import="org.quickbundle.orgauth.rmpartytype.RmPartyTypeService"%>
+<%@page import="org.quickbundle.orgauth.rmpartytype.IRmPartyTypeConstants"%>
+<%@page import="org.quickbundle.orgauth.rmpartytype.RmPartyTypeVo"%>
+<%@page import="org.quickbundle.orgauth.rmpartyrelation.IRmPartyRelationService"%>
+<%@page import="org.quickbundle.orgauth.rmpartyrelation.IRmPartyRelationConstants"%>
+<%@page import="org.quickbundle.orgauth.rmpartyrelation.RmPartyRelationVo"%>
 <%
 	//团体类型
 	String party_type = request.getParameter("party_type");

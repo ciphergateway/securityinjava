@@ -2,7 +2,7 @@
 <%@page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.modules.message.vo.RmMessageVo" %>
+<%@page import="org.quickbundle.modules.message.RmMessageVo" %>
 <%@page import="org.quickbundle.modules.message.IRmMessageConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmMessageConstants.REQUEST_REFERENCE_INPUT_TYPE));

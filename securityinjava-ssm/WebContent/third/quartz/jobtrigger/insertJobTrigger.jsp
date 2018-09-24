@@ -2,11 +2,11 @@
 <%@page import="org.quickbundle.tools.helper.RmDateHelper"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Map.Entry"%>
-<%@page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants"%>
+<%@page import="org.quickbundle.third.quartz.jobdetail.IJobDetailConstants"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.third.quartz.jobtrigger.vo.JobTriggerVo" %>
-<%@ page import="org.quickbundle.third.quartz.jobtrigger.util.IJobTriggerConstants" %>
+<%@ page import="org.quickbundle.third.quartz.jobtrigger.JobTriggerVo" %>
+<%@ page import="org.quickbundle.third.quartz.jobtrigger.IJobTriggerConstants" %>
 <%  //判断是否为修改页面
   	JobTriggerVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

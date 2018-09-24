@@ -18,59 +18,59 @@
 	<!--startProjectBeans-->
 
 	<!--RmLog的bean配置-->
-	<bean id="IRmLogService" class="org.quickbundle.modules.log.rmlog.service.impl.RmLogService">
+	<bean id="IRmLogService" class="org.quickbundle.modules.log.rmlog.RmLogService">
 		<property name="dao" ref="IRmLogDao"/>
 	</bean>
-	<bean id="IRmLogDao" class="org.quickbundle.modules.log.rmlog.dao.impl.RmLogDao">
+	<bean id="IRmLogDao" class="org.quickbundle.modules.log.rmlog.RmLogDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
 	<!--RmLogType的bean配置-->
-	<bean id="IRmLogTypeService" class="org.quickbundle.modules.log.rmlogtype.service.impl.RmLogTypeService">
+	<bean id="IRmLogTypeService" class="org.quickbundle.modules.log.rmlogtype.RmLogTypeService">
 		<property name="dao" ref="IRmLogTypeDao"/>
 	</bean>
-	<bean id="IRmLogTypeDao" class="org.quickbundle.modules.log.rmlogtype.dao.impl.RmLogTypeDao">
+	<bean id="IRmLogTypeDao" class="org.quickbundle.modules.log.rmlogtype.RmLogTypeDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
 	<!--RmLock的bean配置-->
-	<bean id="IRmLockService" class="org.quickbundle.modules.lock.rmlock.service.impl.RmLockService">
+	<bean id="IRmLockService" class="org.quickbundle.modules.lock.rmlock.RmLockService">
 		<property name="dao" ref="IRmLockDao"/>
 	</bean>
-	<bean id="IRmLockDao" class="org.quickbundle.modules.lock.rmlock.dao.impl.RmLockDao">
+	<bean id="IRmLockDao" class="org.quickbundle.modules.lock.rmlock.RmLockDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
 	<!--开始 配置RmAffix的bean-->
 	<!--RmAffix的业务层-->
-	<bean id="IRmAffixService" class="org.quickbundle.modules.affix.rmaffix.service.impl.RmAffixService">
+	<bean id="IRmAffixService" class="org.quickbundle.modules.affix.rmaffix.RmAffixService">
 		<property name="dao" ref="IRmAffixDao"/>
 	</bean>
 	<!--RmAffix的数据访问层-->
-	<bean id="IRmAffixDao" class="org.quickbundle.modules.affix.rmaffix.dao.impl.RmAffixDao">
+	<bean id="IRmAffixDao" class="org.quickbundle.modules.affix.rmaffix.RmAffixDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmAffix的bean-->
 	
 	<!--开始 配置RmCodeType的bean-->
 	<!--RmCodeType的业务层-->
-	<bean id="IRmCodeTypeService" class="org.quickbundle.modules.code.rmcodetype.service.impl.RmCodeTypeService">
+	<bean id="IRmCodeTypeService" class="org.quickbundle.modules.code.rmcodetype.RmCodeTypeService">
 		<property name="dao" ref="IRmCodeTypeDao"/>
 		<property name="codeDataService" ref="IRmCodeDataService"/>
 	</bean>
 	<!--RmCodeType的数据访问层-->
-	<bean id="IRmCodeTypeDao" class="org.quickbundle.modules.code.rmcodetype.dao.impl.RmCodeTypeDao">
+	<bean id="IRmCodeTypeDao" class="org.quickbundle.modules.code.rmcodetype.RmCodeTypeDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmCodeType的bean-->
 
 	<!--开始 配置RmCodeData的bean-->
 	<!--RmCodeData的业务层-->
-	<bean id="IRmCodeDataService" class="org.quickbundle.modules.code.rmcodedata.service.impl.RmCodeDataService">
+	<bean id="IRmCodeDataService" class="org.quickbundle.modules.code.rmcodedata.RmCodeDataService">
 		<property name="dao" ref="IRmCodeDataDao"/>
 	</bean>
 	<!--RmCodeData的数据访问层-->
-	<bean id="IRmCodeDataDao" class="org.quickbundle.modules.code.rmcodedata.dao.impl.RmCodeDataDao">
+	<bean id="IRmCodeDataDao" class="org.quickbundle.modules.code.rmcodedata.RmCodeDataDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmCodeData的bean-->

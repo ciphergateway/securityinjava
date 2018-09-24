@@ -2,7 +2,7 @@
 <%@page import="java.util.Map"%>
 <%@page import="org.quartz.JobDataMap"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@page import="org.quickbundle.third.quartz.util.ISchedulerConstants"%>
+<%@page import="org.quickbundle.third.quartz.ISchedulerConstants"%>
 <%@page import="org.quartz.Scheduler"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
@@ -10,8 +10,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.third.quartz.jobexecuting.vo.JobExecutingVo" %>
-<%@ page import="org.quickbundle.third.quartz.jobexecuting.util.IJobExecutingConstants" %>
+<%@ page import="org.quickbundle.third.quartz.jobexecuting.JobExecutingVo" %>
+<%@ page import="org.quickbundle.third.quartz.jobexecuting.IJobExecutingConstants" %>
 <%  //取出List
 	List<JobExecutingVo> lResult = null;  //定义结果列表的List变量
 	if(request.getAttribute(IJobExecutingConstants.REQUEST_BEANS) != null) {  //如果request中的beans不为空
@@ -103,7 +103,7 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		out.print(rmOrderNumber);
+			out.print(rmOrderNumber);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="job_name"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>
@@ -135,17 +135,19 @@
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IJobExecutingConstants.TABLE_COLUMN_CHINESE.get("job_run_time")%>' property="job_run_time" sortable="false">
 		<bean:define id="job_run_time" name="rmBean" property="job_run_time"/>
-		<%long lJob_run_time = Long.parseLong(String.valueOf(job_run_time));%>
-		<span title="<%=lJob_run_time%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lJob_run_time) %></span>
+		<%
+			long lJob_run_time = Long.parseLong(String.valueOf(job_run_time));
+		%>
+		<span title="<%=lJob_run_time%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lJob_run_time)%></span>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IJobExecutingConstants.TABLE_COLUMN_CHINESE.get("fire_instance_id")%>' property="fire_instance_id" sortable="false"/>
 	<layout:collectionItem width="8%" title='合并参数'>
 		<bean:define id="dataMap" name="rmBean" property="dataMap"/>
 		<%
-		JobDataMap jdm = (JobDataMap)dataMap;
-		for(Map.Entry<String, Object> en : jdm.entrySet()) {
+			JobDataMap jdm = (JobDataMap)dataMap;
+				for(Map.Entry<String, Object> en : jdm.entrySet()) {
 			out.print(en.getKey() + "=" + en.getValue() + ";");
-		}
+				}
 		%>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IJobExecutingConstants.TABLE_COLUMN_CHINESE.get("result")%>' property="result" sortable="false"/>

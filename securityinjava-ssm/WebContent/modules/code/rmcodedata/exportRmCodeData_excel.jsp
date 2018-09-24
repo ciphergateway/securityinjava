@@ -12,9 +12,9 @@
 <%@ page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@ page import="org.quickbundle.tools.helper.RmDateHelper"%>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.vo.RmCodeDataVo" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.service.IRmCodeDataService" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.RmCodeDataVo" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataService" %>
 <%
 	IRmCodeDataService service = (IRmCodeDataService)RmBeanFactory.getBean(IRmCodeDataConstants.SERVICE_KEY);	
 	List lResult = null;  //定义结果列表的List变量

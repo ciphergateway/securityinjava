@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.orgauth.rmrole.vo.RmRoleVo" %>
-<%@page import="org.quickbundle.orgauth.rmrole.util.IRmRoleConstants" %>
+<%@page import="org.quickbundle.orgauth.rmrole.RmRoleVo" %>
+<%@page import="org.quickbundle.orgauth.rmrole.IRmRoleConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmRoleConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

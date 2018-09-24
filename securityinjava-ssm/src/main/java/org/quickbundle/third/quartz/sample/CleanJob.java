@@ -7,7 +7,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quickbundle.third.quartz.util.ISchedulerConstants;
+import org.quickbundle.third.quartz.ISchedulerConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**

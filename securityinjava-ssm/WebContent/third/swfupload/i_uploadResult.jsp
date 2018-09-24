@@ -5,7 +5,7 @@
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo"%>
+<%@page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo"%>
 <%
 	String bs_keyword = request.getParameter("bs_keyword");
 	String record_id = request.getParameter("record_id");

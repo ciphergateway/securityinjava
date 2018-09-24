@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmparty.vo.RmPartyVo" %>
-<%@ page import="org.quickbundle.orgauth.rmparty.util.IRmPartyConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmparty.RmPartyVo" %>
+<%@ page import="org.quickbundle.orgauth.rmparty.IRmPartyConstants" %>
 <%  //取出本条记录
 	RmPartyVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmPartyVo)request.getAttribute(IRmPartyConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

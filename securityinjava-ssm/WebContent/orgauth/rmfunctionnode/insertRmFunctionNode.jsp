@@ -6,8 +6,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo" %>
-<%@ page import="org.quickbundle.orgauth.rmfunctionnode.util.IRmFunctionNodeConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeVo" %>
+<%@ page import="org.quickbundle.orgauth.rmfunctionnode.IRmFunctionNodeConstants" %>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.config.RmConfig"%>

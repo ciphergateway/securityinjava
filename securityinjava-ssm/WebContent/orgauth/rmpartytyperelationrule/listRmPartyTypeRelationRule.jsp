@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.vo.RmPartyTypeRelationRuleVo" %>
-<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.util.IRmPartyTypeRelationRuleConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.RmPartyTypeRelationRuleVo" %>
+<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.IRmPartyTypeRelationRuleConstants" %>
 
 
 
@@ -171,8 +171,8 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmPartyTypeRelationRuleConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmPartyTypeRelationRuleConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="id"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>

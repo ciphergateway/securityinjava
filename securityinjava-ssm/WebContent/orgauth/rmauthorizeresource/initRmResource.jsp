@@ -1,7 +1,7 @@
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.List"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.orgauth.rmauthorizeresource.vo.RmAuthorizeResourceVo"%>
+<%@page import="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceVo"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%  
 	String bs_keyword = request.getParameter("bs_keyword");

@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.vo.RmAuthorizeResourceVo" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.util.IRmAuthorizeResourceConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceVo" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.IRmAuthorizeResourceConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getAttribute(IRmAuthorizeResourceConstants.REQUEST_IS_READ_ONLY))) {

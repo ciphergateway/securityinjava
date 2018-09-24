@@ -16,9 +16,9 @@
 <%@page import=org.quickbundle.tools.helper.RmZipHelper"%>
 <%@page import=org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import=org.quickbundle.base.beans.RmBeanFactory"%>
-<%@ page import=org.quickbundle.modules.code.rmcodedata.vo.RmCodeDataVo" %>
-<%@ page import=org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
-<%@ page import=org.quickbundle.modules.code.rmcodedata.service.IRmCodeDataService" %>
+<%@ page import=org.quickbundle.modules.code.rmcodedata.RmCodeDataVo" %>
+<%@ page import=org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
+<%@ page import=org.quickbundle.modules.code.rmcodedata.IRmCodeDataService" %>
 <%
 	boolean isSubmit = false;
 	if("1".equals(request.getParameter("isSubmit"))) {

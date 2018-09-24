@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmJspHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
 <html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>

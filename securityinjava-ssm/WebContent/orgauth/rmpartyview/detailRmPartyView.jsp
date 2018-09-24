@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmpartyview.vo.RmPartyViewVo" %>
-<%@ page import="org.quickbundle.orgauth.rmpartyview.util.IRmPartyViewConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmpartyview.RmPartyViewVo" %>
+<%@ page import="org.quickbundle.orgauth.rmpartyview.IRmPartyViewConstants" %>
 <%  //取出本条记录
 	RmPartyViewVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmPartyViewVo)request.getAttribute(IRmPartyViewConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

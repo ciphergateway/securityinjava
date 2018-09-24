@@ -5,8 +5,8 @@
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="javax.sql.DataSource"%>
 <%@page import="org.quickbundle.modules.lock.RmLockHelper"%>
-<%@page import="org.quickbundle.modules.lock.rmlock.service.IRmLockService"%>
-<%@page import="org.quickbundle.modules.lock.rmlock.util.IRmLockConstants"%>
+<%@page import="org.quickbundle.modules.lock.rmlock.IRmLockService"%>
+<%@page import="org.quickbundle.modules.lock.rmlock.IRmLockConstants"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmDateHelper"%><html>
 <head>

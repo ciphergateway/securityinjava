@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.orgauth.rmpartytype.service.IRmPartyTypeService;
-import org.quickbundle.orgauth.rmpartytype.util.IRmPartyTypeConstants;
-import org.quickbundle.orgauth.rmpartytype.vo.RmPartyTypeVo;
+import org.quickbundle.orgauth.rmpartytype.IRmPartyTypeConstants;
+import org.quickbundle.orgauth.rmpartytype.IRmPartyTypeService;
+import org.quickbundle.orgauth.rmpartytype.RmPartyTypeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
 import org.quickbundle.tools.helper.RmLogHelper;
 

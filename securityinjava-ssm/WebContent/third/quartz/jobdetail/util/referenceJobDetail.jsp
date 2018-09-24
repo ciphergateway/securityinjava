@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.third.quartz.jobdetail.vo.JobDetailVo" %>
-<%@page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants" %>
+<%@page import="org.quickbundle.third.quartz.jobdetail.JobDetailVo" %>
+<%@page import="org.quickbundle.third.quartz.jobdetail.IJobDetailConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IJobDetailConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

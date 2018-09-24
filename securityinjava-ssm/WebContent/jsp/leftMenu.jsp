@@ -1,5 +1,5 @@
 <%@page import="org.quickbundle.tools.helper.RmUrlHelper"%>
-<%@page import="org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo"%>
+<%@page import="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeVo"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@page import="java.util.TreeMap"%>
 <%@page import="java.util.Map"%>

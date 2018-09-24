@@ -9,13 +9,13 @@
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.List"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.orgauth.rmrole.vo.RmRoleVo"%>
-<%@page import="org.quickbundle.orgauth.rmrole.util.IRmRoleConstants"%>
+<%@page import="org.quickbundle.orgauth.rmrole.RmRoleVo"%>
+<%@page import="org.quickbundle.orgauth.rmrole.IRmRoleConstants"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@page import="org.quickbundle.orgauth.rmrole.service.impl.RmRoleService"%>
+<%@page import="org.quickbundle.orgauth.rmrole.RmRoleService"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@page import="org.quickbundle.orgauth.rmparty.service.IRmPartyService"%>
-<%@page import="org.quickbundle.orgauth.rmparty.util.IRmPartyConstants"%>
+<%@page import="org.quickbundle.orgauth.rmparty.IRmPartyService"%>
+<%@page import="org.quickbundle.orgauth.rmparty.IRmPartyConstants"%>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <html>
 <head>

@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import org.quickbundle.ICoreConstants;
 import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.project.common.service.IRmCommonService;
+import org.quickbundle.project.common.IRmCommonService;
 
 public class RmBeanHelper {
 

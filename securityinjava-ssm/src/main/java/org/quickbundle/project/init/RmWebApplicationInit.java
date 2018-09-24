@@ -57,7 +57,7 @@ public class RmWebApplicationInit implements ILoadOnStartup {
 			if (RmConfig.getSingleton().isSchedulerStart()) {
 				long schedulerStartLazySecond = RmConfig.getSingleton().getSchedulerStartLazy();
 				if (schedulerStartLazySecond <= 0) {
-					org.quartz.Scheduler scheduler = (org.quartz.Scheduler) RmBeanFactory.getBean(org.quickbundle.third.quartz.util.ISchedulerConstants.QUARTZ_SHEDULER);
+					org.quartz.Scheduler scheduler = (org.quartz.Scheduler) RmBeanFactory.getBean(org.quickbundle.third.quartz.ISchedulerConstants.QUARTZ_SHEDULER);
 					scheduler.start();
 
 				} else {
@@ -68,7 +68,7 @@ public class RmWebApplicationInit implements ILoadOnStartup {
 								System.out.println("sleep for ejb ok begin, " + finalSchedulerStartLazy + " second");
 								Thread.sleep(1000 * finalSchedulerStartLazy);
 								System.out.println("sleep for ejb ok end");
-								org.quartz.Scheduler scheduler = (org.quartz.Scheduler) RmBeanFactory.getBean(org.quickbundle.third.quartz.util.ISchedulerConstants.QUARTZ_SHEDULER);
+								org.quartz.Scheduler scheduler = (org.quartz.Scheduler) RmBeanFactory.getBean(org.quickbundle.third.quartz.ISchedulerConstants.QUARTZ_SHEDULER);
 								scheduler.start();
 							} catch (Exception e) {
 								e.printStackTrace();

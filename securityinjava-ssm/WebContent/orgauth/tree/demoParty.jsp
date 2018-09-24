@@ -1,6 +1,6 @@
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@page import="org.quickbundle.orgauth.util.impl.RmOrgService"%>
+<%@page import="org.quickbundle.orgauth.util.RmOrgService"%>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.List"%>

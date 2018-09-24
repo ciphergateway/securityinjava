@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmuseronlinerecord.vo.RmUserOnlineRecordVo" %>
-<%@ page import="org.quickbundle.orgauth.rmuseronlinerecord.util.IRmUserOnlineRecordConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordVo" %>
+<%@ page import="org.quickbundle.orgauth.rmuseronlinerecord.IRmUserOnlineRecordConstants" %>
 <%  //取出本条记录
 	RmUserOnlineRecordVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmUserOnlineRecordVo)request.getAttribute(IRmUserOnlineRecordConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

@@ -6,7 +6,7 @@ import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.orgauth.IOrgauthConstants;
-import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
+import org.quickbundle.orgauth.rmauthorize.RmAuthorizeVo;
 
 public class RmOrgAuthSqlHelper implements IGlobalConstants{
 	/**

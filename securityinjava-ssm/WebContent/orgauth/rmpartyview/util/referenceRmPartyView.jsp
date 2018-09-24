@@ -2,8 +2,8 @@
 <%@page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.orgauth.rmpartyview.vo.RmPartyViewVo" %>
-<%@page import="org.quickbundle.orgauth.rmpartyview.util.IRmPartyViewConstants" %>
+<%@page import="org.quickbundle.orgauth.rmpartyview.RmPartyViewVo" %>
+<%@page import="org.quickbundle.orgauth.rmpartyview.IRmPartyViewConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmPartyViewConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

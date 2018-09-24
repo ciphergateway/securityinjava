@@ -4,21 +4,21 @@
 <struts-config>
 	<action-mappings>
 		<!--JobExecutingJobExecuting的struts跳转规则-->
-		<action type="org.quickbundle.third.quartz.jobexecuting.web.JobExecutingAction" scope="request" path="/JobExecutingAction" parameter="cmd">
+		<action type="org.quickbundle.third.quartz.jobexecuting.JobExecutingAction" scope="request" path="/JobExecutingAction" parameter="cmd">
 			<forward name="toQueryAll" path="/JobExecutingAction.do?cmd=queryAll" redirect="true"/>
 			<forward name="listPage" path="/third/quartz/jobexecuting/listJobExecuting.jsp"/>
 			<forward name="updatePage" path="/third/quartz/jobexecuting/insertJobExecuting.jsp?isModify=1"/>
 			<forward name="detailPage" path="/third/quartz/jobexecuting/detailJobExecuting.jsp"/>
 		</action>
 		<!--JobTriggerJobTrigger的struts跳转规则-->
-		<action type="org.quickbundle.third.quartz.jobtrigger.web.JobTriggerAction" scope="request" path="/JobTriggerAction" parameter="cmd">
+		<action type="org.quickbundle.third.quartz.jobtrigger.JobTriggerAction" scope="request" path="/JobTriggerAction" parameter="cmd">
 			<forward name="toQueryAll" path="/JobTriggerAction.do?cmd=queryAll" redirect="true"/>
 			<forward name="listPage" path="/third/quartz/jobtrigger/listJobTrigger.jsp"/>
 			<forward name="updatePage" path="/third/quartz/jobtrigger/insertJobTrigger.jsp?isModify=1"/>
 			<forward name="detailPage" path="/third/quartz/jobtrigger/detailJobTrigger.jsp"/>
 		</action>
 		<!--JobDetailJobDetail的struts跳转规则-->
-		<action type="org.quickbundle.third.quartz.jobdetail.web.JobDetailAction" scope="request" path="/JobDetailAction" parameter="cmd">
+		<action type="org.quickbundle.third.quartz.jobdetail.JobDetailAction" scope="request" path="/JobDetailAction" parameter="cmd">
 			<forward name="toQueryAll" path="/JobDetailAction.do?cmd=queryAll" redirect="true"/>
 			<forward name="listPage" path="/third/quartz/jobdetail/listJobDetail.jsp"/>
 			<forward name="updatePage" path="/third/quartz/jobdetail/insertJobDetail.jsp?isModify=1"/>
@@ -26,7 +26,7 @@
 			<forward name="referencePage" path="/third/quartz/jobdetail/util/referenceJobDetail.jsp"/>
 		</action>
 		<!--RmSchedulerEventRmSchedulerEvent的struts跳转规则-->
-		<action type="org.quickbundle.third.quartz.rmschedulerevent.web.RmSchedulerEventAction" scope="request" path="/RmSchedulerEventAction" parameter="cmd">
+		<action type="org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventAction" scope="request" path="/RmSchedulerEventAction" parameter="cmd">
 			<forward name="toQueryAll" path="/RmSchedulerEventAction.do?cmd=queryAll" redirect="true"/>
 			<forward name="listPage" path="/third/quartz/rmschedulerevent/listRmSchedulerEvent.jsp"/>
 			<forward name="updatePage" path="/third/quartz/rmschedulerevent/insertRmSchedulerEvent.jsp?isModify=1"/>

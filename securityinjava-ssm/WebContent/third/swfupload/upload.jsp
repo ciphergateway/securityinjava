@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="java.io.File"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.service.IRmAffixService"%>
+<%@page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants"%>
+<%@page import="org.quickbundle.modules.affix.rmaffix.IRmAffixService"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="org.quickbundle.third.fileupload.RmUploadHelper"%>
 <%@page impoorg.quickbundle.tools.helper.RmStringHelperlper"%>

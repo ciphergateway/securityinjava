@@ -1,6 +1,6 @@
 package org.quickbundle.orgauth.custom;
 
-import org.quickbundle.orgauth.rmuser.vo.RmUserVo;
+import org.quickbundle.orgauth.rmuser.RmUserVo;
 
 public interface IRmCustomOrgService {
     /**

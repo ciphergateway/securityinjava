@@ -220,5 +220,5 @@ $(document).ready(function () {
 <%@page import="org.springframework.jdbc.core.RowMapper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo"%>
+<%@page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>

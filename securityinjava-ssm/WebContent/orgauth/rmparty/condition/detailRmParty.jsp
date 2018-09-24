@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmparty.vo.RmPartyVo" %>
-<%@ page import="org.quickbundle.orgauth.rmparty.util.IRmPartyConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmparty.RmPartyVo" %>
+<%@ page import="org.quickbundle.orgauth.rmparty.IRmPartyConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getAttribute(IRmPartyConstants.REQUEST_IS_READ_ONLY))) {

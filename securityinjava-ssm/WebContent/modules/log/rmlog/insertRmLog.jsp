@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.modules.log.rmlog.vo.RmLogVo" %>
-<%@ page import="org.quickbundle.modules.log.rmlog.util.IRmLogConstants" %>
+<%@ page import="org.quickbundle.modules.log.rmlog.RmLogVo" %>
+<%@ page import="org.quickbundle.modules.log.rmlog.IRmLogConstants" %>
 <%  //判断是否为修改页面
   	RmLogVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

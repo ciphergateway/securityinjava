@@ -7,7 +7,7 @@
 <%@page import="java.sql.SQLException"%>
 <%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
 
-<%@page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo"%><div>
+<%@page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo"%><div>
 <%
 String bs_keyword = request.getParameter("bs_keyword");
 String record_id = request.getParameter("record_id");

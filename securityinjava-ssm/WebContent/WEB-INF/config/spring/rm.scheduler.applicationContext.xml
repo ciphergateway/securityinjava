@@ -21,22 +21,22 @@
 	</bean>
 	
 	<!--配置JobDetail的bean-->
-	<bean id="IJobDetailService" class="org.quickbundle.third.quartz.jobdetail.service.impl.JobDetailService">
+	<bean id="IJobDetailService" class="org.quickbundle.third.quartz.jobdetail.JobDetailService">
 	</bean>
 
 	<!--配置JobTrigger的bean-->
-	<bean id="IJobTriggerService" class="org.quickbundle.third.quartz.jobtrigger.service.impl.JobTriggerService">
+	<bean id="IJobTriggerService" class="org.quickbundle.third.quartz.jobtrigger.JobTriggerService">
 	</bean>
 	
 	<!--配置JobExecuting的bean-->
-	<bean id="IJobExecutingService" class="org.quickbundle.third.quartz.jobexecuting.service.impl.JobExecutingService">
+	<bean id="IJobExecutingService" class="org.quickbundle.third.quartz.jobexecuting.JobExecutingService">
 	</bean>
 
 	<!--配置RmSchedulerEvent的bean-->
-	<bean id="IRmSchedulerEventService" class="org.quickbundle.third.quartz.rmschedulerevent.service.impl.RmSchedulerEventService">
+	<bean id="IRmSchedulerEventService" class="org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventService">
 		<property name="dao" ref="IRmSchedulerEventDao"/>
 	</bean>
-	<bean id="IRmSchedulerEventDao" class="org.quickbundle.third.quartz.rmschedulerevent.dao.impl.RmSchedulerEventDao">
+	<bean id="IRmSchedulerEventDao" class="org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	

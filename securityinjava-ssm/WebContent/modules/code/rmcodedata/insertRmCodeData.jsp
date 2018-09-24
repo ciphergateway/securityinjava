@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.vo.RmCodeDataVo" %>
-<%@ page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.RmCodeDataVo" %>
+<%@ page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
 <%  //判断是否为修改页面
   	RmCodeDataVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

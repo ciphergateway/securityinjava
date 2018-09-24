@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.vo.JobDetailVo" %>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.JobDetailVo" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.IJobDetailConstants" %>
 <%  //取出本条记录
 	JobDetailVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (JobDetailVo)request.getAttribute(IJobDetailConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

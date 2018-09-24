@@ -3,7 +3,6 @@ package org.quickbundle.modules.message;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.quickbundle.modules.message.dao.RmMessageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 

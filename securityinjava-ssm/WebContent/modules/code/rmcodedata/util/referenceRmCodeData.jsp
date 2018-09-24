@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.modules.code.rmcodedata.vo.RmCodeDataVo" %>
-<%@page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
+<%@page import="org.quickbundle.modules.code.rmcodedata.RmCodeDataVo" %>
+<%@page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmCodeDataConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

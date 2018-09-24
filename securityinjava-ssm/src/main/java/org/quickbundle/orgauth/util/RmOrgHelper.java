@@ -12,7 +12,7 @@ import org.quickbundle.config.RmConfig;
 import org.quickbundle.orgauth.IOrgauthConstants;
 import org.quickbundle.orgauth.cache.RmFunctionNodeCache;
 import org.quickbundle.orgauth.itf.IUtOrgTree;
-import org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo;
+import org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeVo;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.common.RmCommonVo;

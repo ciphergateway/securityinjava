@@ -5,8 +5,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmrole.vo.RmRoleVo" %>
-<%@ page import="org.quickbundle.orgauth.rmrole.util.IRmRoleConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmrole.RmRoleVo" %>
+<%@ page import="org.quickbundle.orgauth.rmrole.IRmRoleConstants" %>
 <%  //取出本条记录
 	RmRoleVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmRoleVo)request.getAttribute(IRmRoleConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

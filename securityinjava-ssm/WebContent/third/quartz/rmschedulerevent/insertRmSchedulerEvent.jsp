@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.vo.RmSchedulerEventVo" %>
-<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.util.IRmSchedulerEventConstants" %>
+<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventVo" %>
+<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.IRmSchedulerEventConstants" %>
 <%  //判断是否为修改页面
   	RmSchedulerEventVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

@@ -2,7 +2,7 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.modules.message.vo.RmMessageVo" %>
+<%@ page import="org.quickbundle.modules.message.RmMessageVo" %>
 <%@ page import="org.quickbundle.modules.message.IRmMessageConstants" %>
 
 <%  //取出本条记录

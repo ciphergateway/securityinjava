@@ -26,10 +26,10 @@
 	<bean id="org.quickbundle.project.login.IRmSessionService" class="org.quickbundle.project.login.RmSessionService"/>
 
 	<!--RmCommon通用方法的bean-->
-	<bean id="IRmCommonService" class="org.quickbundle.project.common.service.RmCommonService">
-		<property name="dao" ref="org.quickbundle.project.common.dao.RmCommonDao"/>
+	<bean id="IRmCommonService" class="org.quickbundle.project.common.RmCommonService">
+		<property name="dao" ref="org.quickbundle.project.common.RmCommonDao"/>
 	</bean>
-	<bean id="org.quickbundle.project.common.dao.RmCommonDao" class="org.quickbundle.project.common.dao.RmCommonDao">
+	<bean id="org.quickbundle.project.common.RmCommonDao" class="org.quickbundle.project.common.RmCommonDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 

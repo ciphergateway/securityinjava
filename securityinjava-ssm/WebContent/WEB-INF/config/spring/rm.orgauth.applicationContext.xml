@@ -19,51 +19,51 @@
 
 	<!--开始 配置RmPartyRelation的bean-->
 	<!--RmPartyRelation的业务层-->
-	<bean id="IRmPartyRelationService" class="org.quickbundle.orgauth.rmpartyrelation.service.impl.RmPartyRelationService">
+	<bean id="IRmPartyRelationService" class="org.quickbundle.orgauth.rmpartyrelation.RmPartyRelationService">
 		<property name="dao" ref="IRmPartyRelationDao"/>
 	</bean>
 	<!--RmPartyRelation的数据访问层-->
-	<bean id="IRmPartyRelationDao" class="org.quickbundle.orgauth.rmpartyrelation.dao.impl.RmPartyRelationDao">
+	<bean id="IRmPartyRelationDao" class="org.quickbundle.orgauth.rmpartyrelation.RmPartyRelationDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmPartyRelation的bean-->
 	<!--开始 配置RmParty的bean-->
 	<!--RmParty的业务层-->
-	<bean id="IRmPartyService" class="org.quickbundle.orgauth.rmparty.service.impl.RmPartyService">
+	<bean id="IRmPartyService" class="org.quickbundle.orgauth.rmparty.RmPartyService">
 		<property name="dao" ref="IRmPartyDao"/>
 	</bean>
 	<!--RmParty的数据访问层-->
-	<bean id="IRmPartyDao" class="org.quickbundle.orgauth.rmparty.dao.impl.RmPartyDao">
+	<bean id="IRmPartyDao" class="org.quickbundle.orgauth.rmparty.RmPartyDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmParty的bean-->
 	<!--开始 配置RmPartyType的bean-->
 	<!--RmPartyType的业务层-->
-	<bean id="IRmPartyTypeService" class="org.quickbundle.orgauth.rmpartytype.service.impl.RmPartyTypeService">
+	<bean id="IRmPartyTypeService" class="org.quickbundle.orgauth.rmpartytype.RmPartyTypeService">
 		<property name="dao" ref="IRmPartyTypeDao"/>
 	</bean>
 	<!--RmPartyType的数据访问层-->
-	<bean id="IRmPartyTypeDao" class="org.quickbundle.orgauth.rmpartytype.dao.impl.RmPartyTypeDao">
+	<bean id="IRmPartyTypeDao" class="org.quickbundle.orgauth.rmpartytype.RmPartyTypeDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmPartyType的bean-->
 	<!--开始 配置RmPartyTypeRelationRule的bean-->
 	<!--RmPartyTypeRelationRule的业务层-->
-	<bean id="IRmPartyTypeRelationRuleService" class="org.quickbundle.orgauth.rmpartytyperelationrule.service.impl.RmPartyTypeRelationRuleService">
+	<bean id="IRmPartyTypeRelationRuleService" class="org.quickbundle.orgauth.rmpartytyperelationrule.RmPartyTypeRelationRuleService">
 		<property name="dao" ref="IRmPartyTypeRelationRuleDao"/>
 	</bean>
 	<!--RmPartyTypeRelationRule的数据访问层-->
-	<bean id="IRmPartyTypeRelationRuleDao" class="org.quickbundle.orgauth.rmpartytyperelationrule.dao.impl.RmPartyTypeRelationRuleDao">
+	<bean id="IRmPartyTypeRelationRuleDao" class="org.quickbundle.orgauth.rmpartytyperelationrule.RmPartyTypeRelationRuleDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmPartyTypeRelationRule的bean-->
 	<!--开始 配置RmPartyView的bean-->
 	<!--RmPartyView的业务层-->
-	<bean id="IRmPartyViewService" class="org.quickbundle.orgauth.rmpartyview.service.impl.RmPartyViewService">
+	<bean id="IRmPartyViewService" class="org.quickbundle.orgauth.rmpartyview.RmPartyViewService">
 		<property name="dao" ref="IRmPartyViewDao"/>
 	</bean>
 	<!--RmPartyView的数据访问层-->
-	<bean id="IRmPartyViewDao" class="org.quickbundle.orgauth.rmpartyview.dao.impl.RmPartyViewDao">
+	<bean id="IRmPartyViewDao" class="org.quickbundle.orgauth.rmpartyview.RmPartyViewDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmPartyView的bean-->
@@ -71,91 +71,91 @@
 
 	<!--开始 配置RmUserOnlineRecord的bean-->
 	<!--RmUserOnlineRecord的业务层-->
-	<bean id="IRmUserOnlineRecordService" class="org.quickbundle.orgauth.rmuseronlinerecord.service.impl.RmUserOnlineRecordService">
+	<bean id="IRmUserOnlineRecordService" class="org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordService">
 		<property name="dao" ref="IRmUserOnlineRecordDao"/>
 	</bean>
 	<!--RmUserOnlineRecord的数据访问层-->
-	<bean id="IRmUserOnlineRecordDao" class="org.quickbundle.orgauth.rmuseronlinerecord.dao.impl.RmUserOnlineRecordDao">
+	<bean id="IRmUserOnlineRecordDao" class="org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmUserOnlineRecord的bean-->
 	<!--开始 配置RmUser的bean-->
 	<!--RmUser的业务层-->
-	<bean id="IRmUserService" class="org.quickbundle.orgauth.rmuser.service.impl.RmUserService">
+	<bean id="IRmUserService" class="org.quickbundle.orgauth.rmuser.RmUserService">
 		<property name="dao" ref="IRmUserDao"/>
 	</bean>
 	<!--RmUser的数据访问层-->
-	<bean id="IRmUserDao" class="org.quickbundle.orgauth.rmuser.dao.impl.RmUserDao">
+	<bean id="IRmUserDao" class="org.quickbundle.orgauth.rmuser.RmUserDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmUser的bean-->
 	<!--开始 配置RmRole的bean-->
 	<!--RmRole的业务层-->
-	<bean id="IRmRoleService" class="org.quickbundle.orgauth.rmrole.service.impl.RmRoleService">
+	<bean id="IRmRoleService" class="org.quickbundle.orgauth.rmrole.RmRoleService">
 		<property name="dao" ref="IRmRoleDao"/>
 	</bean>
 	<!--RmRole的数据访问层-->
-	<bean id="IRmRoleDao" class="org.quickbundle.orgauth.rmrole.dao.impl.RmRoleDao">
+	<bean id="IRmRoleDao" class="org.quickbundle.orgauth.rmrole.RmRoleDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmRole的bean-->
 	<!--开始 配置RmPartyRole的bean-->
 	<!--RmPartyRole的业务层-->
-	<bean id="IRmPartyRoleService" class="org.quickbundle.orgauth.rmpartyrole.service.impl.RmPartyRoleService">
+	<bean id="IRmPartyRoleService" class="org.quickbundle.orgauth.rmpartyrole.RmPartyRoleService">
 		<property name="dao" ref="IRmPartyRoleDao"/>
 	</bean>
 	<!--RmPartyRole的数据访问层-->
-	<bean id="IRmPartyRoleDao" class="org.quickbundle.orgauth.rmpartyrole.dao.impl.RmPartyRoleDao">
+	<bean id="IRmPartyRoleDao" class="org.quickbundle.orgauth.rmpartyrole.RmPartyRoleDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmPartyRole的bean-->
 	<!--开始 配置RmFunctionNode的bean-->
 	<!--RmFunctionNode的业务层-->
-	<bean id="IRmFunctionNodeService" class="org.quickbundle.orgauth.rmfunctionnode.service.impl.RmFunctionNodeService">
+	<bean id="IRmFunctionNodeService" class="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeService">
 		<property name="dao" ref="IRmFunctionNodeDao"/>
 	</bean>
 	<!--RmFunctionNode的数据访问层-->
-	<bean id="IRmFunctionNodeDao" class="org.quickbundle.orgauth.rmfunctionnode.dao.impl.RmFunctionNodeDao">
+	<bean id="IRmFunctionNodeDao" class="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmFunctionNode的bean-->
 	<!--开始 配置RmAuthorize的bean-->
 	<!--RmAuthorize的业务层-->
-	<bean id="IRmAuthorizeService" class="org.quickbundle.orgauth.rmauthorize.service.impl.RmAuthorizeService">
+	<bean id="IRmAuthorizeService" class="org.quickbundle.orgauth.rmauthorize.RmAuthorizeService">
 		<property name="dao" ref="IRmAuthorizeDao"/>
 	</bean>
 	<!--RmAuthorize的数据访问层-->
-	<bean id="IRmAuthorizeDao" class="org.quickbundle.orgauth.rmauthorize.dao.impl.RmAuthorizeDao">
+	<bean id="IRmAuthorizeDao" class="org.quickbundle.orgauth.rmauthorize.RmAuthorizeDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmAuthorize的bean-->
 	<!--开始 配置RmAuthorizeResource的bean-->
 	<!--RmAuthorizeResource的业务层-->
-	<bean id="IRmAuthorizeResourceService" class="org.quickbundle.orgauth.rmauthorizeresource.service.impl.RmAuthorizeResourceService">
+	<bean id="IRmAuthorizeResourceService" class="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceService">
 		<property name="dao" ref="IRmAuthorizeResourceDao"/>
 	</bean>
 	<!--RmAuthorizeResource的数据访问层-->
-	<bean id="IRmAuthorizeResourceDao" class="org.quickbundle.orgauth.rmauthorizeresource.dao.impl.RmAuthorizeResourceDao">
+	<bean id="IRmAuthorizeResourceDao" class="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmAuthorizeResource的bean-->
 	<!--开始 配置RmAuthorizeResourceRecord的bean-->
 	<!--RmAuthorizeResourceRecord的业务层-->
-	<bean id="IRmAuthorizeResourceRecordService" class="org.quickbundle.orgauth.rmauthorizeresourcerecord.service.impl.RmAuthorizeResourceRecordService">
+	<bean id="IRmAuthorizeResourceRecordService" class="org.quickbundle.orgauth.rmauthorizeresourcerecord.RmAuthorizeResourceRecordService">
 		<property name="dao" ref="IRmAuthorizeResourceRecordDao"/>
 	</bean>
 	<!--RmAuthorizeResourceRecord的数据访问层-->
-	<bean id="IRmAuthorizeResourceRecordDao" class="org.quickbundle.orgauth.rmauthorizeresourcerecord.dao.impl.RmAuthorizeResourceRecordDao">
+	<bean id="IRmAuthorizeResourceRecordDao" class="org.quickbundle.orgauth.rmauthorizeresourcerecord.RmAuthorizeResourceRecordDao">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	<!--结束 配置RmAuthorizeResourceRecord的bean-->
 	
 	
 	<!--开始组织权限扩展接口的bean-->
-	<bean id="IRmOrgService" class="org.quickbundle.orgauth.util.impl.RmOrgService" />
+	<bean id="IRmOrgService" class="org.quickbundle.orgauth.util.RmOrgService" />
 	<!--结束组织权限扩展接口的bean-->
 	
 	<!--扩展接口的bean-->
-	<bean id="IRmCustomOrgService" class="org.quickbundle.orgauth.custom.impl.RmCustomOrgService" />
+	<bean id="IRmCustomOrgService" class="org.quickbundle.orgauth.custom.RmCustomOrgService" />
 	
 </beans>

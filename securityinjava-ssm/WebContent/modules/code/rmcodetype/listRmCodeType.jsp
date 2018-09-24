@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.modules.code.rmcodetype.vo.RmCodeTypeVo" %>
-<%@ page import="org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodetype.RmCodeTypeVo" %>
+<%@ page import="org.quickbundle.modules.code.rmcodetype.IRmCodeTypeConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getParameter(IRmCodeTypeConstants.REQUEST_IS_READ_ONLY))) {
@@ -223,8 +223,8 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmCodeTypeConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmCodeTypeConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="id"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>
@@ -240,7 +240,7 @@
 	<layout:collectionItem width="30%" title="备注" property="remark" sortable="true">
 		<bean:define id="rmValue" name="rmBean" property="remark"/>
 		<bean:define id="pk" name="rmBean" property="id"/>
-		<%="1".equals(rmValue) ? "<a target='_blank' href='" + request.getContextPath() + "/third/swfupload/globalUpload.jsp?bs_keyword=" + IRmCodeTypeConstants.TABLE_NAME + "&record_id=" + pk + "&REQUEST_IS_READ_ONLY=1'><img align='center' width='30' height='30' src='" + request.getContextPath() + "/images/icon/affix.gif' /></a>" : "" %>
+		<%="1".equals(rmValue) ? "<a target='_blank' href='" + request.getContextPath() + "/third/swfupload/globalUpload.jsp?bs_keyword=" + IRmCodeTypeConstants.TABLE_NAME + "&record_id=" + pk + "&REQUEST_IS_READ_ONLY=1'><img align='center' width='30' height='30' src='" + request.getContextPath() + "/images/icon/affix.gif' /></a>" : ""%>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title="数据量" property="data_sum" sortable="true"/>
 

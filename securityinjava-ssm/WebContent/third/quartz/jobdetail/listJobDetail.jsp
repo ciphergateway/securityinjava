@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.vo.JobDetailVo" %>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.JobDetailVo" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.IJobDetailConstants" %>
 <%  //取出List
 	List<JobDetailVo> lResult = null;  //定义结果列表的List变量
 	if(request.getAttribute(IJobDetailConstants.REQUEST_BEANS) != null) {  //如果request中的beans不为空
@@ -137,8 +137,8 @@
 	<layout:collectionItem width="2%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IJobDetailConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IJobDetailConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="job_name"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>

@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.modules.log.rmlog.vo.RmLogVo" %>
-<%@ page import="org.quickbundle.modules.log.rmlog.util.IRmLogConstants" %>
+<%@ page import="org.quickbundle.modules.log.rmlog.RmLogVo" %>
+<%@ page import="org.quickbundle.modules.log.rmlog.IRmLogConstants" %>
 <%  //取出本条记录
 	RmLogVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmLogVo)request.getAttribute(IRmLogConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

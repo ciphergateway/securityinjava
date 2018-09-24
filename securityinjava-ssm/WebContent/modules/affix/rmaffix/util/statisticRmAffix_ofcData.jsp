@@ -5,7 +5,7 @@
 <%@page import="org.springframework.jdbc.core.RowMapper"%>
 <%@page import="org.quickbundle.util.RmKeyCountList"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants"%>
+<%@page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants"%>
 <%
 	final RmKeyCountList<String> kc = new RmKeyCountList<String>(); 
 	RmProjectHelper.getCommonServiceInstance().query("select mime_type as rm_key, count(mime_type) as rm_count from RM_AFFIX group by mime_type", new RowMapper() {

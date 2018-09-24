@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.vo.RmPartyTypeRelationRuleVo" %>
-<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.util.IRmPartyTypeRelationRuleConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.RmPartyTypeRelationRuleVo" %>
+<%@ page import="org.quickbundle.orgauth.rmpartytyperelationrule.IRmPartyTypeRelationRuleConstants" %>
 <%  //判断是否为修改页面
   	RmPartyTypeRelationRuleVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

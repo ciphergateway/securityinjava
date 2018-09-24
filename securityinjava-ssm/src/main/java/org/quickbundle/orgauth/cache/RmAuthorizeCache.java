@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.orgauth.rmauthorize.service.IRmAuthorizeService;
-import org.quickbundle.orgauth.rmauthorize.util.IRmAuthorizeConstants;
-import org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo;
+import org.quickbundle.orgauth.rmauthorize.IRmAuthorizeConstants;
+import org.quickbundle.orgauth.rmauthorize.IRmAuthorizeService;
+import org.quickbundle.orgauth.rmauthorize.RmAuthorizeVo;
 import org.quickbundle.project.cache.RmAbstractCache;
 import org.quickbundle.tools.helper.RmLogHelper;
 

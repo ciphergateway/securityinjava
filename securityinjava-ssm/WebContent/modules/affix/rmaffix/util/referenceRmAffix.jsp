@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
-<%@page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
+<%@page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo" %>
+<%@page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmAffixConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

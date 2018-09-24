@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorize.vo.RmAuthorizeVo" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorize.util.IRmAuthorizeConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorize.RmAuthorizeVo" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorize.IRmAuthorizeConstants" %>
 <%  //判断是否为修改页面
   	RmAuthorizeVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

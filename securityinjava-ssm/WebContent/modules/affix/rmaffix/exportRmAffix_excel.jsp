@@ -13,9 +13,9 @@
 <%@ page import="org.quickbundle.base.RmPageVo"%>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@ page import="org.quickbundle.tools.helper.RmDateHelper"%>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.service.IRmAffixService" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.IRmAffixService" %>
 <%
 	IRmAffixService service = (IRmAffixService)RmBeanFactory.getBean(IRmAffixConstants.SERVICE_KEY);	
 	List<RmAffixVo> lResult = null;  //定义结果列表的List变量

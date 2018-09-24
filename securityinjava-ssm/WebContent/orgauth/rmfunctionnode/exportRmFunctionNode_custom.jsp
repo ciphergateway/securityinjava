@@ -2,7 +2,7 @@
 <%@page import="java.util.Map"%>
 <%@page import="org.quickbundle.util.RmSequenceMap"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
-<%@page import="org.quickbundle.orgauth.rmfunctionnode.util.IRmFunctionNodeConstants" %>
+<%@page import="org.quickbundle.orgauth.rmfunctionnode.IRmFunctionNodeConstants" %>
 <%  //取出List
 	String queryCondition = session.getAttribute(IRmFunctionNodeConstants.REQUEST_QUERY_CONDITION).toString();
 	Integer recordCount = Integer.parseInt(session.getAttribute("RECORD_COUNT").toString());

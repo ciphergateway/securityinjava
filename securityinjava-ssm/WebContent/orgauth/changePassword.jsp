@@ -1,6 +1,6 @@
 <%@page import="org.quickbundle.project.RmCryptoHelper"%>
-<%@page import="org.quickbundle.orgauth.rmuser.service.IRmUserService"%>
-<%@page import="org.quickbundle.orgauth.rmuser.util.IRmUserConstants"%>
+<%@page import="org.quickbundle.orgauth.rmuser.IRmUserService"%>
+<%@page import="org.quickbundle.orgauth.rmuser.IRmUserConstants"%>
 <%@page import="org.quickbundle.project.login.RmUserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>

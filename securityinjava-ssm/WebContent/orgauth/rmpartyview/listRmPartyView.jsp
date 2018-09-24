@@ -2,8 +2,8 @@
 <%@ page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.orgauth.rmpartyview.vo.RmPartyViewVo" %>
-<%@ page import="org.quickbundle.orgauth.rmpartyview.util.IRmPartyViewConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmpartyview.RmPartyViewVo" %>
+<%@ page import="org.quickbundle.orgauth.rmpartyview.IRmPartyViewConstants" %>
 
 
 
@@ -153,8 +153,8 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmPartyViewConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmPartyViewConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="id"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>

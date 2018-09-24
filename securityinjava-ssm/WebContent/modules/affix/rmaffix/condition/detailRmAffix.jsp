@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getAttribute(IRmAffixConstants.REQUEST_IS_READ_ONLY))) {

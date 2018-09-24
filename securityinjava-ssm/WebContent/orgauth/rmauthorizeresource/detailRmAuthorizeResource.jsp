@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.vo.RmAuthorizeResourceVo" %>
-<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.util.IRmAuthorizeResourceConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceVo" %>
+<%@ page import="org.quickbundle.orgauth.rmauthorizeresource.IRmAuthorizeResourceConstants" %>
 <%  //取出本条记录
 	RmAuthorizeResourceVo resultVo = null;  //定义一个临时的vo变量
 	resultVo = (RmAuthorizeResourceVo)request.getAttribute(IRmAuthorizeResourceConstants.REQUEST_BEAN);  //从request中取出vo, 赋值给resultVo

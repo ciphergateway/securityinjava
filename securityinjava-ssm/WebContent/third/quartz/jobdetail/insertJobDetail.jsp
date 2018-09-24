@@ -3,8 +3,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.vo.JobDetailVo" %>
-<%@ page import="org.quickbundle.third.quartz.jobdetail.util.IJobDetailConstants" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.JobDetailVo" %>
+<%@ page import="org.quickbundle.third.quartz.jobdetail.IJobDetailConstants" %>
 <%  //判断是否为修改页面
   	JobDetailVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)

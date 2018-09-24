@@ -13,9 +13,9 @@
 <%@page import="org.quickbundle.tools.helper.RmZipHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.vo.RmAffixVo" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.util.IRmAffixConstants" %>
-<%@ page import="org.quickbundle.modules.affix.rmaffix.service.IRmAffixService" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants" %>
+<%@ page import="org.quickbundle.modules.affix.rmaffix.IRmAffixService" %>
 <%
 	boolean isSubmit = false;
 	if("1".equals(request.getParameter("isSubmit"))) {

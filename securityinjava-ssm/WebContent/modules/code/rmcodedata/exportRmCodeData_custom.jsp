@@ -2,7 +2,7 @@
 <%@page import="java.util.Map"%>
 <%@page import="org.quickbundle.util.RmSequenceMap"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
-<%@page import="org.quickbundle.modules.code.rmcodedata.util.IRmCodeDataConstants" %>
+<%@page import="org.quickbundle.modules.code.rmcodedata.IRmCodeDataConstants" %>
 <%  //取出List
 	String queryCondition = session.getAttribute(IRmCodeDataConstants.REQUEST_QUERY_CONDITION).toString();
 	Integer recordCount = Integer.parseInt(session.getAttribute("RECORD_COUNT").toString());

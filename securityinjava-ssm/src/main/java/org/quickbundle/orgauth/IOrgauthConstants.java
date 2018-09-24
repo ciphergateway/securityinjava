@@ -3,8 +3,8 @@ package org.quickbundle.orgauth;
 import org.quickbundle.project.IGlobalConstants;
 
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.orgauth.rmrole.util.IRmRoleConstants;
-import org.quickbundle.orgauth.rmuser.util.IRmUserConstants;
+import org.quickbundle.orgauth.rmrole.IRmRoleConstants;
+import org.quickbundle.orgauth.rmuser.IRmUserConstants;
 
 public interface IOrgauthConstants extends IGlobalConstants {
     

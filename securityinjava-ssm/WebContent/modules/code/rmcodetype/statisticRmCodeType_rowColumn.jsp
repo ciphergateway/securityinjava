@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@page import="org.quickbundle.tools.support.RmStatisticHandler"%>
-<%@page import="org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants" %>
+<%@page import="org.quickbundle.modules.code.rmcodetype.IRmCodeTypeConstants" %>
 <%  //取出本条记录
 	RmStatisticHandler sh = null;
 	sh = (RmStatisticHandler)request.getAttribute(IRmCodeTypeConstants.REQUEST_STATISTIC_HANDLER);  //从request中取出RmStatisticHandler, 赋值给sh

@@ -6,8 +6,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<%@page import="org.quickbundle.orgauth.rmrole.vo.RmRoleVo" %>
-<%@page import="org.quickbundle.orgauth.rmrole.util.IRmRoleConstants" %>
+<%@page import="org.quickbundle.orgauth.rmrole.RmRoleVo" %>
+<%@page import="org.quickbundle.orgauth.rmrole.IRmRoleConstants" %>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <%  //判断是否为修改页面
   	RmRoleVo resultVo = null;  //定义一个临时的vo变量

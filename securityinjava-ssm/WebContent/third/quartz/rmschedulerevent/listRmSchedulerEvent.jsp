@@ -3,8 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.vo.RmSchedulerEventVo" %>
-<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.util.IRmSchedulerEventConstants" %>
+<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventVo" %>
+<%@ page import="org.quickbundle.third.quartz.rmschedulerevent.IRmSchedulerEventConstants" %>
 <%  //取出List
 	List<RmSchedulerEventVo> lResult = null;  //定义结果列表的List变量
 	if(request.getAttribute(IRmSchedulerEventConstants.REQUEST_BEANS) != null) {  //如果request中的beans不为空
@@ -223,8 +223,8 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmSchedulerEventConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmSchedulerEventConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="id"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>
@@ -242,8 +242,10 @@
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("event_type")%>' property="event_type" sortable="true"/>
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("cost_millis")%>' property="cost_millis" sortable="true">
 		<bean:define id="cost_millis" name="rmBean" property="cost_millis"/>
-		<%long lCost_millis = Long.parseLong(String.valueOf(cost_millis));%>
-		<span title="<%=lCost_millis%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lCost_millis) %></span>
+		<%
+			long lCost_millis = Long.parseLong(String.valueOf(cost_millis));
+		%>
+		<span title="<%=lCost_millis%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lCost_millis)%></span>
 	</layout:collectionItem>	
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("result_status")%>' property="result_status" sortable="true"/>
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("create_time")%>' property="create_time" sortable="true">

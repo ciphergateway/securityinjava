@@ -1,7 +1,7 @@
 package org.quickbundle.base.service;
 
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.project.common.service.IRmCommonService;
+import org.quickbundle.project.common.IRmCommonService;
 
 public class RmService {
     /**

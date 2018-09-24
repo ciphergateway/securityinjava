@@ -1,9 +1,9 @@
 package org.quickbundle.modules.lock;
 
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.modules.lock.rmlock.service.IRmLockService;
-import org.quickbundle.modules.lock.rmlock.util.IRmLockConstants;
-import org.quickbundle.modules.lock.rmlock.vo.RmLockVo;
+import org.quickbundle.modules.lock.rmlock.IRmLockConstants;
+import org.quickbundle.modules.lock.rmlock.IRmLockService;
+import org.quickbundle.modules.lock.rmlock.RmLockVo;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
 import org.quickbundle.tools.helper.RmDateHelper;

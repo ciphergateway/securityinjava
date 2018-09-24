@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@page import="org.quickbundle.orgauth.util.impl.RmOrgService"%>
+<%@page import="org.quickbundle.orgauth.util.RmOrgService"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
@@ -8,8 +8,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.orgauth.rmuser.vo.RmUserVo" %>
-<%@ page import="org.quickbundle.orgauth.rmuser.util.IRmUserConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmuser.RmUserVo" %>
+<%@ page import="org.quickbundle.orgauth.rmuser.IRmUserConstants" %>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
 <%  //取出List
@@ -224,8 +224,8 @@
 	<layout:collectionItem width="3%"  title="序" style="text-align:center;">
 	<%
 		Integer rmOrderNumber = (Integer)pageContext.getAttribute("rmOrderNumber");
-		RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmUserConstants.RM_PAGE_VO);
-		out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
+			RmPageVo pageVo = (RmPageVo)pageContext.getRequest().getAttribute(IRmUserConstants.RM_PAGE_VO);
+			out.print((pageVo.getCurrentPage() - 1) * pageVo.getPageSize() + rmOrderNumber.intValue() + 1);
 	%>
 		<bean:define id="rmValue" name="rmBean" property="id"/>
 		<input type="hidden" signName="hiddenId" value="<%=rmValue%>"/>

@@ -89,7 +89,7 @@ public class DefaultWebServer {
 					tempFile = File.createTempFile("getpids", ".exe");
 
 					// extract the embedded getpids.exe file from the jar and save it to above file
-					pump(DefaultWebServer.class.getResourceAsStream("resource/getpids.exe"),
+					pump(DefaultWebServer.class.getResourceAsStream("getpids.exe"),
 							new FileOutputStream(tempFile), true, true);
 					cmd = new String[] { tempFile.getAbsolutePath() };
 				}

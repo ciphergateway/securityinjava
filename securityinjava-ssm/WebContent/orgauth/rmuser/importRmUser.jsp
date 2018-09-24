@@ -14,9 +14,9 @@
 <%@page import="org.quickbundle.tools.helper.RmZipHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@ page import="org.quickbundle.orgauth.rmuser.vo.RmUserVo" %>
-<%@ page import="org.quickbundle.orgauth.rmuser.util.IRmUserConstants" %>
-<%@ page import="org.quickbundle.orgauth.rmuser.service.IRmUserService" %>
+<%@ page import="org.quickbundle.orgauth.rmuser.RmUserVo" %>
+<%@ page import="org.quickbundle.orgauth.rmuser.IRmUserConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmuser.IRmUserService" %>
 <%
 	boolean isSubmit = false;
 	if("1".equals(request.getParameter("isSubmit"))) {

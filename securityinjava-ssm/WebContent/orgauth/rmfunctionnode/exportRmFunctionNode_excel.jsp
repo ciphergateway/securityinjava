@@ -13,9 +13,9 @@
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@ page import="org.quickbundle.tools.helper.RmDateHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
-<%@ page import="org.quickbundle.orgauth.rmfunctionnode.vo.RmFunctionNodeVo" %>
-<%@ page import="org.quickbundle.orgauth.rmfunctionnode.util.IRmFunctionNodeConstants" %>
-<%@ page import="org.quickbundle.orgauth.rmfunctionnode.service.IRmFunctionNodeService" %>
+<%@ page import="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeVo" %>
+<%@ page import="org.quickbundle.orgauth.rmfunctionnode.IRmFunctionNodeConstants" %>
+<%@ page import="org.quickbundle.orgauth.rmfunctionnode.IRmFunctionNodeService" %>
 <%
 	IRmFunctionNodeService service = (IRmFunctionNodeService)RmBeanFactory.getBean(IRmFunctionNodeConstants.SERVICE_KEY);	
 	List<RmFunctionNodeVo> lResult = null;  //定义结果列表的List变量

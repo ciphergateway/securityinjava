@@ -5,8 +5,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
-<%@page import="org.quickbundle.orgauth.rmauthorizeresource.vo.RmAuthorizeResourceVo" %>
-<%@page import="org.quickbundle.orgauth.rmauthorizeresource.util.IRmAuthorizeResourceConstants" %>
+<%@page import="org.quickbundle.orgauth.rmauthorizeresource.RmAuthorizeResourceVo" %>
+<%@page import="org.quickbundle.orgauth.rmauthorizeresource.IRmAuthorizeResourceConstants" %>
 <%
 	String referenceInputType = String.valueOf(request.getAttribute(IRmAuthorizeResourceConstants.REQUEST_REFERENCE_INPUT_TYPE));
 	if(referenceInputType == null || referenceInputType.length() == 0 || (!"checkbox".equals(referenceInputType.toLowerCase()) && !"radio".equals(referenceInputType.toLowerCase()))) {

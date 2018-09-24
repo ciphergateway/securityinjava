@@ -4,8 +4,8 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.base.RmPageVo"%>
-<%@ page import="org.quickbundle.modules.code.rmcodetype.vo.RmCodeTypeVo" %>
-<%@ page import="org.quickbundle.modules.code.rmcodetype.util.IRmCodeTypeConstants" %>
+<%@ page import="org.quickbundle.modules.code.rmcodetype.RmCodeTypeVo" %>
+<%@ page import="org.quickbundle.modules.code.rmcodetype.IRmCodeTypeConstants" %>
 <%  //判断是否只读
 	boolean isReadOnly = false;
 	if("1".equals(request.getAttribute(IRmCodeTypeConstants.REQUEST_IS_READ_ONLY))) {

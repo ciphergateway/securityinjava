@@ -3112,7 +3112,7 @@
 	<tag>
 		<name>collection</name>
 		<!--tagclass>fr.improve.struts.taglib.layout.collection.CollectionTag</tagclass-->
-		<tagclass>org.quickbundle.third.strutslayout.collection.RmCollectionTag</tagclass>
+		<tagclass>org.quickbundle.third.strutslayout.RmCollectionTag</tagclass>
 		<bodycontent>JSP</bodycontent>
 		<attribute>
 			<name>headLocked</name>
@@ -3329,7 +3329,7 @@
 	<tag>
 		<name>collectionItem</name>
 		<!--tagclass>fr.improve.struts.taglib.layout.collection.CollectionItemTag</tagclass-->
-		<tagclass>org.quickbundle.third.strutslayout.collection.RmCollectionItemTag</tagclass>
+		<tagclass>org.quickbundle.third.strutslayout.RmCollectionItemTag</tagclass>
 		<bodycontent>JSP</bodycontent>
 		<attribute>
 			<name>locked</name>
