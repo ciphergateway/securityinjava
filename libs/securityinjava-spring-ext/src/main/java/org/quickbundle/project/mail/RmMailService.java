@@ -1,7 +1,6 @@
 package org.quickbundle.project.mail;
 
 import org.quickbundle.tools.helper.RmDateHelper;
-import org.quickbundle.tools.support.mail.RmMailHandler;
 
 public class RmMailService implements IRmMailService {
 	private String mailSmtpHost;

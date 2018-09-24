@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-import org.quickbundle.util.RmSequenceCaseInsensitiveMap;
+import org.quickbundle.tools.support.RmSequenceCaseInsensitiveMap;
 
 
 /**

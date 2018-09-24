@@ -3,7 +3,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.util.List"%>
 <%@page import="org.springframework.jdbc.core.RowMapper"%>
-<%@page import="org.quickbundle.util.RmKeyCountList"%>
+<%@page import="org.quickbundle.tools.support.RmKeyCountList"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.modules.affix.rmaffix.IRmAffixConstants"%>
 <%

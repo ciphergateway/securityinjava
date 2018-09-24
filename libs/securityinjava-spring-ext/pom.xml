@@ -18,6 +18,17 @@
 			<artifactId>securityinjava-tools</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+		<dependency>
+			<groupId>org.safehaus.jug</groupId>
+			<artifactId>jug</artifactId>
+			<version>2.0.0</version>
+			<classifier>lgpl</classifier>
+		</dependency>
 
 		<!-- JSON begin -->
 		<dependency>

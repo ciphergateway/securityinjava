@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.encrypt;
+package org.quickbundle.project.crypto;
 
 import java.security.MessageDigest;
 

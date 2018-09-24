@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.mail;
+package org.quickbundle.project.mail;
 
 public class SendPassword {
 	private final static int DEFAULT_PASSWORD_LENGTH = 6;

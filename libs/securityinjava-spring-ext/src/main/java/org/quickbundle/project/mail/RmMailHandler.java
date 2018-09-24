@@ -8,7 +8,7 @@
  * 版本历史: 2005-11-23 17:11:16 创建1.0.0版 (baixiaoyong)
  *  
  */
-package org.quickbundle.tools.support.mail;
+package org.quickbundle.project.mail;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Properties;

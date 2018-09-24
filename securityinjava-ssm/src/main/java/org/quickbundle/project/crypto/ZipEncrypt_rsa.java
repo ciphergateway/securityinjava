@@ -1,9 +1,15 @@
-package org.quickbundle.tools.support.encrypt;
+package org.quickbundle.project.crypto;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.security.Key;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.util.UUID;
 import java.util.zip.ZipEntry;
@@ -11,21 +17,18 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
 
 /**
- * 对文件加密/解密和压缩/解压缩对象类
- * AES压缩加密/解压缩解密，网上一般用base64来对byte[]编码,其实不需要，指定AES/CBC/PKCS5Padding
-来指定加密解密时候位数不对的情况下，用pkcs5padding来附加位数，不过这个时候读解密的文件的时候，要多读16位的验证位就不会报异常
-
+ * 对文件压缩加密/解密解压缩 对象类
+ * RSA压缩加密/解压缩解密
  * 
- * @author 赵成明
  */
-public class ZipEncrypt_aes {
-	private void directoryZip(ZipOutputStream out, File f, String base)
+public class ZipEncrypt_rsa {
+	private static PrivateKey privateKey;
+
+	private static PublicKey publicKey;
+
+	private static void directoryZip(ZipOutputStream out, File f, String base)
 			throws Exception {
 		// 如果传入的是目录
 		if (f.isDirectory()) {
@@ -60,7 +63,8 @@ public class ZipEncrypt_aes {
 	 * @param file
 	 * @throws Exception
 	 */
-	private void fileZip(ZipOutputStream zos, File file) throws Exception {
+	private static void fileZip(ZipOutputStream zos, File file)
+			throws Exception {
 		if (file.isFile()) {
 			zos.putNextEntry(new ZipEntry(file.getName()));
 			FileInputStream fis = new FileInputStream(file);
@@ -83,7 +87,8 @@ public class ZipEncrypt_aes {
 	 * @param file
 	 * @throws Exception
 	 */
-	private void fileUnZip(ZipInputStream zis, File file) throws Exception {
+	private static void fileUnZip(ZipInputStream zis, File file)
+			throws Exception {
 		ZipEntry zip = zis.getNextEntry();
 		if (zip == null)
 			return;
@@ -111,7 +116,7 @@ public class ZipEncrypt_aes {
 	 * @param directory
 	 * @param zipFile
 	 */
-	private void zip(String directory, String zipFile) {
+	private static void zip(String directory, String zipFile) {
 		try {
 			ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(
 					zipFile));
@@ -128,7 +133,7 @@ public class ZipEncrypt_aes {
 	 * @param directory
 	 * @param zipFile
 	 */
-	private void unZip(String directory, String zipFile) {
+	private static void unZip(String directory, String zipFile) {
 		try {
 			ZipInputStream zis = new ZipInputStream(
 					new FileInputStream(zipFile));
@@ -149,13 +154,12 @@ public class ZipEncrypt_aes {
 	 * @param keyPath
 	 * @return
 	 */
-	private Key getKey(String keyPath) throws Exception {
+	public static Key getKey(String keyPath) throws Exception {
+		Key key = null;
 		FileInputStream fis = new FileInputStream(keyPath);
-		byte[] b = new byte[16];
-		fis.read(b);
-		SecretKeySpec dks = new SecretKeySpec(b, "AES");
-		fis.close();
-		return dks;
+		ObjectInputStream ofs = new ObjectInputStream(fis);
+		key = (Key) ofs.readObject();
+		return key;
 	}
 
 	/**
@@ -164,15 +168,13 @@ public class ZipEncrypt_aes {
 	 * @param srcFile
 	 * @param destFile
 	 */
-	private void encrypt(String srcFile, String destFile, Key privateKey)
+	private static void encrypt(String srcFile, String destFile, Key privateKey)
 			throws Exception {
-		SecureRandom sr = new SecureRandom();
-		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-		IvParameterSpec spec = new IvParameterSpec(privateKey.getEncoded());
-		cipher.init(Cipher.ENCRYPT_MODE, privateKey, spec, sr);
+		Cipher cipher = Cipher.getInstance("RSA");
+		cipher.init(Cipher.ENCRYPT_MODE, privateKey);
 		FileInputStream fis = new FileInputStream(srcFile);
 		FileOutputStream fos = new FileOutputStream(destFile);
-		byte[] b = new byte[2048];
+		byte[] b = new byte[53];
 		while (fis.read(b) != -1) {
 			fos.write(cipher.doFinal(b));
 		}
@@ -188,17 +190,15 @@ public class ZipEncrypt_aes {
 	 * @param privateKey
 	 * @throws Exception
 	 */
-	private void decrypt(String srcFile, String destFile, Key privateKey)
+	private static void decrypt(String srcFile, String destFile, Key privateKey)
 			throws Exception {
-		SecureRandom sr = new SecureRandom();
-		Cipher ciphers = Cipher.getInstance("AES/CBC/PKCS5Padding");
-		IvParameterSpec spec = new IvParameterSpec(privateKey.getEncoded());
-		ciphers.init(Cipher.DECRYPT_MODE, privateKey, spec, sr);
+		Cipher cipher = Cipher.getInstance("RSA");
+		cipher.init(Cipher.DECRYPT_MODE, privateKey);
 		FileInputStream fis = new FileInputStream(srcFile);
 		FileOutputStream fos = new FileOutputStream(destFile);
-		byte[] b = new byte[2064];
+		byte[] b = new byte[64];
 		while (fis.read(b) != -1) {
-			fos.write(ciphers.doFinal(b));
+			fos.write(cipher.doFinal(b));
 		}
 		fos.close();
 		fis.close();
@@ -214,24 +214,29 @@ public class ZipEncrypt_aes {
 	 * @param keyfile
 	 *            公钥存放地点
 	 */
-	public void encryptZip(String srcFile, String destfile, String keyfile)
-			throws Exception {
+	public static void encryptZip(String srcFile, String destfile,
+			String keyfile) throws Exception {
 		SecureRandom sr = new SecureRandom();
-		KeyGenerator kg = KeyGenerator.getInstance("AES");
-		kg.init(128, sr);
-		SecretKey key = kg.generateKey();
+		KeyPairGenerator kg = KeyPairGenerator.getInstance("RSA");
+		kg.initialize(512, sr);
+		// 产生新密钥对
+		KeyPair kp = kg.generateKeyPair();
+		// 获得私匙
+		ZipEncrypt_rsa.privateKey = kp.getPrivate();
+		// 获得公钥
+		ZipEncrypt_rsa.publicKey = kp.getPublic();
 		File f = new File(keyfile);
-		if (!f.getParentFile().exists())
-			f.getParentFile().mkdirs();
 		f.createNewFile();
 		FileOutputStream fos = new FileOutputStream(f);
-		fos.write(key.getEncoded());
+		ObjectOutputStream dos = new ObjectOutputStream(fos);
+		dos.writeObject(ZipEncrypt_rsa.publicKey);
+
 		File temp = new File(UUID.randomUUID().toString() + ".zip");
 		temp.deleteOnExit();
 		// 先压缩文件
 		zip(srcFile, temp.getAbsolutePath());
 		// 对文件加密
-		encrypt(temp.getAbsolutePath(), destfile, key);
+		encrypt(temp.getAbsolutePath(), destfile, privateKey);
 		temp.delete();
 	}
 
@@ -245,27 +250,22 @@ public class ZipEncrypt_aes {
 	 * @param publicKey
 	 *            公钥
 	 */
-	public void decryptUnzip(String srcfile, String destfile, String keyfile)
-			throws Exception {
+	public static void decryptUnzip(String srcfile, String destfile,
+			Key publicKey) throws Exception {
 		// 先对文件解密
 		File temp = new File(UUID.randomUUID().toString() + ".zip");
 		temp.deleteOnExit();
-		decrypt(srcfile, temp.getAbsolutePath(), this.getKey(keyfile));
+		decrypt(srcfile, temp.getAbsolutePath(), publicKey);
 		// 解压缩
 		unZip(destfile, temp.getAbsolutePath());
 		temp.delete();
 	}
 
 	public static void main(String args[]) throws Exception {
-		long a = System.currentTimeMillis();
-		new ZipEncrypt_aes().encryptZip("e:/com", "e:/comXXX/page.zip",
-				"e:/comXXX/public.key");
+		
+		ZipEncrypt_rsa.encryptZip("E:/download/tmp", "E:/download/tmp.zip", "E:/download/b.key");
 
-		System.out.println(System.currentTimeMillis() - a);
-		a = System.currentTimeMillis();
+//		ZipEncrypt.decryptUnzip(destZip, srcPath + 2,ZipEncrypt.getKey(keyfile));
 
-		new ZipEncrypt_aes().decryptUnzip("e:/comXXX/page.zip", "e:/comxxx",
-				"e:/comXXX/public.key");
-		System.out.println(System.currentTimeMillis() - a);
 	}
 }

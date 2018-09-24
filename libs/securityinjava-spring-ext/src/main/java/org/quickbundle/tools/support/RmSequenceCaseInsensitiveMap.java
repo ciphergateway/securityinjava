@@ -9,12 +9,13 @@
  * 2006-4-8 21:36:30 创建1.0.0版 (Administrator)
  * 
  */
-package org.quickbundle.util;
+package org.quickbundle.tools.support;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.collections.map.CaseInsensitiveMap;
+import org.quickbundle.util.RmSequenceSet;
 
 /**
  * 实现一个标准的java.util.Map，按照put的先后顺序读取，key值对大小写不敏感
