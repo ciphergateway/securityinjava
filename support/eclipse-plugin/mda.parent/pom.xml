@@ -20,14 +20,14 @@
 		<tycho.version>1.1.0</tycho.version>
 	</properties>
 	
+
+
 	<repositories>
 		<!-- configure p2 repository to resolve against -->
 		<repository>
-			<id>indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-			<!-- file URL for faster and offline builds -->
-			<!-- <url>file:/${basedir}/../../helios-rcp/</url> -->
+			<id>eclipse-indigo</id>
+		   	<layout>p2</layout>
+		   	<url>http://download.eclipse.org/releases/indigo</url>
 		</repository>
 		<!-- SWTbot is not part of the helios update site -->
 		<repository>

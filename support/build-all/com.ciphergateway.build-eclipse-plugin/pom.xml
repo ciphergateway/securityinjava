@@ -4,7 +4,7 @@
 		<groupId>com.ciphergateway</groupId>
 		<artifactId>build-ide.parent</artifactId>
 		<version>6.0.0</version>
-		<relativePath>../build.parent/pom.xml</relativePath>
+		<relativePath>../build-all.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>com.ciphergateway.build-eclipse-plugin</artifactId>
 	<packaging>jar</packaging>
