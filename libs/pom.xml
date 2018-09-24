@@ -18,7 +18,7 @@ Contributors:
 	<modules>
         <module>java-lib.parent</module>
         <module>securityinjava-tools</module>
-	    <module>securityinjava-core</module>
+	    <module>securityinjava-spring-ext</module>
   </modules>
 	
 </project>

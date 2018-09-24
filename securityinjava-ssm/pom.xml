@@ -149,7 +149,7 @@
 							<content>
 <![CDATA[eclipse.preferences.version=1
 encoding/<project>=UTF-8
-encoding/tools.bat=GBK]]>
+encoding//res/tools.bat=GBK]]>
 							</content>
 						</file>
 					</additionalConfig>
@@ -347,7 +347,7 @@ encoding/tools.bat=GBK]]>
 		</dependency>
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
-			<artifactId>securityinjava-core</artifactId>
+			<artifactId>securityinjava-spring-ext</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
 
