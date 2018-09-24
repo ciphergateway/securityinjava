@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>support/java-lib</module>
+    <module>libs</module>
     <module>securityinjava-ssm</module>
     <module>securityinjava-vertx</module>
     <module>support/eclipse-plugin</module>
