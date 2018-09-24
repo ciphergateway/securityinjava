@@ -12,8 +12,6 @@
     <module>libs</module>
     <module>securityinjava-ssm</module>
     <module>securityinjava-vertx</module>
-    <module>support/eclipse-plugin</module>
-    <module>support/build</module>
   </modules>
 
 </project>
