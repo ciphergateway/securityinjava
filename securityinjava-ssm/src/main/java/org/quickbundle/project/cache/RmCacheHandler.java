@@ -27,7 +27,7 @@ import org.quickbundle.third.webservice.RmPasswordCallback;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 
-@WebService(endpointInterface = "org.quickbundle.itf.cache.IRmCacheHandler")
+@WebService(endpointInterface = "org.quickbundle.itf.IRmCacheHandler")
 public class RmCacheHandler<T> implements IRmCacheHandler<T>{
 
 	/**

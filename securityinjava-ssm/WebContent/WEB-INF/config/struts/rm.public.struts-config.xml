@@ -11,7 +11,7 @@
 	<!-- ========== Global Exceptions Configuration ============================== -->
 	<global-exceptions >
         <exception
-	         handler="org.quickbundle.third.struts.action.RmExceptionHandler"
+	         handler="org.quickbundle.third.struts.RmExceptionHandler"
 	         key="GLOBAL_ERROR_CODE"
 	         scope="request"
 	         path="/jsp/common/err.jsp"

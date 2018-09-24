@@ -194,7 +194,7 @@
 	</logger>
 
     <!--错误监控-->
-	<logger name="org.quickbundle.third.struts.action.RmExceptionHandler" additivity="false">
+	<logger name="org.quickbundle.third.struts.RmExceptionHandler" additivity="false">
         <level value="DEBUG"/>
         <appender-ref ref="stdout" />
 		<appender-ref ref="errorf" />

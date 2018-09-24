@@ -129,7 +129,7 @@
 	<!-- //TODO Clean struts begin -->
 	<servlet>
 		<servlet-name>action</servlet-name>
-		<servlet-class>org.quickbundle.third.struts.action.RmActionServlet</servlet-class>
+		<servlet-class>org.quickbundle.third.struts.RmActionServlet</servlet-class>
 		<init-param>
 			<param-name>init-classes</param-name>
 			<param-value></param-value>

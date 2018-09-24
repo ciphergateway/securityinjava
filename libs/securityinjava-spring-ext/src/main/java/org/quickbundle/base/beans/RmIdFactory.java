@@ -16,7 +16,7 @@ public class RmIdFactory {
         if(!isInitId) {
             synchronized (RmIdFactory.class) {
                 if(!isInitId) {
-                	idGenerator = (IRmIdGenerator) RmBeanFactory.getBean("org.quickbundle.itf.base.IRmIdGenerator");
+                	idGenerator = (IRmIdGenerator) RmBeanFactory.getBean("org.quickbundle.itf.IRmIdGenerator");
                 	idGenerator.init();
                     isInitId = true;
                 }

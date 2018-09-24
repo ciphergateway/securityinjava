@@ -64,8 +64,8 @@
 			<!-- soa -->
 			<url>^/(services|api)(|/.*)$</url>
 		</ignoreUrls>
-		<!-- valid business service url, to be monitor and log -->
-		<validBsUrlMatch>^.*((\.(jsp|do|py))|/[\w]*)$</validBsUrlMatch>
+		<!-- valid business service url, to be monitor and log ^.*((\.(jsp|do|py))|/[\w]*)$ -->
+		<validBsUrlMatch>^.*((\.(jsp|do|py))|/\w*)$</validBsUrlMatch>
 	</org.quickbundle.project.filter.RmPrivilegeFilter>
 	
 	<org.quickbundle.project.RmProjectHelper>
