@@ -86,21 +86,30 @@ In your issue report please make sure you provide the following information:
 # 3. Installation
 
 ## 3.1 编译打包
-### 一键编译securityinjava-6.0.0插件的方式一（推荐）
+### 一键编译securityinjava-6.0.0 Java工程
+		1，git clone https://github.com/ciphergateway/securityinjava
+		2，先安装基础jar包和必要组件到$M2_REPO。
+			cd securityinjava
+			mvn clean package【注：第一次执行需要下载关联maven资源，第二次执行就很快，建议配合本地Nexus使用】
+		3，把securutyinjava-ssm/WebContent/目录发布到Tomcat-6.0.0以上或其他JavaEE中间件即可运行。
+	
+
+### 一键编译securityinjava-6.0.0 Eclipse插件的方式（含Java工程打包）
 eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要求是eclipse的JavaEE/jee版，同时Eclipse版本>=3.7
 
 		1，git clone https://github.com/ciphergateway/securityinjava
 		2，先安装基础jar包和必要组件到$M2_REPO。
-			cd securityinjava		   
-			mvn clean package 【注：第一次执行需要下载大量maven资源，第二次执行可以加上离线参数-o以加快编译，即mvn install -o】
+			cd securityinjava/support/build-all
+			mvn clean package 【注：第一次执行需要下载大量maven资源，并从Eclipse官方站下载资源，第二次执行可以加上离线参数-o以加快编译，即mvn package -o】
 			【注：如果报错，请尝试执行多次mvn package
-		4，安装插件包。
-			securityinjava/support/build/build-securityinjava-ssm/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_6.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
+		3，安装插件包。
+			securityinjava/support/build-all/build-securityinjava-ssm/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_6.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
 			最终结构如下：$ECLIPSE_HOME/links/securityinjava_6.0.0/eclipse/plugins/...
-		5，重启Eclipse即可
+		4，重启Eclipse即可
 		
-### 一键编译quickbundle-6.0.0插件的方式二(不推荐，目前未做维护)
-updatesite格式的安装版，安装到Eclipse时较慢。但安装时会自动下载所需的依赖插件，要求Eclipse版本>=3.7
+
+
+【备用打包方式】updatesite格式的安装版，安装到Eclipse时较慢。但安装时会自动下载所需的依赖插件，要求Eclipse版本>=3.7
 
 		1，使用Linux下的ln -s(或windows下的junction)，把qb-archetype/quickbundle-rmwebdemo目录软链接到qb-core/eclipse-plugin/quickbundle-gp/t/j1目录。
 		2，安装maven-3.0.5，在qb-core目录下，执行mvn install，即可安装到$M2_REPO/org/quickbundle/org.quickbundle.mda.updatesite/4.0.0/org.quickbundle.mda.updatesite-4.0.0.zip。
