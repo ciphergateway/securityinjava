@@ -25,7 +25,7 @@ import org.quickbundle.third.mybatis.dialect.PostgreSQLDialect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
+@Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class , Integer.class}) })
 public class ScrollableStatementHandlerInterceptor implements Interceptor {
 
 	private final static Logger log = LoggerFactory.getLogger(ScrollableStatementHandlerInterceptor.class);

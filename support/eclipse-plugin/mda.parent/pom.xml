@@ -29,12 +29,13 @@
 		   	<layout>p2</layout>
 		   	<url>http://download.eclipse.org/releases/indigo</url>
 		</repository>
-		<!-- SWTbot is not part of the helios update site -->
+		<!-- SWTbot is not part of the helios update site 
 		<repository>
 			<id>swtbot</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site/</url>
 		</repository>
+		-->
 	</repositories>
 	
 	<build>

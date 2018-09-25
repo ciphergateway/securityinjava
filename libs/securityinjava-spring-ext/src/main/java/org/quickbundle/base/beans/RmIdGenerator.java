@@ -45,7 +45,7 @@ public class RmIdGenerator implements IRmIdGenerator {
 		rule = new HashMap<String, TableIdRuleVo>();
         //id.xml命名空间
         Map<String, String> defaultNameSpaceMap = new HashMap<String, String>();  
-        defaultNameSpaceMap.put("q", "http://www.quickbundle.org/schema");
+        defaultNameSpaceMap.put("q", "http://www.ciphergateway.com/schema");
         //读入id.xml
         Document docIdxml = null;;
 		try {

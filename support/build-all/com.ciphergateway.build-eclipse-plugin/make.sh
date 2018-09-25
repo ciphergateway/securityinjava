@@ -30,7 +30,7 @@ mvn clean eclipse:clean eclipse:eclipse
 #mvn clean
 cd ..
 echo extract securityinjava-ssm.jar...
-jar cfM support/build/com.ciphergateway.build-eclipse-plugin/target/securityinjava-ssm.jar securityinjava-ssm
+jar cfM support/build-all/com.ciphergateway.build-eclipse-plugin/target/securityinjava-ssm.jar securityinjava-ssm
 pwd
-cd support/build/com.ciphergateway.build-eclipse-plugin/target/eclipse/plugins/com.ciphergateway.mda.gp-6.0.0/t/j1
+cd support/build-all/com.ciphergateway.build-eclipse-plugin/target/eclipse/plugins/com.ciphergateway.mda.gp-6.0.0/t/j1
 jar xfM ../../../../../securityinjava-ssm.jar
