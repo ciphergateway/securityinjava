@@ -231,7 +231,7 @@
     </tag>
     <tag>
         <name>define</name>
-        <tag-class>org.quickbundle.third.struts.taglib.RmNestedDefineTag</tag-class>
+        <tag-class>org.quickbundle.third.struts.RmNestedDefineTag</tag-class>
         <tei-class>org.apache.struts.taglib.nested.bean.NestedDefineTei</tei-class>
         <body-content>empty</body-content>
         <description>

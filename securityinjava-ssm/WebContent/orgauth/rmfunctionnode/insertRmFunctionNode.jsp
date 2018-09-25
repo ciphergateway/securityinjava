@@ -11,6 +11,7 @@
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="org.quickbundle.config.RmConfig"%>
+<%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%  //判断是否为修改页面
   	RmFunctionNodeVo resultVo = null;  //定义一个临时的vo变量
 	boolean isModify = false;  //定义变量,标识本页面是否修改(或者新增)
@@ -22,7 +23,7 @@
 	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%@page imorg.quickbundle.project.RmProjectHelperHelper"%>
+
 <html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
