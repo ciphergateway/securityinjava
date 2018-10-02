@@ -1,9 +1,7 @@
 package org.quickbundle.tools.support.helper;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,7 +15,6 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
-import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.tools.helper.RmXmlHelper;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -25,6 +22,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class RmXmlHelperTest {
+
 	@Rule
 	public TestRule watcher = new TestWatcher() {
 	   protected void starting(Description description) {
