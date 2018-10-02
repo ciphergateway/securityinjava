@@ -123,7 +123,7 @@ public class RmPyServlet extends HttpServlet {
         	if(!pythonLib.exists()) {
         		RmLogHelper.getLogger(PyServlet.class).info("begin init jython lib");
         		String zipFile = RmPathHelper.getWebInfDir() + "/archive/python/jython.zip";
-        		RmZipHelper.unZip(RmXmlHelper.formatToFile(zipFile), pythonLib.getAbsolutePath());
+        		RmZipHelper.unZip(RmXmlHelper.formatToFile(zipFile), pythonLib.getAbsolutePath(), RmConfig.getSingleton().getDefaultEncode());
         		RmLogHelper.getLogger(PyServlet.class).info("create jython lib: unzip " + zipFile + " to " + pythonLib.getAbsolutePath());
         	}
         }

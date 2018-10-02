@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
 
 public class RmCryptoHelper {
 	
@@ -56,7 +55,7 @@ public class RmCryptoHelper {
 		try {
 			MessageDigest md = MessageDigest.getInstance(algorithm);
 			byte digest[] = md.digest(pass.getBytes("iso-8859-1"));
-			return new String(Base64.encodeBase64(digest));
+			return new String(Base64.getEncoder().encode(digest));
 		} catch (IOException ioe) {
 			throw new RuntimeException((new StringBuilder()).append("Fatal error: ").append(ioe).toString(), ioe);
 		} 
@@ -88,8 +87,8 @@ public class RmCryptoHelper {
 	 */
 	public static String encryptDesBase64(String value){
 		try {
-			byte[] s = RmCryptoHelper.desEncrypt(value.getBytes(), desKey.getBytes());
-			String base64 = Base64.encodeBase64URLSafeString(s);
+			byte[] src = RmCryptoHelper.desEncrypt(value.getBytes(), desKey.getBytes());
+			String base64 = Base64.getUrlEncoder().encodeToString(src);
 			return base64;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,7 +103,7 @@ public class RmCryptoHelper {
 	 */
 	public static String decryptDesBase64(String value) {
 		try {
-			byte[] s = Base64.decodeBase64(value);
+			byte[] s = Base64.getDecoder().decode(value);
 			String result = new String(RmCryptoHelper.desDecrypt(s, desKey.getBytes()));
 			return result;
 		} catch (Exception e) {
@@ -120,7 +119,7 @@ public class RmCryptoHelper {
 	 */
 	public static String encryptBase64(String value){
 		try {
-			String base64 = Base64.encodeBase64URLSafeString(value.getBytes());
+			String base64 = Base64.getUrlEncoder().encodeToString(value.getBytes());
 			return base64;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -135,7 +134,7 @@ public class RmCryptoHelper {
 	 */
 	public static String decryptBase64(String value) {
 		try {
-			return new String(Base64.decodeBase64(value));
+			return new String(Base64.getDecoder().decode(value));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return value;

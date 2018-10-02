@@ -6,8 +6,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-import org.quickbundle.tools.support.RmSequenceCaseInsensitiveMap;
-
+import org.quickbundle.util.RmSequenceCaseInsensitiveMap;
 
 /**
  * 一个有序的key值忽略大小写的vo，实现了Map接口，key值必须是String，value可以是Object

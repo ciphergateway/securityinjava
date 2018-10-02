@@ -10,7 +10,6 @@
  * 
  */
 package org.quickbundle.util;
-import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
