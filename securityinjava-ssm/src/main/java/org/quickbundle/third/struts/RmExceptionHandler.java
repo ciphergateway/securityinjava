@@ -17,6 +17,7 @@ import org.apache.struts.util.ModuleException;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.Node;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.base.RmExceptionVo;
 import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
@@ -31,7 +32,7 @@ public class RmExceptionHandler extends ExceptionHandler {
         if(exceptionDoc == null) {
             synchronized (RmExceptionHandler.class) {
                 if(exceptionDoc == null) {
-                    exceptionDoc = RmXmlHelper.parse(xmlPath);
+                    exceptionDoc = new DOMReader().read(RmXmlHelper.parse(xmlPath));
                 }
             }
         }

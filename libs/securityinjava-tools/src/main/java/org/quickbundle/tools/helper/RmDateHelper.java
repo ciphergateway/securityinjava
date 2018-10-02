@@ -195,7 +195,7 @@ public class RmDateHelper {
 			  }
 			return sb.toString();
 		} else {
-			RmLogHelper.error(RmDateHelper.class, "formatDateStr(" + str + ") failed");
+			System.err.println(RmDateHelper.class.getName() + "formatDateStr(" + str + ") failed");
 			return str;
 		}
 		

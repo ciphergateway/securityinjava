@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.beans.RmIdFactory;
@@ -85,12 +86,10 @@ public class RmCodeService implements IRmCodeService {
         }
         Document doc = null;
 		try {
-			doc = RmXmlHelper.parse(RmPathHelper.getWebInfDir() + "/config/rm/initCodeTypeData.xml");
-		} catch (MalformedURLException e1) {
-			throw new RmRuntimeException("initCodeTypeData.xml配置错误", e1);
-		} catch (DocumentException e1) {
-			throw new RmRuntimeException("initCodeTypeData.xml配置错误", e1);
-		}
+			doc = new DOMReader().read(RmXmlHelper.parse(RmPathHelper.getWebInfDir() + "/config/rm/initCodeTypeData.xml"));
+		} catch (Exception e) {
+			throw new RmRuntimeException("initCodeTypeData.xml配置错误, caused by " + e.getMessage(), e);
+		} 
 		List<RmCodeTypeVo> lCodeTypeVo = new ArrayList<RmCodeTypeVo>();
 		List<RmCodeDataVo> lCodeDataVo = new ArrayList<RmCodeDataVo>();
         for (Iterator itCode = doc.selectNodes("/codes/code").iterator(); itCode.hasNext();) {

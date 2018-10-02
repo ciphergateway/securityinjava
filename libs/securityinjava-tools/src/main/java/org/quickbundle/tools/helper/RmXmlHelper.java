@@ -10,36 +10,36 @@ package org.quickbundle.tools.helper;
  *  
  */
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
+import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringReader;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
-import java.util.Map;
+import java.io.Writer;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
-import org.dom4j.Attribute;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.Node;
-import org.dom4j.Text;
-import org.dom4j.io.DocumentSource;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.SAXReader;
-import org.dom4j.io.XMLWriter;
 import org.quickbundle.config.RmBaseConfig;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
+import org.xml.sax.SAXException;
 
 /**
  * 功能、用途、现存BUG:
@@ -56,31 +56,27 @@ public class RmXmlHelper {
      * 
      * @param document
      * @return
+     * @throws TransformerException 
      */
-    public static String getStringFromDocument(Document document) {
-        String returnStr = "";
-        ByteArrayOutputStream bytesStream = new ByteArrayOutputStream();
-        BufferedOutputStream outer = new BufferedOutputStream(bytesStream);
-
+    public static String getStringFromDocument(Document document) throws TransformerException {
+    	return getStringFromNode(document);
+    }
+    
+    /**
+     * 功能: 从Node对象中获取String
+     * 
+     * @param node
+     * @return
+     * @throws TransformerException
+     */
+    public static String getStringFromNode(Node node) throws TransformerException {
         TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = null;
-        try {
-            transformer = tFactory.newTransformer();
-            transformer.setOutputProperty("encoding", RmBaseConfig.getSingleton().getDefaultEncode());
-            transformer.setOutputProperty("indent", "yes");
-            transformer.transform(new DocumentSource(document), new StreamResult(outer));
-            returnStr = bytesStream.toString(RmBaseConfig.getSingleton().getDefaultEncode());
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        } catch (TransformerException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-        return returnStr;
+        Transformer transformer = tFactory.newTransformer();
+        transformer.setOutputProperty("encoding", RmBaseConfig.getSingleton().getDefaultEncode());
+        transformer.setOutputProperty("indent", "yes");
+        Writer out = new StringWriter();
+        transformer.transform(new DOMSource(node), new StreamResult(out));
+        return out.toString();
     }
 
     /**
@@ -88,13 +84,16 @@ public class RmXmlHelper {
      * 
      * @param xmlStr
      * @return
+     * @throws ParserConfigurationException 
+     * @throws IOException 
+     * @throws SAXException 
+     * @throws UnsupportedEncodingException 
      */
-    public static Document getDocumentFromString(String xmlStr) {
-        try {
-			return new SAXReader().read(new StringReader(xmlStr));
-		} catch (DocumentException e) {
-			throw new RuntimeException(e);
-		}
+    public static Document getDocumentFromString(String xmlStr) throws ParserConfigurationException, UnsupportedEncodingException, SAXException, IOException {
+        	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        	DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
+        	Document doc = documentBuilder.parse(new ByteArrayInputStream(xmlStr.getBytes(RmBaseConfig.getSingleton().getDefaultEncode())));
+        	return doc;
     }
     
     /**
@@ -103,14 +102,30 @@ public class RmXmlHelper {
      * @param channelLink
      * @param channelDescription
      * @return
+     * @throws ParserConfigurationException 
      */
-    public static Document getRss20Document(String channelTitle, String channelLink, String channelDescription) {
-    	Document doc = DocumentHelper.createDocument();
-    	Element rootEle = doc.addElement("rss").addAttribute("version", "2.0");
-    	Element channelEle = rootEle.addElement("channel");
-    	channelEle.addElement("title").setText(channelTitle);
-    	channelEle.addElement("link").setText(channelLink);
-    	channelEle.addElement("description").setText(channelDescription);
+    public static Document getRss20Document(String channelTitle, String channelLink, String channelDescription) throws ParserConfigurationException {
+    	Document doc = null;
+		doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+    	Element rssEle = doc.createElement("rss");
+    	rssEle.setAttribute("version", "2.0");
+    	doc.appendChild(rssEle);
+    	
+    	Element channelEle = doc.createElement("channel");
+    	rssEle.appendChild(channelEle);
+    	
+    	Element titleEle = doc.createElement("title");
+    	titleEle.setTextContent(channelTitle);
+    	channelEle.appendChild(titleEle);
+    	
+    	Element linkEle = doc.createElement("link");
+    	linkEle.setTextContent(channelLink);
+    	channelEle.appendChild(linkEle);
+    	
+    	Element descriptionEle = doc.createElement("description");
+    	descriptionEle.setTextContent(channelDescription);
+    	channelEle.appendChild(descriptionEle);
+    	
     	return doc;
     }
     
@@ -121,14 +136,29 @@ public class RmXmlHelper {
      * @param itemDescription
      * @param pubDate
      * @return
+     * @throws ParserConfigurationException 
      */
-    public static Document getRss20Item(String itemTitle, String itemLink, String itemDescription, String pubDate) {
-    	Document doc = DocumentHelper.createDocument();
-    	Element itemEle = doc.addElement("item");
-    	itemEle.addElement("title").setText(itemTitle);
-    	itemEle.addElement("link").setText(itemLink);
-    	itemEle.addElement("description").setText(itemDescription);
-    	itemEle.addElement("pubDate").setText(pubDate);
+    public static Document getRss20Item(String itemTitle, String itemLink, String itemDescription, String pubDate) throws ParserConfigurationException {
+    	Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+    	Element itemEle = doc.createElement("item");
+    	doc.appendChild(itemEle);
+
+		Element titleEle = doc.createElement("title");
+		titleEle.setTextContent(itemTitle);
+		itemEle.appendChild(titleEle);
+
+		Element linkEle = doc.createElement("link");
+		linkEle.setTextContent(itemLink);
+		itemEle.appendChild(linkEle);
+
+		Element descriptionEle = doc.createElement("description");
+		descriptionEle.setTextContent(itemDescription);
+		itemEle.appendChild(descriptionEle);
+
+		Element pubDateEle = doc.createElement("pubDate");
+		pubDateEle.setTextContent(pubDate);
+		itemEle.appendChild(pubDateEle);
+    	
     	return doc;
     }
 
@@ -137,63 +167,43 @@ public class RmXmlHelper {
      * 
      * @param ruleXml
      * @return
-     * @throws MalformedURLException
+     * @throws ParserConfigurationException 
+     * @throws IOException 
+     * @throws SAXException 
      * @throws DocumentException
      */
-    public static Document parse(String xmlPath) throws MalformedURLException, DocumentException {
+    public static Document parse(String xmlPath) throws ParserConfigurationException, SAXException, IOException {
         if (xmlPath == null || xmlPath.length() == 0) {
             throw new NullPointerException("xml路径是空!");
         }
-        SAXReader reader = new SAXReader();
-        Document document = reader.read(new URL(formatToUrl(xmlPath)));
-        return document;
+    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    	DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
+    	Document doc = documentBuilder.parse(formatToUrl(xmlPath));
+    	return doc;
     }
     
-    /**
-     * 功能: 从xmlPath的资源转化成Document对象，带命名空间
-     * @param ruleXml
-     * @param mNamespaceURIs
-     * @return
-     * @throws MalformedURLException
-     * @throws DocumentException
-     */
-    public static Document parse(String ruleXml, Map mNamespaceURIs) throws MalformedURLException, DocumentException {
-        if (ruleXml == null || ruleXml.length() == 0) {
-            throw new NullPointerException("xml路径是空!");
-        }
-        SAXReader reader = new SAXReader();
-        reader.getDocumentFactory().setXPathNamespaceURIs(mNamespaceURIs);
-        Document document = null;
-        if (ruleXml.startsWith("file:")) {
-            document = reader.read(new URL(ruleXml));
-        } else {
-            document = reader.read(new File(ruleXml));
-        }
-
-        return document;
-    }
-
     /**
      * 功能: 把xml保存到指定的路径文件名
      * 
      * @param document
      * @param targetFile
      * @throws IOException
+     * @throws TransformerException 
      */
-    public static boolean saveXmlToPath(Document document, String targetFile) {
+    public static void saveXmlToPath(Document document, String targetFile) throws IOException, TransformerException {
+        targetFile = formatToFile(targetFile);
+        RmFileHelper.initParentDir(targetFile);
+        
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transformer = tFactory.newTransformer();
+        transformer.setOutputProperty("encoding", RmBaseConfig.getSingleton().getDefaultEncode());
+        transformer.setOutputProperty("indent", "yes");
+        Writer out = new FileWriter(targetFile);
         try {
-            targetFile = formatToFile(targetFile);
-            RmFileHelper.initParentDir(targetFile);
-            OutputFormat format = OutputFormat.createPrettyPrint();
-            format.setEncoding(RmBaseConfig.getSingleton().getDefaultEncode());
-            XMLWriter writer = new XMLWriter(new FileOutputStream(targetFile), format);
-            writer.write(document);
-            writer.close();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+        	transformer.transform(new DOMSource(document), new StreamResult(out));
+		}  finally {
+			out.close();
+		}
     }
 
     /**
@@ -242,39 +252,27 @@ public class RmXmlHelper {
 	 * 
 	 * @param from
 	 * @param to
+	 * @throws XPathExpressionException 
 	 */
-	public static void deepCopyElement(Element from, Element to) {
+	public static void deepCopyElement(Element from, Element to) throws XPathExpressionException {
 		if(from == null || to == null) {
 			return;
 		}
-		List<Node> lNode = from.selectNodes("@*|node()");
-		for(Node node : lNode) {
-			if(node instanceof Attribute) {
-				Attribute attr = (Attribute)node;
-				to.addAttribute(attr.getName(), attr.getText());
-			} else if(node instanceof Element) {
-				Element ele = (Element)node;
-				to.add(ele.createCopy());
-			} else if(node instanceof Text) {
-				to.setText(node.getText());
+		
+		XPathExpression expr = XPathFactory.newInstance().newXPath().compile("@*|node()");
+		NodeList nodes = (NodeList)expr.evaluate(from, XPathConstants.NODESET);
+		for(int i=0; i<nodes.getLength(); i++) {
+			Node fromNode = nodes.item(i);
+			if(fromNode instanceof Attr) {
+				Attr attr = (Attr)fromNode;
+				to.setAttribute(attr.getName(), attr.getValue());
+			} else if(fromNode instanceof Element) {
+				Node newNode = to.getOwnerDocument().importNode((Element)fromNode, true);
+				to.appendChild(newNode);
+			} else if(fromNode instanceof Text) {
+				to.setTextContent(fromNode.getNodeValue());
 			}
 		}
 	}
-	
-	/**
-	 * 先清理to的所有node()和Attribute，在复制from下的所有节点(包括Attribute, Element, Text)到to
-	 * 
-	 * @param from
-	 * @param to
-	 */
-	public static void deepCopyElementWithClear(Element from, Element to) {
-		if(from == null || to == null) {
-			return;
-		}
-		List<Node> lNode = to.selectNodes("@*|node()");
-		for(Node node : lNode) {
-			to.remove(node);
-		}
-		deepCopyElement(from, to);
-	} 
+ 
 }

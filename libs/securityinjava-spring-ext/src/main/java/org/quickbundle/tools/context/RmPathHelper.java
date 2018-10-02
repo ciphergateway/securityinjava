@@ -14,15 +14,20 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.tools.helper.RmFileHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
 
@@ -52,7 +57,12 @@ public class RmPathHelper {
 		if(tomcatContextFile == null) {
 			tomcatContextFile = getProjectDir().toString() + File.separator + getWarName() + ".xml";
 		}
-		RmXmlHelper.saveXmlToPath(doc, tomcatContextFile);
+		try {
+			RmFileHelper.saveFile(doc.asXML(), tomcatContextFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage(), e);
+		}
 		return new File(tomcatContextFile);
 	}
 	
@@ -122,7 +132,7 @@ public class RmPathHelper {
 	            Map<String, String> defaultNameSpaceMap = new HashMap<String, String>();  
 	            defaultNameSpaceMap.put("q", "http://java.sun.com/xml/ns/javaee");
 	            //读入web.xml
-	            Document docWebXml = RmXmlHelper.parse(getWebInfDir() + File.separator + "web.xml", defaultNameSpaceMap);
+	            Document docWebXml = parse(getWebInfDir() + File.separator + "web.xml", defaultNameSpaceMap);
 	            defaultServletContextName = docWebXml.valueOf("/q:web-app/q:display-name");
 			} catch (Exception e) {
 				//ignore
@@ -133,6 +143,30 @@ public class RmPathHelper {
 		}
 		return defaultServletContextName;
 	}
+	
+    /**
+     * 功能: 从xmlPath的资源转化成Document对象，带命名空间
+     * @param ruleXml
+     * @param mNamespaceURIs
+     * @return
+     * @throws MalformedURLException
+     * @throws DocumentException
+     */
+    public static Document parse(String ruleXml, Map mNamespaceURIs) throws MalformedURLException, DocumentException {
+        if (ruleXml == null || ruleXml.length() == 0) {
+            throw new NullPointerException("xml路径是空!");
+        }
+        SAXReader reader = new SAXReader();
+        reader.getDocumentFactory().setXPathNamespaceURIs(mNamespaceURIs);
+        Document document = null;
+        if (ruleXml.startsWith("file:")) {
+            document = reader.read(new URL(ruleXml));
+        } else {
+            document = reader.read(new File(ruleXml));
+        }
+
+        return document;
+    }
 
 	/**
 	 * 功能: 获得WEB-INF目录。默认从缓存Servlet上下文取，如没有直接取RmGlobalReference所在目录(后者适用于开发环境)

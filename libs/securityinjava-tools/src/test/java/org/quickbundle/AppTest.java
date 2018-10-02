@@ -1,12 +1,5 @@
 package org.quickbundle;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.io.SAXReader;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -42,9 +35,5 @@ public class AppTest
     {
         assertTrue( true );
     }
-    public static void main(String[] args) throws MalformedURLException, DocumentException {
-        SAXReader reader = new SAXReader();
-        Document document = reader.read(new URL("file:///C:/Users/Administrator/.quickbundle/config_gc.xml"));
-		System.out.println(document);
-	}
+
 }

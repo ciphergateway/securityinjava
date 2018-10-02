@@ -7,8 +7,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.quickbundle.config.RmBaseConfig;
-import org.quickbundle.tools.helper.RmLogHelper;
-import org.slf4j.Logger;
 
 /**
  * 通用缓冲器 <h3>刷新方式:</h3>
@@ -24,7 +22,6 @@ import org.slf4j.Logger;
  * @param <E> 缓冲对象
  */
 public abstract class AbstractTaskQueue<E> {
-	protected Logger log = RmLogHelper.getLogger(this.getClass());
 	/**
 	 * 缓冲队列
 	 */
@@ -78,7 +75,7 @@ public abstract class AbstractTaskQueue<E> {
 		
 		if(buf.size() >= capcity * 10){
 			//容量过大
-			RmLogHelper.getLogger("rmexception").error("buf.clear() -> count:" + buf.size() + ", 缓冲区溢出, 请联系维护人员检查是否部署环境异常!");
+			System.err.println("buf.clear() -> count:" + buf.size() + ", 缓冲区溢出, 请联系维护人员检查是否部署环境异常!");
 			buf.clear();
 		}
 		//注释掉以下代码，杜绝在发起调用的业务线程中更新日志
@@ -102,7 +99,7 @@ public abstract class AbstractTaskQueue<E> {
 			flush(buf);
 			int thisCount = oldSize-buf.size();
 			if(thisCount > 0) {
-				log.info("flush " + thisCount + " records, cost " + (System.currentTimeMillis()-startTime) + " ms");
+				System.out.println("flush " + thisCount + " records, cost " + (System.currentTimeMillis()-startTime) + " ms");
 			}
 		} finally {
 			last_flush = System.currentTimeMillis();

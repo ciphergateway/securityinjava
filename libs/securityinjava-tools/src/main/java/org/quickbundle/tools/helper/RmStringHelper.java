@@ -369,7 +369,7 @@ public class RmStringHelper {
         } else if(tempValue instanceof Map || tempValue instanceof Collection) { //跳过Map
             return null;
         } else {
-            RmLogHelper.warn(RmStringHelper.class, "从Object转化为js，遇到了未知java类型:" + tempValue);                    
+        	System.err.println(RmStringHelper.class.getName() + "从Object转化为js，遇到了未知java类型:" + tempValue);                    
             return null;
         }
         return sb.toString();

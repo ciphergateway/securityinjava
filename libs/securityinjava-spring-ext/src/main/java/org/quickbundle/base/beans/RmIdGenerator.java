@@ -1,13 +1,12 @@
 package org.quickbundle.base.beans;
 
-import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
 import org.quickbundle.base.beans.idwrapper.MaxInDbWrapper;
 import org.quickbundle.base.beans.idwrapper.ShardingInCacheWrapper;
 import org.quickbundle.config.RmBaseConfig;
@@ -18,6 +17,9 @@ import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class RmIdGenerator implements IRmIdGenerator {
 
@@ -49,23 +51,26 @@ public class RmIdGenerator implements IRmIdGenerator {
         //读入id.xml
         Document docIdxml = null;;
 		try {
-			docIdxml = RmXmlHelper.parse(RmPathHelper.getWebInfDir() + "/config/rm/id.xml", defaultNameSpaceMap);
-		} catch (MalformedURLException e) {
-			throw new RuntimeException(e);
-		} catch (DocumentException e) {
-			throw new RuntimeException(e);
-		}
-		List<Element> lTable = docIdxml.selectNodes("/q:RmIdFactory/q:table");
-		for(Element table : lTable) {
-			String tableName = table.valueOf("@table_name").toUpperCase();
-			TableIdRuleVo ruleVo = new TableIdRuleVo();
-			ruleVo.setTableCode(table.valueOf("@table_code"));
-			ruleVo.setTableName(tableName);
-			ruleVo.setIdName(table.valueOf("@id_name"));
-			ruleVo.setMultiDb("true".equals(table.valueOf("@multi_db")) || "1".equals(table.valueOf("@multi_db")));
-			ruleVo.setWrapperClass(table.valueOf("@wrapper_class"));
-			ruleVo.setWrapperClassFormat(table.valueOf("@wrapper_class_format"));
-			rule.put(tableName, ruleVo);
+			docIdxml = RmXmlHelper.parse(RmPathHelper.getWebInfDir() + "/config/rm/id.xml");
+			XPath xpath = XPathFactory.newInstance().newXPath();
+			NodeList lTable = (NodeList) xpath.compile("/RmIdFactory/table").evaluate(docIdxml, XPathConstants.NODESET);
+			for(int i=0; i<lTable.getLength(); i++) {
+				Element table =(Element)lTable.item(i);
+				
+				String tableName = ((String)xpath.compile("@table_name").evaluate(table, XPathConstants.STRING)).toUpperCase();
+				TableIdRuleVo ruleVo = new TableIdRuleVo();
+				ruleVo.setTableCode((String)xpath.compile("@table_code").evaluate(table, XPathConstants.STRING));
+				ruleVo.setTableName(tableName);
+				ruleVo.setIdName((String)xpath.compile("@id_name").evaluate(table, XPathConstants.STRING));
+				ruleVo.setMultiDb("true".equals((String)xpath.compile("@multi_db").evaluate(table, XPathConstants.STRING))
+						|| "1".equals((String)xpath.compile("@multi_db").evaluate(table, XPathConstants.STRING)));
+				ruleVo.setWrapperClass((String)xpath.compile("@wrapper_class").evaluate(table, XPathConstants.STRING));
+				ruleVo.setWrapperClassFormat((String)xpath.compile("@wrapper_class_format").evaluate(table, XPathConstants.STRING));
+				rule.put(tableName, ruleVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage(), e);
 		}
 	}
 	

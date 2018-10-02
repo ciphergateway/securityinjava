@@ -30,6 +30,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 import org.dom4j.Document;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmNumberHelper;
@@ -288,7 +289,7 @@ public class RmExcelHandler {
 
     public static void main(String[] args) {
         try {
-            Document doc = RmXmlHelper.parse("E:\\platform\\myProject\\physic_subject\\report\\test.xml");
+            Document doc = new DOMReader().read(RmXmlHelper.parse("E:\\platform\\myProject\\physic_subject\\report\\test.xml"));
 
             RmExcelHandler eh = new RmExcelHandler(getSheetFromExcelFile(new File(
                     "/testReport.xls"))[0]);

@@ -10,23 +10,21 @@
  */
 package org.quickbundle.tools.support.tree;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.Iterator;
-import java.util.List;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.Node;
-import org.dom4j.io.DocumentSource;
-import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.tools.helper.RmXmlHelper;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * 功能、用途、现存BUG:
@@ -50,28 +48,11 @@ public class DeepTreeXmlHandler {
      */
     public String getStringFromDocument() {
         selfCheckHasChild4HardTree();
-        ByteArrayOutputStream bytesStream = new ByteArrayOutputStream();
-        BufferedOutputStream outer = new BufferedOutputStream(bytesStream);
-
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = null;
         try {
-            transformer = tFactory.newTransformer();
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.ENCODING, RmBaseConfig.getSingleton().getDefaultEncode());
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
-            transformer.transform(new DocumentSource(this.document), new StreamResult(outer));
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }
-        String returnValue = "";
-		try {
-			returnValue = bytesStream.toString(RmBaseConfig.getSingleton().getDefaultEncode());
-		} catch (Exception e1) {
-			e1.printStackTrace();
+			return RmXmlHelper.getStringFromDocument(document);
+		} catch (TransformerException e) {
+			throw new RuntimeException(e.getMessage(), e);
 		}
-        return returnValue;
     }
 
     /**
@@ -79,8 +60,13 @@ public class DeepTreeXmlHandler {
      *  
      */
     public DeepTreeXmlHandler() {
-        document = DocumentHelper.createDocument();
-        document.addElement("Trees");
+    	try {
+			document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+		} catch (ParserConfigurationException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
+    	Element root = document.createElement("Trees");
+    	document.appendChild(root);
     }
 
     /**
@@ -90,12 +76,14 @@ public class DeepTreeXmlHandler {
      * @return
      */
     public Element addTreeNode(DeepTreeVo dtv) {
-        Element root = document.getRootElement();
-        Element treeNodeVo = root.addElement("TreeNode");
+        Element root = document.getDocumentElement();
+        
+		Element treeNodeVo = document.createElement("TreeNode");
+		root.appendChild(treeNodeVo);
         for(Iterator itMapAttribute = dtv.getAttributeMapIterator(); itMapAttribute.hasNext(); ) {
             String tempKey = itMapAttribute.next().toString();
             String tempValue = dtv.getAttribute(tempKey);
-            treeNodeVo.addAttribute(tempKey, tempValue);
+            treeNodeVo.setAttribute(tempKey, tempValue);
         }
         return treeNodeVo;
     }
@@ -110,19 +98,25 @@ public class DeepTreeXmlHandler {
     public Element addTreeNode(String parentId, DeepTreeVo dtv) {
         if(parentId == null) {
             return null;
-        } else {
-            Element thisParentTreeNode = (Element) document.selectSingleNode("//TreeNode[@id='" + parentId + "']");
-            if(thisParentTreeNode == null) {
-                return null;
-            }
-            Element thisTreeNode = thisParentTreeNode.addElement("TreeNode");
-            for(Iterator itMapAttribute = dtv.getAttributeMapIterator(); itMapAttribute.hasNext(); ) {
-                String tempKey = itMapAttribute.next().toString();
-                String tempValue = dtv.getAttribute(tempKey);
-                thisTreeNode.addAttribute(tempKey, tempValue);
-            }
-            return thisTreeNode;
-        }
+        } 
+		try {
+			XPathExpression expr = XPathFactory.newInstance().newXPath().compile("//TreeNode[@id='" + parentId + "']");
+			Element thisParentTreeNode = (Element)expr.evaluate(document, XPathConstants.NODE);
+			if(thisParentTreeNode == null) {
+				return null;
+			}
+			Element thisTreeNode = document.createElement("TreeNode");
+			thisParentTreeNode.appendChild(thisTreeNode);
+			for(Iterator itMapAttribute = dtv.getAttributeMapIterator(); itMapAttribute.hasNext(); ) {
+				String tempKey = itMapAttribute.next().toString();
+				String tempValue = dtv.getAttribute(tempKey);
+				thisTreeNode.setAttribute(tempKey, tempValue);
+			}
+			return thisTreeNode;
+		} catch (XPathExpressionException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
+
     }
     
     /**
@@ -150,19 +144,21 @@ public class DeepTreeXmlHandler {
      * @return 返回修复的节点数
      */
     public int selfCheckHasChild4HardTree() {
-        List lTreeNode = this.document.selectNodes("//TreeNode[not(./TreeNode) and @xmlSource='' and @hasChild='1']");
-        for(Iterator itLTreeNode = lTreeNode.iterator(); itLTreeNode.hasNext(); ) {
-            Node tempTreeNode = (Node) itLTreeNode.next();
-            Node hasChild = tempTreeNode.selectSingleNode("@hasChild");
-            hasChild.setText("0");
-        }
-        return lTreeNode.size();
+
+		try {
+			XPathExpression expr = XPathFactory.newInstance().newXPath().compile("//TreeNode[not(./TreeNode) and @xmlSource='' and @hasChild='1']");
+			NodeList lTreeNode = (NodeList)expr.evaluate(document, XPathConstants.NODESET);
+	        for(int i=0; i<lTreeNode.getLength(); i++) {
+	            Node tempTreeNode = lTreeNode.item(0);
+	            XPathExpression expr2 = XPathFactory.newInstance().newXPath().compile("@hasChild");
+	            
+	            Node hasChild = (Node)expr2.evaluate(tempTreeNode, XPathConstants.NODE);
+	            hasChild.setTextContent("0");
+	        }
+	        return lTreeNode.getLength();
+		} catch (XPathExpressionException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
     }
 
-    public static void main(String[] args) {
-        DeepTreeXmlHandler dt = new DeepTreeXmlHandler();
-        dt.addTreeNode(new DeepTreeVo("1", "销售部", "1", "xmlData.xml"));
-        dt.addTreeNode(new DeepTreeVo("2", "开发中心", "1", "xmlData.xml"));
-        System.out.println(dt.getStringFromDocument());
-    }
 }

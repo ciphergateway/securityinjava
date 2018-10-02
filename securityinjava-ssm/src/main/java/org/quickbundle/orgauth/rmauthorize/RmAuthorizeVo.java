@@ -19,6 +19,7 @@ package org.quickbundle.orgauth.rmauthorize;
 import java.sql.Timestamp;
 
 import org.dom4j.Document;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.base.RmValueObject;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
@@ -385,7 +386,7 @@ public class RmAuthorizeVo extends RmValueObject{
 			return null;
 		}
 		try {
-			return RmXmlHelper.getDocumentFromString(custom_code);
+			return new DOMReader().read(RmXmlHelper.getDocumentFromString(custom_code));
 		} catch (Exception e) {
 			RmLogHelper.getLogger(this.getClass()).warn("getRuleCustomCode():" + e.toString() + " cause:" + e.getCause());
 			return null;

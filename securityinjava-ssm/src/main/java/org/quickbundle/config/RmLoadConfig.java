@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.tools.context.RmPathHelper;
@@ -122,12 +123,10 @@ public class RmLoadConfig {
             synchronized (RmProjectHelper.class) {
             	if(!loadXmlVo.isInit) {
             		try {
-            			loadXmlVo.doc = RmXmlHelper.parse(xmlFullPath);
+            			loadXmlVo.doc = new DOMReader().read(RmXmlHelper.parse(xmlFullPath));
             			loadXmlVo.isInit = true;
-            		} catch (MalformedURLException e) {
-            			throw new RmRuntimeException("load " + xmlFullPath +" error", e);
-            		} catch (DocumentException e) {
-            			throw new RmRuntimeException("load " + xmlFullPath +" error", e);
+            		} catch (Exception e) {
+            			throw new RmRuntimeException("load " + xmlFullPath +" error, caused by " + e.getMessage(), e);
             		}
             	}
             }

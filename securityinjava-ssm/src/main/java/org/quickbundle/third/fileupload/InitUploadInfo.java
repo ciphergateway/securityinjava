@@ -17,11 +17,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.MissingResourceException;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Node;
+import org.dom4j.io.DOMReader;
 import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmXmlHelper;
+import org.xml.sax.SAXException;
 
 /**
  * 功能、用途、现存BUG:
@@ -41,24 +45,19 @@ public class InitUploadInfo {
      * 功能: 加载上传文件的配置文件
      *
      * @return
+     * @throws SAXException 
+     * @throws ParserConfigurationException 
      */
-    private synchronized static Document readProperties(){
+    private synchronized static Document readProperties() {
         try {
             String uploadFileConfUrl = RmPathHelper.getWebInfDir().getPath() + RmUploadHelper.SYSTEM_FILE_SEPARATOR + "conf" + RmUploadHelper.SYSTEM_FILE_SEPARATOR + "uploadFileConf.xml";        
-            Document resources = RmXmlHelper.parse(uploadFileConfUrl);
+            Document resources = new DOMReader().read(RmXmlHelper.parse(uploadFileConfUrl));
             if(resources==null){
                 throw new MissingResourceException("Cannot find the uploadFileConf.xml file", "InitUploadInfo", "Resource File");
             }
             return resources; 
-        }catch(MissingResourceException mre) {
-            mre.printStackTrace();
-            throw new Error(mre.getMessage());
-        }catch (IOException ie) {
-            ie.printStackTrace();
-            throw new Error(ie.getMessage());
-        } catch (DocumentException e) {
-            e.printStackTrace();
-            throw new Error(e.getMessage());
+        }catch(Exception e) {
+            throw new Error(e.getMessage(), e);
         }
 	}
     

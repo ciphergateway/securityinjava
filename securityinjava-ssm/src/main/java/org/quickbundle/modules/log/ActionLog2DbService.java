@@ -42,7 +42,7 @@ public class ActionLog2DbService extends AbstractTaskQueue<RmLogVo> {
 			logService.insert(vos);
 		} catch (Throwable e) {
 			e.printStackTrace();
-			log.error("flush(): " + e.toString());
+			System.err.println("flush(): " + e.toString());
 		}
 	}
 }

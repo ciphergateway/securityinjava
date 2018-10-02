@@ -28,7 +28,7 @@ public class RmUrlHelper {
     public static String replaceParameter(String str, HttpServletRequest request, Map<String, Object> mContext) {
         if(str.indexOf("<%=") > -1) {
             try {
-                RmLogHelper.getLogger(RmUrlHelper.class).info("RmUrlHelper.replaceParameter(" + str + "): Thread.currentThread()=" + Thread.currentThread());
+                System.out.println("RmUrlHelper.replaceParameter(" + str + "): Thread.currentThread()=" + Thread.currentThread());
                 HttpSession session = request.getSession(false);
                 if(mContext == null) {
                 	mContext = new HashMap<String, Object>();
@@ -42,7 +42,8 @@ public class RmUrlHelper {
                     str = str.substring(0, str.indexOf("<%=")) + tempValue + str.substring(str.indexOf("%>") + "%>".length());
                 }
             } catch (Exception e) {
-            	RmLogHelper.getLogger(RmUrlHelper.class).error("RmUrlHelper.replaceParameter(" + str + "):" + e.toString());
+            	System.err.println("RmUrlHelper.replaceParameter(" + str + "):" + e.toString());
+            	throw new RuntimeException(e.getMessage(), e);
             }
         }
        

@@ -18,9 +18,11 @@ package org.quickbundle.orgauth.rmuser;
 
 import java.sql.Timestamp;
 
+import org.dom4j.Document;
+import org.dom4j.io.DOMReader;
+import org.quickbundle.orgauth.custom.RmCustomUserVo;
 import org.quickbundle.project.login.IRmLoginVo;
 import org.quickbundle.tools.helper.RmXmlHelper;
-import org.quickbundle.orgauth.custom.RmCustomUserVo;
 
 /**
  * 功能、用途、现存BUG:
@@ -43,7 +45,13 @@ public class RmUserVo extends RmCustomUserVo implements IRmLoginVo{
 		if(custom_xml == null || custom_xml.length() == 0) {
 			return "";
 		}
-		return RmXmlHelper.getDocumentFromString(custom_xml).valueOf("/user/@" + attributeOfRoot);
+		Document doc;
+		try {
+			doc = new DOMReader().read(RmXmlHelper.getDocumentFromString(custom_xml));
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage(), e);
+		} 
+		return doc.valueOf("/user/@" + attributeOfRoot);
 	}
 
 
