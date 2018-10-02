@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.ciphergateway</groupId>
     <artifactId>mda.parent</artifactId>
-    <version>6.0.0</version>
+    <version>${revision}</version>
     <relativePath>../mda.parent/pom.xml</relativePath>
   </parent>
 	<artifactId>com.ciphergateway.mda.gp</artifactId>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
 			<artifactId>com.ciphergateway.mda.libs</artifactId>
-			<version>6.0.0</version>
+			<version>${revision}</version>
 		</dependency>
 	</dependencies>
 </project>

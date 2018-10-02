@@ -2,7 +2,7 @@
 <feature
       id="com.ciphergateway.mda.feature"
       label="Quickbundle mda"
-      version="6.0.0"
+      version="6.0.0.qualifier"
       provider-name="Quickbundle">
 
    <description url="http://www.ciphergateway.com">

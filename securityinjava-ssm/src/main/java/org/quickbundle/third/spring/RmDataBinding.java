@@ -9,7 +9,7 @@ import org.springframework.web.context.request.WebRequest;
 
 public class RmDataBinding implements WebBindingInitializer {
 
-	public void initBinder(WebDataBinder binder, WebRequest request) {
+	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(java.util.Date.class, new CustomDateEditor(dateFormat, true));
@@ -20,6 +20,10 @@ public class RmDataBinding implements WebBindingInitializer {
 		datetimeFormat.setLenient(false);
 		binder.registerCustomEditor(java.sql.Timestamp.class, new CustomTimestampEditor(datetimeFormat, true));
 
+	}
+	
+	public void initBinder(WebDataBinder binder, WebRequest request) {
+		initBinder(binder);
 	}
 
 }

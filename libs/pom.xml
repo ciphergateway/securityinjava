@@ -10,15 +10,20 @@ Contributors:
     SAP AG - initial API and implementation
 --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ciphergateway</groupId>
+        <artifactId>securityinjava.aggregator</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 	<groupId>com.ciphergateway</groupId>
 	<artifactId>libs.aggregator</artifactId>
-	<version>6.0.0</version>
 	<packaging>pom</packaging>
 
 	<modules>
         <module>libs.parent</module>
         <module>securityinjava-tools</module>
 	    <module>securityinjava-spring-ext</module>
-  </modules>
+    </modules>
 	
 </project>

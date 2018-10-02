@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ciphergateway</groupId>
+        <artifactId>build-all.aggregator</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 	<groupId>com.ciphergateway</groupId>
 	<artifactId>build-all.parent</artifactId>
-	<version>6.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -11,7 +16,7 @@
 		<jdk.version>1.8</jdk.version>
 		<basedir>./</basedir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<securityinjava.version>6.0.0</securityinjava.version>
+		<securityinjava.version>${revision}</securityinjava.version>
 	</properties>
 	
 	<build>
@@ -51,12 +56,13 @@
 						</goals>
 						<configuration>
 							<target description="execute make shell/batch">
-								<echo>execute ${make.script}</echo>
 								<exec executable="cmd.exe" dir="${basedir}" osfamily="windows" failonerror="true">
 									<arg line=" /c make.bat" />
+									<env key="revision" value="${revision}" />
 								</exec>
 								<exec executable="bash" dir="${basedir}" osfamily="unix" failonerror="true">
 									<arg line=" make.sh" />
+									<env key="revision" value="${revision}" />
 								</exec>
 							</target>
 						</configuration>

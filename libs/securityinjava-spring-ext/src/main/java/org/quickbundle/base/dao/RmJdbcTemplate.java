@@ -62,16 +62,17 @@ public class RmJdbcTemplate extends JdbcTemplate {
 		Statement stmt = null;
 		try {
 			Connection conToUse = con;
-			if (getNativeJdbcExtractor() != null &&
-					getNativeJdbcExtractor().isNativeConnectionNecessaryForNativeStatements()) {
-				conToUse = getNativeJdbcExtractor().getNativeConnection(con);
-			}
+			// Spring-5.0 Drop NativeJdbcExtractor mechanism in favor of java.sql.Connection.unwrap()
+//			if (getNativeJdbcExtractor() != null &&
+//					getNativeJdbcExtractor().isNativeConnectionNecessaryForNativeStatements()) {
+//				conToUse = getNativeJdbcExtractor().getNativeConnection(con);
+//			}
 			stmt = conToUse.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			applyStatementSettings(stmt);
 			Statement stmtToUse = stmt;
-			if (getNativeJdbcExtractor() != null) {
-				stmtToUse = getNativeJdbcExtractor().getNativeStatement(stmt);
-			}
+//			if (getNativeJdbcExtractor() != null) {
+//				stmtToUse = getNativeJdbcExtractor().getNativeStatement(stmt);
+//			}
 			Object result = action.doInStatement(stmtToUse);
 			handleWarnings(stmt);
 			return result;

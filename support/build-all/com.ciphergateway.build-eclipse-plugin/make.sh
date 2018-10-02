@@ -10,27 +10,27 @@ function extractJar()
   rm -f $1.jar
 }
 
-cd target 
+echo "${revision}="${revision}
 
-echo rename directory...
-mv com.ciphergateway.build-eclipse-plugin-6.0.0-bin eclipse
+echo [1/4]rename plugin directory...
+cd target
+mv com.ciphergateway.build-eclipse-plugin-${revision}-bin eclipse
 cd eclipse
-mv com.ciphergateway.build-eclipse-plugin-6.0.0 plugins
+mv com.ciphergateway.build-eclipse-plugin-${revision} plugins
 cd plugins
 
-echo extract plugin jars...
-extractJar com.ciphergateway.mda.gc-6.0.0
-extractJar com.ciphergateway.mda.gp-6.0.0
-extractJar com.ciphergateway.mda.libs-6.0.0
-extractJar com.ciphergateway.mda.mvm-6.0.0
+echo [2/4]extract plugin jars...
+extractJar com.ciphergateway.mda.gc-${revision}
+extractJar com.ciphergateway.mda.gp-${revision}
+extractJar com.ciphergateway.mda.libs-${revision}
+extractJar com.ciphergateway.mda.mvm-${revision}
 
-echo copy securityinjava-ssm...
+echo [3/4]copy securityinjava-ssm...
 cd ../../../../../../securityinjava-ssm
 mvn clean eclipse:clean eclipse:eclipse
-#mvn clean
 cd ..
-echo extract securityinjava-ssm.jar...
+
+echo [4/4]extract securityinjava-ssm.jar...
 jar cfM support/build-all/com.ciphergateway.build-eclipse-plugin/target/securityinjava-ssm.jar securityinjava-ssm
-pwd
-cd support/build-all/com.ciphergateway.build-eclipse-plugin/target/eclipse/plugins/com.ciphergateway.mda.gp-6.0.0/t/j1
+cd support/build-all/com.ciphergateway.build-eclipse-plugin/target/eclipse/plugins/com.ciphergateway.mda.gp-${revision}/t/j1
 jar xfM ../../../../../securityinjava-ssm.jar

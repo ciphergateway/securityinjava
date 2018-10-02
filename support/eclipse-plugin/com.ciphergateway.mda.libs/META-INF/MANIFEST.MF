@@ -2,7 +2,7 @@ Manifest-Version: 6.0.0
 Bundle-ManifestVersion: 2
 Bundle-Name: com.ciphergateway.mda.libs
 Bundle-SymbolicName: com.ciphergateway.mda.libs;singleton:=true
-Bundle-Version: 6.0.0
+Bundle-Version: 6.0.0.qualifier
 Eclipse-BundleShape: dir
 Export-Package: org.quickbundle.config,
  org.quickbundle.tools.helper,

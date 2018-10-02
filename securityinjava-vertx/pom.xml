@@ -6,10 +6,11 @@
 
   <groupId>com.ciphergateway</groupId>
   <artifactId>securityinjava-vertx</artifactId>
-  <version>6.0.0</version>
+  <version>${revision}</version>
 
   <properties>
-    <securityinjava.version>6.0.0</securityinjava.version>
+    <revision>6.0.0-SNAPSHOT</revision>
+    <securityinjava.version>${revision}</securityinjava.version>
     <vertx.version>3.4.2</vertx.version>
   </properties>
 

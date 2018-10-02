@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ciphergateway</groupId>
+		<artifactId>eclipse-plugins.aggregator</artifactId>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 	<groupId>com.ciphergateway</groupId>
 	<artifactId>mda.parent</artifactId>
-	<version>6.0.0</version>
 	<packaging>pom</packaging>
 	
 	<!-- tycho requires maven >= 3.0 -->
@@ -25,17 +30,10 @@
 	<repositories>
 		<!-- configure p2 repository to resolve against -->
 		<repository>
-			<id>eclipse-indigo</id>
+			<id>eclipse-luna</id>
 		   	<layout>p2</layout>
-		   	<url>http://download.eclipse.org/releases/indigo</url>
+		   	<url>http://download.eclipse.org/releases/luna/</url>
 		</repository>
-		<!-- SWTbot is not part of the helios update site 
-		<repository>
-			<id>swtbot</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site/</url>
-		</repository>
-		-->
 	</repositories>
 	
 	<build>

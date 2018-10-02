@@ -1,27 +1,29 @@
 @ECHO OFF
-cd target 
 
-echo rename directory...
-move build-securityinjava-ssm-6.0.0-bin eclipse
+echo "%revision%="%revision%
+
+echo [1/4]rename plugin directory...
+cd target 
+move com.ciphergateway.build-eclipse-plugin-%revision%-bin eclipse
 cd eclipse
-move build-securityinjava-ssm-6.0.0 plugins
+move com.ciphergateway.build-eclipse-plugin-%revision% plugins
 cd plugins
 
-echo extract plugin jars...
-call :extractJar org.quickbundle.mda.gc-6.0.0
-call :extractJar org.quickbundle.mda.gp-6.0.0
-call :extractJar org.quickbundle.mda.libs-6.0.0
-call :extractJar org.quickbundle.mda.mvm-6.0.0
+echo [2/4]extract plugin jars...
+call :extractJar com.ciphergateway.mda.gc-%revision%
+call :extractJar com.ciphergateway.mda.gp-%revision%
+call :extractJar com.ciphergateway.mda.libs-%revision%
+call :extractJar com.ciphergateway.mda.mvm-%revision%
 
-echo copy securityinjava-ssm...
-cd ..\..\..\..\..\archetype\securityinjava-ssm
+echo [3/4]copy securityinjava-ssm...
+cd ..\..\..\..\..\..\securityinjava-ssm
 rem call mvn clean eclipse:clean eclipse:eclipse
-call mvn clean
 cd ..
-echo extract securityinjava-ssm.jar...
-call jar cfM ../build/build-securityinjava-ssm/target/securityinjava-ssm.jar securityinjava-ssm
-cd ..\build\build-securityinjava-ssm\target\eclipse\plugins\org.quickbundle.mda.gp-6.0.0\t\j1
-call jar xfM ../../../../../securityinjava-ssm.jar
+
+echo [4/4]extract securityinjava-ssm.jar...
+call jar cfM support\build-all\com.ciphergateway.build-eclipse-plugin\target\securityinjava-ssm.jar securityinjava-ssm
+cd support\build-all\com.ciphergateway.build-eclipse-plugin\target\eclipse\plugins\com.ciphergateway.mda.gp-%revision%\t\j1
+call jar xfM ..\..\..\..\..\securityinjava-ssm.jar
 
 goto :EOF  
 
@@ -45,17 +47,4 @@ move %1.jar ..
 cd ..
 rd /s/q %1
 endlocal&goto :EOF
-
-:packageJar1
-setlocal
-echo packeging %1
-
-call jar uf %1.jar df org com
-
-
-cd ..
-rem rd /s/q %1
-endlocal&goto :EOF
-
-
 
