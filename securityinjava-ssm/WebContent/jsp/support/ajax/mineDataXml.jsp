@@ -18,7 +18,7 @@
 		doc = (org.dom4j.Document) RmXmlConverter.getDocByObj(lResult);
 		System.out.println("mineDataXml.jsp: mine " + lResult.size() + " records! ");
 	}
-	String xmlStr = RmXmlHelper.getStringFromDocument(doc);
+	String xmlStr = doc.asXML();
 	//System.out.println(xmlStr);
 	out.print(xmlStr);
 } catch(Exception e) {

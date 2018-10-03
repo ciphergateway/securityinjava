@@ -17,7 +17,7 @@ package org.quickbundle.third.quartz.jobdetail;
 
 import java.util.Map;
 
-import org.apache.commons.collections.map.CaseInsensitiveMap;
+import org.apache.commons.collections4.map.CaseInsensitiveMap;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.third.quartz.ISchedulerConstants;
 

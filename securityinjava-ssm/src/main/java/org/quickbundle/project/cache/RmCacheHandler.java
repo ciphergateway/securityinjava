@@ -2,7 +2,6 @@ package org.quickbundle.project.cache;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -13,17 +12,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.jws.WebService;
 
-import org.apache.cxf.binding.soap.saaj.SAAJOutInterceptor;
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.apache.cxf.logging.FaultListener;
-import org.apache.cxf.message.Message;
-import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
-import org.apache.ws.security.WSConstants;
-import org.apache.ws.security.handler.WSHandlerConstants;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.itf.IRmCacheHandler;
 import org.quickbundle.itf.IRmCacheListener;
-import org.quickbundle.third.webservice.RmPasswordCallback;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 
@@ -84,59 +75,10 @@ public class RmCacheHandler<T> implements IRmCacheHandler<T>{
 		
 		final Map<String, String> mOther = RmClusterConfig.getSingleton().getOtherWsUrl();
 		for (final String nodeId : mOther.keySet()) {
-			String wsUrl = mOther.get(nodeId);
-			final String soaUrl = wsUrl + "RmCacheHandler";
-			Runnable task = new Runnable() {
-				public void run() {
-					try {
-						RmCacheHandler.FlushTask ftThis = new RmCacheHandler.FlushTask(cacheClassName, flushType, keys);
-						if(sFlushTask.contains(ftThis)) {
-							sFlushTask.remove(ftThis);
-							JaxWsProxyFactoryBean jw = new JaxWsProxyFactoryBean();
-							jw.setServiceClass(IRmCacheHandler.class);
-							jw.setAddress(soaUrl);
-							appendAuth(jw, nodeId);
-							IRmCacheHandler ch = (IRmCacheHandler) jw.create();
-							ch.reflectFlush(cacheClassName, flushType, keys);
-							logCache.info(RmCacheHandler.class.getName() + ".flushOtherNodes(" + cacheClassName.getName() + ", " + flushType + ", " + Arrays.deepToString(keys) + "): " + mOther);
-						} else {
-							logCache.debug("ignore " + RmCacheHandler.class.getName() + ".flushOtherNodes(" + cacheClassName.getName() + ", " + flushType + ", " + Arrays.deepToString(keys) + "): " + mOther);							
-						}
-					} catch (Exception e) {
-						//e.printStackTrace();
-						logCache.error(RmCacheHandler.class.getName() + ".flushOtherNodes(" + cacheClassName.getName() + ", " + flushType + ", " + Arrays.deepToString(keys) + "): " + e.toString());
-					}
-				}
-			};
-			threadPool.execute(task);
+			//TODO call cluster node
 		}
 	}
 	
-	/**
-	 * 添加用户名和密码信息
-	 * 
-	 * @param jw
-	 */
-	public void appendAuth(JaxWsProxyFactoryBean jw, String nodeId) {
-		Map<String, Object> outProps = new HashMap<String, Object>();
-		outProps.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
-		outProps.put(WSHandlerConstants.USER, RmClusterConfig.getSingleton().getAuth(nodeId).keySet().toArray(new String[0])[0]);
-		outProps.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
-		outProps.put(WSHandlerConstants.PW_CALLBACK_CLASS, RmPasswordCallback.class.getName());
-
-		Map<String, Object> mProp = new HashMap<String, Object>();
-		mProp.put(FaultListener.class.getName(), new FaultListener() {
-			public boolean faultOccurred(Exception exception, String description, Message message) {
-				RmCacheHandler.logCache.error("fail: " + exception.toString() + " cause:" + exception.getCause());
-				return false;
-			}
-		});
-		jw.setProperties(mProp);
-
-		WSS4JOutInterceptor wssOut = new WSS4JOutInterceptor(outProps);
-		jw.getOutInterceptors().add(wssOut);
-		jw.getOutInterceptors().add(new SAAJOutInterceptor());
-	}
 	
 	/**
 	 * 销毁缓存处理器，安全关闭线程池

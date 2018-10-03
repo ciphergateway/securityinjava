@@ -23,10 +23,8 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.quickbundle.base.RmValueObject;
-import org.quickbundle.third.webservice.TimestampAdapter;
 
 /**
  * 功能、用途、现存BUG:
@@ -347,7 +345,6 @@ public class RmUserVo extends RmValueObject implements IRmLoginVo{
      * 
      * @return 最后登录时间
      */
-	@XmlJavaTypeAdapter(TimestampAdapter.class)
 	public Timestamp getLast_login_date(){
 		return last_login_date;
 	}

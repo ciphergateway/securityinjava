@@ -1,15 +1,7 @@
 package org.quickbundle.project.server;
 
 import java.io.File;
-import java.lang.management.ManagementFactory;
-import java.util.ArrayList;
 
-import javax.management.MBeanServer;
-import javax.management.MalformedObjectNameException;
-import javax.management.ObjectName;
-import javax.servlet.ServletContext;
-
-import org.apache.commons.lang.StringUtils;
 //import org.eclipse.jetty.security.ConstraintMapping;
 //import org.eclipse.jetty.security.ConstraintSecurityHandler;
 //import org.eclipse.jetty.security.HashLoginService;

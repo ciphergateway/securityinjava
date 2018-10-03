@@ -49,7 +49,7 @@ public class RmUUIDHelper {
 	 * @return
 	 */
 	public static String getUUID() {
-		return getRandomBasedUUID().toString();
+		return getTimeBasedUUID().toString();
 	}
 
 	/**

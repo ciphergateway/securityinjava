@@ -4,7 +4,7 @@
 <%@ page contentType="text/xml;charset=UTF-8" language="java" %><%try {
 	Object obj = request.getAttribute(IGlobalConstants.REQUEST_OUTPUT_OBJECT);
 	
-	String xmlStr = RmXmlHelper.getStringFromDocument((org.dom4j.Document) RmXmlConverter.getDocByObj(obj));
+	String xmlStr = RmXmlConverter.getDocByObj(obj).asXML();
 	//System.out.println(xmlStr);
 	out.print(xmlStr);
 } catch(Exception e) {

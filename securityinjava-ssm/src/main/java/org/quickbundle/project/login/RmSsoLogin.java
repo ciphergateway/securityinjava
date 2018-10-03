@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.dom4j.Element;
 import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.base.RmValueObject;
@@ -122,16 +121,16 @@ public class RmSsoLogin {
 			String[] ssoValueArgs = ssoValue.split(splictKeyRegex);
 			String nodeId = ssoValueArgs[0];
 			String sessionId = ssoValueArgs[2];
-			String callWsUrl = RmClusterConfig.getSingleton().getSelfNode().get(RmClusterConfig.NodeKey.webServiceUrl.name());
-			String address = callWsUrl + "RmSsoLogin";
-			JaxWsProxyFactoryBean jw = new JaxWsProxyFactoryBean();
-			jw.setServiceClass(IRmSsoService.class);
-			jw.setAddress(address);
-			Object obj = jw.create();
-			IRmSsoService ssoService = (IRmSsoService) obj;
-			
-			RmUserVo userVo = ssoService.copyLogin(sessionId, ssoValue);
-			session.setAttribute(IGlobalConstants.RM_USER_VO, userVo);
+//			String callWsUrl = RmClusterConfig.getSingleton().getSelfNode().get(RmClusterConfig.NodeKey.webServiceUrl.name());
+//			String address = callWsUrl + "RmSsoLogin";
+//			JaxWsProxyFactoryBean jw = new JaxWsProxyFactoryBean();
+//			jw.setServiceClass(IRmSsoService.class);
+//			jw.setAddress(address);
+//			Object obj = jw.create();
+//			IRmSsoService ssoService = (IRmSsoService) obj;
+//			
+//			RmUserVo userVo = ssoService.copyLogin(sessionId, ssoValue);
+//			session.setAttribute(IGlobalConstants.RM_USER_VO, userVo);
 			session.setAttribute(IGlobalConstants.RM_SSO_TEMP, IGlobalConstants.RM_YES);
 			return true;
 		} catch (Exception e) {

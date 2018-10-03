@@ -67,9 +67,9 @@
 	    </property>
     </bean>
 
-	<!-- JSR303 Validator定义 -->
+	<!-- JSR303 Validator定义 
  	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-	
+	-->
 	<!-- MailSender used by EmailAdvice -->
 	<!--
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">

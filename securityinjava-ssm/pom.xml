@@ -342,19 +342,12 @@ encoding//res/tools.bat=GBK]]>
             <scope>provided</scope>
         </dependency>
 		<dependency>
-			<groupId>maven_not_found</groupId>
-			<artifactId>Struts-Layout</artifactId>
-			<version>1.4.0-RC1</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/res/lib/maven_not_found/Struts-Layout-1.4.0-RC1.jar</systemPath>
-		</dependency>
-		<dependency>
 			<groupId>com.ciphergateway</groupId>
 			<artifactId>securityinjava-spring-ext</artifactId>
 			<version>${securityinjava.version}</version>
 		</dependency>
 
-		<!-- Proxool -->
+		<!-- Proxool begin -->
 		<dependency>
 			<groupId>com.cloudhopper.proxool</groupId>
 			<artifactId>proxool</artifactId>
@@ -380,48 +373,160 @@ encoding//res/tools.bat=GBK]]>
 		  <artifactId>avalon-framework-api</artifactId>
 		  <version>4.3</version>
 		</dependency>
+		<!-- Proxool end -->
 
- 		
 		<dependency>
-			<groupId>org.apache.ant</groupId>
-			<artifactId>ant</artifactId>
-			<version>1.9.13</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.13</version>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>3.2.7</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.11</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-digester</groupId>
-			<artifactId>commons-digester</artifactId>
-			<version>2.1</version>
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-collections4</artifactId>
+		  <version>4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.3.3</version>
 		</dependency>
+ 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+
 		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>jaxen</groupId>
-			<artifactId>jaxen</artifactId>
-			<version>1.1.6</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!--		-->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+	  <dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>2.11.1</version>
+	  </dependency>
+	  <dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.11.1</version>
+	  </dependency>
+		
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.bull.javamelody</groupId>
+			<artifactId>javamelody-core</artifactId>
+			<version>1.74.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.19</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hynnet</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>c3p0</groupId>
+					<artifactId>c3p0</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- to be clean -->
+		<dependency>
+			<groupId>maven_not_found</groupId>
+			<artifactId>Struts-Layout</artifactId>
+			<version>1.4.0-RC1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/res/lib/maven_not_found/Struts-Layout-1.4.0-RC1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-core</artifactId>
+			<version>${struts.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-extras</artifactId>
+			<version>${struts.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-taglib</artifactId>
+			<version>${struts.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.python</groupId>
+			<artifactId>jython</artifactId>
+			<version>2.7-b1</version>
+		</dependency>
+
+
+		<!-- JSR303  BeanValidator 
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+		-->
+        <!-- JSON begin 
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        -->
+        <!-- JSON end -->
+
+		<!--	
 		<dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
@@ -445,275 +550,9 @@ encoding//res/tools.bat=GBK]]>
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>net.bull.javamelody</groupId>
-			<artifactId>javamelody-core</artifactId>
-			<version>1.74.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jfree</groupId>
-			<artifactId>jcommon</artifactId>
-			<version>1.0.24</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jfree</groupId>
-			<artifactId>jfreechart</artifactId>
-			<version>1.0.19</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.hynnet</groupId>
-			<artifactId>jxl</artifactId>
-			<version>2.6.12.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>2.0.1.Final</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
- 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.25</version>
-		</dependency>
- 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-core</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-extras</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-taglib</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.python</groupId>
-			<artifactId>jython</artifactId>
-			<version>2.7-b1</version>
-		</dependency>
-		<!-- JSR303  BeanValidator -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate-validator.version}</version>
-		</dependency>
-		
-        <!-- JSON begin -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-        <!-- JSON end -->
-		
-		<!-- mybatis -->
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>${mybatis.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>${mybatis-spring.version}</version>
-		</dependency>
+		-->
 
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.3</version>
-		</dependency>
-		
-		<!-- CXF -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-common</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-java2ws</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-validator</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-wsdlto-core</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-wsdlto-databinding-jaxb</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-ws-security</artifactId>
-			<version>${cxf.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>ehcache-core</artifactId>
-					<groupId>net.sf.ehcache</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>opensaml</artifactId>
-					<groupId>org.opensaml</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-annotation_1.0_spec</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jaxws_2.2_spec</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-stax-api_1.0_spec</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-			<version>1.1.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.neethi</groupId>
-			<artifactId>neethi</artifactId>
-			<version>3.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.woodstox</groupId>
-			<artifactId>woodstox-core-asl</artifactId>
-			<version>4.4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>wsdl4j</groupId>
-			<artifactId>wsdl4j</artifactId>
-			<version>1.6.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.ws.security</groupId>
-			<artifactId>wss4j</artifactId>
-			<version>1.6.19</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>opensaml</artifactId>
-					<groupId>org.opensaml</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.xmlbeans</groupId>
-			<artifactId>xmlbeans</artifactId>
-			<version>2.6.0</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>stax-api</artifactId>
-					<groupId>stax</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.ws.xmlschema</groupId>
-			<artifactId>xmlschema-core</artifactId>
-			<version>2.2.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-xjc</artifactId>
-			<version>2.3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-core</artifactId>
-			<version>2.3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.xml.soap</groupId>
-			<artifactId>saaj-api</artifactId>
-			<version>1.3.5</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.messaging.saaj</groupId>
-			<artifactId>saaj-impl</artifactId>
-			<version>1.3.28</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.woodstox</groupId>
-			<artifactId>stax2-api</artifactId>
-			<version>3.1.4</version>
-		</dependency>
-		
-		<!-- Spring security -->
+		<!-- Spring security 
 		<dependency>  
 		    <groupId>org.springframework.security</groupId>  
 		    <artifactId>spring-security-web</artifactId>  
@@ -749,6 +588,6 @@ encoding//res/tools.bat=GBK]]>
 		    <artifactId>spring-security-crypto</artifactId>  
 		    <version>${spring.security.version}</version>  
 		</dependency> 
-		
+		-->
 	</dependencies>
 </project>
