@@ -184,26 +184,6 @@
 	</servlet-mapping>
 	<!-- proxool end -->
 
-	<!-- jython begin -->
-	<servlet>
-	    <servlet-name>PyServlet</servlet-name>
-	    <servlet-class>org.quickbundle.third.jython.RmPyServlet</servlet-class>
-		<init-param>
-             <param-name>skip_jython_initialization</param-name>
-             <param-value>true</param-value>
-         </init-param>
-		<init-param>
-             <param-name>python.console.encoding</param-name>
-             <param-value>UTF-8</param-value>
-         </init-param>
-	    <load-on-startup>-1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-	    <servlet-name>PyServlet</servlet-name>
-	    <url-pattern>*.py</url-pattern>
-	</servlet-mapping>
-	<!-- jython end -->
-
 	<!--Session timeout-->
 	<session-config>
 		<session-timeout>60</session-timeout>
