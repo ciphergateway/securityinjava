@@ -23,11 +23,13 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <version>1.1.6</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -39,13 +41,12 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
-		<dependency>
-			<groupId>org.safehaus.jug</groupId>
-			<artifactId>jug</artifactId>
-			<version>2.0.0</version>
-			<classifier>lgpl</classifier>
-		</dependency>
-
+        <dependency>
+          <groupId>com.fasterxml.uuid</groupId>
+          <artifactId>java-uuid-generator</artifactId>
+          <version>3.1.5</version>
+        </dependency>
+        
 		<!-- JSON begin -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -54,7 +55,7 @@
 		</dependency>
 
 		<!-- JSON end -->
-
+        <!--        -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>

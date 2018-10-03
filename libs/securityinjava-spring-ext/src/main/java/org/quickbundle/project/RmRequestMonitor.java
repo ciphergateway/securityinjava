@@ -55,8 +55,9 @@ public class RmRequestMonitor {
         long executeTime = -1l;
         if(RmGlobalMonitor.uniqueUUID.get() != null) {
         	long startTime = RmUUIDHelper.getTimestamp(RmGlobalMonitor.uniqueUUID.get());
-        	long nowUUID = RmUUIDHelper.getSysTimestamp();
-            executeTime = (nowUUID - startTime) /10000;
+        	long nowUUIDTime = RmUUIDHelper.getSysTimestamp();
+        	System.nanoTime();
+            executeTime = (nowUUIDTime - startTime) /10000;
         }
         long[] sqlCount = tlSqlCount.get();
         StringBuilder sb = new StringBuilder();

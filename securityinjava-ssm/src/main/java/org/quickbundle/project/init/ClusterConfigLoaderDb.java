@@ -43,7 +43,7 @@ public class ClusterConfigLoaderDb extends AbstractClusterConfigLoader {
 	}
 
 	private void initSelfNode() {
-		selfNode.put(NodeKey.id.name(), RmUUIDHelper.generateUUID());
+		selfNode.put(NodeKey.id.name(), RmUUIDHelper.getUUID());
 		selfNode.put(NodeKey.user.name(), RmClusterConfig.DEFAULT_AUTH_KEY_VALUE.get(NodeKey.user.name()));
 		selfNode.put(NodeKey.password.name(), RmClusterConfig.DEFAULT_AUTH_KEY_VALUE.get(NodeKey.password.name()));
 

@@ -41,7 +41,7 @@ public class RmLogMethod {
     public void beforeMethod(JoinPoint jp) {
         if(methodStackDeep.get() == null) { //方法栈的顶层
         	if(RmGlobalMonitor.uniqueUUID.get() == null) {
-        		RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.generateUUID());
+        		RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.getUUID());
         		hereCreateUUID.set(true);
         	}
         	methodHolder.set(System.currentTimeMillis());

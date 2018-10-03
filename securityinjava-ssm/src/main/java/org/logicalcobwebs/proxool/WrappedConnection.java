@@ -170,7 +170,7 @@ public class WrappedConnection implements MethodInterceptor {
                         if(concreteMethod.getName().equals(COMMIT_METHOD) || concreteMethod.getName().equals(ROLLBACK_METHOD)) {
                         	RmGlobalMonitor.removeTransactionUUID(String.valueOf(this.getId()));
                         } else if(concreteMethod.getName().equals(SET_AUTO_COMMIT_METHOD) && argCount == 1 && new Boolean(false).equals(args[0])) {
-                        	RmGlobalMonitor.putTransactionUUID(String.valueOf(this.getId()), RmUUIDHelper.generateUUID());
+                        	RmGlobalMonitor.putTransactionUUID(String.valueOf(this.getId()), RmUUIDHelper.getUUID());
                         }
                     } catch (IllegalAccessException e) {
                         // This is probably because we are trying to access a non-public concrete class. But don't worry,

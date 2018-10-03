@@ -30,7 +30,7 @@ public class RmSsoLogin {
 	public final static String splictKey = "$"; 
 	public final static String splictKeyRegex = "\\$";
 	public final static long defaultExpired = 1000 * 60 * 30; 
-	private static String privateKey = RmUUIDHelper.generateUUID();
+	private static String privateKey = RmUUIDHelper.getUUID();
 	
 	
 	/**

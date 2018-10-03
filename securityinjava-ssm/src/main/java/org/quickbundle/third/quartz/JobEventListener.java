@@ -86,7 +86,7 @@ public class JobEventListener implements JobListener {
 
 	public void jobToBeExecuted(JobExecutionContext context) {
     	if(RmGlobalMonitor.uniqueUUID.get() == null) {
-    		RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.generateUUID());
+    		RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.getUUID());
     		hereCreateUUID.set(true);
     	}
 	}

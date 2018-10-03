@@ -122,7 +122,7 @@ public class RmPrivilegeFilter implements Filter {
     		if(request.getAttribute("javax.servlet.forward.request_uri") == null && 
     				validBsUrlMatch.matcher(uri).find()) {
     			//1, 产生全局唯一的UUID
-    			RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.generateUUID());
+    			RmGlobalMonitor.uniqueUUID.set(RmUUIDHelper.getUUID());
     			
     			//2, 绑定request到当前线程
     			RmRequestMonitor.tlCurrentRequest.set(request);

@@ -18,7 +18,7 @@ public class UuidWrapper implements IRmIdWrapper {
 	public String[] nextValue(int length) {
 		String[] result = new String[length];
 		for(int i=0; i<length; i++) {
-			result[0] = RmUUIDHelper.generateUUID();
+			result[0] = RmUUIDHelper.getUUID();
 		}
 		return result;
 	}
