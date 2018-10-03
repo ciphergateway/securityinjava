@@ -8,6 +8,7 @@
 	<packaging>war</packaging>
 
 	<properties>
+		<skipTests>true</skipTests>
 		<revision>6.0.0-SNAPSHOT</revision>
 		<basedir>./</basedir>
 		<war.dir>WebContent</war.dir>

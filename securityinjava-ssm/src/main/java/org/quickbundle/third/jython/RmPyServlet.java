@@ -118,15 +118,15 @@ public class RmPyServlet extends HttpServlet {
         	props.put("python.home", getDefaultPythonHome());
         }
         //qb-rm auto create jython lib dir if not exist
-        if(RmConfig.getSingleton().isCreatePythonLibIfNotExist()) {
-        	File pythonLib = new File(props.getProperty("python.home"));
-        	if(!pythonLib.exists()) {
-        		RmLogHelper.getLogger(PyServlet.class).info("begin init jython lib");
-        		String zipFile = RmPathHelper.getWebInfDir() + "/archive/python/jython.zip";
-        		RmZipHelper.unZip(RmXmlHelper.formatToFile(zipFile), pythonLib.getAbsolutePath(), RmConfig.getSingleton().getDefaultEncode());
-        		RmLogHelper.getLogger(PyServlet.class).info("create jython lib: unzip " + zipFile + " to " + pythonLib.getAbsolutePath());
-        	}
-        }
+//        if(RmConfig.getSingleton().isCreatePythonLibIfNotExist()) {
+//        	File pythonLib = new File(props.getProperty("python.home"));
+//        	if(!pythonLib.exists()) {
+//        		RmLogHelper.getLogger(PyServlet.class).info("begin init jython lib");
+//        		String zipFile = RmPathHelper.getWebInfDir() + "/archive/python/jython.zip";
+//        		RmZipHelper.unZip(RmXmlHelper.formatToFile(zipFile), pythonLib.getAbsolutePath(), RmConfig.getSingleton().getDefaultEncode());
+//        		RmLogHelper.getLogger(PyServlet.class).info("create jython lib: unzip " + zipFile + " to " + pythonLib.getAbsolutePath());
+//        	}
+//        }
         PySystemState.initialize(baseProps, props, new String[0], Thread.currentThread().getContextClassLoader());
         PySystemState.add_package("javax.servlet");
         PySystemState.add_package("javax.servlet.http");
