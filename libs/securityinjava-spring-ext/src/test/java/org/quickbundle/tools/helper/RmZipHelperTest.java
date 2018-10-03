@@ -3,6 +3,7 @@ package org.quickbundle.tools.helper;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -29,26 +30,32 @@ public class RmZipHelperTest {
 		RmFileHelper.saveFile("bbbbbb", tmpDir + File.separator + "b.txt");
 		RmFileHelper.saveFile("中文", tmpDir + File.separator + "中文.txt");
 	}
+	
+	void doCreateZipFile() throws Exception {
+	       File targetZip = new File(tmpDir + File.separator + "abc.zip");
+	        RmZipHelper.createZipFile(new File[] {
+	                new File(tmpDir + File.separator + "a.txt"),
+	                new File(tmpDir + File.separator + "b.txt"),
+	                new File(tmpDir + File.separator + "中文.txt")
+	        }, targetZip, RmZipHelper.ZIP_ENCODING_UTF8);
+	        RmFileHelper.copyFile(targetZip, userHomeZip);
+	}
 
 	@Test
 	public void createZipFile() throws Exception {
-		File targetZip = new File(tmpDir + File.separator + "abc.zip");
-		RmZipHelper.createZipFile(new File[] {
-				new File(tmpDir + File.separator + "a.txt"),
-				new File(tmpDir + File.separator + "b.txt"),
-				new File(tmpDir + File.separator + "中文.txt")
-		}, targetZip, RmZipHelper.ZIP_ENCODING_UTF8);
+	    File targetZip = new File(tmpDir + File.separator + "abc.zip");
+	    doCreateZipFile();
 		assertTrue(targetZip.exists());
-		
-		RmFileHelper.copyFile(targetZip, userHomeZip);
 		assertTrue(userHomeZip.exists());
 		targetZip.delete();
 		assertTrue(!targetZip.exists());
+		userHomeZip.delete();
+		assertTrue(!userHomeZip.exists());
 	}
 	
 	@Test
 	public void unZip() throws Exception {
-		createZipFile();
+	    doCreateZipFile();
 		assertTrue(userHomeZip.exists());
 		RmZipHelper.unZip(userHomeZip.toString(), cgTestDir, RmZipHelper.ZIP_ENCODING_UTF8);
 		assertTrue(new File(cgTestDir + File.separator + "中文.txt").exists());

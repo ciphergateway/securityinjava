@@ -2,10 +2,7 @@
 <rm>
 	<org.quickbundle.project.init.CustomSystemProperties>
 		<!-- for production -->
-		<rmdemo.root.home>${user.home}/.qbhome/rmdemo</rmdemo.root.home>
-		
-		<!-- for tomcat debug 
-		<rmdemo.root.home>${user.dir}/work/.qbhome/rmdemo</rmdemo.root.home> -->
+		<rmdemo.root.home>${user.home}/.ciphergateway/work/rmdemo</rmdemo.root.home>
 		
 		<javamelody.storage-directory>${rmdemo.root.home}/javamelody</javamelody.storage-directory>
 	</org.quickbundle.project.init.CustomSystemProperties>

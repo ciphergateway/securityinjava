@@ -19,9 +19,9 @@ public class RmRequestMonitor {
     public static final ThreadLocal<ServletRequest> tlCurrentRequest = new ThreadLocal<ServletRequest>();
     
 	//request统计的Logger
-	private static final Logger logRequest = RmLogHelper.getLogger("rmrequest");
+	private static final Logger logRequest = RmLogHelper.getLogger("rmrequestf");
 	//request统计的Logger，用于控制台输出
-	private static final Logger logRequest2 = RmLogHelper.getLogger("rmrequest2");
+	private static final Logger logRequest2 = RmLogHelper.getLogger("rmrequeststdout");
     
     /**
      * 绑定的sql数量
