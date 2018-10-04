@@ -22,7 +22,7 @@ import java.sql.Timestamp;
 		<xsl:if test="column[@dataType='java.math.BigDecimal']">
 import java.math.BigDecimal;
 </xsl:if>
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 
 <xsl:value-of select="str:getClassComment($authorName)"/>
 
@@ -62,7 +62,7 @@ import java.sql.Timestamp;
 				<xsl:if test="column[@dataType='java.math.BigDecimal']">
 import java.math.BigDecimal;
 </xsl:if>
-import org.quickbundle.base.vo.RmValueObject;
+import org.quickbundle.base.RmValueObject;
 
 <xsl:value-of select="str:getClassComment($authorName)"/>
 

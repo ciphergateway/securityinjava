@@ -59,7 +59,7 @@
     where <xsl:value-of select="$thisTablePk"/>=#{<xsl:value-of select="str:getTablePkFormatLower(/meta, @tableName)"/>}
   <xsl:value-of select="$charLt"/>/update>
 
-  <xsl:value-of select="$charLt"/>select id="get" parameterType="string" resultType="<xsl:value-of select="$javaPackageTableDir"/>.vo.<xsl:value-of select="str:getTableFormatNameUpperFirst(/meta, @tableName)"/>Vo">
+  <xsl:value-of select="$charLt"/>select id="get" parameterType="<xsl:value-of select="lower-case($tablePkClass)"/>" resultType="<xsl:value-of select="$javaPackageTableDir"/>.vo.<xsl:value-of select="str:getTableFormatNameUpperFirst(/meta, @tableName)"/>Vo">
     select <xsl:value-of select="@tableName"/>.<xsl:value-of select="$thisTablePk"/>, 
       <xsl:for-each select="column[not(@columnName=$thisTablePk)]">
 				<xsl:value-of select="../@tableName"/>.<xsl:value-of select="@columnName"/>

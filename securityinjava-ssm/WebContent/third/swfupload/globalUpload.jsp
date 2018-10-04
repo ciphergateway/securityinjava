@@ -42,7 +42,7 @@ if(aTo_delete_affix != null && aTo_delete_affix.length > 0) {
 <script type="text/javascript" src="js/swfupload.queue.js"></script>
 <script type="text/javascript" src="js/fileprogress.js"></script>
 <script type="text/javascript" src="js/handlers.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 var swfu;
 window.onload = function() {

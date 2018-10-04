@@ -12,7 +12,7 @@
     <xsl:result-document href="{$targetFullPath}/list{str:upperFirst(lower-case(@tableName))}.jsp" format="rm-text">
 <xsl:value-of select="$charLt"/>%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <xsl:value-of select="$charLt"/>%@ page import="java.util.List" %>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.base.RmPageVo"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.common.vo.RmCommonVo"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.RmProjectHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.IGlobalConstants"%>

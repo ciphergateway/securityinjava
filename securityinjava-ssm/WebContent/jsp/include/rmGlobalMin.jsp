@@ -1,4 +1,4 @@
-<%@ page errorPage="/jsp/common/err.jsp" %><%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean" %><%@page import="org.quickbundle.config.RmConfig"%><script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.11.2.min.js"></script>
+<%@ page errorPage="/jsp/common/err.jsp" %><%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean" %><%@page import="org.quickbundle.config.RmConfig"%><script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-tools.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-behavior.js"></script>
 <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">

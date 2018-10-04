@@ -30,7 +30,7 @@
 	</bean>
 	
 	<!-- 使用annotation自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
-	<context:component-scan base-package="org.quickbundle,hello.helloworld" name-generator="org.quickbundle.third.spring.RmAnnotationBeanNameGenerator">
+	<context:component-scan base-package="org.quickbundle, com, hello.helloworld" name-generator="org.quickbundle.third.spring.RmAnnotationBeanNameGenerator">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
@@ -40,7 +40,7 @@
     -->
     <bean id="BeanNameGenerator" class="org.quickbundle.third.spring.RmAnnotationBeanNameGenerator"></bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.quickbundle,hello.helloworld" />
+        <property name="basePackage" value="org.quickbundle, com, hello.helloworld" />
     	<property name="nameGenerator" ref="BeanNameGenerator" />
     	<property name="annotationClass" value="org.quickbundle.third.mybatis.MyBatisDao"/>
     </bean>

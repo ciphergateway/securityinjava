@@ -66,7 +66,7 @@
 <xsl:value-of select="$charLt"/>%@page import="java.sql.SQLException"%>
 <xsl:value-of select="$charLt"/>%@page import="java.util.List"%>
 <xsl:value-of select="$charLt"/>%@page import="org.springframework.jdbc.core.RowMapper"%>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.util.RmKeyCountList"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.support.RmKeyCountList"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.RmProjectHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="<xsl:value-of select="$javaPackageTableDir"/>.<xsl:value-of select="$ITableNameConstants"/>"%>
 </xsl:template>

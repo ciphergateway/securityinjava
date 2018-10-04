@@ -11,7 +11,7 @@ package <xsl:value-of select="$javaPackageTableDir"/>;
 
 import java.util.Map;
 
-import org.apache.commons.collections.map.CaseInsensitiveMap;
+import org.apache.commons.collections4.map.CaseInsensitiveMap;
 import org.quickbundle.project.IGlobalConstants;
 
 <xsl:value-of select="str:getClassComment($authorName)"/>

@@ -8,7 +8,7 @@
 	<xsl:template match="table[1]">
 <xsl:value-of select="$charLt"/>%@page contentType="text/html; charset=UTF-8" language="java" %>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.RmVoHelper" %>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.support.statistic.RmStatisticHandler"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.support.RmStatisticHandler"%>
 <xsl:value-of select="$charLt"/>%@page import="<xsl:value-of select="$javaPackageTableDir"/>.<xsl:value-of select="$ITableNameConstants"/>" %>
 <xsl:value-of select="$charLt"/>%  //取出本条记录
     RmStatisticHandler sh = null;

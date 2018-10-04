@@ -16,8 +16,8 @@
 <xsl:value-of select="$charLt"/>%@ page import="jxl.format.Alignment" %>
 <xsl:value-of select="$charLt"/>%@ page import="jxl.write.Label" %>
 <xsl:value-of select="$charLt"/>%@ page import="jxl.write.WritableCellFormat" %>
-<xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
-<xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.base.web.page.RmPageVo"%>
+<xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.base.beans.RmBeanFactory"%>
+<xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.base.RmPageVo"%>
 <xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <xsl:value-of select="$charLt"/>%@ page import="org.quickbundle.tools.helper.RmDateHelper"%>
 <xsl:if test="column[@isBuild='true' and (@humanDisplayType='rm.dictionary.select' or @humanDisplayType='rm.dictionary.checkbox')]">

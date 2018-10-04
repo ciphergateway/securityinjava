@@ -19,9 +19,9 @@
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.RmProjectHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.third.excel.RmExcelHandler"%>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.io.RmZipHelper"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.RmZipHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.RmVoHelper"%>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.base.beans.factory.RmBeanFactory"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <xsl:value-of select="$charLt"/>%@ page import="<xsl:value-of select="$javaPackageTableDir"/>.vo.<xsl:value-of select="$TableNameVo"/>" %>
 <xsl:value-of select="$charLt"/>%@ page import="<xsl:value-of select="$javaPackageTableDir"/>.<xsl:value-of select="$ITableNameConstants"/>" %>
 <xsl:value-of select="$charLt"/>%

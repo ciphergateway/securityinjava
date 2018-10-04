@@ -7,7 +7,7 @@
 <%@page import="java.math.BigDecimal"%>
 <%@page import="org.quickbundle.third.fileupload.RmUploadHelper"%>
 <%@page impoorg.quickbundle.tools.helper.RmStringHelperlper"%>
-<%@page impoorg.quickbundle.base.beans.factory.RmBeanFactorytory"%>
+<%@page impoorg.quickbundle.base.beans.RmBeanFactorytory"%>
 <%@page impoorg.quickbundle.tools.helper.RmJspHelperlper"%>
 <%@page impoorg.quickbundle.tools.helper.RmVoHelperlper"%>
 <%@page impojava.util.ListList"%>

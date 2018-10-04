@@ -19,7 +19,7 @@ import java.util.Map;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
-import org.quickbundle.base.beans.factory.RmIdFactory;
+import org.quickbundle.base.beans.RmIdFactory;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.third.mybatis.ParaMap;
 import org.quickbundle.third.mybatis.RmSqlSessionDaoSupport;

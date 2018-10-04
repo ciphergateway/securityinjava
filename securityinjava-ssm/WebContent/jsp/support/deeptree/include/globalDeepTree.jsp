@@ -70,7 +70,7 @@
 	if(enableStatusText == null || enableStatusText.length() == 0  || (!"true".equals(enableStatusText) && !"false".equals(enableStatusText))) {
 		enableStatusText = "false";
 	}
-%><script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery/jquery-1.11.2.min.js"></script>
+%><script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery/jquery.transform.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/jsp/support/deeptree/deeptree.js"></script>
 <script type="text/javascript">

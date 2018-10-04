@@ -186,7 +186,9 @@ public class CopyProjectEngine {
 				if (sourceFile.isFile()) {
 					copySingleFile(sourceFile, targetFilePath, sFileType, monitor, thisReplacedFile);
 				} else if (sourceFile.isDirectory()) {// 如果是子文件夹
-					copyFolder(sourceFile.getCanonicalPath(), targetFilePath, sFileType, monitor);
+				    //Mac等操作系统下不支持目录硬链接，导致ln -s 软链接模板目录后，getCanonicalPath()直接取到原始目录，所以去掉
+					//copyFolder(sourceFile.getCanonicalPath(), targetFilePath, sFileType, monitor);
+				    copyFolder(sourceFile.toString(), targetFilePath, sFileType, monitor);
 				} else {
 					QbGenerateProjectPlugin.log(sourceFile + "既不是文件也不是目录，忽略！");
 				}
@@ -349,14 +351,19 @@ public class CopyProjectEngine {
 	 * @return
 	 */
 	private String getFileEndPart(File sourceFile) {
-		String uriSourceFile = null;
-		try {
-			uriSourceFile = sourceFile.getCanonicalPath();
-		} catch (IOException e1) {
-			uriSourceFile = sourceFile.getAbsolutePath();
-		}
+		String uriSourceFile = sourceFile.toString();
+//		try {
+//			uriSourceFile = sourceFile.getCanonicalPath();
+//		} catch (IOException e1) {
+//			uriSourceFile = sourceFile.getAbsolutePath();
+//		}
 		uriSourceFile = RmXmlHelper.formatToUrl(uriSourceFile);
-		uriSourceFile = uriSourceFile.substring(RmFileHelper.formatToUrl(gpRule.getProjectTemplatePath()).length());
+		try {
+		    uriSourceFile = uriSourceFile.substring(RmFileHelper.formatToUrl(gpRule.getProjectTemplatePath()).length());
+        } catch (Exception e) {
+            e.printStackTrace();
+            QbGenerateProjectPlugin.log("getFileEndPart(" + sourceFile + ") error: " + e.toString());
+        }
 		return uriSourceFile;
 	}
 

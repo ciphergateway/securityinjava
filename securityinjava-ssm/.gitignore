@@ -8,6 +8,7 @@ bin/
 
 /WebContent/WEB-INF/classes/
 /WebContent/WEB-INF/lib/
+/WebContent/upload/
 
 /.pydevproject
 /qalab.xml

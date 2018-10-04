@@ -1,6 +1,6 @@
 <%@ page errorPage="/jsp/common/err.jsp" %><%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c"%><%@ taglib uri="/WEB-INF/tld/struts-bean.tld" prefix="bean" %><%@ taglib uri="/WEB-INF/tld/struts-layout.tld" prefix="layout" %><%@page import="org.quickbundle.config.RmConfig"%><%@page import="org.quickbundle.tools.helper.RmLogHelper"%><%@page import="org.quickbundle.tools.helper.RmStringHelper"%><%@page import="org.quickbundle.tools.helper.RmJspHelper"%><%@page import="org.quickbundle.project.IGlobalConstants"%>
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.form.js"></script>
 <script type="text/javascript"> 
 var dir_base = "<%=request.getContextPath()%>";

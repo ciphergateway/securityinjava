@@ -20,7 +20,7 @@
 <xsl:value-of select="$charLt"/>head>
 <xsl:value-of select="$charLt"/>meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <xsl:value-of select="$charLt"/>title><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME_DISPLAY%><xsl:value-of select="$charLt"/>/title>
-<xsl:value-of select="$charLt"/>jsp:include page="/jsp/include/rmGlobalAjax.jsp" />
+<xsl:value-of select="$charLt"/>jsp:include page="/jsp/include/rmGlobal.jsp" />
 <xsl:value-of select="$charLt"/>script type="text/javascript">
 Ext.onReady(function(){
 <!--开始列循环：ajax页面枚举下拉参照定义-->
