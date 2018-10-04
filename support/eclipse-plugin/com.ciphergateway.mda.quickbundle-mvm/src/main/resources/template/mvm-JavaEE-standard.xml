@@ -25,9 +25,6 @@
 			<file xsltPath="JavaEE-standard/jsp/importTableName.xsl" outputFile="importTableName.jsp" bundleCode="importExport"/>
 			<file xsltPath="JavaEE-standard/jsp/insertTableName.xsl" outputFile="insertTableName.jsp" bundleCode="main"/>
 			<file xsltPath="JavaEE-standard/jsp/listTableName.xsl" outputFile="listTableName.jsp" bundleCode="main"/>
-			<file xsltPath="JavaEE-standard/jsp/formTableName.xsl" outputFile="formTableName.jsp" bundleCode="main"/>
-			<file xsltPath="JavaEE-standard/jsp/modifyTableName.xsl" outputFile="modifyTableName.jsp" bundleCode="main"/>
-			<file xsltPath="JavaEE-standard/jsp/addTableName.xsl" outputFile="addTableName.jsp" bundleCode="main"/>
 		</files>
 		<files filesType="config" outputPath="src/main/resources/config">
 			<file xsltPath="JavaEE-standard/config/jdbc.xsl" outputFile="jdbc.properties" afterKeyWord="NOT_EXIST_POSITION"/>
@@ -38,6 +35,7 @@
 		</files>
 		<files filesType="config" outputPath="${webAppName}/jsp">
 			<file xsltPath="JavaEE-standard/config/funcTree_default.xsl" outputFile="funcTree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/config/tree_default.xsl" outputFile="ajax/tree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="ajax"/>
 		</files>
 		<files filesType="other" outputPath="src/main/java">
 			<file xsltPath="JavaEE-standard/other/IRmCodeConstants.xsl" outputFile="org/quickbundle/modules/code/IRmCodeConstants.java" afterKeyWord="//start dictionary define" rowIsUnique="true"/>
