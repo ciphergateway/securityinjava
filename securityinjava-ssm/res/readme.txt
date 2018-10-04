@@ -1,8 +1,16 @@
 ﻿---------------用mvn启动------------------
 团队开发推荐采用Maven私服，以提升和共享下载速度
 
-cd /securityinjava
+#生成Eclipse IDE文件
 mvn eclipse:eclipse
+
+#执行测试，因为默认是skipTests=true，所以以下命令用于执行copy-dependencies，复制所有关联jar包到/WEB-INF/lib
+mvn clean test
+
+#执行测试用例
+mvn clean test -DskipTests=false
+
+#打包
 mvn package
 
 

@@ -237,31 +237,34 @@ encoding//res/tools.bat=GBK]]>
 					</reportPlugins>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>test</phase>
+                        <configuration>
+                            <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                            <excludeScope>provided</excludeScope>
+                        </configuration>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
+
 		<pluginManagement>
 			<plugins>
-	            <plugin>
-	                <groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-dependency-plugin</artifactId>
-	                <version>3.0.2</version>
-	                <executions>
-	                    <execution>
-	                        <id>copy-dependencies</id>
-	                        <phase>compile</phase>
-	                        <goals>
-	                            <goal>copy-dependencies</goal>
-	                        </goals>
-	                        <configuration>
-	                            <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
-	                            <overWriteReleases>false</overWriteReleases>
-	                            <overWriteSnapshots>true</overWriteSnapshots>
-	                            <excludeScope>provided</excludeScope>
-	                        </configuration>
-	                    </execution>
-	                </executions>
-	            </plugin>
+
 			</plugins>
 		</pluginManagement>
+
 	</build>
 	<dependencies>
 		<!-- jdbc driver -->
