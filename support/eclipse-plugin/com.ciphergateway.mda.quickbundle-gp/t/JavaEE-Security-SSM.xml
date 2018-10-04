@@ -3,7 +3,7 @@
     <keywordReplace>
 	    <items>
 	       <item title="项目名" keyword="securityinjava-ssm" replacePath="true" required="true" defaultValue="projectName"></item>
-	       <item title="WEB应用名" keyword="rmdemo" replacePath="true" required="true" defaultValue="webAppName"></item>
+	       <item title="WEB应用名" keyword="sijava" replacePath="true" required="true" defaultValue="webAppName"></item>
 	    </items>
 		<fileFilter>
 			<fileAffix name="component"/>
@@ -51,7 +51,7 @@
 			<file>/securityinjava-ssm/WebContent/WEB\-INF/config/spring/rm\.scheduler\.applicationContext\.xml</file>
 			<file>/securityinjava-ssm/WebContent/WEB\-INF/config/struts/rm\.scheduler\.struts\-config\.xml</file>
 			<file>/securityinjava-ssm/WebContent/WEB\-INF/config/quartz/.*</file>
-			<file>/securityinjava-ssm/(rmdemo/WEB\-INF/lib|src/third/support/source)/quartz[\-.0-9a-z]*\.jar</file>
+			<file>/securityinjava-ssm/(sijava/WEB\-INF/lib|src/third/support/source)/quartz[\-.0-9a-z]*\.jar</file>
 			<file>/securityinjava-ssm/WebContent/ut/ap/scheduler/.*</file>
 			<file>/securityinjava-ssm/src/main/java/org/quickbundle/project/db/quartz/.*</file>
 			<file>/securityinjava-ssm/src/main/java/ut/ap/scheduler/.*</file>

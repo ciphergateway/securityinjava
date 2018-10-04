@@ -3,7 +3,7 @@
     <keywordReplace>
 	    <items>
 	       <item title="项目名" keyword="quickbundle-securitymobile" replacePath="true" required="true" defaultValue="projectName"></item>
-	       <item title="WEB应用名" keyword="rmdemo" replacePath="true" required="true" defaultValue="webAppName"></item>
+	       <item title="WEB应用名" keyword="sijava" replacePath="true" required="true" defaultValue="webAppName"></item>
 	    </items>
 		<fileFilter>
 			<fileAffix name="component"/>

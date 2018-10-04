@@ -377,7 +377,7 @@ public class RmWebServer {
 //    }
 
 	/**
-     * 功能: 将路径格式化为File形式 --> c:\rmdemo.log
+     * 功能: 将路径格式化为File形式 --> c:\sijava.log
      * 
      * @param filePath
      * @param osSeparatorStr 指定当前操作系统分隔符
@@ -398,7 +398,7 @@ public class RmWebServer {
     }
     
     /**
-     * 功能: 将路径格式化为url --> file:///c:/rmdemo.log
+     * 功能: 将路径格式化为url --> file:///c:/sijava.log
      * 
      * @param filePath
      * @return

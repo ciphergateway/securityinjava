@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules rulesVersion="6.0.0-20180902">
-	<database pdmPath="" dbProductName="MySQL" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/rmdemo?jdbcCompliantTruncation=false" userName="root" password="" catalog="" schemaPattern="" tableNamePattern="">
+	<database pdmPath="" dbProductName="MySQL" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/sijava?jdbcCompliantTruncation=false" userName="root" password="" catalog="" schemaPattern="" tableNamePattern="">
 		<!--定义目标表名xml的路径-->
 		<tableTos>
 			<tableTo xmlName="RM_FUNCTION_NODE.xml">RM_FUNCTION_NODE</tableTo>

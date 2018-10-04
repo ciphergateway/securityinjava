@@ -50,7 +50,7 @@ public class HostInfo {
 	}
 	
 	/**
-	 * @return 返回http://localhost:8080/rmdemo
+	 * @return 返回http://localhost:8080/sijava
 	 */
 	public String getLocalhostUrlPath() {
 		return scheme + "://" + serverName + ":" + serverPort + contextPath;

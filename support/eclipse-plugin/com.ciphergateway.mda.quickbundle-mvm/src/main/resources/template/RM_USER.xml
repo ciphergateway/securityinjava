@@ -9,7 +9,7 @@
   </project>
   <database>
     <driver>com.mysql.jdbc.Driver</driver>
-    <url>jdbc:mysql://localhost/rmdemo?jdbcCompliantTruncation=false</url>
+    <url>jdbc:mysql://localhost/sijava?jdbcCompliantTruncation=false</url>
     <userName>root</userName>
     <password></password>
     <dbProductName>MySQL</dbProductName>

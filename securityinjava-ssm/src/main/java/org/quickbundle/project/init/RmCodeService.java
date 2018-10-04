@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -53,6 +54,7 @@ public class RmCodeService implements IRmCodeService {
 		        return Pattern.compile("^.+\\.sql$", Pattern.CASE_INSENSITIVE).matcher(name).find();
 			}
 		});
+		Arrays.sort(aSqlFile);
 		for (int i = 0; i < aSqlFile.length; i++) {
 			String[] aSql = RmSqlHelper.loadSql(aSqlFile[i].toString());
 			IRmCommonService commonService = RmProjectHelper.getCommonServiceInstance();

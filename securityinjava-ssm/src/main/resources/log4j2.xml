@@ -4,7 +4,7 @@
     <!-- Logging Properties -->
     <Properties>
         <Property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS} %p [%c] - %m%n</Property>
-        <Property name="LOG_ROOT">${sys:user.home:-}/.ciphergateway/work/rmdemo/logs</Property>
+        <Property name="LOG_ROOT">${sys:user.home:-}/.ciphergateway/work/sijava/logs</Property>
     </Properties>
 
     <Appenders>

@@ -1,5 +1,5 @@
 /*
- * 系统名称:基于冉闵开发工具 --> rmdemo
+ * 系统名称:基于冉闵开发工具 --> sijava
  * 
  * 文件名称: org.quickbundle.util --> IExecuteCode.java
  * 

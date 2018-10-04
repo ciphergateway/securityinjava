@@ -34,7 +34,7 @@
 	</properties>
 
 	<build>
-		<finalName>rmdemo</finalName>
+		<finalName>sijava</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
@@ -249,7 +249,7 @@ encoding//res/tools.bat=GBK]]>
                             <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <includeScope>runtime</includeScope>
+                            <excludeScope>provided</excludeScope>
                         </configuration>
                         <goals>
                             <goal>copy-dependencies</goal>

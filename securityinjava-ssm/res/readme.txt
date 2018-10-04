@@ -21,7 +21,7 @@ org.quickbundle.project.init.RmWebApplicationInit#line.74，忽略每次启动�
 -------------Tomcat下热部署kmipweb应用------------------------
 选用Tomcat-7.0.90
 ${TOMCAT_HOME}/conf/Catalina/localhost/kmipweb.xml:
-<Context path="/rmdemo" docBase="D:\apps\securityinjava-ssm\WebContent" debug="0" reloadable="false" privileged="true">
+<Context path="/sijava" docBase="D:\apps\securityinjava-ssm\WebContent" debug="0" reloadable="false" privileged="true">
 
 -----------------Tomcat配置  server.xml------------------
     <Executor name="tomcatThreadPool" namePrefix="catalina-exec-" maxThreads="150" minSpareThreads="4"/>

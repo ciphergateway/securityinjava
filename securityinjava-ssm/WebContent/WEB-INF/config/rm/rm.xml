@@ -2,9 +2,9 @@
 <rm>
 	<org.quickbundle.project.init.CustomSystemProperties>
 		<!-- for production -->
-		<rmdemo.root.home>${user.home}/.ciphergateway/work/rmdemo</rmdemo.root.home>
+		<sijava.root.home>${user.home}/.ciphergateway/work/sijava</sijava.root.home>
 		
-		<javamelody.storage-directory>${rmdemo.root.home}/javamelody</javamelody.storage-directory>
+		<javamelody.storage-directory>${sijava.root.home}/javamelody</javamelody.storage-directory>
 	</org.quickbundle.project.init.CustomSystemProperties>
 	
 	<org.quickbundle.config.RmConfig>
@@ -13,7 +13,7 @@
 		<systemDebugMode>true</systemDebugMode>
 		
 		<!-- war's home directory -->
-		<warHome>${rmdemo.root.home}</warHome>
+		<warHome>${sijava.root.home}</warHome>
 		
 		<!-- default page size of list page 
 			列表页默认分页数 -->
@@ -37,7 +37,7 @@
 		
 		<!-- recycle Bin Folder
 			逻辑删除的回收站文件夹 -->
-		<recycleBinFolder>${rmdemo.root.home}/recycle_bin</recycleBinFolder>
+		<recycleBinFolder>${sijava.root.home}/recycle_bin</recycleBinFolder>
 		
 		<!-- default font for report -->
 		<defaultFont>微软雅黑,黑体</defaultFont>

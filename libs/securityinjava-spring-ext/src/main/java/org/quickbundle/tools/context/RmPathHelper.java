@@ -1,5 +1,5 @@
 /*
- * 系统名称:基于冉闵开发工具 --> rmdemo
+ * 系统名称:基于冉闵开发工具 --> sijava
  * 
  * 文件名称: org.quickbundle.tools.support.path --> RmPathHelper.java
  * 
@@ -309,7 +309,7 @@ public class RmPathHelper {
 	}
 
     /**
-     * 初始化webAppRootKey(如:rmdemo.root)
+     * 初始化webAppRootKey(如:sijava.root)
      * 
      * @return
      */

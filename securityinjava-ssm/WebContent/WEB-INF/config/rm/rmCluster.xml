@@ -18,17 +18,17 @@
 				<shardingPrefix>1000</shardingPrefix>
 				<user>server1</user>
 				<password>1</password>
-				<contextPath>/rmdemo</contextPath>
-				<baseUrl>http://localhost:9999/rmdemo/</baseUrl>
-				<webServiceUrl>http://localhost:9999/rmdemo/services/</webServiceUrl>
+				<contextPath>/sijava</contextPath>
+				<baseUrl>http://localhost:9999/sijava/</baseUrl>
+				<webServiceUrl>http://localhost:9999/sijava/services/</webServiceUrl>
 			</node>
 			<node id="server2">
 				<shardingPrefix>1002</shardingPrefix>
 				<user>server2</user>
 				<password>1</password>
-				<contextPath>/rmdemo</contextPath>
-				<baseUrl>http://localhost:10000/rmdemo/</baseUrl>
-				<webServiceUrl>http://localhost:10000/rmdemo/services/</webServiceUrl>
+				<contextPath>/sijava</contextPath>
+				<baseUrl>http://localhost:10000/sijava/</baseUrl>
+				<webServiceUrl>http://localhost:10000/sijava/services/</webServiceUrl>
 			</node>
 		</org.quickbundle.project.init.ClusterConfigLoaderXml>
 		-->
@@ -41,7 +41,7 @@
 				<url>^.*\.do$</url>
 			</redirectUrls>
 			<redirectTargets>
-				<baseUrl>http://localhost:10000/rmdemo/</baseUrl>
+				<baseUrl>http://localhost:10000/sijava/</baseUrl>
 			</redirectTargets>
 		</redirectGroup>
 	</org.quickbundle.project.login.RmSsoLogin>
