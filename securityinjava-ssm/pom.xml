@@ -4,17 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ciphergateway</groupId>
 	<artifactId>securityinjava-ssm</artifactId>
-	<version>${revision}</version>
+	<version>6.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
 		<skipTests>true</skipTests>
-		<revision>6.0.0-SNAPSHOT</revision>
 		<basedir>./</basedir>
 		<war.dir>WebContent</war.dir>
 		<encoding>UTF-8</encoding>
 		<jdk.version>1.8</jdk.version>
-		<securityinjava.version>${revision}</securityinjava.version>
+		<securityinjava.version>6.0.0-SNAPSHOT</securityinjava.version>
 
 		<!-- 主要依赖库的版本定义 -->
 		<spring.version>5.0.9.RELEASE</spring.version>
@@ -93,6 +92,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.2</version>
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
@@ -240,19 +240,6 @@ encoding//res/tools.bat=GBK]]>
 							</configuration>
 						</plugin>
 						<plugin>
-							<groupId>net.sf</groupId>
-							<artifactId>stat-scm</artifactId>
-							<configuration>
-								<includes>
-									<include>**/*.java</include>
-								</includes>
-								<excludes>
-									<exclude>**/test/**/*.java</exclude>
-								</excludes>
-								<tagsDir>/releases/</tagsDir>
-							</configuration>
-						</plugin>
-						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-changelog-plugin</artifactId>
 						</plugin>
@@ -285,7 +272,6 @@ encoding//res/tools.bat=GBK]]>
 									<pluginExecutionFilter>
 										<groupId>org.apache.maven.plugins</groupId>
 										<artifactId>maven-dependency-plugin</artifactId>
-										<versionRange>3.0.2</versionRange>
 										<goals>
 											<goal>copy-dependencies</goal>
 										</goals>

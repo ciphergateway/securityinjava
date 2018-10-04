@@ -4,8 +4,11 @@
 .project
 .settings
 .classpath
-target/
 bin/
+
+# Maven generated files
+target/
+.flattened-pom.xml
 
 # Compiled class file
 *.class
