@@ -34,28 +34,6 @@
 		<jdbc.driver.version>5.1.47</jdbc.driver.version>
 	</properties>
 
-	<licenses>
-		<license>
-			<name>Apache 2</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-			<comments>A business-friendly OSS license</comments>
-		</license>
-	</licenses>
-	<organization>
-		<name>CipherGateway Team</name>
-		<url>http://ciphergateway.com</url>
-	</organization>
-	<issueManagement>
-		<system>Github Issues</system>
-		<url>https://github.com/ciphergateway/securityinjava/issues</url>
-	</issueManagement>
-	<scm>
-		<connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
-		<developerConnection>scm:git:https://github.com/ciphergateway/securityinjava.git</developerConnection>
-		<url>https://github.com/ciphergateway/securityinjava</url>
-	</scm>
-
 	<build>
 		<finalName>rmdemo</finalName>
 		<resources>
@@ -603,4 +581,27 @@ encoding//res/tools.bat=GBK]]>
 		</dependency> 
 		-->
 	</dependencies>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+	<organization>
+		<name>CipherGateway Team</name>
+		<url>http://ciphergateway.com</url>
+	</organization>
+	<issueManagement>
+		<system>Github Issues</system>
+		<url>https://github.com/ciphergateway/securityinjava/issues</url>
+	</issueManagement>
+	<scm>
+		<connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
+		<developerConnection>scm:git:https://github.com/ciphergateway/securityinjava.git</developerConnection>
+		<url>https://github.com/ciphergateway/securityinjava</url>
+	</scm>
+
 </project>

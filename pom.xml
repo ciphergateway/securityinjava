@@ -8,15 +8,157 @@
   <version>${revision}</version>
   <packaging>pom</packaging>
 
-  <properties>
-    <revision>6.0.0-SNAPSHOT</revision>
-    <skipTests>true</skipTests>
-  </properties>
-
+  <!--for improve develop, ignore "support/eclipse-plugin" and "support/build-all", you can execute mvn in support/build-all for all modules -->
   <modules>
     <module>libs</module>
     <module>securityinjava-ssm</module>
     <module>securityinjava-vertx</module>
   </modules>
+
+  <properties>
+
+    <!--global version of SecurityInJava-->
+    <revision>6.0.0-SNAPSHOT</revision>
+    <BUILD_ALIAS>Final</BUILD_ALIAS>
+    <securityinjava.version>${revision}</securityinjava.version>
+
+    <!--for improve develop, default skipTests, you can run "mvn package -DskipTests=false" for run tests -->
+    <skipTests>true</skipTests>
+
+    <encoding>UTF-8</encoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <jdk.version>1.8</jdk.version>
+
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <excludes>
+            <exclude>**/.gitkeep</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.10</version>
+        <configuration>
+          <additionalConfig>
+            <file>
+              <name>.settings/org.eclipse.core.resources.prefs</name>
+              <content><![CDATA[eclipse.preferences.version=1
+encoding/<project>=UTF-8]]></content>
+            </file>
+          </additionalConfig>
+          <additionalBuildcommands>
+            <buildcommands>org.eclipse.m2e.core.maven2Builder</buildcommands>
+          </additionalBuildcommands>
+          <additionalProjectnatures>
+            <projectnatures>org.eclipse.m2e.core.maven2Nature</projectnatures>
+          </additionalProjectnatures>
+          <projectNameTemplate>[artifactId]-[version]</projectNameTemplate>
+          <addGroupIdToProjectName>true</addGroupIdToProjectName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.6</version>
+        <configuration>
+          <reportPlugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <version>2.9</version>
+              <configuration>
+                <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+              </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>2.10.4</version>
+            </plugin>
+            <plugin>
+              <artifactId>maven-pmd-plugin</artifactId>
+              <version>3.8</version>
+              <configuration>
+                <targetJdk>${jdk.version}</targetJdk>
+              </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <version>2.5</version>
+              <configuration>
+                <aggregate>true</aggregate>
+              </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-report-plugin</artifactId>
+              <version>2.22.0</version>
+            </plugin>
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>cobertura-maven-plugin</artifactId>
+              <version>2.7</version>
+              <configuration>
+                <formats>
+                  <format>xml</format>
+                  <format>html</format>
+                </formats>
+              </configuration>
+            </plugin>
+          </reportPlugins>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.7.0</version>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>CipherGateway Team</name>
+    <url>http://ciphergateway.com</url>
+  </organization>
+
+  <issueManagement>
+    <system>Github Issues</system>
+    <url>https://github.com/ciphergateway/securityinjava/issues</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
+    <developerConnection>scm:git:https://github.com/qiphergateway/securityinjava.git</developerConnection>
+    <url>https://github.com/iphergateway/securityinjava</url>
+  </scm>
 
 </project>

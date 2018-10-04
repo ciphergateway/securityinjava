@@ -18,15 +18,11 @@
 	
 	<properties>
 		<manifest-location>META-INF</manifest-location>
-		<encoding>UTF-8</encoding>
 		<jdk.version>1.5</jdk.version>
-		<BUILD_ALIAS>Final</BUILD_ALIAS>
 		<basedir>./</basedir>
 		<tycho.version>1.1.0</tycho.version>
 	</properties>
 	
-
-
 	<repositories>
 		<!-- configure p2 repository to resolve against -->
 		<repository>
