@@ -29,11 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * bootstrap main			/message => formRmMessage.jsp
- * bootstrap 				/message/add|modify|remove|get
- * 
- * 
- * list					 /message/list
+ * list					 /message
  * insert page		GET	 /message/insert
  * insert action	POST /message/insert
  * update page		GET  /message/update/{id}
@@ -75,7 +71,7 @@ public class RmMessageController implements IRmMessageConstants {
         model.addAttribute(REQUEST_QUERY_CONDITION, queryCondition);
         model.addAttribute(REQUEST_BEANS, beans);  //把结果集放入request
         model.addAttribute(REQUEST_WRITE_BACK_FORM_VALUES, RmVoHelper.getMapFromRequest((HttpServletRequest) request));  //回写表单
-		return "message/formRmMessage";
+		return "message/listRmMessage";
 	}
 	
 	/**
@@ -88,18 +84,10 @@ public class RmMessageController implements IRmMessageConstants {
 		return "message/insertRmMessage";
 	}
     
-	@RequestMapping(value = "modify/{id}")
-    public String updateForm1(@PathVariable("id") String id, Model model) {
-    	RmMessageVo bean = rmMessageService.get(new Long(id));
-        model.addAttribute(REQUEST_BEAN, bean);  //把vo放入request
-        model.addAttribute("action", "update");
-        return "message/modifyRmMessage";
-    }
-	
 	/**
 	 * 从页面表单获取信息注入vo，并插入单条记录
 	 */
-	/*@RequestMapping(value = "insert", method = RequestMethod.POST, 
+	@RequestMapping(value = "insert", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> insert(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors) {
@@ -110,13 +98,6 @@ public class RmMessageController implements IRmMessageConstants {
         Map<String, String> result = new HashMap<String, String>();
         result.put("message", "新增成功: " + vo.getId());
 		return new ResponseEntity<Map<String, String>>(result, HttpStatus.CREATED);
-	}*/
-	
-	@RequestMapping(value = "insert", method = RequestMethod.POST)
-	public String insert(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors,RedirectAttributes redirectAttributes) {
-        RmVoHelper.markCreateStamp(request,vo);  //打创建时间,IP戳
-        rmMessageService.insert(vo);  //插入单条记录
-		return "redirect:/message";
 	}
 	
 	/**
@@ -338,14 +319,4 @@ public class RmMessageController implements IRmMessageConstants {
     	redirectAttributes.addAttribute("message_id", message_id);
     	return "redirect:/message/rm_m_message_user";
     }
-
-    /**
-     * 从页面表单获取信息注入vo，并修改单条记录
-     */
-	@RequestMapping(value = "update", method = RequestMethod.POST)
-	public String modify(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors,RedirectAttributes redirectAttributes) {
-		update(request, vo, errors);
-		return "redirect:/message";
-	}
-
 }

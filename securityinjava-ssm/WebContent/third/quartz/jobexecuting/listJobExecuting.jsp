@@ -135,9 +135,7 @@
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IJobExecutingConstants.TABLE_COLUMN_CHINESE.get("job_run_time")%>' property="job_run_time" sortable="false">
 		<bean:define id="job_run_time" name="rmBean" property="job_run_time"/>
-		<%
-			long lJob_run_time = Long.parseLong(String.valueOf(job_run_time));
-		%>
+		<%long lJob_run_time = Long.parseLong(String.valueOf(job_run_time));%>
 		<span title="<%=lJob_run_time%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lJob_run_time)%></span>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IJobExecutingConstants.TABLE_COLUMN_CHINESE.get("fire_instance_id")%>' property="fire_instance_id" sortable="false"/>

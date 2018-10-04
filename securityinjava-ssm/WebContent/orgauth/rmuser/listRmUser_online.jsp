@@ -63,13 +63,9 @@
 	<layout:collectionItem width="8%" title='<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("name")%>' property="name" sortable="false">
 		<bean:define id="rmValue" name="rmBean" property="name"/>
 		<bean:define id="id" name="rmBean" property="id"/>
-		<%
-			if(rmValue != null && rmValue.toString().length() > 0){
-		%>
+		<%if(rmValue != null && rmValue.toString().length() > 0){%>
 			<a target="_blank" href="<%=request.getContextPath()%>/RmUserAction.do?cmd=detail&id=<%=id%>" ><%=rmValue%></a>
-		<%
-			}
-		%>
+		<%}%>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("login_id")%>' property="login_id" sortable="false">
 		<bean:define id="login_id" name="rmBean" property="login_id"/>
@@ -102,18 +98,14 @@
 	</layout:collectionItem>
 	<layout:collectionItem width="5%" title='思考时间' property="lastAccessedTime" sortable="false" style="text-align:center;">
 		<bean:define id="lastAccessedTime" name="rmBean" property="lastAccessedTime"/>
-		<%
-			if(((Long)lastAccessedTime).longValue() > 0) {
+		<%if(((Long)lastAccessedTime).longValue() > 0) {
 			long thinkTime = System.currentTimeMillis()- ((Long)lastAccessedTime).longValue();
-		%><%=thinkTime > 1000*60*5 ? "<B style='color:RED'>" : ""%><%=RmDateHelper.parseToTimeDesciption(thinkTime)%><%=thinkTime > 1000*60*5 ? "</B>" : ""%><%
-			}
-		%>
+		%><%=thinkTime > 1000*60*5 ? "<B style='color:RED'>" : ""%><%=RmDateHelper.parseToTimeDesciption(thinkTime) %><%=thinkTime > 1000*60*5 ? "</B>" : ""%><%} %>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='距超时退出' property="maxInactiveInterval" sortable="false" style="text-align:center;">
 		<bean:define id="lastAccessedTime" name="rmBean" property="lastAccessedTime"/>
 		<bean:define id="maxInactiveInterval" name="rmBean" property="maxInactiveInterval"/>
-		<%
-			if(((Long)lastAccessedTime).longValue() > 0) {
+		<% if(((Long)lastAccessedTime).longValue() > 0) {
 				long thinkTime = System.currentTimeMillis()- ((Long)lastAccessedTime).longValue();
 				long remainTimeout = Long.parseLong(maxInactiveInterval.toString()) - thinkTime;
 				out.print(RmDateHelper.parseToTimeDesciption(remainTimeout));
@@ -125,17 +117,11 @@
 		<bean:define id="session_id" name="rmBean" property="sessionId"/>
 		<bean:define id="id" name="rmBean" property="id"/>
 		<div id="div_operation">
-		<%
-			if(session.getId().equals(session_id)) {
-		%>
+		<%if(session.getId().equals(session_id)) {%>
 		
-		<%
-					} else if(session_id != null){
-				%>
+		<%} else if(session_id != null){ %>
 		<a href="javascript:forceLogoutUser_onClick('<%=session_id%>', '<%=id%>')">强制下线</a>
-		<%
-			}
-		%>
+		<%} %>
 		</div>
 	</layout:collectionItem>
 	</layout:collection>

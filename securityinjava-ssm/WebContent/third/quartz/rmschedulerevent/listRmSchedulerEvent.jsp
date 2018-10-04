@@ -242,9 +242,7 @@
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("event_type")%>' property="event_type" sortable="true"/>
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("cost_millis")%>' property="cost_millis" sortable="true">
 		<bean:define id="cost_millis" name="rmBean" property="cost_millis"/>
-		<%
-			long lCost_millis = Long.parseLong(String.valueOf(cost_millis));
-		%>
+		<%long lCost_millis = Long.parseLong(String.valueOf(cost_millis));%>
 		<span title="<%=lCost_millis%>毫秒"><%=RmDateHelper.parseToTimeDesciption(lCost_millis)%></span>
 	</layout:collectionItem>	
 	<layout:collectionItem width="8%" title='<%=IRmSchedulerEventConstants.TABLE_COLUMN_CHINESE.get("result_status")%>' property="result_status" sortable="true"/>
