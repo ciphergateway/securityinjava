@@ -249,7 +249,7 @@ encoding//res/tools.bat=GBK]]>
                             <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <excludeScope>provided</excludeScope>
+                            <includeScope>runtime</includeScope>
                         </configuration>
                         <goals>
                             <goal>copy-dependencies</goal>
@@ -407,6 +407,7 @@ encoding//res/tools.bat=GBK]]>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>

@@ -14,7 +14,6 @@ import org.quickbundle.project.common.IRmCommonService;
 import org.quickbundle.project.login.IRmLoginVo;
 import org.quickbundle.project.login.RmUserVo;
 import org.quickbundle.project.mail.IRmMailService;
-import org.quickbundle.project.test.RmAlarmCollector;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;

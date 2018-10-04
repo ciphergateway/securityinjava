@@ -11,18 +11,15 @@
  */
 package org.quickbundle.project.test;
 
-import junit.framework.TestCase;
-
 import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.project.init.CustomSystemProperties;
 import org.quickbundle.project.init.InitDatabaseHelper;
 import org.quickbundle.project.init.LoadProjectConfig;
-import org.quickbundle.project.listener.RmContextLoaderListener;
-import org.quickbundle.tools.context.RmHolderServlet;
 import org.quickbundle.tools.context.RmPathHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
-import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import junit.framework.TestCase;
 
 /**
  * 功能、用途、现存BUG:

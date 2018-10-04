@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.quickbundle.project.test.RmAlarmCollector;
+import org.quickbundle.project.RmAlarmCollector;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.slf4j.Logger;
 

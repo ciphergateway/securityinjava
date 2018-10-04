@@ -1,4 +1,4 @@
-package org.quickbundle.project.test;
+package org.quickbundle.project;
 
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.project.RmGlobalMonitor;
-import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
 import org.quickbundle.tools.helper.RmStringHelper;
 
