@@ -34,7 +34,7 @@
 			</xsl:for-each>)
   <xsl:value-of select="$charLt"/>/insert>
     
-  <xsl:value-of select="$charLt"/>delete id="delete" parameterType="int">
+  <xsl:value-of select="$charLt"/>delete id="delete" parameterType="<xsl:value-of select="lower-case($tablePkClass)"/>">
     delete from <xsl:value-of select="@tableName"/> where <xsl:value-of select="$thisTablePk"/>=#{<xsl:value-of select="str:getTablePkFormatLower(/meta, @tableName)"/>}
   <xsl:value-of select="$charLt"/>/delete>
   

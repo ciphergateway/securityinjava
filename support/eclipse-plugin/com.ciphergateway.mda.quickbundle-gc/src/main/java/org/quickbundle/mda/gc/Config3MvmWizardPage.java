@@ -73,7 +73,7 @@ public class Config3MvmWizardPage extends WizardPage implements Listener {
     	
         new Label(container, SWT.NULL).setText("框架");
         final Text textFramework = new Text(container, SWT.BORDER | SWT.SINGLE | SWT.READ_ONLY);
-        textFramework.setText("jQuery-1.6 + Html + SpringMVC-3.2 + Spring-3.2 + MyBatis-3.2");
+        textFramework.setText("Vue-2.5 + jQuery-1.12 + SpringMVC-5.0 + Spring-5.0 + MyBatis-3.4");
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
         textFramework.setLayoutData(gd);

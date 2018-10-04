@@ -14,7 +14,7 @@
         <framework>JavaSE|Vert.x</framework>
         <description><![CDATA[Java企业级异步开发框架(基于Vert.x)，适用于超高并发场景，该Vert.x-3.5版本在2018年的Techempower性能测试中在全球300多个开发排名第一。适用场景：要求超高性能的企业级应用。]]></description>
         <author>CipherGateway</author>
-        <config>JavaEE-Security-Vert.x.xml</config>
+        <config>JavaEE-Security-Vertx.xml</config>
         <source>{templatePath}/j2</source>
     </archetype>
 </archetypes>
