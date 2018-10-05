@@ -3,15 +3,26 @@
 
     <!-- Logging Properties -->
     <Properties>
-        <Property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS} %p [%c] - %m%n</Property>
-        <Property name="LOG_ROOT">${sys:user.home:-}/.ciphergateway/work/sijava/logs</Property>
+        <Property name="LOG_PATH">${sys:user.home:-}/.ciphergateway/work/sijava/logs</Property>
+        <Property name="CONSOLE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p - [%-15.15t] %-40.40c{1.} : %m%n</Property>
+        <Property name="FILE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p - [%15.15t] %-40.40c{1.} : %m%n</Property>
+
+        <!-- spring-boot --> 
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_DATEFORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
+        <Property name="CONSOLE_PATTERN2">%clr{%d{${LOG_DATEFORMAT_PATTERN}}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_PATTERN2">%d{${LOG_DATEFORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} ${sys:PID} - [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
     </Properties>
+    
+         <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
+    
 
     <Appenders>
    
 	    <!--Console: 定义通用控制台输出-->
         <Console name="stdout" target="SYSTEM_OUT" follow="true">
-            <PatternLayout pattern="${PATTERN}"/>
+            <PatternLayout pattern="${CONSOLE_PATTERN}"/>
         </Console>
 
 	    <!--Console: URL访问信息便于调试-->
@@ -20,9 +31,9 @@
         </Console>
 
 	    
-	    <!--Global: 全局日志-->
-        <RollingFile name="allf" bufferedIO="true" fileName="${LOG_ROOT}/all.log" filePattern="${LOG_ROOT}/all-%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout pattern="${PATTERN}"/>
+	    <!--All: 默认全部日志-->
+        <RollingFile name="allf" bufferedIO="true" fileName="${LOG_PATH}/all.log" filePattern="${LOG_PATH}/all-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${FILE_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
             </Policies>
@@ -30,9 +41,9 @@
         </RollingFile>
 
         <!--Level: 警告监控-->
-	    <RollingFile name="warnf" fileName="${LOG_ROOT}/warn.log" filePattern="${LOG_ROOT}/warn-%d{yyyy-MM-dd}-%i.log">
+	    <RollingFile name="warnf" fileName="${LOG_PATH}/warn.log" filePattern="${LOG_PATH}/warn-%d{yyyy-MM-dd}-%i.log">
             <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="${PATTERN}"/>
+            <PatternLayout pattern="${FILE_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
             </Policies>
@@ -40,9 +51,9 @@
         </RollingFile>
         
 	    <!--Level: 错误监控-->
-       <RollingFile name="errorf" fileName="${LOG_ROOT}/error.log" filePattern="${LOG_ROOT}/error-%d{yyyy-MM-dd}-%i.log">
+       <RollingFile name="errorf" fileName="${LOG_PATH}/error.log" filePattern="${LOG_PATH}/error-%d{yyyy-MM-dd}-%i.log">
             <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="${PATTERN}"/>
+            <PatternLayout pattern="${FILE_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
             </Policies>
@@ -52,14 +63,14 @@
         <!--Level: Spring bean creation报错-->
         <Console name="beanstdout" target="SYSTEM_OUT" follow="true">
             <RegexFilter regex=".*bean creation exception.*" useRawMsg="true" onMatch="DENY" onMismatch="ACCEPT"/>
-            <PatternLayout pattern="${PATTERN}"/>
+            <PatternLayout pattern="${CONSOLE_PATTERN}"/>
         </Console>
         
 	    <!--Module: Request监控-->
         <Console name="requeststdout" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="%m%n"/>
         </Console>
-        <RollingFile name="requestf" fileName="${LOG_ROOT}/request.log" filePattern="${LOG_ROOT}/request-%d{yyyy-MM-dd}-%i.log" >
+        <RollingFile name="requestf" fileName="${LOG_PATH}/request.log" filePattern="${LOG_PATH}/request-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout pattern="%m%n"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
@@ -72,7 +83,7 @@
         <Console name="sqlstdout" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="%m%n"/>
         </Console>
-        <RollingFile name="sqlf" fileName="${LOG_ROOT}/sql.log" filePattern="${LOG_ROOT}/sql-%d{yyyy-MM-dd}-%i.log" >
+        <RollingFile name="sqlf" fileName="${LOG_PATH}/sql.log" filePattern="${LOG_PATH}/sql-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout pattern="%m%n"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
@@ -81,7 +92,7 @@
         </RollingFile>
 		
 	    <!--Module: Service方法监控-->
-       <RollingFile name="methodf" fileName="${LOG_ROOT}/method.log" filePattern="${LOG_ROOT}/method-%d{yyyy-MM-dd}-%i.log" >
+       <RollingFile name="methodf" fileName="${LOG_PATH}/method.log" filePattern="${LOG_PATH}/method-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout pattern="%m%n"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
@@ -90,8 +101,8 @@
         </RollingFile>
 		
 	    <!--Module: 登录日志-->
-        <RollingFile name="loginf" fileName="${LOG_ROOT}/login.log" filePattern="${LOG_ROOT}/login-%d{yyyy-MM-dd}-%i.log" >
-            <PatternLayout pattern="${PATTERN}"/>
+        <RollingFile name="loginf" fileName="${LOG_PATH}/login.log" filePattern="${LOG_PATH}/login-%d{yyyy-MM-dd}-%i.log" >
+            <PatternLayout pattern="${FILE_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="102400KB" />
             </Policies>
@@ -102,31 +113,13 @@
  
  
      <Loggers>
-     
-	    <!--调整国际化的级别-->
-	    <logger name="org.apache.struts.util.PropertyMessageResources" additivity="false" level="error">     
-	    </logger>
-	    <!--调整Action创建的级别-->
-		<logger name="org.apache.struts.chain.commands.servlet.CreateAction" additivity="false" level="warn">
-		</logger>
-	    <!--调整数据库事务的打印级别 .HibernateTransactionManager .DataSourceTransactionManager-->
-		<logger name="org.springframework.transaction" level="info">
-		</logger>
-		<logger name="org.springframework.orm.hibernate3" level="info">
-		</logger>
-		<logger name="org.springframework.jdbc.datasource" level="info">
-		</logger>
-		<logger name="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver" level="debug">
-		</logger>
-	    <!--hibernate的INFO较多,忽略之-->
-		<logger name="org.hibernate" level="warn">
-		</logger>
-	    <!--忽略低价值信息-->
-		<logger name="org.apache.cxf.service.factory.ReflectionServiceFactoryBean" level="warn">
-		</logger>
-		<logger name="org.springframework.web.context.support.XmlWebApplicationContext" level="warn">
-		</logger>
-	
+
+        <!--全局日志-->
+        <Root level="trace" includeLocation="false">
+            <AppenderRef ref="stdout" />
+            <AppenderRef ref="allf" />
+        </Root>
+
 	    <!--URL访问信息定义(只输出到控制台)-->
 		<logger name="struts" additivity="false" level="debug">
 	        <AppenderRef ref="urlstdout"/>
@@ -171,12 +164,22 @@
 		<logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" additivity="false" level="debug">
 	        <AppenderRef ref="beanstdout" />
 		</logger>
-		
-		<!--全局日志-->
-		<Root level="info" includeLocation="false">
-			<AppenderRef ref="stdout" />
-			<AppenderRef ref="allf" />
-		</Root>
+
+  
+        <!--调整国际化的级别-->
+        <logger name="org.apache.struts.util.PropertyMessageResources" additivity="false" level="error" />     
+        <!--调整Action创建的级别-->
+        <logger name="org.apache.struts.chain.commands.servlet.CreateAction" additivity="false" level="warn" />
+        <!--调整数据库事务的打印级别 .HibernateTransactionManager .DataSourceTransactionManager-->
+        <logger name="org.springframework.transaction" level="info" />
+        <logger name="org.springframework.orm.hibernate3" level="info" />
+        <logger name="org.springframework.jdbc.datasource" level="info" />
+        <logger name="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver" level="debug" />
+        <!--hibernate的INFO较多,忽略之-->
+        <logger name="org.hibernate" level="warn" />
+        <!--忽略低价值信息-->
+        <logger name="org.apache.cxf.service.factory.ReflectionServiceFactoryBean" level="warn" />
+        <logger name="org.springframework.web.context.support.XmlWebApplicationContext" level="warn" />
   
     </Loggers>
     

@@ -267,6 +267,25 @@ encoding//res/tools.bat=GBK]]>
 
 	</build>
 	<dependencies>
+		<!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+		-->
 		<!-- jdbc driver -->
 		<dependency>
 			<groupId>${jdbc.driver.groupId}</groupId>
@@ -547,6 +566,19 @@ encoding//res/tools.bat=GBK]]>
 		</dependency> 
 		-->
 	</dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Override Spring Data release train provided by Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.0.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 	<licenses>
 		<license>
