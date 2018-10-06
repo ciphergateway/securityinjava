@@ -8,8 +8,6 @@
   <version>${revision}</version>
   <packaging>pom</packaging>
 
-  <url>https://github.com/ciphergateway/securityinjava</url>
-
   <!--for improve develop, ignore "support/eclipse-plugin" and "support/build-all", you can execute mvn in support/build-all for all modules -->
   <modules>
     <module>libs</module>
@@ -61,24 +59,6 @@
             </execution>
           </executions>
         </plugin>
-<!--                <noJekyll>true</noJekyll>
-        <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <version>0.12</version>
-            <configuration>
-                <message>Creating site for ${project.version}</message>
-                <server>github</server>
-            </configuration>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>site</goal>
-                    </goals>
-                    <phase>site</phase>
-                </execution>
-            </executions>
-        </plugin>-->
 
         <plugin>
             <groupId>com.github.github</groupId>
@@ -97,14 +77,10 @@
                     <goals>
                         <goal>site</goal>
                     </goals>
-                    <phase>site</phase>
+                    <phase>site-deploy</phase>
                 </execution>
             </executions>
         </plugin>
-
-<!--
-
--->
 
     </plugins>
 
@@ -310,6 +286,15 @@
       </plugins>
     </pluginManagement>
   </build>
+
+
+  <url>http://ciphergateway.github.io/securityinjava/</url>
+  <distributionManagement>
+      <site>
+          <id>github.gh-pages</id>
+          <url>${project.url}</url>
+      </site>
+  </distributionManagement>
 
   <licenses>
     <license>

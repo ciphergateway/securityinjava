@@ -42,6 +42,13 @@
     </plugins>
   </build>
 
+    <distributionManagement>
+        <site>
+            <id>github.gh-pages</id>
+            <url>${project.url}</url>
+        </site>
+    </distributionManagement>
+
 	<dependencies>
     <dependency>
         <groupId>javax.servlet</groupId>
