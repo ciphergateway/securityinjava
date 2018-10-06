@@ -1,242 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ciphergateway</groupId>
-	<artifactId>securityinjava-ssm</artifactId>
-	<version>6.0.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ciphergateway</groupId>
+    <artifactId>securityinjava-ssm</artifactId>
+    <version>6.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-	<properties>
-		<skipTests>true</skipTests>
-		<basedir>./</basedir>
-		<war.dir>WebContent</war.dir>
-		<encoding>UTF-8</encoding>
-		<jdk.version>1.8</jdk.version>
-		<securityinjava.version>6.0.0-SNAPSHOT</securityinjava.version>
+    <properties>
+        <skipTests>true</skipTests>
+        <basedir>./</basedir>
+        <war.dir>WebContent</war.dir>
+        <encoding>UTF-8</encoding>
+        <jdk.version>1.8</jdk.version>
+        <securityinjava.version>6.0.0-SNAPSHOT</securityinjava.version>
+        
+        <!-- 主要依赖库的版本定义 -->
+        <junit.version>4.12</junit.version>
+        <spring.version>5.0.9.RELEASE</spring.version>
+        <mybatis.version>3.4.6</mybatis.version>
+        <mybatis-spring.version>1.3.2</mybatis-spring.version>
 
-		<!-- 主要依赖库的版本定义 -->
-		<spring.version>5.0.9.RELEASE</spring.version>
-		<mybatis.version>3.4.6</mybatis.version>
-		<mybatis-spring.version>1.3.2</mybatis-spring.version>
-		<junit.version>4.12</junit.version>
+        <log4j.version>2.11.1</log4j.version>
 
-		<struts.version>1.3.10</struts.version>
+        <struts.version>1.3.10</struts.version>
 
-		<spring.security.version>5.0.8.RELEASE</spring.security.version>
-		<hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
-		<cxf.version>3.1.16</cxf.version>
 
-		<!-- if your database is not mysql, change to real target belowing -->
-		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
-		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
-		<jdbc.driver.version>5.1.47</jdbc.driver.version>
-	</properties>
+        <!-- if your database is not mysql, change to real target belowing -->
+        <jdbc.driver.groupId>mysql</jdbc.driver.groupId>
+        <jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
+        <jdbc.driver.version>5.1.47</jdbc.driver.version>
+    </properties>
 
-	<build>
-		<finalName>sijava</finalName>
-		<resources>
-			<resource>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**/*.xml</include>
-				</includes>
-				<excludes>
-					<exclude>org/quickbundle/project/server/*.java</exclude>
-				</excludes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-		</resources>
-		<outputDirectory>${war.dir}/WEB-INF/classes</outputDirectory>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-				<configuration>
-					<encoding>${encoding}</encoding>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-					<excludes>
-						<excludes>org/quickbundle/project/server/*</excludes>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<warSourceDirectory>${war.dir}</warSourceDirectory>
-					<includeEmptyDirs>true</includeEmptyDirs>
-			          <webResources>
-			            <resource>
-			              <!-- this is relative to the pom.xml directory -->
-			              <directory>${war.dir}</directory>
-			              <!-- the list has a default value of ** -->
-			              <includes>
-			                <include>**/*</include>
-			              </includes>
-			            </resource>
-			          </webResources>
-					<webXml>${war.dir}/WEB-INF/web.xml</webXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>${war.dir}/WEB-INF/lib</directory>
-							<followSymlinks>false</followSymlinks>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.10</version>
-				<configuration>
-					<additionalConfig>
-						<file>
-							<name>.settings/org.eclipse.core.resources.prefs</name>
-							<content>
+    <build>
+        <finalName>sijava</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <outputDirectory>${war.dir}/WEB-INF/classes</outputDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <warSourceDirectory>${war.dir}</warSourceDirectory>
+                    <includeEmptyDirs>true</includeEmptyDirs>
+                      <webResources>
+                        <resource>
+                          <!-- this is relative to the pom.xml directory -->
+                          <directory>${war.dir}</directory>
+                          <!-- the list has a default value of ** -->
+                          <includes>
+                            <include>**/*</include>
+                          </includes>
+                        </resource>
+                      </webResources>
+                    <webXml>${war.dir}/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${war.dir}/WEB-INF/lib</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/org.eclipse.core.resources.prefs</name>
+                            <content>
 <![CDATA[eclipse.preferences.version=1
-encoding/<project>=UTF-8
-encoding//res/tools.bat=GBK]]>
-							</content>
-						</file>
-					</additionalConfig>
-					<additionalBuildcommands>
-						<buildcommands>org.eclipse.m2e.core.maven2Builder</buildcommands>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnatures>org.eclipse.m2e.core.maven2Nature</projectnatures>
-					</additionalProjectnatures>
-					<projectNameTemplate>[artifactId]</projectNameTemplate>
-					<addGroupIdToProjectName>true</addGroupIdToProjectName>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<includes>
-						<include>**/Test*.java</include>
-						<include>**/*Test.java</include>
-						<include>**/*TestCase.java</include>
-					</includes>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>maven</groupId>
-				<artifactId>maven-simian-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<outputEncoding>UTF-8</outputEncoding>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<configuration>
-								<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-								<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>cobertura-maven-plugin</artifactId>
-							<configuration>
-								<formats>
-									<format>xml</format>
-									<format>html</format>
-								</formats>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-jxr-plugin</artifactId>
-							<configuration>
-								<aggregate>true</aggregate>
-								<outputEncoding>UTF-8</outputEncoding>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>jdepend-maven-plugin</artifactId>
-						</plugin>
-						<plugin>
-							<artifactId>maven-pmd-plugin</artifactId>
-							<configuration>
-								<targetJdk>1.8</targetJdk>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>findbugs-maven-plugin</artifactId>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<configuration>
-								<configLocation>${basedir}/res/rule/my_checks.xml</configLocation>
-								<outputFileFormat>plain</outputFileFormat>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>net.objectlab</groupId>
-							<artifactId>mvn-qalab-plugin</artifactId>
-							<reportSets>
-								<reportSet>
-									<reports>
-										<report>report-merge-chart</report>
-										<report>report-movers-all</report>
-									</reports>
-								</reportSet>
-							</reportSets>
-							<configuration>
-								<dateOnly>true</dateOnly>
-								<startTimeHoursOffset>1</startTimeHoursOffset>
-								<outputFile>${basedir}/target/qalab.xml</outputFile>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-changelog-plugin</artifactId>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-changes-plugin</artifactId>
-							<reportSets>
-								<reportSet>
-									<reports>
-										<report>jira-report</report>
-									</reports>
-								</reportSet>
-							</reportSets>
-						</plugin>
-					</reportPlugins>
-				</configuration>
-			</plugin>
+encoding//res/tools.bat=GBK
+encoding/<project>=UTF-8]]>
+                            </content>
+                        </file>
+                    </additionalConfig>
+                    <additionalBuildcommands>
+                        <buildcommands>org.eclipse.m2e.core.maven2Builder</buildcommands>
+                    </additionalBuildcommands>
+                    <additionalProjectnatures>
+                        <projectnatures>org.eclipse.m2e.core.maven2Nature</projectnatures>
+                    </additionalProjectnatures>
+                    <projectNameTemplate>[artifactId]</projectNameTemplate>
+                    <addGroupIdToProjectName>true</addGroupIdToProjectName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/Test*.java</include>
+                        <include>**/*Test.java</include>
+                        <include>**/*TestCase.java</include>
+                    </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>maven</groupId>
+                <artifactId>maven-simian-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <configuration>
+                                <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-report-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>cobertura-maven-plugin</artifactId>
+                            <configuration>
+                                <formats>
+                                    <format>xml</format>
+                                    <format>html</format>
+                                </formats>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-jxr-plugin</artifactId>
+                            <configuration>
+                                <aggregate>true</aggregate>
+                                <outputEncoding>UTF-8</outputEncoding>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>jdepend-maven-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <configuration>
+                                <targetJdk>1.8</targetJdk>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>findbugs-maven-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <configuration>
+                                <configLocation>${basedir}/res/rule/my_checks.xml</configLocation>
+                                <outputFileFormat>plain</outputFileFormat>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>net.objectlab</groupId>
+                            <artifactId>mvn-qalab-plugin</artifactId>
+                            <reportSets>
+                                <reportSet>
+                                    <reports>
+                                        <report>report-merge-chart</report>
+                                        <report>report-movers-all</report>
+                                    </reports>
+                                </reportSet>
+                            </reportSets>
+                            <configuration>
+                                <dateOnly>true</dateOnly>
+                                <startTimeHoursOffset>1</startTimeHoursOffset>
+                                <outputFile>${basedir}/target/qalab.xml</outputFile>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-changelog-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-changes-plugin</artifactId>
+                            <reportSets>
+                                <reportSet>
+                                    <reports>
+                                        <report>jira-report</report>
+                                    </reports>
+                                </reportSet>
+                            </reportSets>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -257,17 +250,26 @@ encoding//res/tools.bat=GBK]]>
                     </execution>
                 </executions>
             </plugin>
-		</plugins>
+        </plugins>
 
-		<pluginManagement>
-			<plugins>
+        <pluginManagement>
+            <plugins>
 
-			</plugins>
-		</pluginManagement>
+            </plugins>
+        </pluginManagement>
 
-	</build>
-	<dependencies>
-		<!--
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -285,13 +287,13 @@ encoding//res/tools.bat=GBK]]>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-		-->
-		<!-- jdbc driver -->
-		<dependency>
-			<groupId>${jdbc.driver.groupId}</groupId>
-			<artifactId>${jdbc.driver.artifactId}</artifactId>
-			<version>${jdbc.driver.version}</version>
-		</dependency>
+        -->
+        <!-- jdbc driver -->
+        <dependency>
+            <groupId>${jdbc.driver.groupId}</groupId>
+            <artifactId>${jdbc.driver.artifactId}</artifactId>
+            <version>${jdbc.driver.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -304,268 +306,179 @@ encoding//res/tools.bat=GBK]]>
             <version>2.2.1</version>
             <scope>provided</scope>
         </dependency>
-		<dependency>
-			<groupId>com.ciphergateway</groupId>
-			<artifactId>securityinjava-spring-ext</artifactId>
-			<version>${securityinjava.version}</version>
-		</dependency>
-
-		<!-- Proxool begin -->
-		<dependency>
-			<groupId>com.cloudhopper.proxool</groupId>
-			<artifactId>proxool</artifactId>
-			<version>0.9.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>avalon-framework</groupId>
-					<artifactId>avalon-framework-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-		  <groupId>avalon-framework</groupId>
-		  <artifactId>avalon-framework-api</artifactId>
-		  <version>4.3</version>
-		  <exclusions>
-		  	<exclusion>
-		  		<groupId>log4j</groupId>
-		  		<artifactId>log4j</artifactId>
-		  	</exclusion>
-		  </exclusions>
-		</dependency>
-		<!-- Proxool end -->
-
-		<dependency>
-		  <groupId>org.apache.commons</groupId>
-		  <artifactId>commons-collections4</artifactId>
-		  <version>4.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.3.3</version>
-		</dependency>
-		<!--
- 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.25</version>
-		</dependency>
--->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<!--		-->
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>2.0.1.Final</version>
-		</dependency>
-
-	  <dependency>
-	    <groupId>org.apache.logging.log4j</groupId>
-	    <artifactId>log4j-api</artifactId>
-	    <version>2.11.1</version>
-	  </dependency>
-	  <dependency>
-	    <groupId>org.apache.logging.log4j</groupId>
-	    <artifactId>log4j-core</artifactId>
-	    <version>2.11.1</version>
-	  </dependency>
-		<dependency>
-		  <groupId>org.apache.logging.log4j</groupId>
-		  <artifactId>log4j-slf4j-impl</artifactId>
-		  <version>2.11.1</version>
-		</dependency>
-
-		<!-- mybatis -->
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>${mybatis.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>${mybatis-spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.bull.javamelody</groupId>
-			<artifactId>javamelody-core</artifactId>
-			<version>1.74.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jfree</groupId>
-			<artifactId>jfreechart</artifactId>
-			<version>1.0.19</version>
-		</dependency>
-		<dependency>
-			<groupId>com.hynnet</groupId>
-			<artifactId>jxl</artifactId>
-			<version>2.6.12.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.3</version>
-			<exclusions>
-				<exclusion>
-					<groupId>c3p0</groupId>
-					<artifactId>c3p0</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- to be clean -->
-		<dependency>
-			<groupId>maven_not_found</groupId>
-			<artifactId>Struts-Layout</artifactId>
-			<version>1.4.0-RC1</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/res/lib/maven_not_found/Struts-Layout-1.4.0-RC1.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-core</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-extras</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts-taglib</artifactId>
-			<version>${struts.version}</version>
-		</dependency>
-
-		<!-- JSR303  BeanValidator 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate-validator.version}</version>
-		</dependency>
-		-->
-        <!-- JSON begin 
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.13</version>
+            <groupId>com.ciphergateway</groupId>
+            <artifactId>securityinjava-spring-ext</artifactId>
+            <version>${securityinjava.version}</version>
         </dependency>
-        -->
-        <!-- JSON end -->
 
-		<!--	
-		<dependency>
-			<groupId>com.lowagie</groupId>
-			<artifactId>itext</artifactId>
-			<version>4.2.2</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>bcmail-jdk14</artifactId>
-					<groupId>bouncycastle</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>bcprov-jdk14</artifactId>
-					<groupId>bouncycastle</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>bctsp-jdk14</artifactId>
-					<groupId>org.bouncycastle</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jfreechart</artifactId>
-					<groupId>jfree</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		-->
+        <!-- Proxool begin -->
+        <dependency>
+            <groupId>com.cloudhopper.proxool</groupId>
+            <artifactId>proxool</artifactId>
+            <version>0.9.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>avalon-framework</groupId>
+                    <artifactId>avalon-framework-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+          <groupId>avalon-framework</groupId>
+          <artifactId>avalon-framework-api</artifactId>
+          <version>4.3</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>log4j</groupId>
+                  <artifactId>log4j</artifactId>
+              </exclusion>
+          </exclusions>
+        </dependency>
+        <!-- Proxool end -->
 
-		<!-- Spring security 
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-web</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency>
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-config</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency>
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-acl</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency>  
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-openid</artifactId>  
-		    <version>${spring.security.version}</version>
-		</dependency>  
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-ldap</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency>  
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-taglibs</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency>  
-		<dependency>  
-		    <groupId>org.springframework.security</groupId>  
-		    <artifactId>spring-security-crypto</artifactId>  
-		    <version>${spring.security.version}</version>  
-		</dependency> 
-		-->
-	</dependencies>
+        <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-collections4</artifactId>
+          <version>4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--        -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
+        </dependency>
+
+        <!-- Log4j -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>net.bull.javamelody</groupId>
+            <artifactId>javamelody-core</artifactId>
+            <version>1.74.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>c3p0</groupId>
+                    <artifactId>c3p0</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Deprecated, to be clean in next version-->
+        <dependency>
+            <groupId>maven_not_found</groupId>
+            <artifactId>Struts-Layout</artifactId>
+            <version>1.4.0-RC1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/res/lib/maven_not_found/Struts-Layout-1.4.0-RC1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-core</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-extras</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-taglib</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+
+    </dependencies>
+    
 
     <dependencyManagement>
         <dependencies>
@@ -580,26 +493,26 @@ encoding//res/tools.bat=GBK]]>
         </dependencies>
     </dependencyManagement>
 
-	<licenses>
-		<license>
-			<name>Apache 2</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-			<comments>A business-friendly OSS license</comments>
-		</license>
-	</licenses>
-	<organization>
-		<name>CipherGateway Team</name>
-		<url>http://ciphergateway.com</url>
-	</organization>
-	<issueManagement>
-		<system>Github Issues</system>
-		<url>https://github.com/ciphergateway/securityinjava/issues</url>
-	</issueManagement>
-	<scm>
-		<connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
-		<developerConnection>scm:git:https://github.com/ciphergateway/securityinjava.git</developerConnection>
-		<url>https://github.com/ciphergateway/securityinjava</url>
-	</scm>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <organization>
+        <name>CipherGateway Team</name>
+        <url>http://ciphergateway.com</url>
+    </organization>
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>https://github.com/ciphergateway/securityinjava/issues</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:https://github.com/ciphergateway/securityinjava.git</connection>
+        <developerConnection>scm:git:https://github.com/ciphergateway/securityinjava.git</developerConnection>
+        <url>https://github.com/ciphergateway/securityinjava</url>
+    </scm>
 
 </project>
