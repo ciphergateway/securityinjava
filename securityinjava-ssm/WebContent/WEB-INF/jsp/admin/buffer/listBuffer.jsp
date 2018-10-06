@@ -14,7 +14,7 @@ function flushNow_onClick(bufClassName_, bufName_) {
 	if(window.confirm("您确定要手动刷新缓存吗？")) {
 		form.bufClassName.value = bufClassName_;
 		form.bufName.value = bufName_;
-		form.action="doFlushBuffer.jsp";
+		form.action="<%=request.getContextPath()%>/admin/buffer/flush";
 		event.srcElement.disabled = true;	
 		form.submit();
 	}

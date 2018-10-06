@@ -23,7 +23,7 @@
 <script type="text/javascript">
 <%if(info.length() > 0){%>
 //alert("<%=info%>");
-window.location.href = "listBuffer.jsp";
+window.location.href = "<%=request.getContextPath()%>/admin/buffer/list";
 <%}%>
 </script>
 </head>

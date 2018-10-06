@@ -1,13 +1,13 @@
-package org.quickbundle.project.crypto;
+package com.ciphergateway.crypto;
 
 import java.security.MessageDigest;
 
 import org.quickbundle.config.RmBaseConfig;
-public final class Md5Token {
+public final class HashToken {
 	private static char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-	private static Md5Token instance = new Md5Token();
+	private static HashToken instance = new HashToken();
 
-	public synchronized static Md5Token getInstance() {
+	public synchronized static HashToken getInstance() {
 		return instance;
 	}
 	
@@ -22,14 +22,14 @@ public final class Md5Token {
 		if(arg==null){
 			arg="";
 		}
-		MessageDigest md5 = null;
+		MessageDigest md = null;
 		try {
-			md5=MessageDigest.getInstance("MD5");
-			md5.update(arg.getBytes(RmBaseConfig.getSingleton().getDefaultEncode()));
+		    md=MessageDigest.getInstance("SHA-256");
+		    md.update(arg.getBytes(RmBaseConfig.getSingleton().getDefaultEncode()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return toHex(md5.digest());
+		return toHex(md.digest());
 	}
 	private StringBuffer toHex(byte[] bytes) {
 		StringBuffer str = new StringBuffer(32);
@@ -43,6 +43,6 @@ public final class Md5Token {
 	}
 	
 	public static void main(String a[]){
-		System.out.println(Md5Token.getInstance().getLongToken(Md5Token.getInstance().getLongToken("123456")));
+		System.out.println(HashToken.getInstance().getLongToken(HashToken.getInstance().getLongToken("123456")));
 	}
 }

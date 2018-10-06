@@ -16,11 +16,12 @@ import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmLoadConfig;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmCryptoHelper;
-import org.quickbundle.project.crypto.Md5Token;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
 import org.slf4j.Logger;
+
+import com.ciphergateway.crypto.HashToken;
 
 public class RmSsoLogin {
 	private static final Logger log = RmLogHelper.getLogger(RmSsoLogin.class);
@@ -146,7 +147,7 @@ public class RmSsoLogin {
 		instance.setNodeId(RmClusterConfig.getSingleton().getSelfId());
 		instance.setExpired(String.valueOf(System.currentTimeMillis() + defaultExpired));
 		instance.setSessionId(sessionId);
-		instance.setHash(Md5Token.getInstance().getLongToken(Md5Token.getInstance().getLongToken(instance.nodeId + instance.expired + instance.sessionId) + privateKey));
+		instance.setHash(HashToken.getInstance().getLongToken(HashToken.getInstance().getLongToken(instance.nodeId + instance.expired + instance.sessionId) + privateKey));
 		return instance;
 	}
 	
@@ -163,7 +164,7 @@ public class RmSsoLogin {
 		}
 		
 		public boolean validateSsoVo() {
-			String hash_ = Md5Token.getInstance().getLongToken(Md5Token.getInstance().getLongToken(nodeId + expired + sessionId) + privateKey);
+			String hash_ = HashToken.getInstance().getLongToken(HashToken.getInstance().getLongToken(nodeId + expired + sessionId) + privateKey);
 			if(hash_.equals(hash)) {
 				return true;
 			} else {
