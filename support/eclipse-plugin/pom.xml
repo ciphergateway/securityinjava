@@ -10,7 +10,7 @@
       <relativePath>../../pom.xml</relativePath>
   </parent>
   <groupId>com.ciphergateway</groupId>
-  <artifactId>eclipse-plugins.aggregator</artifactId>
+  <artifactId>eclipse-plugins.group</artifactId>
   <packaging>pom</packaging>
 
   <modules>

@@ -12,4 +12,12 @@
   <artifactId>securityinjava-tools</artifactId>
   <packaging>jar</packaging>
 
+  <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+  <distributionManagement>
+      <site>
+          <id>github.gh-pages</id>
+          <url>${project.url}</url>
+      </site>
+  </distributionManagement>
+
 </project>

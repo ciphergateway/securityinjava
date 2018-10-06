@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ciphergateway</groupId>
-        <artifactId>libs.aggregator</artifactId>
+        <artifactId>libs.group</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -42,12 +42,13 @@
     </plugins>
   </build>
 
-    <distributionManagement>
-        <site>
-            <id>github.gh-pages</id>
-            <url>${project.url}</url>
-        </site>
-    </distributionManagement>
+      <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+      <distributionManagement>
+          <site>
+              <id>github.gh-pages</id>
+              <url>${project.url}</url>
+          </site>
+      </distributionManagement>
 
 	<dependencies>
     <dependency>

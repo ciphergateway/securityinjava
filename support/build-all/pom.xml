@@ -10,7 +10,7 @@
       <relativePath>../../pom.xml</relativePath>
   </parent>
   <groupId>com.ciphergateway</groupId>
-  <artifactId>build-all.aggregator</artifactId>
+  <artifactId>build-all.group</artifactId>
   <packaging>pom</packaging>
 
   <modules>

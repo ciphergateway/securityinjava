@@ -138,6 +138,7 @@ encoding/<project>=UTF-8]]>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
                 <configuration>
+                    <skipDeploy>true</skipDeploy>
                     <outputEncoding>UTF-8</outputEncoding>
                     <reportPlugins>
                         <plugin>
@@ -492,6 +493,14 @@ encoding/<project>=UTF-8]]>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+  <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+  <distributionManagement>
+      <site>
+          <id>github.gh-pages</id>
+          <url>${project.url}</url>
+      </site>
+  </distributionManagement>
 
     <licenses>
         <license>

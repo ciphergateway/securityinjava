@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ciphergateway</groupId>
-		<artifactId>eclipse-plugins.aggregator</artifactId>
+		<artifactId>eclipse-plugins.group</artifactId>
 		<version>${revision}</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
@@ -206,7 +206,7 @@ encoding/<project>=UTF-8]]></content>
 										<artifactId>tycho-packaging-plugin</artifactId>
 										<versionRange>${tycho.version}</versionRange>
 										<goals>
-											<goal>build-qualifier-aggregator</goal>
+											<goal>build-qualifier-group</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>

@@ -17,7 +17,7 @@ Contributors:
         <relativePath>../pom.xml</relativePath>
     </parent>
 	<groupId>com.ciphergateway</groupId>
-	<artifactId>libs.aggregator</artifactId>
+	<artifactId>libs.group</artifactId>
 	<packaging>pom</packaging>
 
 	<modules>
