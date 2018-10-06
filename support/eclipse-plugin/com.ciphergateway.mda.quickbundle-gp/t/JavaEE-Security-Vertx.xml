@@ -2,7 +2,7 @@
 <rules>
     <keywordReplace>
 	    <items>
-	       <item title="项目名" keyword="quickbundle-securitymobile" replacePath="true" required="true" defaultValue="projectName"></item>
+	       <item title="项目名" keyword="securityinjava-vertx" replacePath="true" required="true" defaultValue="projectName"></item>
 	       <item title="WEB应用名" keyword="sijava" replacePath="true" required="true" defaultValue="webAppName"></item>
 	    </items>
 		<fileFilter>
@@ -16,12 +16,7 @@
 		</fileFilter>
     </keywordReplace>
 	<modules>
-		<module key="base" isBuild="true" name="基础框架" description="项目基础框架、代码生成依赖的组件(3张表)" isNecessary="true">
-			<folder>/securityinjava-ssm/src/test/java/?$</folder>
-		</module>
-		<module key="system" isBuild="true" name="系统组件" description="业务日志、锁、系统参数、公告(7张表)" isNecessary="true"/>
-		<module key="system" isBuild="true" name="源代码" description="lib下jar包的源代码" isNecessary="false">
-			<file>/securityinjava-ssm/doc/source/.*</file>
+		<module key="base" isBuild="true" name="基础框架" description="项目基础框架" isNecessary="true">
 		</module>
 	</modules>
 </rules>
