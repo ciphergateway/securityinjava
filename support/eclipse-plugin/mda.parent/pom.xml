@@ -22,15 +22,7 @@
 		<basedir>./</basedir>
 		<tycho.version>1.1.0</tycho.version>
 	</properties>
-	
-	<repositories>
-		<!-- configure p2 repository to resolve against -->
-		<repository>
-			<id>eclipse-luna</id>
-		   	<layout>p2</layout>
-		   	<url>http://download.eclipse.org/releases/luna/</url>
-		</repository>
-	</repositories>
+
 	
 	<build>
 		<plugins>
