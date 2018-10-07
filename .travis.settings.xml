@@ -9,7 +9,7 @@
             <id>github</id>
             <password>${env.TRAVIS_GITHUB_TOKEN}</password>
         </server>
-    <servers>
+    </servers>
 
 
 </settings>
