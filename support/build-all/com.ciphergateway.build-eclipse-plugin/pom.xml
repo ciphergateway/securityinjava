@@ -13,13 +13,6 @@
 		<basedir>./</basedir>
 	</properties>
 
-	<modules>
-		<module>../../../libs</module>
-		<module>../../../securityinjava-ssm</module>
-		<module>../../../securityinjava-vertx</module>
-		<module>../../../support/eclipse-plugin</module>
-	</modules>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.ciphergateway</groupId>
