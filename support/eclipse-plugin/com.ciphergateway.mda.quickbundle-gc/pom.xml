@@ -19,4 +19,24 @@
       </dependency>
   </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <configuration>
+              <path>${project.artifactId}</path>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+  <distributionManagement>
+    <site>
+        <id>github.gh-pages</id>
+        <url>${project.url}</url>
+    </site>
+  </distributionManagement>
+
 </project>

@@ -4,7 +4,7 @@
         <groupId>com.ciphergateway</groupId>
         <artifactId>securityinjava</artifactId>
         <version>${revision}</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../../../pom.xml</relativePath>
     </parent>
 	<artifactId>com.ciphergateway.build-eclipse-plugin</artifactId>
 	<packaging>jar</packaging>
@@ -39,13 +39,13 @@
 	<build>
 		<plugins>
 
-		    <plugin>
-		        <groupId>com.github.github</groupId>
-		        <artifactId>site-maven-plugin</artifactId>
-		        <configuration>
-		            <path>${project.artifactId}</path>
-		        </configuration>
-		    </plugin>
+		  <plugin>
+		      <groupId>com.github.github</groupId>
+		      <artifactId>site-maven-plugin</artifactId>
+		      <configuration>
+		          <path>${project.artifactId}</path>
+		      </configuration>
+		  </plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.1.0</version>
@@ -95,5 +95,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+    <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+    <distributionManagement>
+      <site>
+          <id>github</id>
+          <url>${project.url}</url>
+      </site>
+    </distributionManagement>
 
 </project>
