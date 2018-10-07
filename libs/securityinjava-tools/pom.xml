@@ -27,7 +27,7 @@
   <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
   <distributionManagement>
       <site>
-          <id>github.gh-pages</id>
+          <id>github</id>
           <url>${project.url}</url>
       </site>
   </distributionManagement>

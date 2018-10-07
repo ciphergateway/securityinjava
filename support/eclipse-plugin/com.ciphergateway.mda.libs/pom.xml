@@ -26,7 +26,7 @@
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>test</phase>
+						<phase>initialize</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -66,7 +66,7 @@
 	<url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
 	<distributionManagement>
 	  <site>
-	      <id>github.gh-pages</id>
+	      <id>github</id>
 	      <url>${project.url}</url>
 	  </site>
 	</distributionManagement>
