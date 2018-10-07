@@ -8,7 +8,7 @@ cache:
 
 deploy:
   provider: script
-  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn site-deploy -X -e"
+  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn site-deploy"
   skip_cleanup: true
   on:
     tags: true
