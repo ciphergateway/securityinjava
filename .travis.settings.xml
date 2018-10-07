@@ -5,7 +5,7 @@
   <Servers>
     <Server>
       <Id>ciphergateway</Id>
-      <Password>${env.TRAVIS_GITHUB_CIPHERGATEWAY_TOKEN}</Password>
+      <Password>${env.TRAVIS_GITHUB_TOKEN}</Password>
     </Server>
   </Servers>
 </Settings>
