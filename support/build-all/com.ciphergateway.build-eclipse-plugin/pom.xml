@@ -7,11 +7,18 @@
         <relativePath>../../../pom.xml</relativePath>
     </parent>
 	<artifactId>com.ciphergateway.build-eclipse-plugin</artifactId>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<properties>
 		<basedir>./</basedir>
 	</properties>
+
+	<modules>
+		<module>../../../libs</module>
+		<module>../../../securityinjava-ssm</module>
+		<module>../../../securityinjava-vertx</module>
+		<module>../../../support/eclipse-plugin</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
@@ -83,10 +90,12 @@
 								<exec executable="cmd.exe" dir="${basedir}" osfamily="windows" failonerror="true">
 									<arg line=" /c make.bat" />
 									<env key="revision" value="${revision}" />
+									<env key="basedir" value="${project.basedir}" />
 								</exec>
 								<exec executable="bash" dir="${basedir}" osfamily="unix" failonerror="true">
 									<arg line=" make.sh" />
 									<env key="revision" value="${revision}" />
+									<env key="basedir" value="${project.basedir}" />
 								</exec>
 							</target>
 						</configuration>

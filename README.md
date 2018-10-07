@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ciphergateway/securityinjava.svg?branch=master)](https://travis-ci.com/ciphergateway/securityinjava)
+
                    == SecurityInJava-6.0.0 doc ==
 
 - [Introduction 介绍](#introduction)

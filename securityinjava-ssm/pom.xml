@@ -264,7 +264,7 @@ encoding/<project>=UTF-8]]>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
-                        <phase>test</phase>
+                        <phase>package</phase>
                         <configuration>
                             <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
@@ -274,9 +274,11 @@ encoding/<project>=UTF-8]]>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
+
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
 
         <pluginManagement>

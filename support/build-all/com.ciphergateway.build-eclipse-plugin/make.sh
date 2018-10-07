@@ -11,9 +11,10 @@ function extractJar()
 }
 
 echo "${revision}="${revision}
+echo "${basedir}="${basedir}
 
 echo [1/4]rename plugin directory...
-cd target
+cd ${basedir}/target
 mv com.ciphergateway.build-eclipse-plugin-${revision}-bin eclipse
 cd eclipse
 mv com.ciphergateway.build-eclipse-plugin-${revision} plugins
