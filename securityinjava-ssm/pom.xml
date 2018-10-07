@@ -133,6 +133,29 @@ encoding/<project>=UTF-8]]>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <repositoryName>securityinjava</repositoryName>
+                    <repositoryOwner>ciphergateway</repositoryOwner>
+                    <path>${project.artifactId}</path>
+                    <message>Site for ${project.name} ${project.version}</message>
+                    <merge>true</merge>
+                    <server>github</server>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site-deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -144,7 +167,7 @@ encoding/<project>=UTF-8]]>
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-project-info-reports-plugin</artifactId>
-                        <version>3.0.0</version>
+                            <version>2.9</version>
                             <configuration>
                                 <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
                                 <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
@@ -233,6 +256,7 @@ encoding/<project>=UTF-8]]>
                     </reportPlugins>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -494,13 +518,15 @@ encoding/<project>=UTF-8]]>
         </dependencies>
     </dependencyManagement>
 
-  <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
-  <distributionManagement>
+
+    <url>https://ciphergateway.github.io/securityinjava/securityinjava-ssm</url>
+    <distributionManagement>
       <site>
-          <id>github.gh-pages</id>
+          <id>github</id>
           <url>${project.url}</url>
       </site>
-  </distributionManagement>
+    </distributionManagement>
+
 
     <licenses>
         <license>

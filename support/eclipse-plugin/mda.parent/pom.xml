@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.ciphergateway</groupId>
-		<artifactId>eclipse-plugins.group</artifactId>
-		<version>${revision}</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.ciphergateway</groupId>
+        <artifactId>securityinjava</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
 	<groupId>com.ciphergateway</groupId>
 	<artifactId>mda.parent</artifactId>
 	<packaging>pom</packaging>
@@ -34,6 +34,15 @@
 	
 	<build>
 		<plugins>
+		    <plugin>
+		        <groupId>com.github.github</groupId>
+		        <artifactId>site-maven-plugin</artifactId>
+		        <configuration>
+		            <path>${project.artifactId}</path>
+		        </configuration>
+		    </plugin>
+
+    
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
@@ -233,4 +242,13 @@ encoding/<project>=UTF-8]]></content>
 			</plugins>
 		</pluginManagement>
 	</build>
+
+    <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+    <distributionManagement>
+      <site>
+          <id>github</id>
+          <url>${project.url}</url>
+      </site>
+    </distributionManagement>
+    
 </project>

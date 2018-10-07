@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ciphergateway</groupId>
-        <artifactId>libs.group</artifactId>
+        <artifactId>securityinjava</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-	<groupId>com.ciphergateway</groupId>
-	<artifactId>libs.parent</artifactId>
-	<packaging>pom</packaging>
-	<properties>
+  	<groupId>com.ciphergateway</groupId>
+  	<artifactId>libs.parent</artifactId>
+  	<packaging>pom</packaging>
+  	<properties>
 		<basedir>./</basedir>
 
 		<!-- 主要依赖库的版本定义 -->
@@ -24,6 +24,16 @@
 
   <build>
     <plugins>
+
+    <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <configuration>
+            <path>${project.artifactId}</path>
+        </configuration>
+    </plugin>
+
+
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
         <version>3.0.1</version>
@@ -41,14 +51,6 @@
       </plugin>
     </plugins>
   </build>
-
-      <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
-      <distributionManagement>
-          <site>
-              <id>github.gh-pages</id>
-              <url>${project.url}</url>
-          </site>
-      </distributionManagement>
 
 	<dependencies>
     <dependency>
@@ -70,4 +72,13 @@
 		  <scope>test</scope>
 		</dependency>
 	</dependencies>
+    
+    <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+    <distributionManagement>
+      <site>
+          <id>github</id>
+          <url>${project.url}</url>
+      </site>
+    </distributionManagement>
+
 </project>

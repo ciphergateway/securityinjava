@@ -73,7 +73,7 @@
 		</dependency>
 	</dependencies>
 
-      <url>http://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
+      <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
       <distributionManagement>
           <site>
               <id>github.gh-pages</id>
