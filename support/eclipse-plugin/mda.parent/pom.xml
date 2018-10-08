@@ -32,11 +32,6 @@
 	        <url>http://download.eclipse.org/releases/luna/</url>
 	    </repository>
 
-	    <repository>
-			<id>codenvy</id>
-			<url>https://maven.codenvycorp.com/content/groups/public/</url>
-	    </repository>
-
 	  </repositories>
 	
 	<build>
