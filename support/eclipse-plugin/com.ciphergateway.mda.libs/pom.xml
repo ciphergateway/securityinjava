@@ -119,18 +119,21 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.noraui</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>12.2.0.1</version>
-		</dependency>
-
-		<dependency>
 		    <groupId>com.ibm.informix</groupId>
 		    <artifactId>jdbc</artifactId>
 		    <version>4.10.12</version>
 		</dependency>
+
+		<!-- can't download oracle jdbc driver from public repository, 
+		     you can add ojdbc*.jar manual, more information see README.md
+		<dependency>
+			<groupId>com.github.noraui</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.2.0.1</version>
+		</dependency>
+		-->
 		
-		<!-- db2 jdbc driver -->
+		<!-- db2 jdbc driver, you can add them manual, more information see README.md
 		<dependency>
 			<groupId>maven_not_found</groupId>
 			<artifactId>db2java.jar</artifactId>
@@ -166,6 +169,7 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/res/lib/maven_not_found/db2jcc.jar</systemPath>
 		</dependency>
+		-->
 	</dependencies>
 
 </project>
