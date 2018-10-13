@@ -34,6 +34,7 @@ if(window.addEventListener) {
 %></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-third.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-tools.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-insert.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-behavior.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-validate.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/json2.js"></script>

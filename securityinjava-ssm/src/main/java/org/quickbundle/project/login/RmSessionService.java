@@ -12,10 +12,8 @@ import javax.jws.WebService;
 import javax.servlet.http.HttpSession;
 
 import org.quickbundle.base.beans.RmBeanFactory;
-import org.quickbundle.config.RmConfig;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
-import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
 import org.quickbundle.tools.helper.RmPopulateHelper;
@@ -25,19 +23,6 @@ import org.springframework.jdbc.core.RowMapper;
 
 @WebService(targetNamespace="http://login.project.quickbundle.org/", endpointInterface = "org.quickbundle.project.login.IRmSessionService")
 public class RmSessionService implements IRmSessionService {
-//	public static IRmSessionService getRemoteSessionService(String clusterNodeId) {
-//		String callWsUrl = RmClusterConfig.getSingleton().getSelfNode().get(RmClusterConfig.NodeKey.webServiceUrl.name());
-//		if(callWsUrl == null) {
-//			return null;
-//		}
-//		String address = callWsUrl + "RmSession";
-//		JaxWsProxyFactoryBean jw = new JaxWsProxyFactoryBean();
-//		jw.setServiceClass(IRmSessionService.class);
-//		jw.setAddress(address);
-//		Object obj = jw.create();
-//		IRmSessionService ss = (IRmSessionService) obj;
-//		return ss;
-//	}
 	
     private IRmLoginService getLoginService() {
         return (IRmLoginService) RmBeanFactory.getBean(IRmLoginService.class.getName());  //得到Service对象,受事务控制
@@ -89,30 +74,6 @@ public class RmSessionService implements IRmSessionService {
 			}
 		}, startIndex, size);
 		
-//		//通过soa查询其他节点的session
-//		for(String clusterNodeId : mOther.keySet()) {
-//			String[] sessionIds = mOther.get(clusterNodeId).toArray(new String[0]);
-//			try {
-//				IRmSessionService remoteSs = getRemoteSessionService(clusterNodeId);
-//				if(remoteSs == null) {
-//					continue;
-//				}
-//				List<RmUserSessionVo> lBrother = remoteSs.listSessionLocal(sessionIds);
-//				for(RmUserSessionVo sourceVo : lBrother) {
-//					if(sourceVo == null) {
-//						continue;
-//					}
-//					RmUserSessionVo destinationVo = mResult.get(sourceVo.getSessionId());
-//					if(sourceVo.getId() != null) {
-//						RmPopulateHelper.populate(destinationVo, sourceVo);
-//					} else {
-//						populateSessionVo(destinationVo, sourceVo);
-//					}
-//				}
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
 		for(String sessionId : mResult.keySet()) {
 			result.add(mResult.get(sessionId));
 		}
@@ -154,21 +115,6 @@ public class RmSessionService implements IRmSessionService {
 	public boolean forceLogoutUser(String user_id, String session_id) {
 		String msg = "您被管理员强制退出了，请重新登录。如有帐号异常，请联系管理员。";
 		boolean sendRemoteSuccess = false;
-		if(RmConfig.getSingleton().isClusterMode()) {
-//			//销毁集群下兄弟节点的session
-//			if(user_id != null && user_id.length() > 0) {
-//				List<RmCommonVo> lvo = RmProjectHelper.getCommonServiceInstance().doQuery("select * from RM_USER_ONLINE_RECORD where user_id='" + user_id + "' and login_sign='" + session_id + "'");
-//				if(lvo.size() > 0) {
-//					RmCommonVo vo = lvo.get(0);
-//					String cluster_node_id = vo.getString("cluster_node_id");
-//					IRmSessionService remoteSs = getRemoteSessionService(cluster_node_id);
-//					if(remoteSs != null) {
-//						int result = remoteSs.forceLogoutUserLocal(new String[]{session_id}, msg);
-//						sendRemoteSuccess = result == 1;
-//					}
-//				}
-//			}
-		}
 		if(!sendRemoteSuccess) { //如果单机模式或集群模式下调用远程失败，本地执行清理动作
 			forceLogoutUserLocal(new String[]{session_id}, msg);
 		}

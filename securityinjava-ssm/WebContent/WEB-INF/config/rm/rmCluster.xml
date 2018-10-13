@@ -35,14 +35,4 @@
 		
 	</org.quickbundle.config.RmClusterConfig>
 	
-	<org.quickbundle.project.login.RmSsoLogin>
-		<redirectGroup enable="false">
-			<redirectUrls >
-				<url>^.*\.do$</url>
-			</redirectUrls>
-			<redirectTargets>
-				<baseUrl>http://localhost:10000/sijava/</baseUrl>
-			</redirectTargets>
-		</redirectGroup>
-	</org.quickbundle.project.login.RmSsoLogin>
 </rm>

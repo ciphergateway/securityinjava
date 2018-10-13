@@ -12,7 +12,7 @@
 <html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
-<%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
+
 <%
 	if(request.getParameter("isSubmit") != null && request.getParameter("isSubmit").length() > 0) {
 		//RmAccessoryVo[] vo = RmUploadHelper.populateUploadInfo(request, "INSERT"); 

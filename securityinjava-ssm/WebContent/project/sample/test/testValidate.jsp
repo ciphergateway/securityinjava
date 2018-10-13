@@ -6,7 +6,6 @@
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
 <script src="<%=request.getContextPath()%>/js/rm-insert.js" type=text/javascript></script>
-<script src="<%=request.getContextPath()%>/third/ckeditor/ckeditor.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>rm-based architecture project</title>
 <%

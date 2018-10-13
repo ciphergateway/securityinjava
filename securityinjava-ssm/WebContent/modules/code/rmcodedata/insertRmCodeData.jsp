@@ -15,7 +15,6 @@
 <html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
-<%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>rm-based architecture project</title>
 <script type="text/javascript">

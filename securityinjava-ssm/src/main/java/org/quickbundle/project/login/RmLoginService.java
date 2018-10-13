@@ -116,14 +116,6 @@ public class RmLoginService extends RmService implements IRmLoginService {
 					return null;
 				}
 				RmUserSessionVo sessionVo = null;
-//				try {
-//					IRmSessionService remoteSs = RmSessionService.getRemoteSessionService(onlineRecordVo.getCluster_node_id());
-//					if(remoteSs != null) {
-//						sessionVo = remoteSs.findSessionLocal(onlineRecordVo.getLogin_sign());
-//					}
-//				} catch (Exception e) {
-//					// TODO: handle exception
-//				}
 				if(sessionVo == null) {
 					return null;
 				}
@@ -156,17 +148,6 @@ public class RmLoginService extends RmService implements IRmLoginService {
 		if(onlineRecordVo != null) {
 			String cluster_node_id = onlineRecordVo.getCluster_node_id();
 			String sessionId = onlineRecordVo.getLogin_sign();
-//			//集群模式下，根据cluster_node_id找到某个兄弟节点，其session也要强制取代
-//			if(RmConfig.getSingleton().isClusterMode() && !RmClusterConfig.getSingleton().getSelfId().equals(cluster_node_id)) {
-//				try {
-//					IRmSessionService remoteSs = RmSessionService.getRemoteSessionService(cluster_node_id);
-//					if(remoteSs != null) {
-//						remoteSs.forceLogoutUserLocal(new String[]{sessionId}, message);
-//					}
-//				} catch (Exception e) {
-//					// TODO: handle exception
-//				}
-//			}
 			HttpSession sessionToReplace = RmSessionListener.getSessionById(sessionId);
 			if(sessionToReplace != null) {
 				sessionToReplace.setAttribute(IRmLoginConstants.LOGOUT_TYPE, IRmLoginConstants.LogoutType.FORCE_REPLACE.value());
@@ -268,7 +249,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 		uorVo.setLogin_time(RmDateHelper.getSysTimestamp());
 		uorVo.setLogin_ip(RmProjectHelper.getIp(request));
 		uorVo.setLogin_uuid(RmGlobalMonitor.uniqueUUID.get());
-		uorVo.setLogin_sign(RmJspHelper.getSession(request).getId());
+		uorVo.setLogin_sign(RmJspHelper.getSession(request, false).getId());
 		RmVoHelper.markCreateStamp((HttpServletRequest)request, uorVo);
 		uorService.insert(uorVo);
 		//更新用户状态

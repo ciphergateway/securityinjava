@@ -141,7 +141,7 @@ public final class RmProjectHelper implements IGlobalConstants{
 		if (request == null) {
 			return null;
 		}
-		Object obj = RmJspHelper.getSession(request).getAttribute(RM_USER_VO);
+		Object obj = RmJspHelper.getSession(request, false).getAttribute(RM_USER_VO);
 		if (obj == null) {
 			return null;
 		}

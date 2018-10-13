@@ -20,7 +20,6 @@
 <%@page import="org.quickbundle.project.common.RmCommonVo"%><html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
-<%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><bean:message key="qb.web_title"/></title>
 <script type="text/javascript">

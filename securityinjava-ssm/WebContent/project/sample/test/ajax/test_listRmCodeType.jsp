@@ -3,7 +3,7 @@
 <html>
 <head>
 <%@ include file="/jsp/include/rmGlobal.jsp" %>
-<%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>中国网通（集团）有限公司河北省分公司企业信息门户</title>
 <script type="text/javascript">

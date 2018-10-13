@@ -681,16 +681,6 @@ public class RmJspHelper implements ICoreConstants {
     }
 	
 	/**
-	 * 功能: 从request中获取session，如果没有session会自动创建新session
-	 *
-	 * @param request
-	 * @return
-	 */
-	public static HttpSession getSession(ServletRequest request) {
-		return getSession(request, true);
-	}
-	
-	/**
 	 * 功能: 从request中获取session，根据create判断是否创建新session
 	 *
 	 * @param request
@@ -763,13 +753,13 @@ public class RmJspHelper implements ICoreConstants {
             if(requestCurrentPage != null && requestCurrentPage.trim().length() > 0) {
                 currentPage = Integer.parseInt(requestCurrentPage);
                 if(rememberPage) {
-                	RmJspHelper.getSession(request).setAttribute("RmGlobalCurrentPage", new String[]{uri, requestCurrentPage});
+                	RmJspHelper.getSession(request, true).setAttribute("RmGlobalCurrentPage", new String[]{uri, requestCurrentPage});
                 }
             } else if(request.getParameter("start") != null && request.getParameter("start").trim().length() > 0){
             	int start = Integer.parseInt(request.getParameter("start").trim());
             	currentPage= (start + 1) / pageSize + 1;
-            } else if(rememberPage && RmJspHelper.getSession(request).getAttribute("RmGlobalCurrentPage") != null) {
-                String[] aUrlQc = (String[])RmJspHelper.getSession(request).getAttribute("RmGlobalCurrentPage");
+            } else if(rememberPage && RmJspHelper.getSession(request, true).getAttribute("RmGlobalCurrentPage") != null) {
+                String[] aUrlQc = (String[])RmJspHelper.getSession(request, true).getAttribute("RmGlobalCurrentPage");
                 if(uri.equals(aUrlQc[0])) {
                     currentPage = Integer.parseInt(aUrlQc[1]);
                 }

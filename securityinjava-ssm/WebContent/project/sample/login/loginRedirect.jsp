@@ -7,8 +7,10 @@
 <%@page import="org.quickbundle.config.RmConfig"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%
+System.out.println("request.getParameter(no_redirect)=" + request.getParameter("no_redirect"));
 	if(!"1".equals(request.getParameter("no_redirect"))) {
 		HttpSession session = RmJspHelper.getSession(request, false);
+		System.out.println("session=" + session + ", session.getAttribute(IGlobalConstants.RM_USER_VO)=" + session.getAttribute(IGlobalConstants.RM_USER_VO));
 		if(session != null && session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
 			response.sendRedirect(request.getContextPath() + "/"); //index.jsp
 		}

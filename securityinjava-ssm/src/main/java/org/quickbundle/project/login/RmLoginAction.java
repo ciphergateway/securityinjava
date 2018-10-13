@@ -38,6 +38,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
         IRmLoginVo loginVo = null;
         //获得session，有可能不存在
         HttpSession session = RmJspHelper.getSession(request, false);
+        System.out.println("********** RmLoginAction: session=" + session + ", session.getId()=" + session != null ? session.getId() : "");
         if(RmConfig.getSingleton().isUserDemoMode()) { //demo模式手动设置IRmLoginVo，用户login_id放入session，用于判断是否登录
         	loginVo = new RmUserVo();
         	loginVo.setLogin_id(request.getParameter(Para.login_id.name()));
@@ -83,20 +84,12 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
             request.setAttribute(Para.password.name(), loginVo.getPassword());
             return mapping.findForward(IRmLoginConstants.LoginForward.TO_LOGIN.value());
         }
+        
         createLongSession(request);
+        
     	//已经成功登录，初始化登录session信息
         getLoginService().executeInitUserInfo(request, loginVo);
-
-        //把此次成功登录的帐号和密码写入cookie
-        if(RmConfig.getSingleton().isLoginCookie()) {
-        	if(request.getParameterValues(Para.is_cookie_login_status.name()) != null 
-        			&& request.getParameterValues(Para.is_cookie_login_status.name()).length > 0
-        			&& RM_YES.equals(request.getParameterValues(Para.is_cookie_login_status.name())[0])) {
-                //设置Cookie
-            	RmJspHelper.setProfile(request, response, Para.login_id.name(), request.getParameter(Para.login_id.name()));
-            	RmJspHelper.setProfile(request, response, Para.password.name(), request.getParameter(Para.password.name()));
-        	}
-        }
+        
         return directForward(mapping, form, request, response);
     }
     

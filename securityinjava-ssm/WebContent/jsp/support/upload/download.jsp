@@ -5,7 +5,7 @@
 <%@page import="org.quickbundle.tools.helper.RmPopulateHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
-<%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
+
 
 <%@page import="org.quickbundle.modules.affix.rmaffix.RmAffixVo"%><div>
 <%
