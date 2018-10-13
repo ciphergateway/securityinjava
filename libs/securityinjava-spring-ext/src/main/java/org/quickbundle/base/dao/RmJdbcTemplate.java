@@ -275,19 +275,31 @@ public class RmJdbcTemplate extends JdbcTemplate {
 		return query(strsql, rowMapper, startIndex, size, false);
 	}
 
+	 /**
+     * @param strsql
+     * @param rowMapper
+     * @param startIndex 开始位置(第一条是1，第二条是2...)
+     * @param size
+     * @param absoluteByNext circle ResultSet.next() instead of ResultSet.absolute(), because of JDBC driver not support so, such as DB2's CLOB 
+     * @param isAbsolutePage
+     * @return
+     */
+    public List query(String strsql, RowMapper rowMapper, int startIndex, int size, boolean absoluteByNext) {
+        return query(strsql, rowMapper, startIndex, size, absoluteByNext, true);
+    }  
+    
 	/**
-	 * 功能:
-	 * 
-	 * @param strsql
-	 * @param rowMapper
-	 * @param startIndex 开始位置(第一条是1，第二条是2...)
-	 * @param size
-	 * @param absoluteByNext circle ResultSet.next() instead of ResultSet.absolute(), because of JDBC driver not support so, such as DB2's CLOB 
+     * @param strsql
+     * @param rowMapper
+     * @param startIndex 开始位置(第一条是1，第二条是2...)
+     * @param size
+     * @param absoluteByNext circle ResultSet.next() instead of ResultSet.absolute(), because of JDBC driver not support so, such as DB2's CLOB 
+	 * @param isAbsolutePage
 	 * @return
 	 */
-	public List query(String strsql, RowMapper rowMapper, int startIndex, int size, boolean absoluteByNext) {
+	public List query(String strsql, RowMapper rowMapper, int startIndex, int size, boolean absoluteByNext, boolean isAbsolutePage) {
 		if (RmBaseConfig.getSingleton().getDatabaseProductName() != null &&
-				(getAbsolutePage().equals(EnumBoolean.FALSE) || (getAbsolutePage().equals(EnumBoolean.NULL) && !RmBaseConfig.getSingleton().isAbsolutePage()))) {
+				(getAbsolutePage().equals(EnumBoolean.FALSE) || (getAbsolutePage().equals(EnumBoolean.NULL) && !isAbsolutePage))) {
 			if (ICoreConstants.DatabaseProductType.ORACLE.getDatabaseProductName().equalsIgnoreCase(RmBaseConfig.getSingleton().getDatabaseProductName())) {
 				return (List) query(RmSqlHelper.getSqlPage4Oracle(strsql, startIndex, size), rowMapper);
 			} else if (ICoreConstants.DatabaseProductType.MYSQL.getDatabaseProductName().equalsIgnoreCase(RmBaseConfig.getSingleton().getDatabaseProductName())) {

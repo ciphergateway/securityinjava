@@ -38,7 +38,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
         IRmLoginVo loginVo = null;
         //获得session，有可能不存在
         HttpSession session = RmJspHelper.getSession(request, false);
-        System.out.println("********** RmLoginAction: session=" + session + ", session.getId()=" + session != null ? session.getId() : "");
+        System.out.println("********** RmLoginAction: session=" + session + ", session.getId()=" + (session != null ? session.getId() : ""));
         if(RmConfig.getSingleton().isUserDemoMode()) { //demo模式手动设置IRmLoginVo，用户login_id放入session，用于判断是否登录
         	loginVo = new RmUserVo();
         	loginVo.setLogin_id(request.getParameter(Para.login_id.name()));
@@ -74,11 +74,6 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
     		}
     	}
         if(loginVo.getLoginFailed() != null) { //登录失败
-        	//清除cookie，不初始化Service跳转到重登录界面
-        	if(RmConfig.getSingleton().isLoginCookie()) {
-        		RmJspHelper.clearProfile(request, response, Para.login_id.name());
-        		RmJspHelper.clearProfile(request, response, Para.password.name());
-        	}
             request.setAttribute(Para.alertStr.name(), loginVo.getLoginFailed());
             request.setAttribute(Para.login_id.name(), loginVo.getLogin_id());
             request.setAttribute(Para.password.name(), loginVo.getPassword());

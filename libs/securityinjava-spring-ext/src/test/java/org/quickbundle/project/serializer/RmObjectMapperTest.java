@@ -1,9 +1,8 @@
+package org.quickbundle.project.serializer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import org.quickbundle.project.serializer.RmObjectMapper;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -17,7 +16,7 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
 
-public class TestJackson {
+public class RmObjectMapperTest {
 	public static void main(String[] args) {
 		List<Message> lvo = new ArrayList<Message>();
 		lvo.add(new Message("1","a","a1"));
@@ -81,34 +80,6 @@ public class TestJackson {
     	result.append("\n});");
     	return result.toString();
     }
-}
-
-class RmBeanSerializerFactory extends BeanSerializerFactory {
-
-	public final static RmBeanSerializerFactory instance = new RmBeanSerializerFactory(null);
-
-	private Object filterId;
-
-	protected RmBeanSerializerFactory(SerializerFactoryConfig config) {
-		super(config);
-	}
-	
-    /**
-     * Method called to find filter that is configured to be used with bean
-     * serializer being built, if any.
-     */
-    protected Object findFilterId(SerializationConfig config, BeanDescription beanDesc)
-    {
-    	return getFilterId();
-    }
-
-	public Object getFilterId() {
-		return filterId;
-	}
-
-	public void setFilterId(Object filterId) {
-		this.filterId = filterId;
-	}
 }
 
 class Message {

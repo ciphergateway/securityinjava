@@ -11,4 +11,4 @@
         String xmlStr = dt.getStringFromDocument();
         System.out.println(xmlStr);
         out.print(xmlStr);
-%><%@page import="org.quickbundle.tools.support.tree.DeepTreeVo"%><%@page import="org.quickbundle.tools.support.tree.DeepTreeXmlHandler"%>
+%><%@page import="org.quickbundle.project.DeepTreeVo"%><%@page import="org.quickbundle.project.DeepTreeXmlHandler"%>

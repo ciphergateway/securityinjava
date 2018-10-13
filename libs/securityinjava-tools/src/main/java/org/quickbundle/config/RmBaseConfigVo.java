@@ -1,7 +1,9 @@
 package org.quickbundle.config;
 
-import java.io.File;
-
+/**
+ * @author qb
+ *
+ */
 public class RmBaseConfigVo {
 	RmBaseConfigVo() {
 		super();
@@ -88,6 +90,16 @@ public class RmBaseConfigVo {
 	 * 最多in多少条记录？
 	 */
 	private int maxSqlInCount = 1000;
+	
+	/**
+	 * 系统默认编码
+	 */
+	private String defaultEncode = "UTF-8";
+	
+	/**
+	 * 默认实数数值的精度
+	 */
+	private int defaultNumberScale = 2;
 
 	/**
 	 * @return the warHome
@@ -286,7 +298,6 @@ public class RmBaseConfigVo {
 		this.defaultFont = defaultFont;
 	}
 	
-	
 	public int getMaxSqlInCount() {
 		return maxSqlInCount;
 	}
@@ -295,131 +306,20 @@ public class RmBaseConfigVo {
 		this.maxSqlInCount = maxSqlInCount;
 	}
 
-	//未加入rm.xml文件的配置
-	/**
-	 * @return 系统缓存检查周期
-	 */
-	public long getCacheCheckInterval() {
-		return 1000 * 2;
-	}
-	
-	/**
-	 * @return 是否全局监控
-	 */
-	public boolean isGlobalMonitor() {
-		return true;
-	}
-	
-	/**
-	 * @return 系统缓存刷新周期
-	 */
-	public long getCacheFlushInterval() {
-		return 1000 * 60 * 5;
-	}
-	
-	/**
-	 * @return 节点心跳间隔
-	 */
-	public long getNodeHeartbeatInterval() {
-		return 1000 * 60;
-	}
-	
-    /**
-     * 翻页是否用rs.absolute(index)的方案
-     */
-    public boolean isAbsolutePage() {
-    	return false;
+    public String getDefaultEncode() {
+        return defaultEncode;
     }
-    
-    /**
-     * 批处理sql的最大记录日志数量
-     */
-    public int getMaxLogSqlBatchSize() {
-    	return 100;
+
+    public void setDefaultEncode(String defaultEncode) {
+        this.defaultEncode = defaultEncode;
     }
-	
-	/**
-	 * 系统用户登录是否DEMO状态(不校验用户数据库)
-	 */
-	public boolean isUserDemoMode() {
-		return false;
-	}
-	
-	/**
-	 * 是否给insert和update的sql语句自动加ts
-	 */
-	public boolean isSqlUpdateAutoAppendTs() {
-		return false;
-	}
-	
-	/**
-	 * 默认的临时文件夹
-	 */
-	public File getDefaultTempDir() {
-		return new File(System.getProperty("java.io.tmpdir") + File.separator + "quickbundle");
-	}
-	
-	/**
-	 * 默认编码
-	 */
-	public String getDefaultEncode() {
-		return "UTF-8";
-	}
-	
-	/**
-	 * 默认实数数值的精度
-	 */
-	public int getDefaultNumberScale() {
-		return 2;
-	}
-	
-	/**
-	 * 登录时是否有校验码
-	 */
-	public boolean isLoginValidateVerifyCode() {
-		return true;
-	}
-	
-	/**
-	 * 登录是持否支持cookie
-	 */
-	public boolean isLoginCookie() {
-		return true;
-	}
-	
-	/**
-	 * cookie默认值365天
-	 */
-	public int getDefaultCookieAge() {
-		return 365 * 24 * 60 * 60;
-	}
-		
-	/**
-	 * ajax提交是否已json格式，还是post表单提交？
-	 */
-	public boolean isSubmitJson() {
-		return false;
-	}
-	
-	/**
-	 * 默认的树形编码起始值，适用于简单的纯数字树，每个节点下最多有900个子节点
-	 */
-	public String getDefaultTreeCodeFirst() {
-		return "100";
-	}
-    
-	/**
-	 * 指定最大循环次数，防止死循环
-	 */
-	public int getMaxCircleCount() {
-		return 10000;
-	}
-	
-	/**
-	 * 定义单实例全局缓存的最大容量，防止溢出攻击，如公开的url列表
-	 * @return
-	 */
-	public int getMaxCacheSize() {
-		return 10000;
-	}
+
+    public int getDefaultNumberScale() {
+        return defaultNumberScale;
+    }
+
+    public void setDefaultNumberScale(int defaultNumberScale) {
+        this.defaultNumberScale = defaultNumberScale;
+    }
+
 }

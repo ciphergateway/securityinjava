@@ -908,10 +908,6 @@ public class RmJspHelper implements ICoreConstants {
         
     }
     
-    public static void setProfile(HttpServletRequest request, HttpServletResponse response, String key, String value) {
-    	setProfile(request, response, key, value, RmBaseConfig.getSingleton().getDefaultCookieAge());
-    }
-    
     public static void setProfile(HttpServletRequest request, HttpServletResponse response, String key, String value, int cookieAge) {
         request.setAttribute(key, value);
         

@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.tree;
+package org.quickbundle.project;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -6,11 +6,11 @@ import java.util.Queue;
 
 import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.config.RmConfig;
+import org.quickbundle.project.AbstractTaskQueue;
 import org.quickbundle.third.quartz.rmschedulerevent.IRmSchedulerEventConstants;
 import org.quickbundle.third.quartz.rmschedulerevent.IRmSchedulerEventService;
 import org.quickbundle.third.quartz.rmschedulerevent.RmSchedulerEventVo;
 import org.quickbundle.tools.helper.RmLogHelper;
-import org.quickbundle.tools.support.buffer.AbstractTaskQueue;
 
 public class EventLog2DbService extends AbstractTaskQueue<RmSchedulerEventVo> {
 	private String name = "调度事件缓冲器";

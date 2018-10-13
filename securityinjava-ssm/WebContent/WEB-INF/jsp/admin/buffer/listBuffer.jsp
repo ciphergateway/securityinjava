@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="/jsp/common/err.jsp" %>
 <%@page import="org.quickbundle.tools.helper.RmDateHelper"%>
-<%@page import="org.quickbundle.tools.support.buffer.AbstractTaskQueue"%>
+<%@page import="org.quickbundle.project.AbstractTaskQueue"%>
 <%@page import="java.util.concurrent.CopyOnWriteArrayList"%>
-<%@page import="org.quickbundle.tools.support.buffer.FlushQueueThread"%>
+<%@page import="org.quickbundle.project.FlushQueueThread"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

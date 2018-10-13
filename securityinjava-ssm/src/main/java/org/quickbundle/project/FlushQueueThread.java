@@ -1,4 +1,4 @@
-package org.quickbundle.tools.support.buffer;
+package org.quickbundle.project;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.config.RmConfig;
 
 /**
  * 刷新监视器
@@ -81,7 +81,7 @@ public class FlushQueueThread extends Thread {
 	/**
 	 * 检查周期
 	 */
-	private long flush_interval = RmBaseConfig.getSingleton().getCacheCheckInterval();
+	private long flush_interval = RmConfig.getSingleton().getCacheCheckInterval();
 
 	public void addTaskQueue(AbstractTaskQueue buf) {
 		if (buf == null) {

@@ -25,8 +25,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
-import org.quickbundle.config.RmBaseConfig;
-
 /**
  * 功能、用途、现存BUG:
  * 
@@ -37,7 +35,7 @@ import org.quickbundle.config.RmBaseConfig;
  */
 public class RmZipHelper {
 	public final static String ZIP_ENCODING_GBK = "GBK";
-	public final static String ZIP_ENCODING_UTF8 = RmBaseConfig.getSingleton().getDefaultEncode();
+	public final static String ZIP_ENCODING_UTF8 = "UTF-8";
 	
     public final static int MAX_ZIP_SIZE = 10 * 1024 * 1024;
     public final static int MAX_TEMPLATE_SIZE = 200 * 1024;

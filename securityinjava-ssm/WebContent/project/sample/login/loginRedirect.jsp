@@ -7,6 +7,8 @@
 <%@page import="org.quickbundle.config.RmConfig"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%
+HttpSession session2 = RmJspHelper.getSession(request, false);
+System.out.println("********** loginRedirect.jsp: session2=" + session2 + ", session2.getId()=" + (session2 != null ? session2.getId() : ""));
 System.out.println("request.getParameter(no_redirect)=" + request.getParameter("no_redirect"));
 	if(!"1".equals(request.getParameter("no_redirect"))) {
 		HttpSession session = RmJspHelper.getSession(request, false);

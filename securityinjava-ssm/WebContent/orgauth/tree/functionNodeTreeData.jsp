@@ -92,5 +92,5 @@ try {
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="java.util.List"%>
-<%@page import="org.quickbundle.tools.support.tree.DeepTreeVo"%>
-<%@page import="org.quickbundle.tools.support.tree.DeepTreeXmlHandler"%>
+<%@page import="org.quickbundle.project.DeepTreeVo"%>
+<%@page import="org.quickbundle.project.DeepTreeXmlHandler"%>

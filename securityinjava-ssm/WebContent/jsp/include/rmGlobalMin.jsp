@@ -29,12 +29,12 @@ if(window.addEventListener) {
 }
 <%
 { //system message
-	HttpSession session2 = RmJspHelper.getSession(request, false);
-	if(session2 != null) {
-		Object systemMessage = session2.getAttribute(IGlobalConstants.SystemPara.system_message.name());
+	HttpSession sessionSystem = RmJspHelper.getSession(request, false);
+	if(sessionSystem != null) {
+		Object systemMessage = sessionSystem.getAttribute(IGlobalConstants.SystemPara.system_message.name());
 		if(systemMessage != null) {
 			out.print("alert(\"" + RmStringHelper.replaceStringToScript(systemMessage) + "\");");
-			session2.removeAttribute(IGlobalConstants.SystemPara.system_message.name());
+			sessionSystem.removeAttribute(IGlobalConstants.SystemPara.system_message.name());
 		}
 	}
 }

@@ -8,7 +8,7 @@
  * 版本历史: 2005-11-19 19:16:49 创建1.0.0版 (baixiaoyong)
  *  
  */
-package org.quickbundle.tools.support.tree;
+package org.quickbundle.project;
 
 import java.util.Iterator;
 

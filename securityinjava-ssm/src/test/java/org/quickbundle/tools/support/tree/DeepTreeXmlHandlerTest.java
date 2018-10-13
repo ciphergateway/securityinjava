@@ -3,6 +3,8 @@ package org.quickbundle.tools.support.tree;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.quickbundle.project.DeepTreeVo;
+import org.quickbundle.project.DeepTreeXmlHandler;
 
 public class DeepTreeXmlHandlerTest {
 

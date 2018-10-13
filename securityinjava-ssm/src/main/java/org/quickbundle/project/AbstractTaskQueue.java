@@ -1,5 +1,5 @@
 
-package org.quickbundle.tools.support.buffer;
+package org.quickbundle.project;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -7,6 +7,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.quickbundle.config.RmBaseConfig;
+import org.quickbundle.config.RmConfig;
 
 /**
  * 通用缓冲器 <h3>刷新方式:</h3>
@@ -37,7 +38,7 @@ public abstract class AbstractTaskQueue<E> {
 	/**
 	 * 最大未刷新时间
 	 */
-	protected long expire_interval = RmBaseConfig.getSingleton().getCacheFlushInterval();
+	protected long expire_interval = RmConfig.getSingleton().getCacheFlushInterval();
 
 	/**
 	 * 指定的下次刷新时刻

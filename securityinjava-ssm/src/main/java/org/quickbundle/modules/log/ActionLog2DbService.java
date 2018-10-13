@@ -6,7 +6,7 @@ import java.util.Queue;
 
 import org.quickbundle.modules.log.rmlog.IRmLogService;
 import org.quickbundle.modules.log.rmlog.RmLogVo;
-import org.quickbundle.tools.support.buffer.AbstractTaskQueue;
+import org.quickbundle.project.AbstractTaskQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

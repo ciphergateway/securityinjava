@@ -340,22 +340,31 @@ public class RmPopulateHelper<E> {
         public boolean containKey(Object sourceObj, String key);
         public Map getKeyValueMap(Object sourceObj);
     }
+    
+    /**
+     * ajax注值模式,各vo之间用name$1, name$2区分
+     * 
+     * @param classVo vo的class对象
+     * @param request 存放form提交数据的request
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public static<T> List<T> populateAjax(Class<T> classVo, HttpServletRequest request) {
+        return populateAjax(classVo, request, true);
+    }
      
     /**
      * ajax注值模式,各vo之间用name$1, name$2区分
      * 
-     * @param <T> vo泛型
      * @param classVo vo的class对象
      * @param request 存放form提交数据的request
+     * @param isSubmitByJson ajax提交是否已json格式，还是post表单提交？
      * @return
-     * @throws IOException 
-     * @throws JsonMappingException 
-     * @throws JsonParseException 
      */
     @SuppressWarnings("unchecked")
-	public static<T> List<T> populateAjax(Class<T> classVo, HttpServletRequest request) {
+	public static<T> List<T> populateAjax(Class<T> classVo, HttpServletRequest request, boolean isSubmitByJson) {
     	List<T> lvo = new ArrayList<T>();
-    	if(RmBaseConfig.getSingleton().isSubmitJson()) {
+    	if(isSubmitByJson) {
     		String jsonStr = request.getParameter(ICoreConstants.RM_AJAX_JSON);
     		List vos;
 			try {
