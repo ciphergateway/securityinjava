@@ -45,4 +45,13 @@ public class ActionLog2DbService extends AbstractTaskQueue<RmLogVo> {
 			System.err.println("flush(): " + e.toString());
 		}
 	}
+	
+    /**
+     * 全局单例
+     */
+    private static ActionLog2DbService instance = new ActionLog2DbService();
+    
+    public static ActionLog2DbService getInstance() {
+        return instance;
+    }
 }

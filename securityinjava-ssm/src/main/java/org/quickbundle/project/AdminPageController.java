@@ -32,7 +32,7 @@ public class AdminPageController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value = "buffer/list")
+	@RequestMapping(value = "buffer/flush")
 	public String bufferFlush(HttpServletRequest request) {
 	    return "admin/buffer/doFlushBuffer";
 	}
