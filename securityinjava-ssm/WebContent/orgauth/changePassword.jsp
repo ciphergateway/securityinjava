@@ -1,4 +1,4 @@
-<%@page import="org.quickbundle.project.RmCryptoHelper"%>
+<%@page import="com.ciphergateway.crypto.RmCryptoHelper"%>
 <%@page import="org.quickbundle.orgauth.rmuser.IRmUserService"%>
 <%@page import="org.quickbundle.orgauth.rmuser.IRmUserConstants"%>
 <%@page import="org.quickbundle.project.login.RmUserVo"%>

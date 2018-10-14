@@ -21,13 +21,14 @@ import java.util.List;
 
 import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
-import org.quickbundle.project.RmCryptoHelper;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.cache.RmSqlCountCache;
 import org.quickbundle.project.mail.IRmMailService;
 import org.quickbundle.project.mail.SendPassword;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.ciphergateway.crypto.RmCryptoHelper;
 
 /**
  * 功能、用途、现存BUG:

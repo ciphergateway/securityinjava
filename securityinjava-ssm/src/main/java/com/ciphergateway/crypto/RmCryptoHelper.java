@@ -1,4 +1,4 @@
-package org.quickbundle.project;
+package com.ciphergateway.crypto;
 
 import java.io.IOException;
 import java.security.MessageDigest;
