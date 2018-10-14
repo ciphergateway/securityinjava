@@ -10,7 +10,6 @@
     HttpSession session2 = RmJspHelper.getSession(request, response, false);
 	if(!"1".equals(request.getParameter("no_redirect"))) {
 		HttpSession session = RmJspHelper.getSession(request, response, false);
-		System.out.println("session=" + session + ", session.getAttribute(IGlobalConstants.RM_USER_VO)=" + session.getAttribute(IGlobalConstants.RM_USER_VO));
 		if(session != null && session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
 			response.sendRedirect(request.getContextPath() + "/"); //index.jsp
 		}

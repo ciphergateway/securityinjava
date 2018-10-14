@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class MyController {
 
-    @Value("${my.secret}")
+    //TODO @Value("${my.secret}")
     private String password;
     
-    @RequestMapping("/")
+    //TODO @RequestMapping("/")
     String home() {
         return "Hello World, " + password;
     }

@@ -22,6 +22,7 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
+			    <value>classpath:config/application.properties</value>
 				<value>classpath:config/mail.properties</value>
 				<value>classpath:config/jdbc.properties</value>
 			</list>

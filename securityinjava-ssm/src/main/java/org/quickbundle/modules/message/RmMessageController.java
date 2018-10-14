@@ -16,6 +16,7 @@ import org.quickbundle.tools.helper.RmSqlHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -52,6 +54,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author 白小勇
  */
 @Controller
+@EnableAutoConfiguration
 @RequestMapping(value = "/message")
 public class RmMessageController implements IRmMessageConstants {
 
