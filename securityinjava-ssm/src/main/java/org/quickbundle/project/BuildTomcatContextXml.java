@@ -1,4 +1,4 @@
-package org.quickbundle.third.middleware;
+package org.quickbundle.project;
 
 import java.io.File;
 

@@ -62,11 +62,11 @@ call mvn eclipse:eclipse
 GOTO MENU
 
 :SERVICE7
-call mvn compile exec:java -Dexec.mainClass="org.quickbundle.third.middleware.BuildTomcatContextXml"
+call mvn compile exec:java -Dexec.mainClass="org.quickbundle.project.BuildTomcatContextXml"
 GOTO MENU
 
 :SERVICE8
-call mvn compile test clean package site eclipse:eclipse exec:java -Dexec.mainClass="org.quickbundle.third.middleware.BuildTomcatContextXml"
+call mvn compile test clean package site eclipse:eclipse exec:java -Dexec.mainClass="org.quickbundle.project.BuildTomcatContextXml"
 GOTO MENU
 
 PAUSE
