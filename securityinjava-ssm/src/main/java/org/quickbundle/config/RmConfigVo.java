@@ -327,7 +327,7 @@ public class RmConfigVo extends RmBaseConfigVo {
      * 系统用户登录是否DEMO状态(不校验用户数据库)
      */
     public boolean isUserDemoMode() {
-        return false;
+        return true;
     }
     
     /**

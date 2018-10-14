@@ -16,7 +16,6 @@
 
     <module>securityinjava-ssm</module>
 
-<!--
     <module>securityinjava-vertx</module>
 
     <module>support/eclipse-plugin/mda.parent</module>
@@ -28,7 +27,6 @@
     <module>support/eclipse-plugin/com.ciphergateway.mda.updatesite</module>
 
     <module>support/build-all/com.ciphergateway.build-eclipse-plugin</module>
--->
   </modules>
 
   <properties>
