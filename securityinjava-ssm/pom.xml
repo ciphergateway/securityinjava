@@ -7,6 +7,9 @@
     <version>6.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <name>SecurityInJava-SSM</name>
+    <description>Build Security Into Java</description>
+
     <properties>
         <skipTests>true</skipTests>
         <basedir>./</basedir>
@@ -18,6 +21,7 @@
         <!-- 主要依赖库的版本定义 -->
         <junit.version>4.12</junit.version>
         <spring.version>5.0.9.RELEASE</spring.version>
+        <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
         <mybatis.version>3.4.6</mybatis.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
 
@@ -47,6 +51,11 @@
         </resources>
         <outputDirectory>${war.dir}/WEB-INF/classes</outputDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -298,7 +307,6 @@ encoding/<project>=UTF-8]]>
             <scope>test</scope>
         </dependency>
 
-        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -316,7 +324,25 @@ encoding/<project>=UTF-8]]>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+    -->
+    <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+    -->
+
+
         <!-- jdbc driver -->
         <dependency>
             <groupId>${jdbc.driver.groupId}</groupId>
@@ -513,7 +539,7 @@ encoding/<project>=UTF-8]]>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.5.RELEASE</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
