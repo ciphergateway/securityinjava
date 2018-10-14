@@ -1,7 +1,15 @@
 ﻿﻿<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 
-<%@ include file="funcTree_orgauth.jsp" %>
-	
+node_org = insFld(foldersTree, gFld ("&nbsp;通用组织结构", "", "ftv2folderopen.gif", "ftv2folderclosed.gif"));
+    
+    /* 用户生成在功能树中 */
+    rmCodeGenerationRmUser_maintenance = insDoc(node_org, gLnk("0","&nbsp;用户", "<%=request.getContextPath()%>/RmUserAction.do?cmd=queryAll", "ftv2link.gif"));
+
+    /* 用户在线记录生成在功能树中 */
+    //rmCodeGenerationRmUserOnlineRecord_maintenance = insDoc(node_org, gLnk("0","&nbsp;用户在线记录", "<%=request.getContextPath()%>/RmUserOnlineRecordAction.do?cmd=queryAll", "ftv2link.gif"));
+    node_user_online = insDoc(node_org, gLnk("0","&nbsp;在线用户", "<%=request.getContextPath()%>/RmUserAction.do?cmd=queryOnlineUser", "ftv2link.gif"));
+
+
 //quartz begin
 node_scheduler_folder = insFld(foldersTree, gFld ("&nbsp;调度管理", "", "ftv2folderopen.gif", "ftv2folderclosed.gif"));
 	rmCodeGenerationJobDetail_maintenance = insDoc(node_scheduler_folder, gLnk("0","&nbsp;作业定义", "<%=request.getContextPath()%>/JobDetailAction.do?cmd=queryAll", "ftv2link.gif"));

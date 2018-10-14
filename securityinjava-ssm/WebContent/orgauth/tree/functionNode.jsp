@@ -5,7 +5,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
-<%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
+<%@page import="org.quickbundle.project.login.IOrgauthConstants"%>
 <html>
 <head>
 <title>rm-based architecture project</title>

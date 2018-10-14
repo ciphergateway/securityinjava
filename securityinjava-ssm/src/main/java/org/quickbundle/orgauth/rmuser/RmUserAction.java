@@ -31,8 +31,6 @@ import org.quickbundle.base.RmPageVo;
 import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.orgauth.IOrgauthConstants;
-import org.quickbundle.orgauth.custom.RmCustomOrgService;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.cache.RmSqlCountCache;
@@ -86,18 +84,7 @@ public class RmUserAction extends RmDispatchAction implements IRmUserConstants {
         RmUserVo vo = new RmUserVo();
         RmPopulateHelper.populate(vo, request);  //从request中注值进去vo
         RmVoHelper.markCreateStamp(request,vo);  //打创建时间,IP戳
-        String id = null;
-        if(IOrgauthConstants.Config.isUserRelationParty.value()) {
-        	String pratyViewId = request.getParameter("view_id");
-        	String partyTypeId = request.getParameter("party_type_id");
-        	String isInherit = request.getParameter("isInherit");
-        	String[] parentPartyIds = request.getParameter("organization_id").split(",");
-        	String[] organizationNames = request.getParameter("organization_name").split(",");
-        	vo.setOrganization_id("");
-        	id = RmCustomOrgService.getInstance().insertParty(vo, pratyViewId, partyTypeId, parentPartyIds,organizationNames,isInherit);  //插入单条记录
-        } else {
-        	id = getService().insert(vo);  //插入单条记录
-        }
+        String id = getService().insert(vo);  //插入单条记录
         request.setAttribute(IGlobalConstants.INSERT_FORM_ID, id);  //新增记录的id放入request属性
         return mapping.findForward(FORWARD_TO_QUERY_ALL);
     }
@@ -132,11 +119,7 @@ public class RmUserAction extends RmDispatchAction implements IRmUserConstants {
         String[] id = RmJspHelper.getArrayFromRequest(request, REQUEST_IDS);  //从request获取多条记录id
         int deleteCount = 0;  //定义成功删除的记录数
         if (id != null && id.length != 0) {
-        	if(IOrgauthConstants.Config.isUserRelationParty.value()) {
-        		deleteCount = RmCustomOrgService.getInstance().deleteParty(id);  //删除多条记录
-        	} else {
-        		deleteCount = getService().delete(id);  //删除多条记录
-        	}
+            deleteCount = getService().delete(id);  //删除多条记录
         }
         request.setAttribute(EXECUTE_ROW_COUNT, deleteCount);  //sql影响的行数放入request属性
         return mapping.findForward(FORWARD_TO_QUERY_ALL);
@@ -172,19 +155,7 @@ public class RmUserAction extends RmDispatchAction implements IRmUserConstants {
         RmPopulateHelper.populate(vo, request);  //从request中注值进去vo
         RmVoHelper.markModifyStamp(request,vo);  //打修改时间,IP戳
         int count = 0;
-    	if(IOrgauthConstants.Config.isUserRelationParty.value()) {
-    		String pratyViewId = request.getParameter("view_id");
-    		String partyTypeId = request.getParameter("party_type_id");
-    		String isInherit = request.getParameter("isInherit");
-    		String[] parentPartyIds = RmStringHelper.parseToArrayIgnoreEmpty(request.getParameter("organization_id"), ",");
-    		String[] parentPartyNames = RmStringHelper.parseToArrayIgnoreEmpty(request.getParameter("organization_name"), ",");
-    		String[] oldParentPartyIds = RmStringHelper.parseToArrayIgnoreEmpty(request.getParameter("oldParentPartyIds"), ",");
-    		String oldName = request.getParameter("oldName");
-    		count = RmCustomOrgService.getInstance().updateParty(vo, pratyViewId,oldName, partyTypeId, parentPartyIds,oldParentPartyIds ,isInherit);  //更新单条记录
-    		vo.setOrganization_id("");
-    	} else {
-    		count = getService().update(vo);  //更新单条记录
-    	}
+		count = getService().update(vo);  //更新单条记录
     	
         request.setAttribute(EXECUTE_ROW_COUNT, count);  //sql影响的行数放入request属性
         return mapping.findForward(FORWARD_TO_QUERY_ALL);
@@ -347,23 +318,6 @@ public class RmUserAction extends RmDispatchAction implements IRmUserConstants {
             queryCondition = request.getAttribute(REQUEST_QUERY_CONDITION).toString();
         } else {
 			List<String> lQuery = new ArrayList<String>();
-			
-			if(IOrgauthConstants.Config.isUserRelationParty.value()) {
-				org.quickbundle.project.login.RmUserVo userVo = (org.quickbundle.project.login.RmUserVo)RmProjectHelper.getRmUserVo(request);
-				if(userVo !=null && !IOrgauthConstants.UserAdminType.ADMIN.value().equals(userVo.getAdmin_type()) && userVo.getParty_id_org()!=null){
-					RmCommonVo cVo = RmProjectHelper.getCommonServiceInstance().doQuery("select distinct(PR.CHILD_PARTY_CODE) from RM_PARTY_RELATION PR where PR.CHILD_PARTY_ID=" + userVo.getParty_id_org()+" and PR.PARTY_VIEW_ID="+IOrgauthConstants.PartyView.DEFAULT.id()).get(0);
-					lQuery.add("exists(select * from RM_USER U2 join RM_PARTY_RELATION PR on U2.ID=PR.CHILD_PARTY_ID where U2.USABLE_STATUS='1' and U2.ID=RM_USER.ID and PR.CHILD_PARTY_CODE like '" + cVo.getString("child_party_code") + "%')");
-				}
-			}
-			if(request.getParameter("parent_party_id") != null && request.getParameter("parent_party_id").length() > 0) {
-				lQuery.add("RM_PARTY_RELATION.CHILD_PARTY_CODE LIKE " +
-						"" +
-						"(select " +
-						RmSqlHelper.getFunction(RmSqlHelper.Function.CONCAT, RmConfig.getSingleton().getDatabaseProductName(), 
-								"PR9.CHILD_PARTY_CODE", "'%'") +
-						" FROM RM_PARTY_RELATION PR9 WHERE PR9.CHILD_PARTY_ID=" + request.getParameter("parent_party_id") + 
-						")");
-			}
 			
 			lQuery.add(RmSqlHelper.buildQueryStr(TABLE_NAME + ".name", request.getParameter("name"), RmSqlHelper.TYPE_CHAR_LIKE));
 			

@@ -1,5 +1,4 @@
 <%@page import="org.quickbundle.tools.helper.RmUrlHelper"%>
-<%@page import="org.quickbundle.orgauth.rmfunctionnode.RmFunctionNodeVo"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <%@page import="java.util.TreeMap"%>
 <%@page import="java.util.Map"%>
@@ -43,7 +42,6 @@ body {margin:0;padding:0;font:12px;line-height:20px;background:#f4f4f4;}
 		String currentParentTotal_code = "";
 		for(Iterator itMFuncNode = mPermissionFuncNode.keySet().iterator(); itMFuncNode.hasNext(); ) {
 			String thisTotalCode = itMFuncNode.next().toString();
-		    RmFunctionNodeVo vo = (RmFunctionNodeVo)mPermissionFuncNode.get(thisTotalCode);
 		    if(!thisTotalCode.startsWith(total_code) || total_code.equals(thisTotalCode)) {
 		    	continue;
 		    }

@@ -21,12 +21,11 @@ import org.dom4j.Node;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmConfig;
 import org.quickbundle.config.RmLoadConfig;
-import org.quickbundle.orgauth.IOrgauthConstants;
-import org.quickbundle.orgauth.cache.RmFunctionNodeCache;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
+import org.quickbundle.project.login.IOrgauthConstants;
 import org.quickbundle.project.login.RmUserVo;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
@@ -229,16 +228,6 @@ public class RmPrivilegeFilter implements Filter {
             return false;
         } else {
             // return true;
-        }
-        Set<String> sTotal_code = RmFunctionNodeCache.getTotal_code(url);
-        if (sTotal_code == null || sTotal_code.size() == 0 || userVo == null) {
-            return true;
-        }
-        List<String> menuList = userVo.getMenuList();
-        for (String total_code : sTotal_code) {
-            if (menuList.contains(total_code)) {
-                return true;
-            }
         }
         return false;
         // orgauth end

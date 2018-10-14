@@ -1,4 +1,4 @@
-<%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
+<%@page import="org.quickbundle.project.login.IOrgauthConstants"%>
 <%
 //begin cmd mode project custom code
 /*

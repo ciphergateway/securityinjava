@@ -20,7 +20,6 @@ import java.sql.Timestamp;
 
 import org.dom4j.Document;
 import org.dom4j.io.DOMReader;
-import org.quickbundle.orgauth.custom.RmCustomUserVo;
 import org.quickbundle.project.login.IRmLoginVo;
 import org.quickbundle.tools.helper.RmXmlHelper;
 
@@ -33,7 +32,7 @@ import org.quickbundle.tools.helper.RmXmlHelper;
  * @since 1.0.0
  */
 
-public class RmUserVo extends RmCustomUserVo implements IRmLoginVo{
+public class RmUserVo extends org.quickbundle.project.login.RmUserVo implements IRmLoginVo {
 
 	/**
 	 * 获取根元素的属性值

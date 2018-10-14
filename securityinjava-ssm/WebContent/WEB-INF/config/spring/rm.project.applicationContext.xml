@@ -44,5 +44,5 @@
 		<property name="sendMailPassword" value="${mail.password}"/>
 		<property name="mailFrom" value="${mail.from}"/>
 	</bean>
-
+	
 </beans>

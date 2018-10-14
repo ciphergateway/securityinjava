@@ -1,5 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8"%>
-<%@page import="org.quickbundle.third.jfreechart.WebChart"%>
+<%@page import="org.quickbundle.third.jfreechart.JFreeChartWebChart"%>
 <%@page import="java.io.PrintWriter" %>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
@@ -14,7 +14,7 @@
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="org.quickbundle.modules.message.IRmMessageConstants"%>
 <%
-	WebChart chart = new WebChart();
+    JFreeChartWebChart chart = new JFreeChartWebChart();
 	List<String[]> lResult = RmProjectHelper.getCommonServiceInstance().query("select template_id as rm_key, count(template_id) as rm_count from RM_MESSAGE group by template_id", new RowMapper() {
 	    public Object mapRow(ResultSet rs, int i) throws SQLException {
 	    	return new String[]{rs.getString("rm_key"), rs.getString("rm_count")};

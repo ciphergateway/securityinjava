@@ -18,11 +18,9 @@ package org.quickbundle.modules.code.rmcodetype;
 import java.util.List;
 
 import org.quickbundle.base.service.RmService;
-import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.modules.code.rmcodedata.IRmCodeDataService;
+import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.tools.helper.RmStringHelper;
-import org.quickbundle.orgauth.rmauthorize.RmAuthorizeVo;
-import org.quickbundle.orgauth.util.RmOrgAuthSqlHelper;
 
 /**
  * 功能、用途、现存BUG:
@@ -206,40 +204,5 @@ public class RmCodeTypeService extends RmService implements IRmCodeTypeService, 
         return sum;
     }
 
-    /**
-     * 集成了数据权限后，查询总记录数，带查询条件
-     * 
-     * @param queryCondition 查询条件, queryCondition等于null或""时查询全部
-     * @param party_ids party_id的集合(包含了用户、角色等)
-     * @param authorize 权限类别对象
-     * @return
-     */
-	public int getRecordCount(String queryCondition, RmAuthorizeVo authorize, String[] party_ids) {
-		String sql = RmOrgAuthSqlHelper.getSqlJoinAuthorize(authorize, party_ids, "count(*)", IRmCodeTypeConstants.TABLE_NAME, queryCondition);
-		return RmProjectHelper.getCommonServiceInstance().doQueryForInt(sql);
-	}
-
-    /**
-     * 集成了数据权限后，通过查询条件获得所有的VO对象列表，带翻页，带排序字符
-     * 
-     * @param queryCondition 查询条件, queryCondition等于null或""时查询全部
-     * @param orderStr 排序字符
-     * @param startIndex 开始位置(第一条是1，第二条是2...)
-     * @param size 查询多少条记录(size小于等于0时,忽略翻页查询全部)
-     * @param party_ids party_id的集合(包含了用户、角色等)
-     * @param authorize 权限类别对象
-     * @return
-     */
-	public List<RmCodeTypeVo> queryByCondition(String queryCondition, String orderStr, int startIndex, int size, RmAuthorizeVo authorize, String[] party_ids) {
-		if(queryCondition == null) {
-			queryCondition = "";
-		}
-		if(orderStr != null) {
-			queryCondition += ORDER_BY_SYMBOL + orderStr;
-		}
-		String sqlSelect = IRmCodeTypeConstants.AFTER_SELECT_SHORT;
-		String sql = RmOrgAuthSqlHelper.getSqlJoinAuthorize(authorize, party_ids, sqlSelect, IRmCodeTypeConstants.TABLE_NAME, queryCondition);
-		return getDao().queryByCondition(sql, startIndex, size);
-	}
 
 }

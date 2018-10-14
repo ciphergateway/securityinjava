@@ -196,9 +196,6 @@ jQuery(document).ready(function(){
         <span>
         	<a id="PageLink_bundle" onclick="return selmenu(this);" href="<%=request.getContextPath()%>/jsp/main.jsp?total_code=bundle" target="mainFrame"><bean:message key="qb.bundle"/></a>
         </span>
-        <span>
-        	<a id="PageLink_orgauth" onclick="return selmenu(this);" href="<%=request.getContextPath()%>/orgauth/main.jsp" target="mainFrame"><bean:message key="qb.accessControlMenu"/></a>
-        </span>  
 	</div>
 	<div class="nav-right">
 	    <!--  <a id="PageLink_9" onClick="return goMain(this);" href="#" target="mainFrame">-->

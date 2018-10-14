@@ -1,4 +1,3 @@
-<%@page import="org.quickbundle.orgauth.custom.IRmCustomOrgService"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="java.io.File"%>
 <%@page import="jxl.Workbook"%>
@@ -53,7 +52,6 @@
 		        RmUserVo[] diseaseVos = (RmUserVo[])rtVo.getLData().toArray(new RmUserVo[0]);
 		        //IRmUserService service = (IRmUserService)RmBeanFactory.getBean(IRmUserConstants.SERVICE_KEY);
 		        //insertSum = service.insert(diseaseVos).length;
-		        IRmCustomOrgService corgService = (IRmCustomOrgService)RmBeanFactory.getBean("IRmCustomOrgService");
 		        //corgService.insertTempRmUser(diseaseVos);
 	    if(rtVo.getRecordSum()-rtVo.getLData().size() > 0) {
 	        File errorExcel2 = new File(zipFile.getParent() + RmUploadHelper.SYSTEM_FILE_SEPARATOR + RmUploadHelper.getUniqueString() + rtVo.getErrorExcel().getName());

@@ -1,14 +1,8 @@
 package org.quickbundle.project.login;
 
 import java.math.BigDecimal;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,28 +13,20 @@ import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.base.service.RmService;
 import org.quickbundle.config.RmClusterConfig;
 import org.quickbundle.config.RmConfig;
-import org.quickbundle.orgauth.IOrgauthConstants;
 import org.quickbundle.orgauth.rmuser.IRmUserConstants;
 import org.quickbundle.orgauth.rmuser.IRmUserService;
 import org.quickbundle.orgauth.rmuseronlinerecord.IRmUserOnlineRecordConstants;
 import org.quickbundle.orgauth.rmuseronlinerecord.IRmUserOnlineRecordService;
 import org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordVo;
-import org.quickbundle.orgauth.util.IRmOrgService;
-import org.quickbundle.orgauth.util.RmOrgService;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
-import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
-import org.quickbundle.tools.helper.RmStringHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
-import org.quickbundle.util.RmOrderCodes;
-import org.quickbundle.util.RmSequenceSet;
-import org.springframework.jdbc.core.RowMapper;
 
 public class RmLoginService extends RmService implements IRmLoginService {
     public IRmUserOnlineRecordService getUserOnlineRecordService() {
@@ -172,59 +158,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
     	HttpSession session = RmJspHelper.getSession(request, response, true);
 		RmUserVo userVo = (RmUserVo)loginVo;
 		//orgauth initUserInfo begin
-		IRmOrgService orgService = RmOrgService.getInstance();
-		//定义当前用户所有的party_id
-		Set<String> sParty_id = new RmSequenceSet<String>();
-		if(userVo.getId() != null && userVo.getId().length() > 0) {
-			//放入用户ID
-			sParty_id.add(userVo.getId());
-			
-			//所有祖先团体(包含父团体)
-			List<RmCommonVo> lAncestor = orgService.listAncestor(userVo.getId(),IOrgauthConstants.PartyView.DEFAULT.id());
-			Set<String> sAncestor_party_id = orgService.listAncestor_party_id(lAncestor);
-			Set<String> sOwner_party_id = orgService.listOwner_party_id(lAncestor, IOrgauthConstants.OrgTree.COMPANY.value());
-			
-			//放入所有祖先团体
-			sParty_id.addAll(sAncestor_party_id);
-			
-			//取关联角色的团体ID
-			String sqlRole = "select ROLE_ID from RM_PARTY_ROLE where OWNER_PARTY_ID in(" + RmStringHelper.parseToSQLString(sParty_id.toArray(new String[0])) + ") and (OWNER_ORG_ID in(" + RmStringHelper.parseToSQLStringApos(sAncestor_party_id.toArray(new String[0])) + ") or OWNER_ORG_ID is null or OWNER_ORG_ID='')";
-			List<String> lRole_id = RmProjectHelper.getCommonServiceInstance().query(sqlRole, new RowMapper() {
-				public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-					return rs.getString("ROLE_ID");
-				}
-			});
-			sParty_id.addAll(lRole_id);
-			//放入userVo
-			userVo.setParty_id_all(sParty_id.toArray(new String[0]));
-			userVo.setParty_id_owner(sOwner_party_id.toArray(new String[0]));
-		}
 
-		//取菜单权限
-		final Map<RmOrderCodes, String> mOrder = new TreeMap<RmOrderCodes, String>();
-		String sqlMenuList = "select distinct RM_FUNCTION_NODE.TOTAL_CODE, RM_FUNCTION_NODE.NAME, RM_FUNCTION_NODE.ORDER_CODE from RM_FUNCTION_NODE " +
-				"join RM_AUTHORIZE_RESOURCE on RM_FUNCTION_NODE.TOTAL_CODE=RM_AUTHORIZE_RESOURCE.OLD_RESOURCE_ID " +
-				"and RM_AUTHORIZE_RESOURCE.AUTHORIZE_ID=" + IOrgauthConstants.Authorize.FUNCTION_NODE.id() + " " + 
-				"left join RM_AUTHORIZE_RESOURCE_RECORD on RM_AUTHORIZE_RESOURCE_RECORD.AUTHORIZE_RESOURCE_ID=RM_AUTHORIZE_RESOURCE.ID " +
-				"where RM_AUTHORIZE_RESOURCE.DEFAULT_ACCESS='1' or RM_AUTHORIZE_RESOURCE_RECORD.PARTY_ID in(" +
-				RmStringHelper.parseToSQLString(sParty_id.toArray(new String[0])) + ") ";
-//				+ "order by " + RmSqlHelper.getFunction(RmSqlHelper.Function.SUBSTR, RmConfig.getDatabaseProductName()) +
-//				"(RM_FUNCTION_NODE.TOTAL_CODE, 1, LENGTH(RM_FUNCTION_NODE.TOTAL_CODE)-3), RM_FUNCTION_NODE.ORDER_CODE";
-		RmProjectHelper.getCommonServiceInstance().query(sqlMenuList, new RowMapper() {
-			public Object mapRow(ResultSet rs, int no) throws SQLException {
-				String totalCode = rs.getString("TOTAL_CODE");
-				String orderCode = rs.getString("ORDER_CODE");
-				String parentCode = null;
-				if(totalCode != null && totalCode.length() >= 3) {
-					parentCode = totalCode.substring(0, totalCode.length() - 3);
-				}
-				mOrder.put(new RmOrderCodes(parentCode, orderCode, totalCode), totalCode);
-				return null;
-			}
-		});
-		List<String> menuList = new ArrayList<String>();
-		menuList.addAll(mOrder.values());
-		userVo.setMenuList(menuList);
 		//orgauth initUserInfo end
 		
 		//记住登录时间

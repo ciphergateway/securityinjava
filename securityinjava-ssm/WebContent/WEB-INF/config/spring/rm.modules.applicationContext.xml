@@ -101,5 +101,21 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <!-- 结束 配置Quartz -->
+    
+    <!--开始 配置RmUserOnlineRecord的bean-->
+    <bean id="IRmUserOnlineRecordService" class="org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordService">
+        <property name="dao" ref="IRmUserOnlineRecordDao"/>
+    </bean>
+    <bean id="IRmUserOnlineRecordDao" class="org.quickbundle.orgauth.rmuseronlinerecord.RmUserOnlineRecordDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!--开始 配置RmUser的bean-->
+    <bean id="IRmUserService" class="org.quickbundle.orgauth.rmuser.RmUserService">
+        <property name="dao" ref="IRmUserDao"/>
+    </bean>
+    <bean id="IRmUserDao" class="org.quickbundle.orgauth.rmuser.RmUserDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 	
 </beans>

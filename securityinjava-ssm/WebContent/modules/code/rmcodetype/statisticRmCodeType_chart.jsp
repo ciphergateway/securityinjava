@@ -5,10 +5,10 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="org.quickbundle.third.jfreechart.WebChart"%>
+<%@page import="org.quickbundle.third.jfreechart.JFreeChartWebChart"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%
-	WebChart chart = new WebChart();
+    JFreeChartWebChart chart = new JFreeChartWebChart();
 	List lResult = RmProjectHelper.getCommonServiceInstance().query("select type_keyword value, count(type_keyword) sum from RM_CODE_TYPE group by value", new RowMapper() {
 	    public Object mapRow(ResultSet rs, int i) throws SQLException {
 	    	return new String[]{rs.getString("value"), rs.getString("sum")};

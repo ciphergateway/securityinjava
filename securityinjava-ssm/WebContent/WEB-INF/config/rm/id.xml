@@ -10,17 +10,6 @@
 	<!--generateFromHere-->
 
 	<!-- orgauth begin -->
-	<table table_code="2028" table_name="RM_PARTY_ROLE" id_name="ID" wrapper_class="org.quickbundle.base.beans.idwrapper.NumberIncrementWrapper"/>
-	<table table_code="2024" table_name="RM_AUTHORIZE" id_name="ID"/>
-	<table table_code="2018" table_name="RM_AUTHORIZE_RESOURCE" id_name="ID"/>
-	<table table_code="2017" table_name="RM_AUTHORIZE_RESOURCE_RECORD" id_name="ID"/>
-	<table table_code="2014" table_name="RM_FUNCTION_NODE" id_name="ID"/>
-	<table table_code="2011" table_name="RM_PARTY" id_name="ID"/>
-	<table table_code="2010" table_name="RM_PARTY_RELATION" id_name="ID"/>
-	<table table_code="2009" table_name="RM_PARTY_TYPE_RELATION_RULE" id_name="ID"/>
-	<table table_code="2008" table_name="RM_PARTY_TYPE" id_name="ID"/>
-	<table table_code="2007" table_name="RM_PARTY_VIEW" id_name="ID"/>
-	<table table_code="2006" table_name="RM_ROLE" id_name="ID"/>
 	<table table_code="2005" table_name="RM_USER_ONLINE_RECORD" id_name="ID"/>
 	<table table_code="2004" table_name="RM_USER" id_name="ID"/>
 	<!-- orgauth end -->
@@ -33,8 +22,6 @@
 	<table table_code="1001" table_name="RM_LOG_TYPE" id_name="ID"/>
 	<table table_code="1001" table_name="RM_LOG" id_name="ID"/>
 	<table table_code="1001" table_name="RM_LOCK" id_name="ID"/>
-	<table table_code="1001" table_name="RM_SYSTEM_PARAMETER" id_name="ID"/>
-	<table table_code="2051" table_name="RM_NOTICE" id_name="ID"/>
 	<!-- system end -->
 
 	<table table_code="2003" table_name="RM_AFFIX" id_name="ID"/>

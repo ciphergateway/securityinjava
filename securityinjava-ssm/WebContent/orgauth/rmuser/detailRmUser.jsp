@@ -11,8 +11,7 @@
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
-<%@page import="org.quickbundle.orgauth.util.RmOrgAuthSqlHelper"%>
+<%@page import="org.quickbundle.project.login.IOrgauthConstants"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%@page import="java.util.List"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
@@ -99,49 +98,6 @@
 	</tr>
 </table>
 <br>
-<%try{%>
-<table class="mainTable" style="width:80%" align="center" border="1">
-	<tr>
-		<td align="center"><h3>本用户所属组织</h3></td>
-	</tr>
-	<%
-		Map<RmOrderCodes, RmCommonVo> mvo  = new TreeMap<RmOrderCodes, RmCommonVo>();
-		Set<String> sAncestorPartyCode = new HashSet<String>();
-		List<RmCommonVo> lpr = RmProjectHelper.getCommonServiceInstance().doQuery("select child_party_code from RM_PARTY_RELATION where child_party_id=" + resultVo.getId()+" and party_view_id!="+IOrgauthConstants.PartyView.DEFAULT.id());
-		for(RmCommonVo vo : lpr) {
-			String code = vo.getString("child_party_code");
-			while(code.length() >= 3) {
-				sAncestorPartyCode.add(code);
-				code = code.substring(0, code.length()-3);
-			}
-		}
-		List<RmCommonVo> lAllpr = RmProjectHelper.getCommonServiceInstance().doQuery("select pv.name, pr.child_party_id, pr.parent_party_code, pr.child_party_code, p.name as parent_party_name, pr.child_party_name from RM_PARTY_RELATION pr join RM_PARTY_VIEW pv on pr.party_view_id=pv.id left join RM_PARTY p on pr.parent_party_id=p.id where p.USABLE_STATUS='1' and pr.child_party_code in (" + RmStringHelper.parseToSQLStringApos(sAncestorPartyCode.toArray(new String[0])) + ")  and party_view_id!="+IOrgauthConstants.PartyView.DEFAULT.id());
-		for(RmCommonVo vo : lAllpr) {
-			mvo.put(new RmOrderCodes(vo.getString("name"), vo.getString("child_party_code")), vo);
-		}
-
-	%>	
-	<tr>
-		<td align="left">
-		<%
-			String strs = "";
-			for(Map.Entry<RmOrderCodes, RmCommonVo> en : mvo.entrySet()) {
-				RmCommonVo vo = en.getValue();
-				if(resultVo.getId().equals(vo.getString("child_party_id"))){
-					strs +="&nbsp;<B style='color:RED'>"+vo.getString("child_party_name")+"</B>&nbsp;&nbsp;<B>"+vo.getString("name")+"</B><BR>";
-				}else{
-					strs +=""+vo.getString("child_party_name")+"&nbsp;&gt;&gt;&nbsp;";
-				}
-			}	
-		 %>
-		 &nbsp;<%=strs %>
-		</td>
-	</tr>
-	<tr>
-		<td  align="center">&nbsp;</td>
-	</tr>
-</table>
-<%}catch(Exception e){e.printStackTrace();} %>
 <input type="hidden" name="id" value="<%=RmStringHelper.prt(resultVo.getId())%>">
 
 <table align="center">
@@ -156,10 +112,7 @@
 <!-- 开始子表信息，带页签集成多个子表 -->
 <script type="text/javascript">
 var childTableTabs  =  new Array(
-
-	new Array ('用户在线记录','<%=request.getContextPath()%>/RmUserOnlineRecordConditionAction.do?cmd=queryAll&user_id=<%=resultVo.getId()%>&RM_ORDER_STR=login_time DESC'),
-	new Array ('数据权限-编码类型','<%=request.getContextPath()%>/orgauth/rmparty/middle/listRm_authorize_resource_record.jsp?party_id=<%=resultVo.getId()%>&bs_keyword=<%=IOrgauthConstants.Authorize.RM_CODE_TYPE.bsKeyword()%>'),
-	null
+	new Array ('用户在线记录','<%=request.getContextPath()%>/RmUserOnlineRecordConditionAction.do?cmd=queryAll&user_id=<%=resultVo.getId()%>&RM_ORDER_STR=login_time DESC')
 );
 </script>
 <br/><br/>

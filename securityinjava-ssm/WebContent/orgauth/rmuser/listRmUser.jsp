@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@page import="org.quickbundle.orgauth.util.RmOrgService"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
@@ -11,7 +10,7 @@
 <%@ page import="org.quickbundle.orgauth.rmuser.RmUserVo" %>
 <%@ page import="org.quickbundle.orgauth.rmuser.IRmUserConstants" %>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
-<%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
+<%@page import="org.quickbundle.project.login.IOrgauthConstants"%>
 <%  //取出List
 	List<RmUserVo> lResult = null;  //定义结果列表的List变量
 	if(request.getAttribute(IRmUserConstants.REQUEST_BEANS) != null) {  //如果request中的beans不为空
@@ -165,14 +164,6 @@
 			<td align="left"><input type="text" class="text_field" name="email" inputName="<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("email")%>" maxLength="100"/></td>
 		</tr>
 		<tr>
-			<td align="right">所属组织：</td>
-			<td align="left">
-				<input type="text" class="text_field_reference_readonly" name="parent_party_id_name" value="" /><input type="hidden" name="parent_party_id"><img class="refButtonClass" src="<%=request.getContextPath() %>/images/09.gif" onClick="javascript:getPartyWindow(new Array(form.parent_party_id, parent_party_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/orgauth/tree/org.jsp?cmd=<%=IOrgauthConstants.OrgTree.DEPARTMENT.value()%>&enableCookie=true&inputType=radio&view_id=<%=IOrgauthConstants.PartyView.DEFAULT.id() %>&submit_bk=<%=IOrgauthConstants.OrgTree.COMPANY.value()%>,<%=IOrgauthConstants.OrgTree.DEPARTMENT.value()%>');"/>
-			</td>
-			<td align="right">&nbsp;</td>
-			<td align="left">&nbsp;</td>
-		</tr>
-		<tr>
 			<td align="right"></td>
 			<td>
 			<input type="button" class="button_ellipse" id="button_ok" onclickto="javascript:simpleQuery_onClick()" value="查询" />
@@ -235,34 +226,6 @@
 		<%="<a class='aul' onClick='javascript:detail_onClick(getRowHiddenId())'>"%>
 		<%=org.quickbundle.tools.helper.RmStringHelper.prt(rmValue)%>
 		<%="</a>"%>
-	</layout:collectionItem>
-	<layout:collectionItem width="8%" title='所属组织' property="parent_party_name" sortable="true">
-		<bean:define id="parent_party_id" name="rmBean" property="parent_party_id"/>
-		<bean:define id="parent_party_code" name="rmBean" property="parent_party_code"/>
-		<bean:define id="parent_party_name" name="rmBean" property="parent_party_name"/>
-		<%
-			StringBuilder orgFullPath = new StringBuilder();
-			try {
-				if(parent_party_id != null && parent_party_id.toString().length() > 0) {
-					RmCommonVo thisParent = new RmCommonVo();
-					thisParent.put("parent_party_code", parent_party_code.toString());
-					List<RmCommonVo> lThisParent = new ArrayList<RmCommonVo>();
-					lThisParent.add(thisParent);
-					List<RmCommonVo> lParent = RmOrgService.getInstance().listAncestor(parent_party_id.toString(), IOrgauthConstants.PartyView.DEFAULT.id(), lThisParent);
-					//lParent.remove(0);
-					for(RmCommonVo vo : lParent) {
-						if(orgFullPath.length() > 0) {
-							orgFullPath.append("->");
-						}
-						orgFullPath.append(vo.getString("child_party_name"));
-					}
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-				orgFullPath.append(parent_party_name.toString());
-			}
-		%>
-		<span title="<%=orgFullPath%>"><%=orgFullPath%></span>
 	</layout:collectionItem>
 	<layout:collectionItem width="8%" title='<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("lock_status")%>' property="lock_status" sortable="true" style="text-align:center;">
 		<bean:define id="rmValue" name="rmBean" property="lock_status"/>

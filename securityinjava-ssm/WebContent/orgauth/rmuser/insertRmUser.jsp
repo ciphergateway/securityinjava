@@ -1,11 +1,10 @@
-<%@page import="org.quickbundle.orgauth.cache.RmPartyTypeCache"%>
 <%@page import="org.quickbundle.project.IGlobalConstants"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="java.util.Map"%>
-<%@page import="org.quickbundle.orgauth.IOrgauthConstants"%>
+<%@page import="org.quickbundle.project.login.IOrgauthConstants"%>
 <%@page import="java.util.List"%>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
@@ -81,14 +80,6 @@
 	    form.action="<%=request.getContextPath()%>/" + rmActionName + ".do?cmd=update";
     	form.submit();
 	}
-	function openTree(organization_id,organization_name){ //组织树
-		var sViewId = $("#view_id").val();
-		//alert(sViewId);
-		var urlPath = '<%=request.getContextPath()%>/orgauth/tree/org.jsp?cmd=<%=IOrgauthConstants.OrgTree.DEFAULT.value()%>&enableCookie=true' + 
-			"&defaultSelectedNodesValue=" + organization_id + 
-			'&inputType=radio&parent_party_id=<%=parent_party_id %>&submit_bk=<%=IOrgauthConstants.OrgTree.COMPANY.value()+","+IOrgauthConstants.OrgTree.DEPARTMENT.value()+","+IOrgauthConstants.OrgTree.DEFAULT%>&include_self=1&view_id=' + sViewId;
-		getPartyWindow(new Array(organization_id,organization_name), '<%=request.getContextPath()%>/', urlPath, '350', '500');
-	}
 	//ajax验证
 	$.ajaxSetup({async:false,type:'POST'});
 	function validateLoginId(){
@@ -150,21 +141,14 @@
         </td>
 	</tr>
 	
-		<!-- 
-		<td align="right"><%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("employee_id")%>：</td>
-		<td align="left">
-		<input type="text" class="text_field_readonly" hiddenInputId="employee_id" name="employee_id" inputName="员工ID" value="" />
-		<input class="text_field_readonly" type="text" name="employee_id"><img class="refButtonClass" src="<%=request.getContextPath() %>/images/09.gif" onClick="javascript:getPartyWindow(new Array(form.employee_id, ''), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/orgauth/tree/org.jsp?cmd=<%=IOrgauthConstants.OrgTree.USER.value()%>&enableCookie=true&inputType=radio&rootXmlSource=authorizeUser&parent_party_id=<%=parent_party_id %>&include_self=1&view_id=<%=IOrgauthConstants.PartyView.DEFAULT.id()%>');"/>
-		</td>
-		-->
-       <tr>
+    <tr>
 		<td align="right"><%if(!isModify){ %><span class="style_required_red">* </span><%} %>输入密码：</td>
 		<td align="left"><input  type="password" class="text_field" id="newkw" name="password" validate="<%if(!isModify){ %>notNull;isSmallLength;<%} %>isValidString;notContainChinese;isFilterChar;" inputName="<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("password")%>" value="" maxlength="20" /></td>
         <td align="right"><%if(!isModify){ %><span class="style_required_red">* </span><%} %>密码确认：</td>	
         <td align="left">
         	<input  type="password" class="text_field" name="password2" validate="<%if(!isModify){ %>notNull;isSmallLength;<%} %>isValidString;ispwd;notContainChinese;" inputName="<%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("password")%>" value="" maxlength="20" /></td>
         </td>
-       </tr> 
+    </tr> 
 	<!--  
 	<tr>
 		<td align="right"><span class="style_required_red">* </span>组织视图：</td>
@@ -204,15 +188,6 @@
         </td>	
 	</tr>
 	-->
-<%if(IOrgauthConstants.Config.isUserRelationParty.value()) { %>
-	<tr>
-		<td align="right">所属组织：</td>
-	  	<td align="left" colspan="3">
-	  		<input type="text" class="text_field_reference_readonly" name="organization_name" inputName="所属组织" hiddenInputId="organization_id" id="organization_name" /><img class="refButtonClass" src="<%=request.getContextPath() %>/images/09.gif" onClick="openTree(organization_id,organization_name)"/>
-      		<input type="hidden" value="" name="organization_id" id="organization_id">
-      	</td>
-	</tr>
-<%} %>
 	<tr>
 		<td align="right"><%=IRmUserConstants.TABLE_COLUMN_CHINESE.get("description")%>：</td>
 		<td colspan="3" align="left">
@@ -236,10 +211,8 @@
 	</table>
 
 	<input type="hidden" name="id" value="">
-	<input type="hidden" name="view_id" value="<%=IOrgauthConstants.PartyView.DEFAULT.id() %>" id="view_id">
 	<input type="hidden" name="isInherit" value="0">
 	<input type="hidden" name="oldName" value="<%= resultVo!=null ? resultVo.getName():""%>">
-	<input type="hidden" name="party_type_id"  value="<%=IOrgauthConstants.Config.isUserRelationParty.value() && RmPartyTypeCache.getPartyType(IRmUserConstants.TABLE_NAME) != null ? RmPartyTypeCache.getPartyType(IRmUserConstants.TABLE_NAME).getId() : ""%>"/>
 	<%if(isModify){%>
 	<input type="hidden"  name="last_login_date"  />
 	<input type="hidden"  name="last_login_ip"  />

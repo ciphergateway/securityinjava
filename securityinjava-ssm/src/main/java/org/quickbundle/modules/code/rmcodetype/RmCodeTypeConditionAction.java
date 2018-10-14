@@ -24,10 +24,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.quickbundle.base.RmPageVo;
-import org.quickbundle.orgauth.IOrgauthConstants;
-import org.quickbundle.orgauth.cache.RmAuthorizeCache;
-import org.quickbundle.orgauth.rmauthorize.RmAuthorizeVo;
-import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.third.struts.RmActionHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
@@ -168,12 +164,10 @@ public class RmCodeTypeConditionAction extends RmCodeTypeAction implements IRmCo
         }
         IRmCodeTypeService service = getService();
         String queryCondition = super.getQueryCondition(request);  //从request中获得查询条件
-        String bs_keyword = IOrgauthConstants.Authorize.RM_CODE_TYPE.bsKeyword();
-        RmAuthorizeVo authorize = RmAuthorizeCache.getAuthorizeByBs_keyword(bs_keyword);
     
-    	RmPageVo pageVo = RmJspHelper.transctPageVo(request, getService().getRecordCount(queryCondition, authorize, RmProjectHelper.getRmUserVo(request).getParty_id_all()));
+    	RmPageVo pageVo = RmJspHelper.transctPageVo(request, getService().getRecordCount(queryCondition));
     	String orderStr = RmJspHelper.getOrderStr(request);  //得到排序信息
-      	List<RmCodeTypeVo> beans = service.queryByCondition(queryCondition, orderStr, pageVo.getStartIndex(), pageVo.getPageSize(), authorize, RmProjectHelper.getRmUserVo(request).getParty_id_all());  //按条件查询全部,带排序
+      	List<RmCodeTypeVo> beans = service.queryByCondition(queryCondition, orderStr, pageVo.getStartIndex(), pageVo.getPageSize());  //按条件查询全部,带排序
     	RmJspHelper.saveOrderStr(orderStr, request);  //保存排序信息
     	request.setAttribute(REQUEST_QUERY_CONDITION, queryCondition);
     	request.setAttribute(REQUEST_BEANS, beans);  //把结果集放入request
