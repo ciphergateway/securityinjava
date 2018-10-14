@@ -29,7 +29,7 @@ if(window.addEventListener) {
 }
 <%
 { //system message
-	HttpSession sessionSystem = RmJspHelper.getSession(request, false);
+	HttpSession sessionSystem = RmJspHelper.getSession(request, response, false);
 	if(sessionSystem != null) {
 		Object systemMessage = sessionSystem.getAttribute(IGlobalConstants.SystemPara.system_message.name());
 		if(systemMessage != null) {

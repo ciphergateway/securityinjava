@@ -31,6 +31,7 @@
 			是否记录request日志，用于分析执行时间和SQL数量 -->
 		<logRequest>true</logRequest>
 		
+		<!-- 默认不启用验证码 -->
 		<loginValidateVerifyCode>false</loginValidateVerifyCode>
 		
 		<!-- move file to recycleBinFolder, instead of remove 

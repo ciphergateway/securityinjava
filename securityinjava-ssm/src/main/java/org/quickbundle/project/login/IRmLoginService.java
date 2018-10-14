@@ -3,6 +3,7 @@ package org.quickbundle.project.login;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpSession;
 
 public interface IRmLoginService {
@@ -46,7 +47,7 @@ public interface IRmLoginService {
 	 * @param request
 	 * @param loginVo
 	 */
-	public void executeInitUserInfo(ServletRequest request, IRmLoginVo loginVo);
+	public void executeInitUserInfo(ServletRequest request, ServletResponse response, IRmLoginVo loginVo);
 	
 	/**
 	 * 清除登录session信息; 完成用户在线记录，并更新状态为--"未登录"

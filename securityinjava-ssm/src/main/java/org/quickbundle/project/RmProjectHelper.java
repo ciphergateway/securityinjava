@@ -58,21 +58,11 @@ public final class RmProjectHelper implements IGlobalConstants{
      * 返回登录名，用于校验是否有效登录
      * 
      * @param request
-     * @return
-     */
-    public static String getRmLoginId(ServletRequest request) {
-    	return getRmLoginId(request, false);
-    }
-    
-    /**
-     * 返回登录名，用于校验是否有效登录
-     * 
-     * @param request
      * @param create
      * @return
      */
-    public static String getRmLoginId(ServletRequest request, boolean createSession) {
-    	HttpSession session = RmJspHelper.getSession(request, createSession);
+    public static String getRmLoginId(ServletRequest request) {
+    	HttpSession session = RmJspHelper.getSession(request, null, false);
     	if(session == null) {
     		return null;
     	}
@@ -83,25 +73,15 @@ public final class RmProjectHelper implements IGlobalConstants{
         return ((IRmLoginVo)obj).getLogin_id();
     }
     
-    /**
-     * 返回user_id，用于vo自动打戳 
-     *
-     * @param request
-     * @return
-     */
-    public static String getRmUserId(ServletRequest request) {
-    	return getRmUserId(request, false);
-    }
     
     /**
      * 返回user_id，用于vo自动打戳 
      * 
      * @param request
-     * @param createSession
      * @return
      */
-    public static String getRmUserId(ServletRequest request, boolean createSession) {
-    	return getRmUserVo(request, createSession).getId();
+    public static String getRmUserId(ServletRequest request) {
+    	return getRmUserVo(request).getId();
     }
 
     /**
@@ -111,18 +91,11 @@ public final class RmProjectHelper implements IGlobalConstants{
      * @return
      */
     public static RmUserVo getRmUserVo(ServletRequest request) {
-    	return getRmUserVo(request, false);
-    }
-    
-    /**
-     * 获得用户信息
-     * 
-     * @param request
-     * @param createSession
-     * @return
-     */
-    public static RmUserVo getRmUserVo(ServletRequest request, boolean createSession) {
-        Object obj = RmJspHelper.getSession(request, createSession).getAttribute(RM_USER_VO);
+        HttpSession session = RmJspHelper.getSession(request, null, false);
+        if(session == null) {
+            return null;
+        }
+        Object obj = session.getAttribute(RM_USER_VO);
         if (obj == null) {
             return null;
         } else {
@@ -141,7 +114,11 @@ public final class RmProjectHelper implements IGlobalConstants{
 		if (request == null) {
 			return null;
 		}
-		Object obj = RmJspHelper.getSession(request, false).getAttribute(RM_USER_VO);
+        HttpSession session = RmJspHelper.getSession(request, null, false);
+        if(session == null) {
+            return null;
+        }
+        Object obj = session.getAttribute(RM_USER_VO);
 		if (obj == null) {
 			return null;
 		}

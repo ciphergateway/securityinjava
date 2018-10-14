@@ -96,7 +96,7 @@ public class RmPrivilegeFilter implements Filter {
             }
 
             boolean isLogin = false;
-            HttpSession session = RmJspHelper.getSession(request, false);
+            HttpSession session = RmJspHelper.getSession(request, response, false);
             if (session != null && session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
                 isLogin = true;
             }

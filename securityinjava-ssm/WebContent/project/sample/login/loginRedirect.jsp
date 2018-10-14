@@ -7,25 +7,12 @@
 <%@page import="org.quickbundle.config.RmConfig"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <%
-HttpSession session2 = RmJspHelper.getSession(request, false);
-System.out.println("********** loginRedirect.jsp: session2=" + session2 + ", session2.getId()=" + (session2 != null ? session2.getId() : ""));
-System.out.println("request.getParameter(no_redirect)=" + request.getParameter("no_redirect"));
+    HttpSession session2 = RmJspHelper.getSession(request, response, false);
 	if(!"1".equals(request.getParameter("no_redirect"))) {
-		HttpSession session = RmJspHelper.getSession(request, false);
+		HttpSession session = RmJspHelper.getSession(request, response, false);
 		System.out.println("session=" + session + ", session.getAttribute(IGlobalConstants.RM_USER_VO)=" + session.getAttribute(IGlobalConstants.RM_USER_VO));
 		if(session != null && session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
 			response.sendRedirect(request.getContextPath() + "/"); //index.jsp
-		}
-		if (RmConfig.getSingleton().isLoginCookie() && !IRmLoginConstants.RM_YES.equals(request.getAttribute(IRmLoginConstants.NO_COOKIE)) && request.getAttribute("alertStr") == null) {
-			String login_id = RmJspHelper.getProfile(request, "login_id");
-			String password = RmJspHelper.getProfile(request, "password");
-			if (login_id != null && password != null && login_id.length() > 0 && password.length() > 0) {
-				response.sendRedirect(request.getContextPath()
-							+ "/RmLoginAction.do?cmd=login&" + IRmLoginConstants.Para.is_cookie.name() + "=1"
-							+ "&login_id=" + RmStringHelper.encodeUrl(login_id)
-							+ "&password=" + RmStringHelper.encodeUrl(password));
-				return;
-			}
 		}
 	}
 

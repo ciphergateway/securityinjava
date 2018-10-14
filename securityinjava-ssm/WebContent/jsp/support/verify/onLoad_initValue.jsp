@@ -2,7 +2,7 @@
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 function onLoad_initValue() {
 	var serverVerifyCode = '<%
-HttpSession session = RmJspHelper.getSession(request, false);
+HttpSession session = RmJspHelper.getSession(request, response, false);
 if(session != null && session.getAttribute("randomStr") != null) {
 	out.print(session.getAttribute("randomStr"));
 }

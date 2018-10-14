@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -682,19 +683,32 @@ public class RmJspHelper implements ICoreConstants {
 	
 	/**
 	 * 功能: 从request中获取session，根据create判断是否创建新session
-	 *
-	 * @param request
+	 * 
+	 * @param request 不能为空
+	 * @param response 可以为空
 	 * @param create 当session为null，如果true则自动创建新session，如果false返回null
 	 * @return
 	 */
-	public static HttpSession getSession(ServletRequest request, boolean create) {
-		if(request instanceof HttpServletRequest) {
-			HttpServletRequest req = (HttpServletRequest) request;
-			HttpSession session = req.getSession(create);
-			return session;
-		} else {
-			return null;
+	public static HttpSession getSession(ServletRequest request, ServletResponse response, boolean create) {
+	    if(request == null || !(request instanceof HttpServletRequest)) {
+	        return null;
+	    }
+	    HttpServletRequest req = (HttpServletRequest) request;
+		HttpSession session = req.getSession(create);
+		if(create && response != null && response instanceof HttpServletResponse) {
+	        HttpServletResponse res = (HttpServletResponse) response;
+	        if (req.getParameter("JSESSIONID") != null) {
+	            Cookie userCookie = new Cookie("JSESSIONID", req.getParameter("JSESSIONID"));
+	            userCookie.setPath("/");
+	            res.addCookie(userCookie);
+	        } else {
+	            String sessionId = session.getId();
+	            Cookie userCookie = new Cookie("JSESSIONID", sessionId);
+	            userCookie.setPath("/");
+	            res.addCookie(userCookie);
+	        }
 		}
+		return session;
 	}
 	
 	/**
@@ -753,13 +767,13 @@ public class RmJspHelper implements ICoreConstants {
             if(requestCurrentPage != null && requestCurrentPage.trim().length() > 0) {
                 currentPage = Integer.parseInt(requestCurrentPage);
                 if(rememberPage) {
-                	RmJspHelper.getSession(request, true).setAttribute("RmGlobalCurrentPage", new String[]{uri, requestCurrentPage});
+                	RmJspHelper.getSession(request, null, true).setAttribute("RmGlobalCurrentPage", new String[]{uri, requestCurrentPage});
                 }
             } else if(request.getParameter("start") != null && request.getParameter("start").trim().length() > 0){
             	int start = Integer.parseInt(request.getParameter("start").trim());
             	currentPage= (start + 1) / pageSize + 1;
-            } else if(rememberPage && RmJspHelper.getSession(request, true).getAttribute("RmGlobalCurrentPage") != null) {
-                String[] aUrlQc = (String[])RmJspHelper.getSession(request, true).getAttribute("RmGlobalCurrentPage");
+            } else if(rememberPage && RmJspHelper.getSession(request, null, true).getAttribute("RmGlobalCurrentPage") != null) {
+                String[] aUrlQc = (String[])RmJspHelper.getSession(request, null, true).getAttribute("RmGlobalCurrentPage");
                 if(uri.equals(aUrlQc[0])) {
                     currentPage = Integer.parseInt(aUrlQc[1]);
                 }

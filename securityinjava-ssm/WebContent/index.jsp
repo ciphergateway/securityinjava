@@ -10,7 +10,7 @@
 	} catch(Throwable e) {
 		e.printStackTrace();
 	}
-	HttpSession session = RmJspHelper.getSession(request, false);
+	HttpSession session = RmJspHelper.getSession(request, response, false);
 	if(session != null && session.getAttribute(IGlobalConstants.RM_USER_VO) != null) { //url改变，基于浏览器的重定向
 		//跳到开发主页面
 		request.getRequestDispatcher("jsp/index0.jsp").forward(request, response);

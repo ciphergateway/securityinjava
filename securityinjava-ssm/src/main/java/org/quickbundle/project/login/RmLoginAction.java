@@ -37,13 +37,12 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
         //登录vo
         IRmLoginVo loginVo = null;
         //获得session，有可能不存在
-        HttpSession session = RmJspHelper.getSession(request, false);
-        System.out.println("********** RmLoginAction: session=" + session + ", session.getId()=" + (session != null ? session.getId() : ""));
+        HttpSession session = RmJspHelper.getSession(request, response, false);
         if(RmConfig.getSingleton().isUserDemoMode()) { //demo模式手动设置IRmLoginVo，用户login_id放入session，用于判断是否登录
         	loginVo = new RmUserVo();
         	loginVo.setLogin_id(request.getParameter(Para.login_id.name()));
         	//确保产生session，并往session放入loginVo
-        	session = createLongSession(request);
+        	session = createLongSession(request, response);
         	session.setAttribute(IGlobalConstants.RM_USER_VO, loginVo);
         	//demo模式不做任何校验，不初始化Service，不记录cookie，直接登录跳转
         	return directForward(mapping, form, request, response);
@@ -66,7 +65,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
     				//往session放入uniqueLoginVo
     				request.setAttribute(USER_UNIQUE_LOGIN_VO, uniqueLoginVo);
     	        	//确保产生session，并往session放入loginVo
-    	        	session = RmJspHelper.getSession(request, true);
+    	        	session = RmJspHelper.getSession(request, response, true);
     				session.setAttribute(FORCE_LOGIN_VO, loginVo);
     				//如果用户已经在线，跳转到确认强制登录的页面
     				return mapping.findForward(IRmLoginConstants.LoginForward.LOGIN_FORCE_CONFIRM.value());
@@ -80,20 +79,20 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
             return mapping.findForward(IRmLoginConstants.LoginForward.TO_LOGIN.value());
         }
         
-        createLongSession(request);
+        createLongSession(request, response);
         
     	//已经成功登录，初始化登录session信息
-        getLoginService().executeInitUserInfo(request, loginVo);
+        getLoginService().executeInitUserInfo(request, response, loginVo);
         
         return directForward(mapping, form, request, response);
     }
     
     //如果是超时短的临时session，加长时间为一个正常超时的session
     //当成功登录系统时才被调用
-	private HttpSession createLongSession(HttpServletRequest request) {
-    	HttpSession session = RmJspHelper.getSession(request, false);
+	private HttpSession createLongSession(HttpServletRequest request, HttpServletResponse response) {
+    	HttpSession session = RmJspHelper.getSession(request, response, false);
     	if(session == null) {
-    		return RmJspHelper.getSession(request, true);
+    		return RmJspHelper.getSession(request,response, true);
     	} else if(session.getMaxInactiveInterval() <= IRmLoginConstants.SESSION_TIMEOUT_SHORT 
     			&& session.getMaxInactiveInterval() < RmSessionListener.getDefaultMaxInactiveInterval()) {
     		session.setMaxInactiveInterval(RmSessionListener.getDefaultMaxInactiveInterval());
@@ -128,7 +127,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
     private IRmLoginVo loginNormal(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	IRmLoginVo loginVo = null;
         //获得session，有可能不存在
-        HttpSession session = RmJspHelper.getSession(request, false);
+        HttpSession session = RmJspHelper.getSession(request, response, false);
     	boolean fromCookie = RM_YES.equals(request.getParameter(Para.is_cookie.name()));
     	String login_id = request.getParameter(Para.login_id.name());
         String password = request.getParameter(Para.password.name());
@@ -239,7 +238,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
      */
     public ActionForward logout(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         //获得session，有可能不存在
-        HttpSession session = RmJspHelper.getSession(request, false);
+        HttpSession session = RmJspHelper.getSession(request, response, false);
         if(session != null) {
         	session.setAttribute(IRmLoginConstants.LOGOUT_TYPE, IRmLoginConstants.LogoutType.NOTMAL.value());
         	getLoginService().executeDestroyUserInfo(session);

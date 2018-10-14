@@ -22,7 +22,7 @@ if(window.addEventListener) {
 }
 <%
 { //system message
-	HttpSession session2 = RmJspHelper.getSession(request, false);
+	HttpSession session2 = RmJspHelper.getSession(request, response, false);
 	if(session2 != null) {
 		Object systemMessage = session2.getAttribute(IGlobalConstants.SystemPara.system_message.name());
 		if(systemMessage != null) {

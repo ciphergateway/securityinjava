@@ -13,6 +13,8 @@ public class RmConfigVo extends RmBaseConfigVo {
 		this.singleton = singleton;
 	}
 	
+	private boolean loginValidateVerifyCode = false;
+	
 	/**
 	 * @return the warHome
 	 */
@@ -264,10 +266,28 @@ public class RmConfigVo extends RmBaseConfigVo {
 	public void setSchedulerStartLazy(long schedulerStartLazy) {
 		this.schedulerStartLazy = schedulerStartLazy;
 	}
+	
+	
 
 	
-	//未加入rm.xml文件的配置
-	//未加入rm.xml文件的配置
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public boolean isLoginValidateVerifyCode() {
+        return loginValidateVerifyCode;
+    }
+
+    /**
+     * 设置登录时是否有校验码
+     * @param loginValidateVerifyCode
+     */
+    public void setLoginValidateVerifyCode(boolean loginValidateVerifyCode) {
+        this.loginValidateVerifyCode = loginValidateVerifyCode;
+    }
+
+    //未加入rm.xml文件的配置
     /**
      * @return 系统缓存检查周期
      */
@@ -322,13 +342,6 @@ public class RmConfigVo extends RmBaseConfigVo {
      */
     public File getDefaultTempDir() {
         return new File(System.getProperty("java.io.tmpdir") + File.separator + "securityinjava");
-    }
-    
-    /**
-     * 登录时是否有校验码
-     */
-    public boolean isLoginValidateVerifyCode() {
-        return true;
     }
     
     /**

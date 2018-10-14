@@ -35,9 +35,9 @@ if(request.getParameter("sRand") != null) {
 //sRand = "8888";
 //将认证码存入session 
 {
-	HttpSession session = RmJspHelper.getSession(request, false);
+	HttpSession session = RmJspHelper.getSession(request, response, false);
 	if(session == null) {
-		session = RmJspHelper.getSession(request, true);
+		session = RmJspHelper.getSession(request,response, true);
 		//由验证码创建的session 3分钟
 		session.setMaxInactiveInterval(60 * 3);
 		session.setAttribute(IRmLoginConstants.LAST_ACCESS_IP, RmProjectHelper.getIp(request));

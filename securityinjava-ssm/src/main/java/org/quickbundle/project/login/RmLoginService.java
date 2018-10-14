@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -166,9 +167,9 @@ public class RmLoginService extends RmService implements IRmLoginService {
 	 * @param request
 	 * @param loginVo
 	 */
-	public void executeInitUserInfo(ServletRequest request, IRmLoginVo loginVo) {
+	public void executeInitUserInfo(ServletRequest request, ServletResponse response, IRmLoginVo loginVo) {
     	//确保产生session，并往session放入loginVo
-    	HttpSession session = RmJspHelper.getSession(request, true);
+    	HttpSession session = RmJspHelper.getSession(request, response, true);
 		RmUserVo userVo = (RmUserVo)loginVo;
 		//orgauth initUserInfo begin
 		IRmOrgService orgService = RmOrgService.getInstance();
@@ -249,7 +250,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 		uorVo.setLogin_time(RmDateHelper.getSysTimestamp());
 		uorVo.setLogin_ip(RmProjectHelper.getIp(request));
 		uorVo.setLogin_uuid(RmGlobalMonitor.uniqueUUID.get());
-		uorVo.setLogin_sign(RmJspHelper.getSession(request, false).getId());
+		uorVo.setLogin_sign(RmJspHelper.getSession(request, null, false).getId());
 		RmVoHelper.markCreateStamp((HttpServletRequest)request, uorVo);
 		uorService.insert(uorVo);
 		//更新用户状态

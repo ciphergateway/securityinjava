@@ -31,7 +31,6 @@ try {
 %>
 <%@page import="org.quickbundle.project.common.RmCommonVo"%>
 <%@page import="org.quickbundle.tools.helper.RmStringHelper"%>
-<%@page import="org.quickbundle.tools.support.tree.DeepTreeVo"%>
 <%@page import="org.quickbundle.project.DeepTreeXmlHandler"%>
 <%@page import="org.quickbundle.orgauth.itf.IUtOrgTree"%>
 <%@page import="org.quickbundle.orgauth.util.RmOrgHelper"%>

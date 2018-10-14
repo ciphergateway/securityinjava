@@ -125,7 +125,7 @@ public class RmRequestMonitor {
     	Object loginId = null;
     	try {
     		clz = Class.forName("org.quickbundle.project.RmProjectHelper");
-    		loginId = clz.getMethod("getRmLoginId", ServletRequest.class, boolean.class).invoke(clz, new Object[]{request, false});
+    		loginId = clz.getMethod("getRmLoginId", ServletRequest.class).invoke(clz, new Object[]{request});
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IllegalArgumentException e) {
