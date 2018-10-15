@@ -5,6 +5,9 @@ services:
 cache:
   directories:
   - "$HOME/.cache"
+script:
+- mvn install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
+- mvn test -B
 
 deploy:
   provider: script

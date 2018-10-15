@@ -43,6 +43,6 @@ public final class HashToken {
 	}
 	
 	public static void main(String a[]){
-		System.out.println(HashToken.getInstance().getLongToken(HashToken.getInstance().getLongToken("123456")));
+		System.out.println();
 	}
 }
