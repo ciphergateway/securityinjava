@@ -32,6 +32,8 @@ public interface IRmCodeConstants {
 	public final static String DICTIONARY_RM_AGENT_STATUS = "RM_AGENT_STATUS";
 	//orgauth end
 	
+	public final static String DICTIONARY_RM_OPERATION_TYPE = "RM_OPERATION_TYPE";
+	
 	public final static String DICTIONARY_RM_MINE_TYPE = "RM_MINE_TYPE";
 	public final static String DICTIONARY_RM_HAVE_NOT = "RM_HAVE_NOT";
 	public final static String DICTIONARY_RM_ENABLE_NOT = "RM_ENABLE_NOT";
