@@ -22,37 +22,6 @@
   		}
 	}
 	String parent_party_id = "" ;
-	/*
-	String admin_type = RmProjectHelper.getRmUserVo(request).getAdmin_type();
-	Map<String, Object> adminTypeMap = RmGlobalReference.get(IRmUserConstants.DICTIONARY_RM_ADMIN_TYPE);
-	Map<String, Object> mAdminType =new HashMap<String,Object>();
-	for(Map.Entry<String, Object> entry:adminTypeMap.entrySet()){
-		if(!"3".equals(entry.getKey())){
-			mAdminType.put(entry.getKey(),entry.getValue());
-		}
-	}
-
-	if(!"3".equals(RmProjectHelper.getRmUserVo(request).getAdmin_type())){
-		if(RmProjectHelper.getRmUserVo(request).getParty_id_org()!=null){
-			//公司id
-			parent_party_id = RmProjectHelper.getRmUserVo(request).getParty_id_org();
-		}
-	}
-
-	String org_name = "";
-	String org_id = "";
-	if(isModify && resultVo !=null){
-		List<RmCommonVo> cVoList = RmProjectHelper.getCommonServiceInstance().doQuery("select P.ID,P.NAME from RM_PARTY P where P.ID in(select PR.PARENT_PARTY_ID from RM_USER U join RM_PARTY_RELATION PR on U.ID=PR.CHILD_PARTY_ID where U.USABLE_STATUS='1' and U.ID="+resultVo.getId()+" and PR.PARTY_VIEW_ID="+IOrgauthConstants.PartyView.DEFAULT.id()+") and P.USABLE_STATUS='1'");
-		for(RmCommonVo vo:cVoList){
-			org_name += vo.getString("name")+",";
-			org_id += vo.getString("id")+",";
-		}
-		if(org_name.length()>0){
-			org_name = org_name.substring(0,org_name.length()-1);
-			org_id = org_id.substring(0,org_id.length()-1);
-		}
-	}
-	*/
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>

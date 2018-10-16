@@ -115,14 +115,6 @@ alter table RM_CODE_DATA add constraint FK_REFERM_CODETYPE_DATA foreign key (COD
       references RM_CODE_TYPE (ID) on delete restrict on update restrict;
 
 
-create table RM_ID_POOL
-(
-   ID                   varchar(50) not null,
-   VERSION              bigint not null,
-   LAST_ID              bigint,
-   primary key (ID)
-);
-
 create table RM_NODE_HEARTBEAT
 (
    ID                   varchar(50) not null,

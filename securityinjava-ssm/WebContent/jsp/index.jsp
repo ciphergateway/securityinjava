@@ -12,9 +12,9 @@
 <title><bean:message key="qb.web_title"/></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<frameset rows="34,*" cols="*" frameborder="NO"  bordercolor="#0F4069"  framespacing="0" noresize>
-	<frame src="<%=request.getContextPath()%>/jsp/include/header.jsp?total_code=<%=total_code%>" scrolling="NO" name="topFrame" />
-	<frame src="<%=request.getContextPath()%>/orgauth/main.jsp" scrolling="NO" name="contentFrameSet" />
+<frameset rows="63,*" cols="*" frameborder="NO"  bordercolor="#0F4069"  framespacing="0" noresize>
+	<frame src="<%=request.getContextPath()%>/jsp/include/header.jsp?total_code=<%=total_code%>&menu=1" scrolling="NO" name="topFrame" />
+	<frame src="<%=request.getContextPath()%>/jsp/main.jsp?total_code=<%=total_code%>" scrolling="NO" name="mainFrame" />
 </frameset>
 <noframes><body>
 </body></noframes>

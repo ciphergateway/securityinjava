@@ -6,7 +6,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.quickbundle.config.RmBaseConfig;
 import org.quickbundle.config.RmConfig;
 
 /**
@@ -18,7 +17,7 @@ import org.quickbundle.config.RmConfig;
  * <li>自定义刷新,重写needFlush方法</li>
  * </ul>
  * 
- * @author liujia
+ * @author 
  * @since 2010-10-14
  * @param <E> 缓冲对象
  */

@@ -12,7 +12,7 @@ import org.quickbundle.config.RmConfig;
 /**
  * 刷新监视器
  * 
- * @author liujia
+ * @author 
  * @since 2010-10-14
  */
 public class FlushQueueThread extends Thread {
