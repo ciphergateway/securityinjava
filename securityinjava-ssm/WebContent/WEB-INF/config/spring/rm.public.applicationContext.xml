@@ -138,6 +138,7 @@
 	    <property name="testAfterUse" value="false"/>
 	    <property name="trace" value="true"/>
 	    <property name="verbose" value="false"/>
+	    <property name="delegateProperties" value="${connection-properties}"/>
     </bean>
 
 	

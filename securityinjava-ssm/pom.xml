@@ -30,10 +30,17 @@
         <struts.version>1.3.10</struts.version>
 
 
-        <!-- if your database is not mysql, change to real target belowing -->
+        <!-- jdbc driver for mysql
         <jdbc.driver.groupId>mysql</jdbc.driver.groupId>
         <jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
         <jdbc.driver.version>5.1.47</jdbc.driver.version>
+        -->
+
+        <!-- jdbc driver for postgresql -->
+        <jdbc.driver.groupId>org.postgresql</jdbc.driver.groupId>
+        <jdbc.driver.artifactId>postgresql</jdbc.driver.artifactId>
+        <jdbc.driver.version>42.1.4</jdbc.driver.version>
+
     </properties>
 
     <build>

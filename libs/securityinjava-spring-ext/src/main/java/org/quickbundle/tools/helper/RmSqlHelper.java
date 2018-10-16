@@ -301,7 +301,9 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 			return getFunctionOracle(func, args);
 		} else if(ICoreConstants.DatabaseProductType.SQLSERVER.getDatabaseProductName().equals(databaseProductName)) {
 			return getFunctionSqlserver(func, args);
-		}
+		} else if(ICoreConstants.DatabaseProductType.POSTGRESQL.getDatabaseProductName().equals(databaseProductName)) {
+            return getFunctionPostgresql(func, args);
+        }
 		return null;
 	}
 	/**
@@ -315,7 +317,8 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		SUBSTR,
 		NVL,
 		CONCAT,
-		WM_CONCAT
+		WM_CONCAT,
+		NUMBER_TO_INTERVAL
 	}
 	static String getFunctionOracle(Function func, Object... args) {
 		StringBuilder result = new StringBuilder();
@@ -348,7 +351,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.WM_CONCAT.name().equals(func.name())) {
 			return "wm_concat";
 		} 
-		return null;
+		return (String)args[0];
 	}
 	static String getFunctionMysql(Function func, Object... args) {
 		StringBuilder result = new StringBuilder();
@@ -383,8 +386,48 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.WM_CONCAT.name().equals(func.name())) {
 			return "group_concat";
 		} 
-		return null;
+		return (String)args[0];
 	}
+	
+    static String getFunctionPostgresql(Function func, Object... args) {
+        StringBuilder result = new StringBuilder();
+        if(Function.TO_NUMBER.name().equals(func.name())) {
+            result.append("cast(");
+            result.append(args[0]);
+            result.append(" as integer)");
+            return result.toString();
+        } else if(Function.TO_CHAR.name().equals(func.name())) {
+            result.append("cast(");
+            result.append(args[0]);
+            result.append(" as char)");
+            return result.toString();
+        } else if(Function.SYSDATE.name().equals(func.name())) {
+            return "current_timestamp";
+        } else if(Function.LENGTH.name().equals(func.name())) {
+            return "length";
+        } else if(Function.SUBSTR.name().equals(func.name())) {
+            return "substring";
+        } else if(Function.NVL.name().equals(func.name())) {
+            return "ifnull";
+        } else if(Function.CONCAT.name().equals(func.name())) {
+            for(int i=0; args!=null && i<args.length; i++) {
+                if(i > 0) {
+                    result.append("||");
+                }
+                result.append(args[i]);
+            }
+            return result.toString();
+        } else if(Function.WM_CONCAT.name().equals(func.name())) {
+            return "array_agg";
+        } else if(Function.NUMBER_TO_INTERVAL.name().equals(func.name())) {
+            result.append("(");
+            result.append(args[0]);
+            result.append("* '1 sec'::interval)");
+            return result.toString();
+        } 
+        return (String)args[0];
+    }
+	
 	static String getFunctionSqlserver(Function func, Object... args) {
 		StringBuilder result = new StringBuilder();
 		if(Function.TO_NUMBER.name().equals(func.name())) {
@@ -404,7 +447,10 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.SUBSTR.name().equals(func.name())) {
 			return "substring";
 		} else if(Function.NVL.name().equals(func.name())) {
-			return "isnull";
+		    result.append("coalesce(");
+		    result.append(args[0]);
+		    result.append(", 'Empty')");
+			return result.toString();
 		} else if(Function.CONCAT.name().equals(func.name())) {
 			for(int i=0; args!=null && i<args.length; i++) {
 				if(i > 0) {
@@ -416,7 +462,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.WM_CONCAT.name().equals(func.name())) {
 			return "group_concat";
 		} 
-		return null;
+		return (String)args[0];
 	}
 	
 	@SuppressWarnings("unchecked")

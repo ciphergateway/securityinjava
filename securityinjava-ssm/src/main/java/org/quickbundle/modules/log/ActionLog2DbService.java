@@ -10,7 +10,6 @@ import org.quickbundle.project.AbstractTaskQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
 public class ActionLog2DbService extends AbstractTaskQueue<RmLogVo> {
 	public ActionLog2DbService() {
 		super();

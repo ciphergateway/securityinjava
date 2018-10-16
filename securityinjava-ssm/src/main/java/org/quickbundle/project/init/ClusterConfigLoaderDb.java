@@ -56,7 +56,11 @@ public class ClusterConfigLoaderDb extends AbstractClusterConfigLoader {
 	}
 	
 	private String buildWhereActive() {
-		return RmSqlHelper.getFunction(RmSqlHelper.Function.SYSDATE, RmConfig.getSingleton().getDatabaseProductName())  + "-LAST_HEARTBEAT<" + RmConfig.getSingleton().getNodeHeartbeatInterval()/1000*1.8;
+	    long heartBeatInterval = RmConfig.getSingleton().getNodeHeartbeatInterval()/1000*2;
+		return RmSqlHelper.getFunction(RmSqlHelper.Function.SYSDATE, RmConfig.getSingleton().getDatabaseProductName())  
+		        + "-LAST_HEARTBEAT<" 
+		        + RmSqlHelper.getFunction(RmSqlHelper.Function.NUMBER_TO_INTERVAL, RmConfig.getSingleton().getDatabaseProductName(), heartBeatInterval)   
+		        ;
 	}
 
 	private String createShardingPrefix() {

@@ -58,15 +58,20 @@ public abstract class AbstractDbWrapper {
     
     private String parseColumn(String idName) {
     	StringBuilder result = new StringBuilder();
-    	String dpn = RmBaseConfig.getSingleton().getDatabaseProductName();
-    	//db2需要char(columnName) like '10001000%'
-    	if(dpn == null 
-    			|| ICoreConstants.DatabaseProductType.DB2.getDatabaseProductName().equals(dpn)
-    			|| dpn.startsWith(ICoreConstants.DatabaseProductType.DB2.getDatabaseProductName() + "/")) {
+    	String dbProductName = RmBaseConfig.getSingleton().getDatabaseProductName();
+    	if(dbProductName == null) {
+    	    return idName;
+    	}
+    	if(ICoreConstants.DatabaseProductType.DB2.getDatabaseProductName().equals(dbProductName)
+    			|| dbProductName.startsWith(ICoreConstants.DatabaseProductType.DB2.getDatabaseProductName() + "/")) {
+    	    //db2需要char(columnName) like '10001000%'
     		result.append("char(").append(idName).append(")");
     		return result.toString();
-    	} else {
-    		return idName;
-    	}
+    	} else if(ICoreConstants.DatabaseProductType.POSTGRESQL.getDatabaseProductName().equals(dbProductName)) {
+    	    //Postgresql需要CAST(columnName AS TEXT) LIKE '10001000%'
+    	    result.append("CAST(").append(idName).append(" AS TEXT)");
+    	    return result.toString();
+    	} 
+		return idName;
     }
 }

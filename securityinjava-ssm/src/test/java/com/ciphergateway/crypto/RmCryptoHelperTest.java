@@ -23,4 +23,13 @@ public class RmCryptoHelperTest {
 	        System.out.println("src=" + src + ", after encrypt and edcrypt, plain=" + new String(plain));
 	        assertArrayEquals(src.getBytes(), plain);
 	    }
+	   
+       @Test
+       public void base64() throws Exception {
+           String keyStr = "12345678abcdefgh";
+           byte[] key = keyStr.getBytes();
+           System.out.println(key.length);
+           System.out.println(new String(key));
+           System.out.println("base64(key)=" + RmCryptoHelper.encodeBase64(new String(key.toString())));
+       }
 }
