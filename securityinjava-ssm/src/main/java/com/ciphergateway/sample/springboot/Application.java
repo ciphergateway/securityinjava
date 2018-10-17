@@ -38,6 +38,11 @@ public class Application implements ApplicationRunner {
             System.out.println("Shutdowning in mode#2...");
             System.exit(SpringApplication.exit(SpringApplication.run(ExitCodeApplication.class, args.getSourceArgs())));
         }
+        initWebContext();
+    }
+
+    private void initWebContext() {
+        
     }
 
     // java -jar my-spring-boot-6.0.0-SNAPSHOT.jar --debug --name="sijava"
