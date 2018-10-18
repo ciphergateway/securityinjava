@@ -2,7 +2,6 @@ package org.quickbundle.project;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author 白小勇
  */
 @Controller
-@EnableAutoConfiguration
+//TODO @EnableAutoConfiguration
 @RequestMapping(value = "/admin")
 public class AdminPageController {
 
