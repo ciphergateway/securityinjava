@@ -6,9 +6,9 @@
 target/
 bin/
 
-/src/main/webapp/WEB-INF/classes/
-/src/main/webapp/WEB-INF/lib/
-/src/main/webapp/upload/
+/WebContent/WEB-INF/classes/
+/WebContent/WEB-INF/lib/
+/WebContent/upload/
 
 /.pydevproject
 /qalab.xml
