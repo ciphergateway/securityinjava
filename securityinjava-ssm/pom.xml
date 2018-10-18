@@ -409,7 +409,15 @@ encoding/<project>=UTF-8]]>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!--        -->
+
+        <!-- jpa 
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+-->
+
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
