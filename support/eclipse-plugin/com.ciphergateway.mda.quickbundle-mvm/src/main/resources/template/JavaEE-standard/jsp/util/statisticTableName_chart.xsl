@@ -7,7 +7,7 @@
 	<!--处理table-->
 	<xsl:template match="table[1]">
 <xsl:value-of select="$charLt"/>%@page contentType="text/html;charset=UTF-8"%>
-<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.third.jfreechart.WebChart"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.third.jfreechart.JFreeChartWebChart"%>
 <xsl:value-of select="$charLt"/>%@page import="java.io.PrintWriter" %>
 <xsl:value-of select="$charLt"/>%@page import="java.sql.ResultSet"%>
 <xsl:value-of select="$charLt"/>%@page import="java.sql.SQLException"%>
@@ -22,7 +22,7 @@
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.RmProjectHelper"%>
 <xsl:value-of select="$charLt"/>%@page import="<xsl:value-of select="$javaPackageTableDir"/>.<xsl:value-of select="$ITableNameConstants"/>"%>
 <xsl:value-of select="$charLt"/>%
-    WebChart chart = new WebChart();
+    JFreeChartWebChart chart = new JFreeChartWebChart();
     List<xsl:value-of select="$charLt"/>String[]> lResult = RmProjectHelper.getCommonServiceInstance().query("select <xsl:value-of select="$statisticColumnFormatLower"/>  as rm_key, count(<xsl:value-of select="$statisticColumnFormatLower"/> ) as rm_count from <xsl:value-of select="@tableName"/> group by <xsl:value-of select="$statisticColumnFormatLower"/> ", new RowMapper() {
         public Object mapRow(ResultSet rs, int i) throws SQLException {
             return new String[]{rs.getString("rm_key"), rs.getString("rm_count")};

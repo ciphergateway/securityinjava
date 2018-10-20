@@ -28,7 +28,6 @@
 <xsl:value-of select="$charLt"/>html>
 <xsl:value-of select="$charLt"/>head>
 <xsl:value-of select="$charLt"/>%@ include file="/jsp/include/rmGlobal.jsp" %>
-<xsl:value-of select="$charLt"/>%@ include file="/jsp/include/rmGlobal_insert.jsp" %>
 <xsl:value-of select="$charLt"/>meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <xsl:value-of select="$charLt"/>title><xsl:value-of select="$charLt"/>bean:message key="qb.web_title"/><xsl:value-of select="$charLt"/>/title>
 <xsl:value-of select="$charLt"/>script type="text/javascript">

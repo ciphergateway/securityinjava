@@ -296,13 +296,11 @@ Ext.onReady(function(){
                 var records = store.getModifiedRecords();
                 if(records != null <xsl:value-of select="$charAmp"/><xsl:value-of select="$charAmp"/> records.length > 0){
                     var params = {};
-<xsl:value-of select="$charLt"/>%if(RmConfig.getSingleton().isSubmitJson()) {%>
                     var json = [];
                     Ext.each(records, function(item) {
                         json.push(item.data);
                     });
                     params["<xsl:value-of select="$charLt"/>%=IGlobalConstants.RM_AJAX_JSON%>"] = Ext.util.JSON.encode(json);
-<xsl:value-of select="$charLt"/>%} else {%> 
                     params["<xsl:value-of select="$charLt"/>%=IGlobalConstants.RM_AJAX_RECORD_SIZE%>"] = records.length;
                     var sk = "<xsl:value-of select="$charLt"/>%=IGlobalConstants.RM_AJAX_SPLIT_KEY%>";
                     for(var i=0; i<xsl:value-of select="$charLt"/>records.length; i++) {
