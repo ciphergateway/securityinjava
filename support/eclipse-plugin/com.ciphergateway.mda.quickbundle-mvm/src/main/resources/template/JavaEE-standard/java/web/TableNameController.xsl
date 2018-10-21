@@ -64,8 +64,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * import action    POST /<xsl:value-of select="@tableDirName"/>/import
  * export custom    GET  /<xsl:value-of select="@tableDirName"/>/export
  * export action    POST /<xsl:value-of select="@tableDirName"/>/export</xsl:if>
-<xsl:if test="contains(@customBundleCode, 'ajax')">
- * ajax                  /<xsl:value-of select="@tableDirName"/>/ajax</xsl:if>
  */
 
 <xsl:value-of select="str:getClassComment($authorName)"/>
@@ -279,15 +277,6 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
     @RequestMapping(value = "export", method = RequestMethod.POST)
     public String exportData(Model model) {
         return "<xsl:value-of select="$jspSourceTableDir"/>/export<xsl:value-of select="$tableFormatNameUpperFirst"/>_excel";
-    }
-</xsl:if>
-<xsl:if test="contains(@customBundleCode, 'ajax')">
-    /**
-     * 跳转到Ajax页
-     */
-    @RequestMapping(value = "ajax")
-    public String ajax(Model model) {
-        return "<xsl:value-of select="$jspSourceTableDir"/>/ajax/list<xsl:value-of select="$tableFormatNameUpperFirst"/>";
     }
 </xsl:if>
     /**

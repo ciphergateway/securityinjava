@@ -174,9 +174,6 @@
 
 <xsl:value-of select="$charLt"/>%--begin 生成页面汇总，正式部署前删除以下代码 --%>
 <xsl:value-of select="$charLt"/>div id="div_funcNode" style="padding:20px 10px 10px 0px; display:none" align="right">
-	<xsl:if test="contains(@customBundleCode, 'ajax')">
-    <xsl:value-of select="$charLt"/>a class="aul" target="_blank" href="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/ajax">Ajax<xsl:value-of select="$charLt"/>/a>
-	</xsl:if>
 	<xsl:if test="contains(@customBundleCode, 'statistic')">
     <xsl:value-of select="$charLt"/>a class="aul" target="_blank" href="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/statistic/chart">图表统计<xsl:value-of select="$charLt"/>/a>
     <xsl:value-of select="$charLt"/>a class="aul" target="_blank" href="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/statistic/flash">Flash图表<xsl:value-of select="$charLt"/>/a>

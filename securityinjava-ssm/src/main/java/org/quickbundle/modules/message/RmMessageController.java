@@ -47,7 +47,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * import action	POST /message/import
  * export custom	GET	 /message/export
  * export action	POST /message/export
- * ajax					 /message/ajax
  * 
  * @author 白小勇
  */
@@ -245,14 +244,6 @@ public class RmMessageController implements IRmMessageConstants {
 	public String exportData(Model model) {
 		return "message/exportRmMessage_excel";
 	}
-	/**
-	 * 跳转到Ajax页
-	 */
-	@RequestMapping(value = "ajax")
-	public String ajax(Model model) {
-		return "message/ajax/listRmMessage";
-	}
-
 	
     /**
      * 从request中获得查询条件
