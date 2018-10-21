@@ -11,8 +11,6 @@
 - [Installation 安装](#installation)
 - [Quick Start 快速上手](#quick-start)
 - [Architecture 架构](#architecture)
-- [Web Security Web安全性](#web-security)
-- [Mobile 手机端](#mobile)
 - [Upgrading 更新](#upgrading)
 - [References 参考](#references)
 
