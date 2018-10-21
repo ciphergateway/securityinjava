@@ -356,10 +356,21 @@
 
     <url>https://ciphergateway.github.io/securityinjava/${project.artifactId}</url>
     <distributionManagement>
-      <site>
-          <id>github</id>
-          <url>${project.url}</url>
-      </site>
+        <site>
+            <id>github</id>
+            <url>${project.url}</url>
+        </site>
+        <snapshotRepository>
+          <id>CipherGateway</id>
+          <name>CipherGateway SNAPSHOTS</name>
+          <url>http://nexus.ciphergateway.com:9999/content/repositories/snapshots/</url>
+          <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+        <repository>
+          <id>CipherGateway</id>
+          <name>CipherGateway Release</name>
+          <url>http://nexus.ciphergateway.com:9999/content/repositories/com.ciphergateway/</url>
+        </repository>
     </distributionManagement>
 
   <profiles>
