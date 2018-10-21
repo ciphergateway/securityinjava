@@ -252,6 +252,13 @@
                     </plugin>
                 </reportPlugins>
             </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.maven.doxia</groupId>
+                <artifactId>doxia-module-markdown</artifactId>
+                <version>1.8</version>
+              </dependency>
+            </dependencies>
         </plugin>
 
       </plugins>
