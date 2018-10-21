@@ -36,7 +36,7 @@
 </script>
 </head>
 <body>
-<form name="form" method="post">
+<form id="form" name="form" method="post">
 
 <div id="div_simple">
 	<table class="table_query">

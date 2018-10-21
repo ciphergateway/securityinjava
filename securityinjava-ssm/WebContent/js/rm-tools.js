@@ -52,7 +52,7 @@ function getYearMonth(textMonth,path) {
 	path = path + "js/month/selectMonth.htm";
 	strFeatures = "dialogWidth=224px;dialogHeight=150px;center=1;help=0;resizable=0;scroll=1;status=0;location=1";
 	var defaultMonth = textMonth.value;
-	var returnMonth = showModalDialog(path,defaultMonth,strFeatures);
+	var returnMonth = window.showModalDialog(path,defaultMonth,strFeatures);
 	if(returnMonth == null)
 	{ 
 		returnMonth="";
@@ -67,7 +67,7 @@ function getHourMinuteSecond(textMonth,path) {
 	path = path + "js/time/hourMinuteSecond.htm";
 	strFeatures = "dialogWidth=224px;dialogHeight=126px;center=yes;location=0;resizable=0;titlebar=0;scrollbars=0;help=no";
 	var defaultTime = textMonth.value;
-	var returnMonth = showModalDialog(path,defaultTime,strFeatures);
+	var returnMonth = window.showModalDialog(path,defaultTime,strFeatures);
 	if(returnMonth != null) { 
 		textMonth.value = returnMonth;
 	}
@@ -80,7 +80,7 @@ function getYearMonthDayHourMinuteSecond(textMonth,path) {
 	path = path + "js/time/yearMonthDayHourMinuteSecond.htm";
 	strFeatures = "dialogWidth=320px;dialogHeight=350px;center=yes;location=0;resizable=0;titlebar=0;scrollbars=0;help=no";
 	var defaultTime = textMonth.value;
-	var returnMonth = showModalDialog(path,defaultTime,strFeatures);
+	var returnMonth = window.showModalDialog(path,defaultTime,strFeatures);
 	if(returnMonth != null) { 
 		textMonth.value = returnMonth;
 	}
@@ -181,21 +181,8 @@ function getReference(inputArray, path, urlPath, width, height){
 	myObject['inputArray'] = inputArray;
 	//urlPath放最后
 	myObject['urlPath'] = urlPath;
-	var rtObj = window.showModalDialog(path + 'jsp/support/globalReference.jsp', myObject, 'dialogHeight=' + height + 'px;dialogWidth=' + width + 'px;');
-	toDoWriteReference(inputArray, rtObj);
-}
-
-function toDoWriteReference(inputArray, rtObj) {
-	if(inputArray != null && rtObj != null && (typeof rtObj) == 'object') {
-		var index = 0;
-		for(var rto in rtObj) {
-			if(index >= inputArray.length) {
-				break;
-			}
-			setTargetValue(inputArray[index], rtObj[rto]);
-			index ++;
-		}
-	}
+	
+	window.showModalDialog(path + 'jsp/support/globalReference.jsp', myObject, 'dialogHeight=' + height + 'px;dialogWidth=' + width + 'px;');
 }
 
 function setTargetValue(target, value) {
@@ -233,6 +220,7 @@ function getUploadWindow(inputArray, path, width, height, fileNumberFromTo, uplo
 	}
 	
 	var myObject = new Object();
+	myObject['inputArray'] = inputArray;
 	try {
 		if(inputArray.length >= 1) {
 			if(inputArray[0].value != null && inputArray[0].value != "" ) {
@@ -262,67 +250,10 @@ function getUploadWindow(inputArray, path, width, height, fileNumberFromTo, uplo
 	} catch(e) {
 		//alert("a  0:" + e.message);
 	}
-	var rtObj = window.showModalDialog(path + 'jsp/support/upload/globalUpload.jsp?fileNumberFromTo=' + fileNumberFromTo + '&uploadDir=' + uploadDir + "&openType=" + openType, myObject,'dialogHeight=' + height + 'px;dialogWidth=' + width + 'px;');
-	toDoWriteUpload(inputArray, rtObj);
+	window.showModalDialog(path + 'jsp/support/upload/globalUpload.jsp?fileNumberFromTo=' + fileNumberFromTo + '&uploadDir=' + uploadDir + "&openType=" + openType, myObject,'dialogHeight=' + height + 'px;dialogWidth=' + width + 'px;');
 }
 
-function toDoWriteUpload(inputArray, rtObj) {
-	var textValue = inputArray[0];
-	var textName = (inputArray.length >= 2) ? inputArray[1] : null;
-	var textIsImage = (inputArray.length >= 3) ? inputArray[2] : null;
-	var textAbbreviatoryName = inputArray.length >= 4 ? inputArray[3] : null;
-	var textSaveNameWidthHeight = inputArray.length >= 5 ? inputArray[4] : null;
-	var textAbbreviatoryNameWidthHeight = inputArray.length >= 6 ? inputArray[5] : null;
-	var textUploadRemark = inputArray.length >= 7 ? inputArray[6] : null;
-	
-	var value1 = "";
-	var name1 = "";
-	var isImage1 = "";
-	var abbreviatoryName = "";
-	var saveNameWidthHeight = "";
-	var abbreviatoryNameWidthHeight = "";
-	var uploadRemark = "";
-	
-	if(rtObj!=null && rtObj.length > 0){
-		for(var i=0; i<rtObj.length-1; i++) {
-			value1 += rtObj[i][0] + ",";
-			name1 += rtObj[i][1] + ",";
-			isImage1 += rtObj[i][2] + ",";
-			abbreviatoryName += rtObj[i][3] + ",";
-			saveNameWidthHeight += rtObj[i][4] + ",";
-			abbreviatoryNameWidthHeight += rtObj[i][5] + ",";
-			uploadRemark += rtObj[i][6] + ",";
-		}
-		value1 += rtObj[rtObj.length-1][0];
-		name1 += rtObj[rtObj.length-1][1];
-		isImage1 += rtObj[rtObj.length-1][2];
-		abbreviatoryName += rtObj[rtObj.length-1][3];
-		saveNameWidthHeight += rtObj[rtObj.length-1][4];
-		abbreviatoryNameWidthHeight += rtObj[rtObj.length-1][5];
-		uploadRemark += rtObj[rtObj.length-1][6];
 
-		jQuery(textValue).val(value1);
-
-		if(textName != null) {
-			textName.value = name1;
-		}
-		if(textIsImage != null) {
-			textIsImage.value = isImage1;
-		}
-		if(textAbbreviatoryName != null) {
-			textAbbreviatoryName.value = abbreviatoryName;
-		}
-		if(textSaveNameWidthHeight != null) {
-			textSaveNameWidthHeight.value = saveNameWidthHeight;
-		}
-		if(textAbbreviatoryNameWidthHeight != null) {
-			textAbbreviatoryNameWidthHeight.value = abbreviatoryNameWidthHeight;
-		}
-		if(textUploadRemark != null) {
-			textUploadRemark.value = uploadRemark;
-		}
-	}
-}
 
 function getUploadWindowWithObj(inputObj, path, width, height){
 	if(path == undefined) {

@@ -213,7 +213,7 @@ public class RmExcelHandler {
                     	str = new Timestamp(dc.getDate().getTime()).toString();
                     } else {
                     	str = thisCell[i].getContents().trim();
-                    	str = str.replaceAll("[　 �]", "");
+                    	//str = str.replaceAll("[　 �]", "");
                     }
                     Object data = str;
                     Class dataClazz = null;
@@ -250,11 +250,22 @@ public class RmExcelHandler {
                     if(vo instanceof Map) {
                         ((Map)vo).put(headCell[i].getContents().trim(), data.toString());
                     } else {
-                    	if(dataClazz == null) {
-                    		RmVoHelper.setVoFieldValue(vo, headCell[i].getContents().trim(), data);          
-                    	} else {
-                    		RmVoHelper.setVoFieldValue(vo, headCell[i].getContents().trim(), data, dataClazz);          
-                    	}
+                        try {
+                            if (dataClazz == null) {
+                                RmVoHelper.setVoFieldValue(vo, headCell[i].getContents().trim(), data);
+                            } else {
+                                RmVoHelper.setVoFieldValue(vo, headCell[i].getContents().trim(), data, dataClazz);
+                            }
+                        } catch (Exception e) {
+                            if (e.getCause().toString().contains("java.lang.NoSuchMethodException")
+                                    && e.getMessage().contains("java.lang.String")) {
+                                try {
+                                    RmVoHelper.setVoFieldValue(vo, headCell[i].getContents().trim(), Long.parseLong(data.toString()), Long.class);
+                                } catch (Exception e2) {
+                                    e2.printStackTrace();
+                                }
+                            }
+                        }
                     }
                 } catch (Exception e) {
                     RmLogHelper.getLogger(RmExcelHandler.class).warn(e.toString());

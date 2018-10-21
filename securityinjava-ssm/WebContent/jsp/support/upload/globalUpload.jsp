@@ -51,6 +51,7 @@
 </html>
 
 <script type="text/javascript">
+    var myObject = window.dialogArguments;
 	var config = {
 		defaultUploadDialogDir : "<%=uploadDir%>",
 		defaultUploadDialogFullDir : "<%=request.getContextPath() + "/" + uploadDir%>",
@@ -90,10 +91,68 @@
 			alert("最多能上传" + config.maxFileNumber + "个附件，请删除多余的附件！");
 			return false;
 		} else {
-	 	 	window.returnValue = uploadHandler.getValue();
+	 	 	toDoWriteUpload(myObject['inputArray'], uploadHandler.getValue());
 			window.close();
 		}
   	}
+
+	function toDoWriteUpload(inputArray, rtObj) {
+	    var textValue = inputArray[0];
+	    var textName = (inputArray.length >= 2) ? inputArray[1] : null;
+	    var textIsImage = (inputArray.length >= 3) ? inputArray[2] : null;
+	    var textAbbreviatoryName = inputArray.length >= 4 ? inputArray[3] : null;
+	    var textSaveNameWidthHeight = inputArray.length >= 5 ? inputArray[4] : null;
+	    var textAbbreviatoryNameWidthHeight = inputArray.length >= 6 ? inputArray[5] : null;
+	    var textUploadRemark = inputArray.length >= 7 ? inputArray[6] : null;
+	    
+	    var value1 = "";
+	    var name1 = "";
+	    var isImage1 = "";
+	    var abbreviatoryName = "";
+	    var saveNameWidthHeight = "";
+	    var abbreviatoryNameWidthHeight = "";
+	    var uploadRemark = "";
+	    
+	    if(rtObj!=null && rtObj.length > 0){
+	        for(var i=0; i<rtObj.length-1; i++) {
+	            value1 += rtObj[i][0] + ",";
+	            name1 += rtObj[i][1] + ",";
+	            isImage1 += rtObj[i][2] + ",";
+	            abbreviatoryName += rtObj[i][3] + ",";
+	            saveNameWidthHeight += rtObj[i][4] + ",";
+	            abbreviatoryNameWidthHeight += rtObj[i][5] + ",";
+	            uploadRemark += rtObj[i][6] + ",";
+	        }
+	        value1 += rtObj[rtObj.length-1][0];
+	        name1 += rtObj[rtObj.length-1][1];
+	        isImage1 += rtObj[rtObj.length-1][2];
+	        abbreviatoryName += rtObj[rtObj.length-1][3];
+	        saveNameWidthHeight += rtObj[rtObj.length-1][4];
+	        abbreviatoryNameWidthHeight += rtObj[rtObj.length-1][5];
+	        uploadRemark += rtObj[rtObj.length-1][6];
+
+	        jQuery(textValue).val(value1);
+
+	        if(textName != null) {
+	            textName.value = name1;
+	        }
+	        if(textIsImage != null) {
+	            textIsImage.value = isImage1;
+	        }
+	        if(textAbbreviatoryName != null) {
+	            textAbbreviatoryName.value = abbreviatoryName;
+	        }
+	        if(textSaveNameWidthHeight != null) {
+	            textSaveNameWidthHeight.value = saveNameWidthHeight;
+	        }
+	        if(textAbbreviatoryNameWidthHeight != null) {
+	            textAbbreviatoryNameWidthHeight.value = abbreviatoryNameWidthHeight;
+	        }
+	        if(textUploadRemark != null) {
+	            textUploadRemark.value = uploadRemark;
+	        }
+	    }
+	}
 
 	function cancel_onClick(){  //取消
 		if(uploadHandler.getLength() == 0 || config.openType == "READ" ) {

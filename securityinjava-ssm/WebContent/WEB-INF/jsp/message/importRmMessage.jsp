@@ -77,7 +77,7 @@
     	if(!getConfirm()) {  //如果用户在确认对话框中点"取消"
   			return false;
 		}
-	    form.action="importRmMessage.jsp";
+	    form.action="<%=request.getContextPath()%>/message/import";
     	form.submit();
 	}
 </script>

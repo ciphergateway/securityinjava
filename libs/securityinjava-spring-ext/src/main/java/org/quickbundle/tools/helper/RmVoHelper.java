@@ -26,6 +26,7 @@ import org.quickbundle.project.serializer.RmObjectMapper;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.util.RmSequenceMap;
 import org.quickbundle.util.RmSequenceSet;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.NotReadablePropertyException;
@@ -959,8 +960,8 @@ public final class RmVoHelper implements ICoreConstants {
         	setMethod = fromcls.getDeclaredMethod(setMethodName,new Class[]{valueClazz});
 	        setMethod.invoke(vo ,new Object[] {value});
         } catch (Exception e) {
-            e.printStackTrace();
-            return result;
+            LoggerFactory.getLogger(RmVoHelper.class).warn("setVoFieldValue error, vo=" + vo.getClass() + ", field=" + field + ", value=" + value + ", valueClazz=" + valueClazz);
+            throw new RuntimeException("setVoFieldValue error, " + e.getMessage(), e);
         }
 	    result = true;
         return result;

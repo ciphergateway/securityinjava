@@ -20,6 +20,56 @@ if(window.addEventListener) {
 } else {
 	window.attachEvent("onload", doInitForm);
 }
+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+ChromePopup = function (url, arg, feature) {
+    var opFeature = feature.split(";");
+    var featuresArray = new Array();
+    for (var i = 0; i < opFeature.length - 1; i++) {
+        var f = opFeature[i].split(":");
+        if(f && f[1]) {
+            featuresArray[f[0].toString().trim().toLowerCase()] = f[1].toString().trim();
+        }
+    }
+
+    var h = "600px", w = "1000px", l = "100px", 
+    t = "100px", r = "no", c = "yes", s = "no";
+    if (featuresArray["dialogheight"]) h = featuresArray["dialogheight"];
+    if (featuresArray["dialogwidth"]) w = featuresArray["dialogwidth"];
+    if (featuresArray["dialogleft"]) l = featuresArray["dialogleft"];
+    if (featuresArray["dialogtop"]) t = featuresArray["dialogtop"];
+    if (featuresArray["resizable"]) r = featuresArray["resizable"];
+    if (featuresArray["center"]) c = featuresArray["center"];
+    if (featuresArray["status"]) s = featuresArray["status"];
+    var modelFeature = "height = " + h + ",width = " + w + ",left=" + l + ",top=" + t + ",model=yes,alwaysRaised=yes,directories=no,titlebar=no,toolbar=no, location=no,status=no,menubar=no" + ",resizable= " + r + ",celter=" + c + ",status=" + s;
+    var model = window.open(url, "", modelFeature, null);
+    model.dialogArguments = arg;
+    //check the new attribute to refresh parent window or not
+    if (window.showModalDialog.refreshParent) {
+        reloadPage(model);
+    }
+    return model;
+}
+
+function reloadPage(returnValue) {
+    var timer = setInterval(function () {
+        if (returnValue.closed) {
+            clearInterval(timer);
+            this.window.location.reload();
+        }
+    }, 1000);
+}
+
+function RefreshParent(isRefresh) {
+    if (isChrome) {
+        window.showModalDialog.refreshParent = isRefresh;
+    }
+}
+$(document).ready(function () {
+    if (isChrome) {
+        window.showModalDialog = ChromePopup;
+    }
+});
 <%
 { //system message
 	HttpSession session2 = RmJspHelper.getSession(request, response, false);
