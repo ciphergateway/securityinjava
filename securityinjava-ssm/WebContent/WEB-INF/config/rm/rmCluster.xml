@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm>
 	<org.quickbundle.config.RmConfig>
-		<!-- job scheduler is start #change in production 
-			系统是否启动任务调度 -->
+		<!-- job scheduler is start #change in production  系统是否启动任务调度 -->
 		<schedulerStart>false</schedulerStart>
-		<!-- lazy start scheduler time(second), 0 or -1 ignore this 
-			延时启动scheduler的秒数 -->
+		<!-- lazy start scheduler time(second), 0 or -1 ignore this  延时启动scheduler的秒数 -->
 		<schedulerStartLazy>30</schedulerStartLazy>
+		<!-- 默认5分钟心跳一次 -->
+		<nodeHeartbeatInterval>300000</nodeHeartbeatInterval>
 	</org.quickbundle.config.RmConfig>
 
 	<org.quickbundle.config.RmClusterConfig>
