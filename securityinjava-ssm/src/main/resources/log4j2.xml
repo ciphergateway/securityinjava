@@ -5,18 +5,8 @@
     <Properties>
         <Property name="LOG_PATH">${sys:user.home:-}/.ciphergateway/work/sijava/logs</Property>
         <Property name="CONSOLE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p - [%-15.15t] %-40.40c{1.} : %m%n</Property>
-        <Property name="FILE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p - [%15.15t] %-40.40c{1.} : %m%n</Property>
-
-        <!-- spring-boot --> 
-        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
-        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
-        <Property name="LOG_DATEFORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
-        <Property name="CONSOLE_PATTERN2">%clr{%d{${LOG_DATEFORMAT_PATTERN}}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
-        <Property name="FILE_PATTERN2">%d{${LOG_DATEFORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} ${sys:PID} - [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_PATTERN"          >%d{yyyy-MM-dd HH:mm:ss.SSS} %5p - [%15.15t] %-40.40c{1.} : %m%n</Property>
     </Properties>
-    
-    <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}"/>
-    
 
     <Appenders>
    
@@ -115,7 +105,7 @@
      <Loggers>
 
         <!--全局日志-->
-        <Root level="trace" includeLocation="false">
+        <Root level="info" includeLocation="false">
             <AppenderRef ref="stdout" />
             <AppenderRef ref="allf" />
         </Root>
