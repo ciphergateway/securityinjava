@@ -81,7 +81,7 @@
         if(!getConfirm()) {  //如果用户在确认对话框中点"取消"
             return false;
         }
-        form.action="import<xsl:value-of select="$tableFormatNameUpperFirst"/>.jsp";
+        form.action="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="$tableFormatNameUpperFirst"/>/import";
         form.submit();
     }
 <xsl:value-of select="$charLt"/>/script>
