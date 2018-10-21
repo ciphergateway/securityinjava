@@ -20,5 +20,6 @@ function stopCover(){
 }
  //-->
 </script>
+Info Works!
 </body>
 </html>

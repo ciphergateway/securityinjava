@@ -140,12 +140,14 @@
   encoding/<project>=UTF-8]]></content>
               </file>
             </additionalConfig>
+<!--
             <additionalBuildcommands>
               <buildcommands>org.eclipse.m2e.core.maven2Builder</buildcommands>
             </additionalBuildcommands>
             <additionalProjectnatures>
               <projectnatures>org.eclipse.m2e.core.maven2Nature</projectnatures>
             </additionalProjectnatures>
+-->
             <projectNameTemplate>[artifactId]-[version]</projectNameTemplate>
             <addGroupIdToProjectName>true</addGroupIdToProjectName>
           </configuration>

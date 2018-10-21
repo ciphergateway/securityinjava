@@ -109,10 +109,6 @@ if(total_code == null){
 <jsp:include page="funcTree_default.jsp" />
 <%}%>
 
-<%if(total_code.indexOf("bundle") > -1) {%>
-<jsp:include page="funcTree_bundle.jsp" />
-<%}%>
-
 <!--startFunctionNodes-->
 	initializeDocument();
 	try {

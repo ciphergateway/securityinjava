@@ -110,16 +110,19 @@
 <script language="javascript">
 <!--
 var selmenu = function(menuId){
-    var menuLinks=document.getElementById("menu").getElementsByTagName("a");
-   	if(menuLinks != null && menuLinks.length>0){
-   		for(var i=0;i<menuLinks.length;i++){
-   			if(menuId==menuLinks[i]){
-   				menuLinks[i].className ="buttons-active";
-   			}else {
-   				menuLinks[i].className ="";
-   			}
-   		}
-   	}
+    var menu=document.getElementById("menu");
+    if(menu) {
+    	var menuLinks = getElementsByTagName("a");
+        if(menuLinks != null && menuLinks.length>0){
+            for(var i=0;i<menuLinks.length;i++){
+                if(menuId==menuLinks[i]){
+                    menuLinks[i].className ="buttons-active";
+                }else {
+                    menuLinks[i].className ="";
+                }
+            }
+        }
+    }
 }
 function goMain(e){
    top.infoFrame.startCover(e.href);
@@ -137,7 +140,7 @@ function logout_onClick() {
 <body>
 <form>
 <div id="header">
-	<img src="<%=request.getContextPath()%>/images/logo.png" style="padding:2px 0px 0px 2px;" align="left" alt="LOGO" id="Any"></img>
+	<img src="<%=request.getContextPath()%>/images/logo.png" height="30px" style="padding:0px 0px 0px 0px;" align="left" alt="LOGO" id="Any"></img>
 	<div class="logo">
 		<span>
   			[ <bean:message key="a.welcome_you"/>， <%=RmStringHelper.prt(RmProjectHelper.getRmLoginId(request))%>  ]   
@@ -172,40 +175,8 @@ jQuery(document).ready(function(){
 </script>
 <%
 	}
-	Map<String, String> mFp = new HashMap<String, String>();//.getFunctionPermission(RmJspHelper.getRmLoginInfo(request).getId());
+	Map<String, String> mFp = new HashMap<String, String>();
 %>
-<div id="menu"<%if(!"1".equals(request.getParameter("menu"))){%> style="display:none"<%}%>>
-	<div class="buttons nav-left">
-    <%
-
-    	for(Iterator<String> itMFp = mFp.keySet().iterator(); itMFp.hasNext(); ) {
-			String tempCode = itMFp.next().toString();
-			if(tempCode.length() == 6) {
-				
-    %>
-		<span>
-			<a id="PageLink_<%=tempCode%>" onclick="return selmenu(this);"  href="<%=request.getContextPath()%>/jsp/index.jsp?total_code=<%=tempCode%>" target="leftFrame"><%=tempCode%></a>
-		</span>
-	<%
-			}
-		}
-	%>
-        <span>
-        	<a id="PageLink_default" onclick="return selmenu(this);" href="<%=request.getContextPath()%>/jsp/main.jsp?total_code=default" target="mainFrame"><bean:message key="qb.default"/></a>
-        </span>
-        <span>
-        	<a id="PageLink_bundle" onclick="return selmenu(this);" href="<%=request.getContextPath()%>/jsp/main.jsp?total_code=bundle" target="mainFrame"><bean:message key="qb.bundle"/></a>
-        </span>
-	</div>
-	<div class="nav-right">
-	    <!--  <a id="PageLink_9" onClick="return goMain(this);" href="#" target="mainFrame">-->
-	    <img id="sms" src="<%=request.getContextPath()%>/images/default/ico_mail.gif" border="0" alt="短信"/>
-	    <!-- </a>-->
-	</div>
-</div>
-<div id="spacer" style="background: url(<%=request.getContextPath()%>/images/default/iwpmi2.gif) top left; width:100%; height:3px">
-	<img src="<%=request.getContextPath()%>/images/default/spacer.gif" height="3"/>
-</div>
 </form>
 </body>
 </html>

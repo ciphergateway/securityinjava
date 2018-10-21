@@ -55,17 +55,17 @@ Add a product:: PUT /products/<product_id>
 Run the server either in your IDE or on the command line, then open your browser and hit
 link:http://localhost:8080/products[list products] to start playing with the API.
 
-== Static site with templating
+== Site with templating
 
 This example shows a simple web-site containing some static pages and also a page dynamically generated using templates.
 
 The link:src/main/java/io/vertx/example/web/templating/[templating example]
 
-The dynamic page outputs some information (path and headers) of the request. It uses the MVEL template engine but you
-could use any of the other template engines if you prefer.
+Multiple examples with different templating engines, including FreeMarker, Handlebars, Jade, MVEL, Pebble, Rocker,
+and Thymeleaf are available.
 
 Run the server either in your IDE or on the command line, then open your browser and hit
-link:http://localhost:8080 and click on the links
+link:http://localhost:8080/[localhost:8080] and click on the links
 
 == Sessions example
 
@@ -404,3 +404,23 @@ Important files to note:
 
 Run the server either in your IDE or on the command line, then open your browser and hit
 link:http://localhost:8080 and chat with a couple of browser windows!
+
+== OAuth2
+
+The OAuth2 example is a simplified interaction with GitHub OAuth2 server. It will
+show how to secure and authenticate users, plus requesting specific authorities:
+
+* `user:email`
+
+Plus how to interact with secured resources using the user object directly.
+
+The link:src/main/java/io/vertx/example/web/oauth2/Server.java[OAuth2 example]
+
+== HTTP Request Validation and OpenAPI 3 Router Factory
+
+The link:src/main/java/io/vertx/example/web/validation/ValidationExampleServer.java[ValidationExampleServer] is an
+example of various usages of validation capabilities included in
+link:http://vertx.io/docs/#web[Vert.x Web API Contract package]
+
+The link:src/main/java/io/vertx/example/web/openapi3/OpenAPI3Server.java[OpenAPI3Server] is an example of
+OpenAPI3RouterFactory, the interface to build your design driven router based on your OpenAPI specification.

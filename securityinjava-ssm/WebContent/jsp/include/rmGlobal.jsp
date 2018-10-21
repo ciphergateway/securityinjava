@@ -33,7 +33,7 @@ if(window.addEventListener) {
 }
 %></script>
 <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
-<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/js/jquery/css/smoothness/jquery-ui-1.11.2.custom.css"/>
+<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/js/jquery/jquery-ui-1.11.2.custom.css"/>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-third.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-tools.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/rm-insert.js"></script>

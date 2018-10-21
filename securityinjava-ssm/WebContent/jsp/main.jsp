@@ -15,8 +15,8 @@
 	<frame src="<%=request.getContextPath()%>/jsp/funcTree.jsp?total_code=<%=total_code%>" scrolling="AUTO" name="leftFrame" />
 	<frame src="frameMid.jsp" scrolling="NO" name="midFrame" />
 	<frameset rows="*,0" frameborder="NO" framespacing="0" name="contentFrameSet" id="contentFrameSet">
-	  	<frame src="<%=request.getContextPath()%>/jsp/container.jsp" scrolling="auto" name="contentFrame" />
-	  	<frame src="info.jsp" scrolling="no" name="infoFrame" />
+	  	<frame src="<%=request.getContextPath()%>/jsp/welcome.jsp" scrolling="auto" name="contentFrame" />
+	  	<frame src="hiddenPage.jsp" scrolling="no" name="infoFrame" />
   	</frameset>
 </frameset>
 <noframes><body>

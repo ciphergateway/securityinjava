@@ -126,12 +126,14 @@ encoding/<project>=UTF-8]]>
                             </content>
                         </file>
                     </additionalConfig>
+<!-- 
                     <additionalBuildcommands>
                         <buildcommands>org.eclipse.m2e.core.maven2Builder</buildcommands>
                     </additionalBuildcommands>
                     <additionalProjectnatures>
                         <projectnatures>org.eclipse.m2e.core.maven2Nature</projectnatures>
                     </additionalProjectnatures>
+ -->
                     <projectNameTemplate>[artifactId]</projectNameTemplate>
                     <addGroupIdToProjectName>true</addGroupIdToProjectName>
                 </configuration>
@@ -281,16 +283,15 @@ encoding/<project>=UTF-8]]>
                     <execution>
                         <id>copy-dependencies</id>
                         <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
                         <configuration>
                             <outputDirectory>${war.dir}/WEB-INF/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
                             <excludeScope>provided</excludeScope>
                         </configuration>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-
                     </execution>
                 </executions>
             </plugin>
