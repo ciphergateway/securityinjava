@@ -1,4 +1,4 @@
-package org.ciphergateway;
+package com.ciphergateway;
 
 public class ExistClass {
 
