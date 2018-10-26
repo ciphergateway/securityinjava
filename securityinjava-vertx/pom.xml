@@ -13,6 +13,7 @@
     <basedir>./</basedir>
     <war.dir>WebContent</war.dir>
     <encoding>UTF-8</encoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>1.8</jdk.version>
     <securityinjava.version>6.0.0-SNAPSHOT</securityinjava.version>
 

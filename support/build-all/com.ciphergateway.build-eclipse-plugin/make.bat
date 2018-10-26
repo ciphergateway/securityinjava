@@ -4,9 +4,9 @@ echo "%revision%="%revision%
 
 echo [1/4]rename plugin directory...
 cd target 
-move com.ciphergateway.build-eclipse-plugin-%revision%-bin eclipse
+ren com.ciphergateway.build-eclipse-plugin-%revision%-bin eclipse
 cd eclipse
-move com.ciphergateway.build-eclipse-plugin-%revision% plugins
+ren com.ciphergateway.build-eclipse-plugin-%revision% plugins
 cd plugins
 
 echo [2/4]extract plugin jars...

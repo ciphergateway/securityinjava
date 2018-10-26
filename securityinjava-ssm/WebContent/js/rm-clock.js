@@ -27,7 +27,7 @@ function updateClock() {
 	preTime = currentTime + timeOffset;
 	var showDate = new Date(currentTime + timeOffset);
 	var today = showDate;			
-	var year = today.getYear() + 00;		//得到年份部分
+	var year = today.getYear() + 0;		//得到年份部分
 	var month = today.getMonth()+1;			//得到月份部分，并修正成为习惯表达方式
 	var date = today.getDate();			//取日部分
 	var day = today.getDay();			//取星期部分
