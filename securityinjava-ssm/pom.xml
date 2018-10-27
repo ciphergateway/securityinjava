@@ -455,6 +455,40 @@ encoding/<project>=UTF-8]]>
             <version>${log4j.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.crypto.tink</groupId>
+            <artifactId>tink</artifactId>
+            <version>1.2.0</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>com.amazonaws</groupId>
+            		<artifactId>aws-java-sdk-core</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>com.amazonaws</groupId>
+            		<artifactId>aws-java-sdk-kms</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>com.google.api-client</groupId>
+            		<artifactId>google-api-client</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>com.google.apis</groupId>
+            		<artifactId>
+            			google-api-services-cloudkms
+            		</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>com.google.guava</groupId>
+            		<artifactId>guava</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>com.google.auto.service</groupId>
+            		<artifactId>auto-service</artifactId>
+            	</exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- third modules -->
         <dependency>
             <groupId>net.bull.javamelody</groupId>

@@ -400,10 +400,17 @@ public class RmConfigVo extends RmBaseConfigVo {
      * 
      * @return
      */
-    public File getDefaultTempDir() {
+    public File getDefaultTempDirWithMkdirs() {
+        if(!defaultTempDir.exists()) {
+            defaultTempDir.mkdirs();
+        }
         return defaultTempDir;
     }
 
+    public File getDefaultTempDir() {
+        return defaultTempDir;
+    }
+    
     public void setDefaultTempDir(File defaultTempDir) {
         this.defaultTempDir = defaultTempDir;
     }
