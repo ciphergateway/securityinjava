@@ -408,7 +408,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
         } else if(Function.SUBSTR.name().equals(func.name())) {
             return "substring";
         } else if(Function.NVL.name().equals(func.name())) {
-            return "ifnull";
+            return "coalesce";
         } else if(Function.CONCAT.name().equals(func.name())) {
             for(int i=0; args!=null && i<args.length; i++) {
                 if(i > 0) {
