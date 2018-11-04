@@ -15,7 +15,7 @@ import org.quickbundle.base.beans.RmBeanFactory;
 import org.quickbundle.project.IGlobalConstants;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.listener.RmSessionListener;
-import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
+import org.quickbundle.project.login.RmLoginVo.RmUserSessionVo;
 import org.quickbundle.tools.helper.RmPopulateHelper;
 import org.quickbundle.tools.helper.RmSqlHelper;
 import org.quickbundle.util.RmSequenceMap;
@@ -39,7 +39,7 @@ public class RmSessionService implements IRmSessionService {
 	
 	@WebMethod(exclude=true)
 	public List<RmUserSessionVo> queryByCondition(String queryCondition, String orderStr, int startIndex, int size) {
-		List<RmUserSessionVo> result = new ArrayList<RmUserVo.RmUserSessionVo>();
+		List<RmUserSessionVo> result = new ArrayList<RmLoginVo.RmUserSessionVo>();
 		final Map<String, HttpSession> mSession = RmSessionListener.getSessions();
 		String yesterday = new Timestamp(System.currentTimeMillis() - 1000*60*60*24*1).toString().substring(0, 19);
 		String sql = "select uor.cluster_node_id, uor.login_sign, uor.login_uuid, u.* from RM_USER u " +
@@ -99,7 +99,7 @@ public class RmSessionService implements IRmSessionService {
 		target.setMaxInactiveInterval(session.getMaxInactiveInterval() * 1000);
 		{ //custom owner org this login, cluster begin
 			if(session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
-				target.setParty_id_org_name(((org.quickbundle.project.login.RmUserVo)session.getAttribute(IGlobalConstants.RM_USER_VO)).getParty_id_org_name());
+				target.setParty_id_org_name(((org.quickbundle.project.login.RmLoginVo)session.getAttribute(IGlobalConstants.RM_USER_VO)).getParty_id_org_name());
 			}
 		} //custom owner org this login, cluster end
 	}
@@ -123,14 +123,14 @@ public class RmSessionService implements IRmSessionService {
 
 	public List<RmUserSessionVo> listSessionLocal(String[] sessionIds) {
 		final Map<String, HttpSession> mSession = RmSessionListener.getSessions();
-		List<RmUserSessionVo> result = new ArrayList<RmUserVo.RmUserSessionVo>();
+		List<RmUserSessionVo> result = new ArrayList<RmLoginVo.RmUserSessionVo>();
 		for(String sessionId : sessionIds) {
 			RmUserSessionVo vo = null;
 			HttpSession session = mSession.get(sessionId);
 			if(session != null) {
 				vo = new RmUserSessionVo();
 				if(session.getAttribute(IGlobalConstants.RM_USER_VO) != null) {
-					org.quickbundle.project.login.RmUserVo userVo = (org.quickbundle.project.login.RmUserVo)session.getAttribute(IGlobalConstants.RM_USER_VO);
+					org.quickbundle.project.login.RmLoginVo userVo = (org.quickbundle.project.login.RmLoginVo)session.getAttribute(IGlobalConstants.RM_USER_VO);
 					RmPopulateHelper.populate(vo, userVo);
 					populateSessionVo(vo, session);
 				}

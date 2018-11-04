@@ -23,7 +23,7 @@ import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
 import org.quickbundle.project.listener.RmSessionListener;
-import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
+import org.quickbundle.project.login.RmLoginVo.RmUserSessionVo;
 import org.quickbundle.tools.helper.RmDateHelper;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmVoHelper;
@@ -56,7 +56,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 	 * @return 校验异常时，返回异常反馈信息，正常返回null
 	 */
 	public String validateLogin(ServletRequest request, IRmLoginVo loginVo){
-		RmUserVo userVo = (RmUserVo)loginVo;
+		RmLoginVo userVo = (RmLoginVo)loginVo;
 		String loginStr = null;
 		//orgauth validateLogin begin
 		if(IOrgauthConstants.UserAdminType.ADMIN.value().equals(loginVo.getAdmin_type())) {
@@ -78,7 +78,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 	 * @return 如果未登录，返回null；如果已经登录在线，返回vo信息
 	 */
 	public UserUniqueLoginVo checkUniqueLogin(ServletRequest request, IRmLoginVo loginVo) {
-		RmUserVo userVo = (RmUserVo)loginVo;
+		RmLoginVo userVo = (RmLoginVo)loginVo;
 		UserUniqueLoginVo uniqueLoginVo = new UserUniqueLoginVo();
 		if(IGlobalConstants.RM_NO.equals(userVo.getLogin_status())) {
 			return null;
@@ -124,7 +124,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 	 * @return 强制登录是否成功
 	 */
 	public boolean executeLoginForce(ServletRequest request, IRmLoginVo loginVo) {
-		RmUserVo userVo = (RmUserVo)loginVo;
+		RmLoginVo userVo = (RmLoginVo)loginVo;
 		//orgauth begin
 		String message = "您被IP为" + RmProjectHelper.getIp(request) + "的用户取代登录了，请重新登录。如有帐号异常，请联系管理员。";
 		if(userVo.getId() == null || userVo.getId().length() == 0) {
@@ -156,13 +156,13 @@ public class RmLoginService extends RmService implements IRmLoginService {
 	public void executeInitUserInfo(ServletRequest request, ServletResponse response, IRmLoginVo loginVo) {
     	//确保产生session，并往session放入loginVo
     	HttpSession session = RmJspHelper.getSession(request, response, true);
-		RmUserVo userVo = (RmUserVo)loginVo;
+		RmLoginVo userVo = (RmLoginVo)loginVo;
 		//orgauth initUserInfo begin
 
 		//orgauth initUserInfo end
 		
 		//记住登录时间
-		userVo.getMAttribute().put(RmUserVo.A_LOGIN_TIME, String.valueOf(System.currentTimeMillis()));
+		userVo.getMAttribute().put(RmLoginVo.A_LOGIN_TIME, String.valueOf(System.currentTimeMillis()));
 		//往session放入loginVo
 		session.setAttribute(IGlobalConstants.RM_USER_VO, userVo);
 		//更新用户状态
@@ -192,7 +192,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 		String lastLoginIp = uorVo.getLogin_ip();
 		RmProjectHelper.getCommonServiceInstance().doUpdate("update RM_USER set LOGIN_STATUS='1', LAST_LOGIN_DATE=?, LAST_LOGIN_IP=?, LOGIN_SUM=LOGIN_SUM+1 where ID=?", new Object[]{lastLoginDate, lastLoginIp, loginVo.getId()});
 		{
-			RmUserVo userVo = (RmUserVo)loginVo;
+			RmLoginVo userVo = (RmLoginVo)loginVo;
 			userVo.setLast_login_date(lastLoginDate);
 			userVo.setLast_login_ip(lastLoginIp);
 			userVo.setLogin_sum(userVo.getLogin_sum()+1);
@@ -210,7 +210,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 				|| IGlobalConstants.RM_YES.equals(session.getAttribute(IGlobalConstants.RM_SSO_TEMP)) ) {
 			return;
 		}
-		RmUserVo vo = (RmUserVo)session.getAttribute(IGlobalConstants.RM_USER_VO);
+		RmLoginVo vo = (RmLoginVo)session.getAttribute(IGlobalConstants.RM_USER_VO);
 		//orgauth destroy begin 完成用户在线记录
 		IRmUserOnlineRecordService uorService = (IRmUserOnlineRecordService)RmBeanFactory.getBean(IRmUserOnlineRecordConstants.SERVICE_KEY);
 		List<RmUserOnlineRecordVo> lUor = uorService.queryByCondition("USER_ID=" + vo.getId() + " and LOGIN_SIGN='" + session.getId() + "' and LOGOUT_TIME is null", "LOGIN_TIME DESC", -1, -1, true);
@@ -223,7 +223,7 @@ public class RmLoginService extends RmService implements IRmLoginService {
 			} else { //默认是超时退出
 				uorVo.setLogout_type(IRmLoginConstants.LogoutType.TIMEOUT.value());
 			}
-			uorVo.setLast_operation(vo.getMAttribute().get(RmUserVo.A_LAST_OPERATION));
+			uorVo.setLast_operation(vo.getMAttribute().get(RmLoginVo.A_LAST_OPERATION));
 			uorVo.setOnline_time(new BigDecimal(uorVo.getLogout_time().getTime() - uorVo.getLogin_time().getTime()));
 			RmVoHelper.markModifyStamp(RmRequestMonitor.getCurrentThreadRequest(), uorVo);
 			uorService.update(uorVo);

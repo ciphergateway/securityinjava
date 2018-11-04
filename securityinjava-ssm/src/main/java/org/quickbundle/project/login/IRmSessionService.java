@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 
-import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
+import org.quickbundle.project.login.RmLoginVo.RmUserSessionVo;
 
 @WebService
 public interface IRmSessionService {

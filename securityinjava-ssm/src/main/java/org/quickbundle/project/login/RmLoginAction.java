@@ -39,7 +39,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
         //获得session，有可能不存在
         HttpSession session = RmJspHelper.getSession(request, response, false);
         if(RmConfig.getSingleton().isUserDemoMode()) { //demo模式手动设置IRmLoginVo，用户login_id放入session，用于判断是否登录
-        	loginVo = new RmUserVo();
+        	loginVo = new RmLoginVo();
         	loginVo.setLogin_id(request.getParameter(Para.login_id.name()));
         	//确保产生session，并往session放入loginVo
         	session = createLongSession(request, response);
@@ -132,7 +132,7 @@ public class RmLoginAction extends RmDispatchAction implements IRmLoginConstants
     	String login_id = request.getParameter(Para.login_id.name());
         String password = request.getParameter(Para.password.name());
         { //初始化loginVo
-        	loginVo = new RmUserVo();
+        	loginVo = new RmLoginVo();
         	loginVo.setLogin_id(login_id);
         	loginVo.setPassword(password);
         }

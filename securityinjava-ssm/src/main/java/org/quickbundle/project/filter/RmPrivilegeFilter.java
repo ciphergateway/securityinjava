@@ -26,7 +26,7 @@ import org.quickbundle.project.RmGlobalMonitor;
 import org.quickbundle.project.RmProjectHelper;
 import org.quickbundle.project.RmRequestMonitor;
 import org.quickbundle.project.login.IOrgauthConstants;
-import org.quickbundle.project.login.RmUserVo;
+import org.quickbundle.project.login.RmLoginVo;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmLogHelper;
 import org.quickbundle.tools.helper.RmUUIDHelper;
@@ -221,7 +221,7 @@ public class RmPrivilegeFilter implements Filter {
         if (url.startsWith(request.getContextPath())) {// 去掉/webAppName前缀
             url = url.substring(request.getContextPath().length());
         }
-        RmUserVo userVo = RmProjectHelper.getRmUserVo(request);
+        RmLoginVo userVo = RmProjectHelper.getRmUserVo(request);
         if (userVo != null && IOrgauthConstants.UserAdminType.ADMIN.value().equals(userVo.getAdmin_type())) { // 管理员都能访问
             return true;
         } else if (url.matches("^/admin/.*$")) { // 监控界面严格按权限访问

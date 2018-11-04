@@ -386,7 +386,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.WM_CONCAT.name().equals(func.name())) {
 			return "group_concat";
 		} 
-		return (String)args[0];
+		return String.valueOf(args[0]);
 	}
 	
     static String getFunctionPostgresql(Function func, Object... args) {
@@ -425,7 +425,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
             result.append("* '1 sec'::interval)");
             return result.toString();
         } 
-        return (String)args[0];
+        return String.valueOf(args[0]);
     }
 	
 	static String getFunctionSqlserver(Function func, Object... args) {
@@ -462,7 +462,7 @@ select * from ( select top 200 * from ( select TOP 100000 * from moa_user order 
 		} else if(Function.WM_CONCAT.name().equals(func.name())) {
 			return "group_concat";
 		} 
-		return (String)args[0];
+		return String.valueOf(args[0]);
 	}
 	
 	@SuppressWarnings("unchecked")

@@ -1,17 +1,16 @@
 <%@page import="com.ciphergateway.crypto.RmCryptoHelper"%>
 <%@page import="org.quickbundle.orgauth.rmuser.IRmUserService"%>
 <%@page import="org.quickbundle.orgauth.rmuser.IRmUserConstants"%>
-<%@page import="org.quickbundle.project.login.RmUserVo"%>
+<%@page import="org.quickbundle.project.login.RmLoginVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.quickbundle.base.beans.RmBeanFactory"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <%@page import="org.quickbundle.project.RmProjectHelper"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-
-	if("1".equals(request.getParameter("isSubmit2"))) {
+    if("1".equals(request.getParameter("isSubmit2"))) {
 		IRmUserService userService = (IRmUserService)RmBeanFactory.getBean(IRmUserConstants.SERVICE_KEY);
-		RmUserVo vo = userService.find(RmProjectHelper.getRmUserId(request));
+		RmLoginVo vo = userService.find(RmProjectHelper.getRmUserId(request));
 		System.out.println(RmCryptoHelper.digestPassword(request.getParameter("old_password"), vo.getLogin_id()) + 
 				"\n" + request.getParameter("old_password") + " " + vo.getLogin_id() + "\n" + 
 				vo.getPassword());

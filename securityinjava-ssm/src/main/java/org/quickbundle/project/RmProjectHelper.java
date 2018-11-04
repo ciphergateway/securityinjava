@@ -12,7 +12,7 @@ import org.quickbundle.modules.log.RmLogTypeCache;
 import org.quickbundle.modules.log.rmlog.RmLogVo;
 import org.quickbundle.project.common.IRmCommonService;
 import org.quickbundle.project.login.IRmLoginVo;
-import org.quickbundle.project.login.RmUserVo;
+import org.quickbundle.project.login.RmLoginVo;
 import org.quickbundle.project.mail.IRmMailService;
 import org.quickbundle.tools.context.RmBeanHelper;
 import org.quickbundle.tools.helper.RmDateHelper;
@@ -90,7 +90,7 @@ public final class RmProjectHelper implements IGlobalConstants{
      * @param request
      * @return
      */
-    public static RmUserVo getRmUserVo(ServletRequest request) {
+    public static RmLoginVo getRmUserVo(ServletRequest request) {
         HttpSession session = RmJspHelper.getSession(request, null, false);
         if(session == null) {
             return null;
@@ -99,7 +99,7 @@ public final class RmProjectHelper implements IGlobalConstants{
         if (obj == null) {
             return null;
         } else {
-            return (RmUserVo)obj;
+            return (RmLoginVo)obj;
         }
     }
 
@@ -109,7 +109,7 @@ public final class RmProjectHelper implements IGlobalConstants{
 	 * @param request
 	 * @return
 	 */
-	public static RmUserVo getCurrentUser() {
+	public static RmLoginVo getCurrentUser() {
 		HttpServletRequest request = RmRequestMonitor.getCurrentThreadRequest();
 		if (request == null) {
 			return null;
@@ -123,7 +123,7 @@ public final class RmProjectHelper implements IGlobalConstants{
 			return null;
 		}
 
-		return (RmUserVo) obj;
+		return (RmLoginVo) obj;
 
 	}
 
@@ -192,7 +192,7 @@ public final class RmProjectHelper implements IGlobalConstants{
     		HttpServletRequest request = RmRequestMonitor.getCurrentThreadRequest();
     		if(request != null) {
         		logVo.setAction_ip(RmProjectHelper.getIp(request));
-    			RmUserVo userVo = RmProjectHelper.getRmUserVo(request);
+    			RmLoginVo userVo = RmProjectHelper.getRmUserVo(request);
     			if(userVo != null) {
     				logVo.setUser_id(userVo.getId());
     				logVo.setUser_id_name(userVo.getName());

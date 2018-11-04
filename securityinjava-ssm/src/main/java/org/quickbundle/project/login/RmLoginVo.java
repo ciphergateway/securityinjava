@@ -35,7 +35,7 @@ import org.quickbundle.base.RmValueObject;
  * @since 1.0.0
  */
 @XmlType(name = "org.quickbundle.project.login.RmUserVo")
-public class RmUserVo extends RmValueObject implements IRmLoginVo{
+public class RmLoginVo extends RmValueObject implements IRmLoginVo{
 	
 	private String parent_party_id;
 	private String parent_party_name;
@@ -521,7 +521,7 @@ public class RmUserVo extends RmValueObject implements IRmLoginVo{
 	}
 	//orgauth end
 	
-	public static class RmUserSessionVo extends RmUserVo {
+	public static class RmUserSessionVo extends RmLoginVo {
 		private String clusterNodeId;
 		private String sessionId;
 		private long creationTime;

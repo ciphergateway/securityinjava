@@ -49,18 +49,19 @@ public class RmCommonVo implements Cloneable, Serializable, Map {
     /**
      * 功能: 为RmCommonVo增加属性，访问时有序(按属性加入的先后顺序)
      *
-     * @param attributeName 属性名称
-     * @param attributeValue 属性值
+     * @param key 属性名称
+     * @param value 属性值
      */
-    public void put(String key, Object value) {
-    	String keyUpper = key != null ? key.toUpperCase() : null;
+    public Object put(Object key_, Object value) {
+        String key = key_ != null ? key_.toString() : null;
+    	String keyUpper = key_ != null ? key_.toString().toUpperCase() : null;
     	if(!mapKey.containsKey(keyUpper)) {
     		mapKey.put(keyUpper, key);
     	}
     	if(value instanceof BigDecimal) {
     		value = value.toString();
     	}
-    	mapAttribute.put(keyUpper, value);
+    	return mapAttribute.put(keyUpper, value);
     }
     
     /**
@@ -242,17 +243,6 @@ public class RmCommonVo implements Cloneable, Serializable, Map {
 			result.add(new AbstractMap.SimpleEntry(mapKey.get(entry.getKey()), entry.getValue()));
 		}
 		return result;
-	}
-
-
-    /**
-     * 功能: 为RmCommonVo增加属性，访问时有序(按属性加入的先后顺序)
-     *
-     * @param key 属性名称
-     * @param value 属性值
-     */
-	public Object put(Object key, Object value) {
-		return mapAttribute.put(key == null ? null : key.toString(), value);
 	}
 
 	public boolean isEmpty() {

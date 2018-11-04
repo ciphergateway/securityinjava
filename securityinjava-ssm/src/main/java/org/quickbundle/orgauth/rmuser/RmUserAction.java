@@ -38,7 +38,7 @@ import org.quickbundle.project.common.RmCommonVo;
 import org.quickbundle.project.listener.RmSessionListener;
 import org.quickbundle.project.login.IRmLoginConstants;
 import org.quickbundle.project.login.IRmSessionService;
-import org.quickbundle.project.login.RmUserVo.RmUserSessionVo;
+import org.quickbundle.project.login.RmLoginVo.RmUserSessionVo;
 import org.quickbundle.third.struts.RmDispatchAction;
 import org.quickbundle.tools.helper.RmJspHelper;
 import org.quickbundle.tools.helper.RmPopulateHelper;
@@ -462,7 +462,7 @@ public class RmUserAction extends RmDispatchAction implements IRmUserConstants {
         	}
     		RmUserSessionVo userVoNew = new RmUserSessionVo();
     		if(session.getAttribute(RM_USER_VO) != null) {
-    			org.quickbundle.project.login.RmUserVo userVoInSession = (org.quickbundle.project.login.RmUserVo)session.getAttribute(RM_USER_VO);
+    			org.quickbundle.project.login.RmLoginVo userVoInSession = (org.quickbundle.project.login.RmLoginVo)session.getAttribute(RM_USER_VO);
     			userVoNew.setId(userVoInSession.getId());
     			userVoNew.setLogin_id(userVoInSession.getLogin_id());
     			userVoNew.setName(userVoInSession.getName());
