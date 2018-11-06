@@ -7,6 +7,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
+import org.quickbundle.base.RmRuntimeException;
 import org.quickbundle.base.beans.idwrapper.MaxInDbWrapper;
 import org.quickbundle.base.beans.idwrapper.ShardingInCacheWrapper;
 import org.quickbundle.config.RmBaseConfig;
@@ -106,6 +107,9 @@ public class RmIdGenerator implements IRmIdGenerator {
 
     public String[] requestIdInner(String tableName, int length) {
     	IRmIdWrapper wrapper = mapWrapper.get(tableName);
+    	if(wrapper == null) {
+    	    throw new RmRuntimeException("RmIdFactory have not table \"" + tableName + "\", please checkout id.xml");
+    	}
     	return wrapper.nextValue(length);
     }
 }
