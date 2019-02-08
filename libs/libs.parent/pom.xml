@@ -41,10 +41,22 @@
         </configuration>
         <executions>
           <execution>
-            <phase>compile</phase>
+            <phase>deploy</phase>
             <goals>
               <goal>jar</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- explicitly define maven-deploy-plugin after other to force exec order -->
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>deploy</phase>
+            <goals>
+                <goal>deploy</goal>
+             </goals>
           </execution>
         </executions>
       </plugin>
