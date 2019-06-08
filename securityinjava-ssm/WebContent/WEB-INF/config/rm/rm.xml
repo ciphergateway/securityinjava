@@ -8,6 +8,10 @@
 	</org.quickbundle.project.init.CustomSystemProperties>
 	
 	<org.quickbundle.config.RmConfig>
+	
+	    <!-- enable login? -->
+        <userDemoMode>false</userDemoMode>
+	
 		<!-- system is in debug mode #change in production 
 			系统是否开发调试状态 -->
 		<systemDebugMode>true</systemDebugMode>

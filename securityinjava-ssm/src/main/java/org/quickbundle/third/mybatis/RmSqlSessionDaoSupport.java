@@ -16,7 +16,7 @@ public class RmSqlSessionDaoSupport extends SqlSessionDaoSupport {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}
 	
-	protected SqlSessionTemplate getSqlSessionTemplate() {
+	public SqlSessionTemplate getSqlSessionTemplate() {
 		SqlSession ss = super.getSqlSession();
 		if(ss instanceof SqlSessionTemplate) {
 			return (SqlSessionTemplate)ss;
