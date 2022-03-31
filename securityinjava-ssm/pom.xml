@@ -21,7 +21,7 @@
         
         <!-- 主要依赖库的版本定义 -->
         <junit.version>4.12</junit.version>
-        <spring.version>5.0.14.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <spring-boot.version>2.0.9.RELEASE</spring-boot.version>
         <mybatis.version>3.5.1</mybatis.version>
         <mybatis-spring.version>2.0.1</mybatis-spring.version>
