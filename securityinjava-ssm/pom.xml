@@ -40,7 +40,7 @@
         <!-- jdbc driver for postgresql -->
         <jdbc.driver.groupId>org.postgresql</jdbc.driver.groupId>
         <jdbc.driver.artifactId>postgresql</jdbc.driver.artifactId>
-        <jdbc.driver.version>42.1.4</jdbc.driver.version>
+        <jdbc.driver.version>42.4.1</jdbc.driver.version>
 
     </properties>
 
