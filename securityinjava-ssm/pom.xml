@@ -40,7 +40,7 @@
         <!-- jdbc driver for postgresql -->
         <jdbc.driver.groupId>org.postgresql</jdbc.driver.groupId>
         <jdbc.driver.artifactId>postgresql</jdbc.driver.artifactId>
-        <jdbc.driver.version>42.1.4</jdbc.driver.version>
+        <jdbc.driver.version>42.2.28</jdbc.driver.version>
 
     </properties>
 
@@ -307,7 +307,35 @@ encoding/<project>=UTF-8]]>
 
     </build>
 
+    <repositories>
+        <repository>
+           <id>my-local-repo</id>
+           <url>file://${basedir}/res/lib/maven_not_found</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <!-- Deprecated, to be clean in next version-->
+        <dependency>
+            <groupId>Struts-Layout</groupId>
+            <artifactId>Struts-Layout</artifactId>
+            <version>1.4.0-RC1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-core</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-extras</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-taglib</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -521,30 +549,6 @@ encoding/<project>=UTF-8]]>
                     <artifactId>c3p0</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <!-- Deprecated, to be clean in next version-->
-        <dependency>
-            <groupId>maven_not_found</groupId>
-            <artifactId>Struts-Layout</artifactId>
-            <version>1.4.0-RC1</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/res/lib/maven_not_found/Struts-Layout-1.4.0-RC1.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts-core</artifactId>
-            <version>${struts.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts-extras</artifactId>
-            <version>${struts.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts-taglib</artifactId>
-            <version>${struts.version}</version>
         </dependency>
     </dependencies>
 
